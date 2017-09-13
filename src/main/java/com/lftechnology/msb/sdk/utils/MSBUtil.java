@@ -2,11 +2,13 @@ package com.lftechnology.msb.sdk.utils;
 
 import com.lftechnology.msb.sdk.dto.Agent;
 import com.lftechnology.msb.sdk.dto.AgentBranch;
+import com.lftechnology.msb.sdk.dto.CancelResponse;
 import com.lftechnology.msb.sdk.dto.Credential;
 import com.lftechnology.msb.sdk.dto.TransactionDetail;
 import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import prabhu.webservices.ReturnAGENTLIST;
 import prabhu.webservices.ReturnCreateTXN;
+import prabhu.webservices.ReturnTXNCancel;
 import prabhu.webservices.SendTransaction;
 
 import java.util.ArrayList;
@@ -95,5 +97,12 @@ public class MSBUtil {
                 returnAGENTLIST.getBANKBRANCHSTATE(),
                 returnAGENTLIST.getAGENTCODE()
         );
+    }
+
+    public static CancelResponse mapToCancelTransactionResponse(ReturnTXNCancel returnTXNCancel) {
+        CancelResponse cancelResponse = new CancelResponse();
+        cancelResponse.setCode(returnTXNCancel.getCODE());
+        cancelResponse.setMsbTxnId(returnTXNCancel.getPINNO());
+        return cancelResponse;
     }
 }

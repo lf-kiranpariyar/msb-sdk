@@ -27,6 +27,7 @@ public class TransactionDetail {
     private String bankBranchName;
     private String bankBranchId;
     private String bankLocationId;
+    private String calcBy;
     private String senderOccupation;
     private String senderSourceOfFund;
     private String senderBeneficiaryRelationship;
@@ -215,6 +216,14 @@ public class TransactionDetail {
 
     public void setBankLocationId(String bankLocationId) {
         this.bankLocationId = bankLocationId;
+    }
+
+    public String getCalcBy() {
+        return calcBy;
+    }
+
+    public void setCalcBy(String calcBy) {
+        this.calcBy = calcBy;
     }
 
     public String getSenderOccupation() {

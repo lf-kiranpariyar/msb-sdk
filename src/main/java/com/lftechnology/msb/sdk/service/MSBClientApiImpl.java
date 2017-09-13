@@ -1,7 +1,10 @@
 package com.lftechnology.msb.sdk.service;
 
+import com.lftechnology.msb.sdk.constant.MSBConstant;
 import com.lftechnology.msb.sdk.dto.Agent;
 import com.lftechnology.msb.sdk.dto.BankInfo;
+import com.lftechnology.msb.sdk.dto.CancelResponse;
+import com.lftechnology.msb.sdk.dto.CancelTransactionDetail;
 import com.lftechnology.msb.sdk.dto.Credential;
 import com.lftechnology.msb.sdk.dto.TransactionDetail;
 import com.lftechnology.msb.sdk.dto.TransactionResponse;
@@ -13,8 +16,8 @@ import prabhu.webservices.IRemitService;
 import prabhu.webservices.IRemitServiceSoap;
 import prabhu.webservices.ReturnAGENTLIST;
 import prabhu.webservices.ReturnCreateTXN;
+import prabhu.webservices.ReturnTXNCancel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,7 +57,7 @@ public class MSBClientApiImpl implements MSBClientApi {
                 transactionDetail.getPaymentMode(),
                 transactionDetail.getBankId(),
                 transactionDetail.getBankAccountNumber(),
-                "", "",
+                transactionDetail.getCalcBy(), "",
                 transactionDetail.getBankBranchName(),
                 transactionDetail.getBankBranchId(),
                 transactionDetail.getSenderOccupation(),
@@ -83,5 +86,29 @@ public class MSBClientApiImpl implements MSBClientApi {
         );
         List<ReturnAGENTLIST> returnAGENTLIST = arrayOfReturnAGENTLIST.getReturnAGENTLIST();
         return MSBUtil.mapToListOfAgent(returnAGENTLIST);
+    }
+
+    @Override
+    public CancelResponse cancelTransaction(Credential credential, CancelTransactionDetail cancelTransactionDetail) {
+        IRemitService iRemitService =new IRemitService();
+        IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        ReturnTXNCancel returnTXNCancel = iRemitServiceSoap.cancelTransactionv2(
+                credential.getAgentCode(),
+                credential.getAgentUserId(),
+                credential.getAgentPassword(),
+                cancelTransactionDetail.getMsbTxnId(),
+                credential.getAgentSessionId(),
+                cancelTransactionDetail.getCancelComment()
+        );
+
+        if(returnTXNCancel.getCODE().equals(MSBConstant.SUCCESS)){
+            return MSBUtil.mapToCancelTransactionResponse(returnTXNCancel);
+        }else {
+            LOGGER.debug("Could not cancel transaction in MSB." + returnTXNCancel.toString());
+            CancelResponse cancelResponse = new CancelResponse();
+            cancelResponse.setCode(MSBConstant.FAILED);
+            cancelResponse.setMsbTxnId(cancelTransactionDetail.getMsbTxnId());
+            return cancelResponse;
+        }
     }
 }

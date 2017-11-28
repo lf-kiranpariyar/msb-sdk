@@ -74,6 +74,9 @@ public class MSBClientApiImpl implements MSBClientApi {
     public List<Agent> getAgents(Credential credential, BankInfo bankInfo) {
         IRemitService iRemitService =new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        System.out.println(credential.toString());
+        System.out.println(bankInfo.getPaymentType());
+        System.out.println(bankInfo.getPayoutCountry());
         ArrayOfReturnAGENTLIST arrayOfReturnAGENTLIST = iRemitServiceSoap.getAgentList(
                 credential.getAgentCode(),
                 credential.getAgentUserId(),

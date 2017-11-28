@@ -265,4 +265,39 @@ public class TransactionDetail {
     public void setSenderSSN(String senderSSN) {
         this.senderSSN = senderSSN;
     }
+
+    @Override
+    public String toString() {
+        return "TransactionDetail{" +
+                "agentTxnId='" + agentTxnId + '\'' +
+                ", senderName='" + senderName + '\'' +
+                ", senderAddress='" + senderAddress + '\'' +
+                ", senderMobile='" + senderMobile + '\'' +
+                ", senderCity='" + senderCity + '\'' +
+                ", senderCountry='" + senderCountry + '\'' +
+                ", senderIdType='" + senderIdType + '\'' +
+                ", senderIdNumber='" + senderIdNumber + '\'' +
+                ", senderIdIsuueDate='" + senderIdIsuueDate + '\'' +
+                ", senderIdExpireDate='" + senderIdExpireDate + '\'' +
+                ", senderDateofBirth='" + senderDateofBirth + '\'' +
+                ", receiverName='" + receiverName + '\'' +
+                ", receiverAddress='" + receiverAddress + '\'' +
+                ", receiverContactNumber='" + receiverContactNumber + '\'' +
+                ", receiverCity='" + receiverCity + '\'' +
+                ", receiverCountry='" + receiverCountry + '\'' +
+                ", transferAmount='" + transferAmount + '\'' +
+                ", paymentMode='" + paymentMode + '\'' +
+                ", bankId='" + bankId + '\'' +
+                ", bankAccountNumber='" + bankAccountNumber + '\'' +
+                ", bankBranchName='" + bankBranchName + '\'' +
+                ", bankBranchId='" + bankBranchId + '\'' +
+                ", bankLocationId='" + bankLocationId + '\'' +
+                ", calcBy='" + calcBy + '\'' +
+                ", senderOccupation='" + senderOccupation + '\'' +
+                ", senderSourceOfFund='" + senderSourceOfFund + '\'' +
+                ", senderBeneficiaryRelationship='" + senderBeneficiaryRelationship + '\'' +
+                ", purposeOfRemittance='" + purposeOfRemittance + '\'' +
+                ", senderSSN='" + senderSSN + '\'' +
+                '}';
+    }
 }

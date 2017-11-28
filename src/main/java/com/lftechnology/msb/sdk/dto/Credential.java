@@ -58,4 +58,16 @@ public class Credential {
     public void setAgentLocationId(String agentLocationId) {
         this.agentLocationId = agentLocationId;
     }
+
+    @Override
+    public String toString() {
+        return "Credential{" +
+                "agentName='" + agentName + '\'' +
+                ", agentCode='" + agentCode + '\'' +
+                ", agentUserId='" + agentUserId + '\'' +
+                ", agentPassword='" + agentPassword + '\'' +
+                ", agentSessionId='" + agentSessionId + '\'' +
+                ", agentLocationId='" + agentLocationId + '\'' +
+                '}';
+    }
 }

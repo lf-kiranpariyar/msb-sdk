@@ -19,7 +19,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "iRemitService", targetNamespace = "WebServices", wsdlLocation = "file:/home/kiranpariyar/Desktop/prabhu/txnservice.xml")
+@WebServiceClient(name = "iRemitService", targetNamespace = "WebServices")
 public class IRemitService
     extends Service
 {
@@ -32,7 +32,11 @@ public class IRemitService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/home/kiranpariyar/Desktop/prabhu/txnservice.xml");
+            String wsdlFileLoation = System.getProperty("WSDL_FILE_LOCATION");
+            if(wsdlFileLoation==null){
+                wsdlFileLoation = System.getenv("WSDL_FILE_LOCATION");
+            }
+            url = new URL(wsdlFileLoation);
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

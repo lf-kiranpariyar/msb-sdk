@@ -1,12 +1,8 @@
 package com.lftechnology.msb.sdk.service;
 
-import com.lftechnology.msb.sdk.dto.Agent;
-import com.lftechnology.msb.sdk.dto.BankInfo;
-import com.lftechnology.msb.sdk.dto.CancelResponse;
-import com.lftechnology.msb.sdk.dto.CancelTransactionDetail;
-import com.lftechnology.msb.sdk.dto.Credential;
-import com.lftechnology.msb.sdk.dto.TransactionDetail;
-import com.lftechnology.msb.sdk.dto.TransactionResponse;
+import com.lftechnology.msb.sdk.dto.*;
+import prabhu.webservices.AmendmentRequest;
+import prabhu.webservices.AmendmentRequestResponse;
 import prabhu.webservices.CancelTransactionResponse;
 
 import java.util.List;
@@ -17,6 +13,8 @@ import java.util.List;
 public interface MSBClientApi {
 
     TransactionResponse createTransaction(Credential credential,TransactionDetail transactionDetail);
+
+    Boolean amendTransaction(Credential credential, TransactionAmendmentDetail amendmentRequest);
 
     List<Agent> getAgents(Credential credential,BankInfo bankInfo);
 

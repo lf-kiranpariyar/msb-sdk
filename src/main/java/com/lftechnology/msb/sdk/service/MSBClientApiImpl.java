@@ -1,22 +1,11 @@
 package com.lftechnology.msb.sdk.service;
 
 import com.lftechnology.msb.sdk.constant.MSBConstant;
-import com.lftechnology.msb.sdk.dto.Agent;
-import com.lftechnology.msb.sdk.dto.BankInfo;
-import com.lftechnology.msb.sdk.dto.CancelResponse;
-import com.lftechnology.msb.sdk.dto.CancelTransactionDetail;
-import com.lftechnology.msb.sdk.dto.Credential;
-import com.lftechnology.msb.sdk.dto.TransactionDetail;
-import com.lftechnology.msb.sdk.dto.TransactionResponse;
+import com.lftechnology.msb.sdk.dto.*;
 import com.lftechnology.msb.sdk.utils.MSBUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import prabhu.webservices.ArrayOfReturnAGENTLIST;
-import prabhu.webservices.IRemitService;
-import prabhu.webservices.IRemitServiceSoap;
-import prabhu.webservices.ReturnAGENTLIST;
-import prabhu.webservices.ReturnCreateTXN;
-import prabhu.webservices.ReturnTXNCancel;
+import prabhu.webservices.*;
 
 import java.util.List;
 
@@ -26,6 +15,8 @@ import java.util.List;
 public class MSBClientApiImpl implements MSBClientApi {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MSBClientApi.class);
+
+    private static final String SUCCESS_CODE="0";
 
     @Override
     public TransactionResponse createTransaction(Credential credential, TransactionDetail transactionDetail) {
@@ -71,12 +62,25 @@ public class MSBClientApiImpl implements MSBClientApi {
     }
 
     @Override
+    public Boolean amendTransaction(Credential credential, TransactionAmendmentDetail amendmentRequest) {
+        IRemitService iRemitService =new IRemitService();
+        IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        ReturnTXNAMEND response = iRemitServiceSoap.amendmentRequest(
+                credential.getAgentCode(),
+                credential.getAgentUserId(),
+                credential.getAgentPassword(),
+                credential.getAgentSessionId(),
+                amendmentRequest.getMsbTxnId(),
+                amendmentRequest.getFieldName(),
+                amendmentRequest.getFieldValue()
+        );
+        return Boolean.valueOf(SUCCESS_CODE.equalsIgnoreCase(response.getCODE()));
+    }
+
+    @Override
     public List<Agent> getAgents(Credential credential, BankInfo bankInfo) {
         IRemitService iRemitService =new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
-        System.out.println(credential.toString());
-        System.out.println(bankInfo.getPaymentType());
-        System.out.println(bankInfo.getPayoutCountry());
         ArrayOfReturnAGENTLIST arrayOfReturnAGENTLIST = iRemitServiceSoap.getAgentList(
                 credential.getAgentCode(),
                 credential.getAgentUserId(),

@@ -20,6 +20,7 @@ public class MSBClientApiImpl implements MSBClientApi {
 
     @Override
     public TransactionResponse createTransaction(Credential credential, TransactionDetail transactionDetail) {
+        LOGGER.info("Creating transaction in MSB, Transaction Details : {}",transactionDetail.toString());
         IRemitService iRemitService =new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
         ReturnCreateTXN returnCreateTXN = iRemitServiceSoap.sendTransaction(
@@ -63,6 +64,7 @@ public class MSBClientApiImpl implements MSBClientApi {
 
     @Override
     public Boolean amendTransaction(Credential credential, TransactionAmendmentDetail amendmentRequest) {
+        LOGGER.info("Updating transaction in MSB, Amendment Transaction Details : {}",amendmentRequest.toString());
         IRemitService iRemitService =new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
         ReturnTXNAMEND response = iRemitServiceSoap.amendmentRequest(
@@ -79,6 +81,7 @@ public class MSBClientApiImpl implements MSBClientApi {
 
     @Override
     public List<Agent> getAgents(Credential credential, BankInfo bankInfo) {
+        LOGGER.info("Getting Bank List from MSB");
         IRemitService iRemitService =new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
         ArrayOfReturnAGENTLIST arrayOfReturnAGENTLIST = iRemitServiceSoap.getAgentList(
@@ -92,11 +95,13 @@ public class MSBClientApiImpl implements MSBClientApi {
                 bankInfo.getBranchState()
         );
         List<ReturnAGENTLIST> returnAGENTLIST = arrayOfReturnAGENTLIST.getReturnAGENTLIST();
+        LOGGER.info("Total Bank List is : {}",returnAGENTLIST.size());
         return MSBUtil.mapToListOfAgent(returnAGENTLIST);
     }
 
     @Override
     public CancelResponse cancelTransaction(Credential credential, CancelTransactionDetail cancelTransactionDetail) {
+        LOGGER.info("Canceling transaction in MSB. Cancel Transaction Details is : {}",cancelTransactionDetail.toString());
         IRemitService iRemitService =new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
         ReturnTXNCancel returnTXNCancel = iRemitServiceSoap.cancelTransactionv2(
@@ -111,7 +116,7 @@ public class MSBClientApiImpl implements MSBClientApi {
         if(returnTXNCancel.getCODE().equals(MSBConstant.SUCCESS)){
             return MSBUtil.mapToCancelTransactionResponse(returnTXNCancel);
         }else {
-            LOGGER.debug("Could not cancel transaction in MSB." + returnTXNCancel.toString());
+            LOGGER.debug("Could not cancel transaction in MSB.", returnTXNCancel.toString());
             CancelResponse cancelResponse = new CancelResponse();
             cancelResponse.setCode(MSBConstant.FAILED);
             cancelResponse.setMsbTxnId(cancelTransactionDetail.getMsbTxnId());

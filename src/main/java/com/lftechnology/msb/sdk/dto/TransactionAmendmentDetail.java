@@ -31,4 +31,13 @@ public class TransactionAmendmentDetail {
     public void setFieldValue(String fieldValue) {
         this.fieldValue = fieldValue;
     }
+
+    @Override public String toString() {
+        final StringBuffer sb = new StringBuffer("TransactionAmendmentDetail{");
+        sb.append("msbTxnId='").append(msbTxnId).append('\'');
+        sb.append(", fieldName='").append(fieldName).append('\'');
+        sb.append(", fieldValue='").append(fieldValue).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

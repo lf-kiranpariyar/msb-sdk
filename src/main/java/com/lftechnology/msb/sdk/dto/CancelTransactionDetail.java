@@ -23,4 +23,12 @@ public class CancelTransactionDetail {
     public void setCancelComment(String cancelComment) {
         this.cancelComment = cancelComment;
     }
+
+    @Override public String toString() {
+        final StringBuffer sb = new StringBuffer("CancelTransactionDetail{");
+        sb.append("msbTxnId='").append(msbTxnId).append('\'');
+        sb.append(", cancelComment='").append(cancelComment).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

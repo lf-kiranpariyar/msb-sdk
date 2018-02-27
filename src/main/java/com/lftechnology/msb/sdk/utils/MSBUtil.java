@@ -1,7 +1,6 @@
 package com.lftechnology.msb.sdk.utils;
 
 import com.lftechnology.msb.sdk.dto.*;
-import com.lftechnology.msb.sdk.service.MSBClientApiImpl;
 import prabhu.webservices.ReturnAGENTLIST;
 import prabhu.webservices.ReturnCreateTXN;
 import prabhu.webservices.ReturnTXNCancel;
@@ -16,6 +15,9 @@ import java.util.stream.Collectors;
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
 public class MSBUtil {
+
+    private MSBUtil(){
+    }
 
     public static TransactionResponse mapToTransactionResponse(ReturnCreateTXN returnCreateTXN){
         TransactionResponse transactionResponse = new TransactionResponse();

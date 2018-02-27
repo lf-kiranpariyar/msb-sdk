@@ -5,6 +5,9 @@ package com.lftechnology.msb.sdk.constant;
  */
 public class MSBConstant {
 
+    private MSBConstant(){
+    }
+
     public static final String SUCCESS = "0";
     public static final String CANCELED = "CANCELED";
     public static final String DUPLICATE_TRANSACTION="1005";

@@ -20,4 +20,6 @@ public interface MSBClientApi {
 
     CancelResponse cancelTransaction(Credential credential,CancelTransactionDetail cancelTransactionDetail);
 
+    Boolean acknowledgeTransaction(Credential credential,String msbTxnId);
+
 }

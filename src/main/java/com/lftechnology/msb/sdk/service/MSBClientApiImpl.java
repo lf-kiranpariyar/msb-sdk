@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class MSBClientApiImpl implements MSBClientApi {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MSBClientApi.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MSBClientApiImpl.class);
 
     private static final String SUCCESS_CODE="0";
 
@@ -74,7 +74,7 @@ public class MSBClientApiImpl implements MSBClientApi {
                 amendmentRequest.getFieldName(),
                 amendmentRequest.getFieldValue()
         );
-        return Boolean.valueOf(SUCCESS_CODE.equalsIgnoreCase(response.getCODE()));
+        return SUCCESS_CODE.equalsIgnoreCase(response.getCODE());
     }
 
     @Override
@@ -111,11 +111,25 @@ public class MSBClientApiImpl implements MSBClientApi {
         if(returnTXNCancel.getCODE().equals(MSBConstant.SUCCESS)){
             return MSBUtil.mapToCancelTransactionResponse(returnTXNCancel);
         }else {
-            LOGGER.debug("Could not cancel transaction in MSB." + returnTXNCancel.toString());
+            LOGGER.debug("Could not cancel transaction in MSB. {}" , returnTXNCancel);
             CancelResponse cancelResponse = new CancelResponse();
             cancelResponse.setCode(MSBConstant.FAILED);
             cancelResponse.setMsbTxnId(cancelTransactionDetail.getMsbTxnId());
             return cancelResponse;
         }
+    }
+
+    @Override
+    public Boolean acknowledgeTransaction(Credential credential, String msbTxnId) {
+        IRemitService iRemitService =new IRemitService();
+        IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        ReturnTXNAuth authorizedConfirmedResponse = iRemitServiceSoap.authorizedConfirmed(
+                credential.getAgentCode(),
+                credential.getAgentUserId(),
+                credential.getAgentPassword(),
+                msbTxnId,
+                credential.getAgentSessionId()
+        );
+        return SUCCESS_CODE.equalsIgnoreCase(authorizedConfirmedResponse.getCODE());
     }
 }

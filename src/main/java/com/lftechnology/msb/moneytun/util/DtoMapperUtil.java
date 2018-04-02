@@ -2,7 +2,6 @@ package com.lftechnology.msb.moneytun.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.msb.moneytun.dto.*;
-import moneytun.dto.*;
 
 import java.math.BigDecimal;
 import java.util.Map;

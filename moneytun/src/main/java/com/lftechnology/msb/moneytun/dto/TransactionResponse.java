@@ -11,10 +11,10 @@ public class TransactionResponse extends Response{
     String invoiceNumber;
 
     @JsonProperty("SenderId")
-    Long senderId;
+    String senderId;
 
     @JsonProperty("RecipientId")
-    Long recipientId;
+    String recipientId;
 
     public String getReferenceNumber() {
         return referenceNumber;
@@ -32,19 +32,19 @@ public class TransactionResponse extends Response{
         this.invoiceNumber = invoiceNumber;
     }
 
-    public Long getSenderId() {
+    public String getSenderId() {
         return senderId;
     }
 
-    public void setSenderId(Long senderId) {
+    public void setSenderId(String senderId) {
         this.senderId = senderId;
     }
 
-    public Long getRecipientId() {
+    public String getRecipientId() {
         return recipientId;
     }
 
-    public void setRecipientId(Long recipientId) {
+    public void setRecipientId(String recipientId) {
         this.recipientId = recipientId;
     }
 }

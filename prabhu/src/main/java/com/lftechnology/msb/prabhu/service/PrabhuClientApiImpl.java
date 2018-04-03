@@ -1,5 +1,6 @@
 package com.lftechnology.msb.prabhu.service;
 
+import com.lftechnology.msb.prabhu.constant.PrabhuConstant;
 import com.lftechnology.msb.prabhu.dto.*;
 import com.lftechnology.msb.prabhu.webservices.*;
 import com.lftechnology.msb.prabhu.utils.MSBUtil;
@@ -11,11 +12,9 @@ import java.util.List;
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
-public class MSBClientApiImpl implements MSBClientApi {
+public class PrabhuClientApiImpl implements PrabhuClientApi {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MSBClientApiImpl.class);
-
-    private static final String SUCCESS_CODE="0";
+    private static final Logger LOGGER = LoggerFactory.getLogger(PrabhuClientApiImpl.class);
 
     @Override
     public TransactionResponse createTransaction(Credential credential, TransactionDetail transactionDetail) {
@@ -73,7 +72,7 @@ public class MSBClientApiImpl implements MSBClientApi {
                 amendmentRequest.getFieldName(),
                 amendmentRequest.getFieldValue()
         );
-        return SUCCESS_CODE.equalsIgnoreCase(response.getCODE());
+        return PrabhuConstant.SUCCESS.equalsIgnoreCase(response.getCODE());
     }
 
     @Override
@@ -107,17 +106,15 @@ public class MSBClientApiImpl implements MSBClientApi {
                 cancelTransactionDetail.getCancelComment()
         );
 
-        return null;
-
-      /*  if(returnTXNCancel.getCODE().equals(MSBConstant.SUCCESS)){
+        if(returnTXNCancel.getCODE().equals(PrabhuConstant.SUCCESS)){
             return MSBUtil.mapToCancelTransactionResponse(returnTXNCancel);
         }else {
             LOGGER.debug("Could not cancel transaction in MSB. {}" , returnTXNCancel);
             CancelResponse cancelResponse = new CancelResponse();
-            cancelResponse.setCode(MSBConstant.FAILED);
+            cancelResponse.setCode(PrabhuConstant.FAILED);
             cancelResponse.setMsbTxnId(cancelTransactionDetail.getMsbTxnId());
             return cancelResponse;
-        }*/
+        }
     }
 
     @Override
@@ -131,6 +128,6 @@ public class MSBClientApiImpl implements MSBClientApi {
                 msbTxnId,
                 credential.getAgentSessionId()
         );
-        return SUCCESS_CODE.equalsIgnoreCase(authorizedConfirmedResponse.getCODE());
+        return PrabhuConstant.SUCCESS.equalsIgnoreCase(authorizedConfirmedResponse.getCODE());
     }
 }

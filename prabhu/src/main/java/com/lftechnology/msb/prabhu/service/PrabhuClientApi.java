@@ -7,9 +7,11 @@ import java.util.List;
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
-public interface MSBClientApi {
+public interface PrabhuClientApi {
 
     TransactionResponse createTransaction(Credential credential, TransactionDetail transactionDetail);
+
+    TransactionResponse getDetails(Credential credential, TransactionDetail transactionDetail);
 
     Boolean amendTransaction(Credential credential, TransactionAmendmentDetail amendmentRequest);
 

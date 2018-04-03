@@ -3,6 +3,7 @@ package com.lftechnology.msb.moneytun.service;
 import com.lftechnology.msb.moneytun.dto.*;
 
 import javax.ws.rs.*;
+import java.util.List;
 
 @Path("/")
 @Consumes("application/json")
@@ -33,11 +34,6 @@ public interface WhiteWingResource {
     @POST
     @Produces("application/json")
     @Path("city")
-    ListResponse<City> getState(City city);
-
-    @POST
-    @Produces("application/json")
-    @Path("city")
     ListResponse<City> getCity(City city);
 
     @GET
@@ -53,7 +49,7 @@ public interface WhiteWingResource {
     @GET
     @Produces("application/json")
     @Path("payerlist")
-    TransactionResponse getTransactionDetails(@HeaderParam("TransferNumber") String referenceNumber);
+    TransactionResponse getPayerList(@HeaderParam("TransferNumber") String referenceNumber);
 
 
     @POST
@@ -64,8 +60,17 @@ public interface WhiteWingResource {
     @GET
     @Produces("application/json")
     @Path("transaction")
-    TransactionResponse getTransactionDetail(@HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
+    TransactionDetail getStatus(@HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
+
+    @GET
+    @Produces("application/json")
+    @Path("transaction")
+    TransactionResponse getDetail(@HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
 
 
+    @GET
+    @Produces("application/json")
+    @Path("bank")
+    List< Bank> getBankList(@HeaderParam("Data") String data, @QueryParam("id") String action);
 
 }

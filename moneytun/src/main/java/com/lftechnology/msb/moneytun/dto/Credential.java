@@ -19,9 +19,13 @@ public class Credential {
 
     private String mtoName;
     private String mtoId;
+
     private String accessCode;
+    private String secretCode;
+
     private String employeeId;
     private String employeePassword;
+
     private String payerId;
 
     public String getMtoName() {
@@ -71,5 +75,13 @@ public class Credential {
 
     public void setPayerId(String payerId) {
         this.payerId = payerId;
+    }
+
+    public String getSecretCode() {
+        return secretCode;
+    }
+
+    public void setSecretCode(String secretCode) {
+        this.secretCode = secretCode;
     }
 }

@@ -19,7 +19,7 @@ import java.util.List;
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
 @RunWith(JUnit4.class)
-public class MSBClientApiImplTest {
+public class PrabhuClientApiImplTest {
 
     @Test
     public void shouldReturnAgentList(){
@@ -43,10 +43,10 @@ public class MSBClientApiImplTest {
 
     @Test
     public void shouldReturnTransactionCreationResponse(){
-        MSBClientApi msbClientApi = new MSBClientApiImpl();
+        PrabhuClientApi prabhuClientApi = new PrabhuClientApiImpl();
         Credential credential = getCredential();
         TransactionDetail transactionDetail = buildTransactionDetail();
-        TransactionResponse transactionResponse = msbClientApi.createTransaction(credential,transactionDetail);
+        TransactionResponse transactionResponse = prabhuClientApi.createTransaction(credential,transactionDetail);
         System.out.println(transactionDetail);
         System.out.println(transactionResponse);
     }

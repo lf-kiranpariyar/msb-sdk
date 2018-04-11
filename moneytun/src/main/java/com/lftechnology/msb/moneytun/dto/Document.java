@@ -1,7 +1,10 @@
 package com.lftechnology.msb.moneytun.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.LocalDate;
 
 public class Document {
 
@@ -27,10 +30,12 @@ public class Document {
     String stateISOCode="";
 
     @JsonProperty("SenderIDIssueDate")
-    String issueDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
+    LocalDate issueDate;
 
     @JsonProperty("SenderIDExpiryDate")
-    String expiryDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
+    LocalDate expiryDate;
 
     public String getType() {
         return type;
@@ -88,19 +93,19 @@ public class Document {
         this.stateISOCode = stateISOCode;
     }
 
-    public String getIssueDate() {
+    public LocalDate getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(String issueDate) {
+    public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
 
-    public String getExpiryDate() {
+    public LocalDate getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(String expiryDate) {
+    public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
 }

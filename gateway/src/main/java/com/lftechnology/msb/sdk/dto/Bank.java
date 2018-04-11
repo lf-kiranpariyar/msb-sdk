@@ -10,6 +10,7 @@ public class Bank {
     private String accountNumber;
     private String accountHolderName;
     private Branch branch;
+    private String type;
     private Map<String, Object> metadata = new HashMap<>();
 
     public String getReferenceId() {
@@ -42,5 +43,29 @@ public class Bank {
 
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
+
+    public Branch getBranch() {
+        return branch;
+    }
+
+    public void setBranch(Branch branch) {
+        this.branch = branch;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

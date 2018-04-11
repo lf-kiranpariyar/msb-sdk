@@ -20,9 +20,16 @@
         <jackson.core.version>2.8.9</jackson.core.version>
         <jackson.databind.version>2.8.9</jackson.databind.version>
         <jackson.annotations.version>2.9.3</jackson.annotations.version>
+        <javaee.version>7.0</javaee.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee.version}</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>javax.xml.soap</groupId>
             <artifactId>javax.xml.soap-api</artifactId>
@@ -33,24 +40,6 @@
             <artifactId>cdi-api</artifactId>
             <version>1.0-SP1</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.5</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-client -->
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-client</artifactId>
-            <version>3.5.0.Final</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>

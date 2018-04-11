@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  */
 public class Credential {
 
-    private String mtoName;
+    private String name;
     private String mtoId;
 
     private String accessCode;
@@ -28,12 +28,12 @@ public class Credential {
 
     private String payerId;
 
-    public String getMtoName() {
-        return mtoName;
+    public String getName() {
+        return name;
     }
 
-    public void setMtoName(String mtoName) {
-        this.mtoName = mtoName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getMtoId() {
@@ -68,7 +68,6 @@ public class Credential {
         this.employeePassword = employeePassword;
     }
 
-
     public String getPayerId() {
         return payerId;
     }
@@ -83,5 +82,9 @@ public class Credential {
 
     public void setSecretCode(String secretCode) {
         this.secretCode = secretCode;
+    }
+
+    public String getAuthenticationDetail(){
+        return this.accessCode.concat(":").concat(this.secretCode);
     }
 }

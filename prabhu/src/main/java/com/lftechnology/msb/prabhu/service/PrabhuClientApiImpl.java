@@ -7,14 +7,18 @@ import com.lftechnology.msb.prabhu.utils.MSBUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ejb.Stateless;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
+@Stateless
 public class PrabhuClientApiImpl implements PrabhuClientApi {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PrabhuClientApiImpl.class);
+    private static final String ONE_UNIT="1";
 
     @Override
     public TransactionResponse createTransaction(Credential credential, TransactionDetail transactionDetail) {
@@ -57,6 +61,11 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
                 transactionDetail.getSenderSSN()
         );
         return MSBUtil.mapToTransactionResponse(returnCreateTXN);
+    }
+
+    @Override
+    public TransactionResponse getDetails(Credential credential, TransactionDetail transactionDetail) {
+        return null;
     }
 
     @Override
@@ -129,5 +138,25 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
                 credential.getAgentSessionId()
         );
         return PrabhuConstant.SUCCESS.equalsIgnoreCase(authorizedConfirmedResponse.getCODE());
+    }
+
+    @Override
+    public BigDecimal getExchangeRate(Credential credential, String destinationCountryName) {
+        IRemitService iRemitService =new IRemitService();
+        IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        ReturnFOREX forex =iRemitServiceSoap.getEXRate(
+                credential.getAgentCode(),
+                credential.getAgentUserId(),
+                credential.getAgentPassword(),
+                "",
+                "",
+                "",
+                credential.getAgentLocationId(),
+                destinationCountryName,
+                "",
+                "",
+                ""
+        );
+        return new BigDecimal(forex.getEXCHANGERATE());
     }
 }

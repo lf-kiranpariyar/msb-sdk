@@ -5,7 +5,7 @@ import com.lftechnology.msb.moneytun.enums.TxnStatus;
 
 import java.math.BigDecimal;
 
-public class TransactionDetail {
+public class TransactionDetail{
 
     @JsonProperty("TransId")
     String invoiceNumber;

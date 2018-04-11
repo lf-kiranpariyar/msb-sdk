@@ -55,22 +55,22 @@ public interface WhiteWingResource {
     @POST
     @Produces("application/json")
     @Path("transaction")
-    TransactionResponse createTransaction(@QueryParam("id") String action, Transaction transaction);
+    TransactionResponse createTransaction(@HeaderParam("Authentication") String authentication , @QueryParam("id") String action, Transaction transaction);
 
     @GET
     @Produces("application/json")
     @Path("transaction")
-    TransactionDetail getStatus(@HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
+    ListResponse<TransactionDetail> getStatus(@HeaderParam("Authentication") String authentication , @HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
 
     @GET
     @Produces("application/json")
     @Path("transaction")
-    TransactionResponse getDetail(@HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
+    TransactionResponse getDetail(@HeaderParam("Authentication") String authentication , @HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
 
 
     @GET
     @Produces("application/json")
     @Path("bank")
-    List< Bank> getBankList(@HeaderParam("Data") String data, @QueryParam("id") String action);
+    ListResponse< Bank> getBankList(@HeaderParam("Authentication") String authentication ,@HeaderParam("Data") String data, @QueryParam("qry") String action);
 
 }

@@ -10,6 +10,14 @@ public class Employee {
     @JsonProperty("EmployeePassword")
     private String password;
 
+    public Employee(String code, String password) {
+        this.code = code;
+        this.password = password;
+    }
+
+    public Employee() {
+    }
+
     public String getCode() {
         return code;
     }

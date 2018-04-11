@@ -11,10 +11,11 @@ public class Address {
     private String addressLine1;
     private String addressLine2;
     private String city;
-    private String country;
+    private Country country;
+    private State state;
+
     private String street;
     private String postCode;
-    private String state;
 
     public String getAddressLine1() {
         return addressLine1;
@@ -32,21 +33,12 @@ public class Address {
         this.addressLine2 = addressLine2;
     }
 
-
     public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getStreet() {
@@ -65,11 +57,19 @@ public class Address {
         this.postCode = postCode;
     }
 
-    public String getState() {
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public State getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(State state) {
         this.state = state;
     }
 }

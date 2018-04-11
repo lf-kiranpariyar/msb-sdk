@@ -58,6 +58,26 @@ public class Transaction {
     @JsonProperty("ReceivingCurrencyCode")
     String receiverCurrencyCode;
 
+    private Transaction(Builder builder) {
+        setAgentId(builder.agentId);
+        setDeliveryMethod(builder.deliveryMethod);
+        setEmployee(builder.employee);
+        setSourceCurrencyCode(builder.sourceCurrencyCode);
+        setPaymentMethod(builder.paymentMethod);
+        setSender(builder.sender);
+        setDocument(builder.document);
+        setReciever(builder.reciever);
+        setExchangeRate(builder.exchangeRate);
+        setAmount(builder.amount);
+        setRecieverAmount(builder.recieverAmount);
+        setPointOfContactId(builder.pointOfContactId);
+        setBankName(builder.bankName);
+        setBankBranch(builder.bankBranch);
+        setBankAccount(builder.bankAccount);
+        setAccountType(builder.accountType);
+        setReceiverCurrencyCode(builder.receiverCurrencyCode);
+    }
+
     public String getAgentId() {
         return agentId;
     }
@@ -192,5 +212,90 @@ public class Transaction {
 
     public void setDeliveryMethod(String deliveryMethod) {
         this.deliveryMethod = deliveryMethod;
+    }
+
+
+    public static final class Builder {
+        private String agentId;
+        private String deliveryMethod;
+        private Employee employee;
+        private String sourceCurrencyCode;
+        private String paymentMethod;
+        private Sender sender;
+        private Document document;
+        private Reciever reciever;
+        private BigDecimal exchangeRate;
+        private BigDecimal amount;
+        private BigDecimal recieverAmount;
+        private Integer pointOfContactId;
+        private String bankName;
+        private String bankBranch;
+        private String bankAccount;
+        private String accountType;
+        private String receiverCurrencyCode;
+
+        public Builder() {
+        }
+
+        public Builder agentId(String val) {
+            agentId = val;
+            return this;
+        }
+
+        public Builder deliveryMethod(String val) {
+            deliveryMethod = val;
+            return this;
+        }
+
+        public Builder employee(Employee val) {
+            employee = val;
+            return this;
+        }
+
+        public Builder sourceCurrencyCode(String val) {
+            sourceCurrencyCode = val;
+            return this;
+        }
+
+        public Builder paymentMethod(String val) {
+            paymentMethod = val;
+            return this;
+        }
+
+        public Builder transactionAmount(BigDecimal amount, BigDecimal exchangeRate, BigDecimal recieverAmount){
+            this.amount= amount;
+            this.exchangeRate=exchangeRate;
+            this.recieverAmount = recieverAmount;
+            return  this;
+        }
+
+        public Builder party(Sender sender, Reciever reciever, Document document){
+            this.sender = sender;
+            this.reciever= reciever;
+            this.document = document;
+            return  this;
+        }
+
+        public Builder pointOfContactId(Integer val) {
+            pointOfContactId = val;
+            return this;
+        }
+
+        public Builder bankDetails(String bankName, String bankBranch, String bankAccount, String accountType) {
+            this.bankName = bankName;
+            this.bankBranch = bankBranch;
+            this.bankAccount = bankAccount;
+            this.accountType = accountType;
+            return this;
+        }
+
+        public Builder receiverCurrencyCode(String val) {
+            receiverCurrencyCode = val;
+            return this;
+        }
+
+        public Transaction build() {
+            return new Transaction(this);
+        }
     }
 }

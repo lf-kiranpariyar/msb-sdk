@@ -1,17 +1,5 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.msb.moneytun.service.WhiteWingResource;
-import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.MediaType;
-import java.math.BigDecimal;
-
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */

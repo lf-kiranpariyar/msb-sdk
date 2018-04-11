@@ -2,6 +2,7 @@ package com.lftechnology.msb.prabhu.service;
 
 import com.lftechnology.msb.prabhu.dto.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -20,5 +21,7 @@ public interface PrabhuClientApi {
     CancelResponse cancelTransaction(Credential credential, CancelTransactionDetail cancelTransactionDetail);
 
     Boolean acknowledgeTransaction(Credential credential,String msbTxnId);
+
+    BigDecimal getExchangeRate(Credential credential,String destinationCountryISOCode);
 
 }

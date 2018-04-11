@@ -12,3 +12,4 @@ import java.lang.annotation.Target;
 public @interface TransactionOriginator {
     String value();
 }
+

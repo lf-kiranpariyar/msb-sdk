@@ -1,13 +1,20 @@
 package com.lftechnology.msb.sdk.dto;
 
+import com.lftechnology.msb.sdk.enums.TransactionPaymentType;
+
+import java.math.BigDecimal;
+
 public class Transaction {
 
     private Sender sender;
     private Recipient recipient;
-    Document document;
+    private Document document;
+    private Bank bank;
     private String transactionId;
-    private String amount;
-    private String paymentMode;
+    private BigDecimal amount;
+    private BigDecimal rate;
+    private BigDecimal recipientAmount;
+    private TransactionPaymentType type;
     private String sourceOfIncome;
     private String purpose;
     private String note;
@@ -44,21 +51,6 @@ public class Transaction {
         this.transactionId = transactionId;
     }
 
-    public String getAmount() {
-        return amount;
-    }
-
-    public void setAmount(String amount) {
-        this.amount = amount;
-    }
-
-    public String getPaymentMode() {
-        return paymentMode;
-    }
-
-    public void setPaymentMode(String paymentMode) {
-        this.paymentMode = paymentMode;
-    }
 
     public String getSourceOfIncome() {
         return sourceOfIncome;
@@ -82,5 +74,45 @@ public class Transaction {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    public TransactionPaymentType getType() {
+        return type;
+    }
+
+    public void setType(TransactionPaymentType type) {
+        this.type = type;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public BigDecimal getRate() {
+        return rate;
+    }
+
+    public void setRate(BigDecimal rate) {
+        this.rate = rate;
+    }
+
+    public BigDecimal getRecipientAmount() {
+        return recipientAmount;
+    }
+
+    public void setRecipientAmount(BigDecimal recipientAmount) {
+        this.recipientAmount = recipientAmount;
     }
 }

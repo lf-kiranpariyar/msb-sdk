@@ -1,5 +1,7 @@
 package com.lftechnology.msb.sdk.enums;
 
+import com.lftechnology.msb.sdk.exception.UnsupportedException;
+
 public enum DocumentType {
 
     PASSPORT("Passport"),
@@ -18,5 +20,31 @@ public enum DocumentType {
 
     String getKey() {
         return name();
+    }
+
+    public static com.lftechnology.msb.moneytun.enums.DocumentType getMoneyTunDocument(DocumentType type){
+        switch (type){
+            case DRIVING_LICENCE:
+                return  com.lftechnology.msb.moneytun.enums.DocumentType.LICENSE;
+            case PASSPORT:
+                return  com.lftechnology.msb.moneytun.enums.DocumentType.PASSPORT;
+            case STATE_ID:
+                return  com.lftechnology.msb.moneytun.enums.DocumentType.STATE_ID;
+            default:
+                throw new UnsupportedException("Invalid Document Type Supplied");
+        }
+    }
+
+    public static com.lftechnology.msb.prabhu.enums.DocumentType getPrabhuDocument(DocumentType type){
+        switch (type){
+            case DRIVING_LICENCE:
+                return  com.lftechnology.msb.prabhu.enums.DocumentType.LICENSE;
+            case PASSPORT:
+                return  com.lftechnology.msb.prabhu.enums.DocumentType.PASSPORT;
+            case STATE_ID:
+                return  com.lftechnology.msb.prabhu.enums.DocumentType.STATE_ID;
+            default:
+                return com.lftechnology.msb.prabhu.enums.DocumentType.CUSTOMER_ID;
+        }
     }
 }

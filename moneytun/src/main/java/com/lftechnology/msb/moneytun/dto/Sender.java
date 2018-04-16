@@ -1,51 +1,55 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Sender {
 
-    @SerializedName("SenderFirstName")
+    @JsonProperty("SenderFirstName")
     String firstName;
 
-    @SerializedName("SenderLastName")
+    @JsonProperty("SenderLastName")
     String lastName;
 
-    @SerializedName("SenderMiddleName")
+    @JsonProperty("SenderMiddleName")
     String middleName;
 
-    @SerializedName("SenderAddressLine1")
+    @JsonProperty("SenderAddressLine1")
     String addressLine1;
 
-    @SerializedName("SenderAddressLine2")
+    @JsonProperty("SenderAddressLine2")
     String addressLine2;
 
-    @SerializedName("SenderCountryISOCode")
+    @JsonProperty("SenderCountryISOCode")
     String senderCountryISOCode;
 
-    @SerializedName("SenderStateISOCode")
+    @JsonProperty("SenderStateISOCode")
     String stateISOCode;
 
-    @SerializedName("SenderState")
+    @JsonProperty("SenderState")
     String state;
 
-    @SerializedName("SenderCity")
+    @JsonProperty("SenderCity")
     String city;
 
-    @SerializedName("SenderZipCode")
+    @JsonProperty("SenderZipCode")
     String zipCode;
 
-    @SerializedName("SenderPhone1")
+    @JsonProperty("SenderPhone1")
     String phone;
 
-    @SerializedName("SenderNationality")
+    @JsonProperty("SenderNationality")
     String nationality;
 
-    @SerializedName("SenderDateOfBirth")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
+    @JsonProperty("SenderDateOfBirth")
     LocalDate dateOfBirth;
 
-    @SerializedName("SenderGender")
+    @JsonProperty("SenderGender")
     String gender;
 
     private Sender(Builder builder) {

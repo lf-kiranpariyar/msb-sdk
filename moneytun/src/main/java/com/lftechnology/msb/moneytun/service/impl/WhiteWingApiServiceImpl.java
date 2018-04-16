@@ -85,6 +85,8 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             ListResponse<Bank> bankListResponse = response.body();
             return response.body().getResults();
         } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
             throw new WhiteWingBadRequestException(e.getMessage());
         }
     }

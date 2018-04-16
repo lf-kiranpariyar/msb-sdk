@@ -24,8 +24,8 @@ com/lftechnology/msb/moneytun/dto/Credential.class
 com/lftechnology/msb/moneytun/dto/APIContext.class
 com/lftechnology/msb/moneytun/dto/Document.class
 com/lftechnology/msb/moneytun/dto/Sender$1.class
+com/lftechnology/msb/moneytun/serializer/DateSerializer.class
 com/lftechnology/msb/moneytun/dto/Sender$Builder.class
-com/lftechnology/msb/moneytun/deserializer/DateDeserializer.class
 com/lftechnology/msb/moneytun/dto/Bank.class
 com/lftechnology/msb/moneytun/dto/Country.class
 com/lftechnology/msb/moneytun/dto/TransactionDetail.class

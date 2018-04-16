@@ -1,19 +1,19 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Response {
 
-    @SerializedName("Message")
+    @JsonProperty("Message")
     String message;
 
-    @SerializedName("StatusCode")
+    @JsonProperty("StatusCode")
     Integer statusCode;
 
-    @SerializedName("Error")
+    @JsonProperty("Error")
     Boolean error;
 
-    @SerializedName("Status")
+    @JsonProperty("Status")
     Integer status;
 
     public String getMessage() {

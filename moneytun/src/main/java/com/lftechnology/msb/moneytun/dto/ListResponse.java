@@ -1,12 +1,12 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonAlias;
 
 import java.util.List;
 
 public class ListResponse<T> extends Response{
 
-    @SerializedName(value="RandomKey",alternate = {"BankList","CountryList", "StateList", "CityList", "CurrencyList", "DeliveryMethodList", "PointOfContactList", "PayerList", "SubPayerList", "AccountTypeList", "IdentificationTypeList"})
+    @JsonAlias({"BankList","CountryList", "StateList", "CityList", "CurrencyList", "DeliveryMethodList", "PointOfContactList", "PayerList", "SubPayerList", "AccountTypeList", "IdentificationTypeList"})
     private List<T> results;
 
     public ListResponse() {

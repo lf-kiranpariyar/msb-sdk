@@ -1,13 +1,13 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Token {
 
-    @SerializedName("Message")
+    @JsonProperty("Message")
     String message;
 
-    @SerializedName("Code")
+    @JsonProperty("Code")
     Integer code;
 
     public String getMessage() {

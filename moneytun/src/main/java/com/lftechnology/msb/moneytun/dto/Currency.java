@@ -1,13 +1,13 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Currency {
 
-    @SerializedName("CurrencyISOCode")
+    @JsonProperty("CurrencyISOCode")
     String code;
 
-    @SerializedName("CurrencyName")
+    @JsonProperty("CurrencyName")
     String name;
 
     public String getCode() {

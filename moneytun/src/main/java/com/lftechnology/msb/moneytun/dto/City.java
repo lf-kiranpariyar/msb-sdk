@@ -1,19 +1,19 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class City {
 
-    @SerializedName("CountryISOCode")
+    @JsonProperty("CountryISOCode")
     String countryISOCode;
 
-    @SerializedName("StateISOCode")
+    @JsonProperty("StateISOCode")
     String stateIsoCode;
 
-    @SerializedName("StateName")
+    @JsonProperty("StateName")
     String stateName;
 
-    @SerializedName("CityName")
+    @JsonProperty("CityName")
     String name;
 
     public String getCountryISOCode() {

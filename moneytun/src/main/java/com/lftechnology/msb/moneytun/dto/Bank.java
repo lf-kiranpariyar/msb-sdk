@@ -1,22 +1,24 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.ws.rs.QueryParam;
 
 public class Bank {
 
-    @SerializedName("BankName")
+    @JsonProperty("BankName")
     String name;
 
-    @SerializedName("BankCode")
+    @JsonProperty("BankCode")
     String code;
 
-    @SerializedName("PayeeCode")
+    @JsonProperty("PayeeCode")
     String payeeCode;
 
-    @SerializedName("SubPayeeAgencyName")
+    @JsonProperty("SubPayeeAgencyName")
     String subPayeeAgencyName;
 
-    @SerializedName("DestinationCountryISOCode")
+    @JsonProperty("DestinationCountryISOCode")
     String countryISOCode;
 
     public String getName() {

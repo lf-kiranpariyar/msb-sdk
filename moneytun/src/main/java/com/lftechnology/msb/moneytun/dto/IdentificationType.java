@@ -1,13 +1,13 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class IdentificationType {
 
-    @SerializedName("IdType")
+    @JsonProperty("IdType")
     String type;
 
-    @SerializedName("SourceCountryISOCode")
+    @JsonProperty("SourceCountryISOCode")
     String sourceCountryISOCode;
 
     public String getType() {

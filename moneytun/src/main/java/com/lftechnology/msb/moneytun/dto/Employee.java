@@ -1,13 +1,13 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Employee {
 
-    @SerializedName("EmployeeCode")
+    @JsonProperty("EmployeeCode")
     private String code;
 
-    @SerializedName("EmployeePassword")
+    @JsonProperty("EmployeePassword")
     private String password;
 
     public Employee(String code, String password) {

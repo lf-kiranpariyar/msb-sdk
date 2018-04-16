@@ -1,43 +1,43 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.lftechnology.msb.moneytun.enums.TxnStatus;
 
 import java.math.BigDecimal;
 
-public class TransactionDetail{
+public class TransactionDetail {
 
-    @SerializedName("TransId")
+    @JsonProperty("TransId")
     String invoiceNumber;
 
-    @SerializedName("Sender")
+    @JsonProperty("Sender")
     Long senderId;
 
-    @SerializedName("Reciever")
+    @JsonProperty("Reciever")
     Long recipientId;
 
-    @SerializedName("")
+    @JsonProperty("")
     TxnStatus status;
 
-    @SerializedName("ConversionRate")
+    @JsonProperty("ConversionRate")
     BigDecimal rate;
 
-    @SerializedName("SendAmount")
+    @JsonProperty("SendAmount")
     BigDecimal amount;
 
-    @SerializedName("SendTotal")
+    @JsonProperty("SendTotal")
     BigDecimal total;
 
-    @SerializedName("ReceivedAmount")
+    @JsonProperty("ReceivedAmount")
     BigDecimal recipientAmount;
 
-    @SerializedName("SenderCurrency")
+    @JsonProperty("SenderCurrency")
     Integer sourceCurrencyId;
 
-    @SerializedName("ReceivedCurrency")
+    @JsonProperty("ReceivedCurrency")
     Integer destinationCurrencyId;
 
-    @SerializedName("TransactionDate")
+    @JsonProperty("TransactionDate")
     String date;
 
     public String getInvoiceNumber() {

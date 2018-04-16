@@ -1,14 +1,13 @@
 package com.lftechnology.msb.moneytun.service.impl;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.msb.moneytun.dto.APIContext;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
 
@@ -30,14 +29,13 @@ public class RequestApi {
             }
         });
 
-        Gson gson = new GsonBuilder()
-                .create();
+        ObjectMapper objectMapper = new ObjectMapper();
 
         return new Retrofit
                 .Builder()
                 .baseUrl(apiContext.getEndPointUrl())
                 .client(httpClient.build())
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(JacksonConverterFactory.create(objectMapper))
                 .build();
     }
 }

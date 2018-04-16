@@ -1,12 +1,12 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import java.math.BigDecimal;
 
 public class ExchangeRateResponse  extends  Response{
 
-    @JsonProperty("Rate")
+    @SerializedName("Rate")
     BigDecimal rate;
 
     public BigDecimal getRate() {

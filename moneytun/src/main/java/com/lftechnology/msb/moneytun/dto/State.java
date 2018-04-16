@@ -1,17 +1,16 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jdk.nashorn.internal.objects.annotations.Property;
+import com.google.gson.annotations.SerializedName;
 
 public class State {
 
-    @JsonProperty("StateISOCode")
+    @SerializedName("StateISOCode")
     String isoCode;
 
-    @JsonProperty("StateName")
+    @SerializedName("StateName")
     String name;
 
-    @JsonProperty("CountryISOCode")
+    @SerializedName("CountryISOCode")
     String countryIsoCode;
 
     public String getIsoCode() {

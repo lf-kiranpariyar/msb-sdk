@@ -1,13 +1,19 @@
 package com.lftechnology.msb.moneytun.dto;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Response {
 
+    @SerializedName("Message")
     String message;
 
+    @SerializedName("StatusCode")
     Integer statusCode;
 
+    @SerializedName("Error")
     Boolean error;
 
+    @SerializedName("Status")
     Integer status;
 
     public String getMessage() {

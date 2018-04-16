@@ -1,7 +1,5 @@
 package com.lftechnology.msb.moneytun.enums;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum PaymentMode {
 
     CASH_PICKUP("CASH PICKUP"), ACCOUNT_DEPOSIT("SEND TO ACCOUNT"),HOME_DELIVERY("CASH DELIVERY");
@@ -12,7 +10,6 @@ public enum PaymentMode {
         this.value = value;
     }
 
-    @JsonValue
     public String getMode() {
         return value;
     }

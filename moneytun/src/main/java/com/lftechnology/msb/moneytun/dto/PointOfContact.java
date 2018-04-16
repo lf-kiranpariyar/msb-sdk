@@ -1,52 +1,52 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class PointOfContact {
 
-    @JsonProperty("POCID")
+    @SerializedName("POCID")
     Integer id;
 
-    @JsonProperty("Payee")
+    @SerializedName("Payee")
     String payee;
 
-    @JsonProperty("POCName")
+    @SerializedName("POCName")
     String name;
 
-    @JsonProperty("CountryISOCode")
+    @SerializedName("CountryISOCode")
     String countryISOCode;
 
-    @JsonProperty("StateISOCode")
+    @SerializedName("StateISOCode")
     String stateISOCode;
 
-    @JsonProperty("StateName")
+    @SerializedName("StateName")
     String stateName;
 
-    @JsonProperty("CityName")
+    @SerializedName("CityName")
     String cityName;
 
-    @JsonProperty("Phone")
+    @SerializedName("Phone")
     String phoneNumber;
 
-    @JsonProperty("Fax")
+    @SerializedName("Fax")
     String fax;
 
-    @JsonProperty("Zip")
+    @SerializedName("Zip")
     String zipCode;
 
-    @JsonProperty("Address")
+    @SerializedName("Address")
     String address;
 
-    @JsonProperty("SendCurrencyISOCode")
+    @SerializedName("SendCurrencyISOCode")
     String sendCurrencyISOCode;
 
-    @JsonProperty("ReceipientCurrencyISOCode")
+    @SerializedName("ReceipientCurrencyISOCode")
     String recieverCurrencyISOCode;
 
-    @JsonProperty("DeliveryMethod")
+    @SerializedName("DeliveryMethod")
     String deliveryMethod;
 
-    @JsonProperty("SubPayer")
+    @SerializedName("SubPayer")
     String subPayer;
 
     public Integer getId() {

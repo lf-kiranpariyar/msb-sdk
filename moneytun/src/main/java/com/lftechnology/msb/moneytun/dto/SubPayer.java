@@ -1,16 +1,16 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class SubPayer {
 
-    @JsonProperty("Payer")
+    @SerializedName("Payer")
     String payerName;
 
-    @JsonProperty("SubPayer")
+    @SerializedName("SubPayer")
     String name;
 
-    @JsonProperty("DestinationCountryISOCode")
+    @SerializedName("DestinationCountryISOCode")
     String destinationCurrencyISOCode;
 
     public String getPayerName() {

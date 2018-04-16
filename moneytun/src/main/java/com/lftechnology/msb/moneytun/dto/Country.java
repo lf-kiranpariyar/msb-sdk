@@ -1,13 +1,13 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class Country {
 
-    @JsonProperty("CountryISOCode")
+    @SerializedName("CountryISOCode")
     String isoCode;
 
-    @JsonProperty("CountName")
+    @SerializedName("CountName")
     String name;
 
     public String getIsoCode() {

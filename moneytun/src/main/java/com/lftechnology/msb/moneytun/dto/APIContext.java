@@ -1,12 +1,11 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.lftechnology.msb.moneytun.constant.Constants;
 import com.lftechnology.msb.moneytun.enums.ApiMode;
 import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 
 import javax.ws.rs.BadRequestException;
-import java.io.IOException;
 
 public class APIContext {
 
@@ -17,14 +16,13 @@ public class APIContext {
     private String endPointUrl;
 
     public APIContext(String credentialString, ApiMode mode) {
-        ObjectMapper objectMapper = new ObjectMapper();
+        Gson gson = new Gson();
         if (credentialString == null) {
             throw new InvalidCredentialException("Credentials not found");
         }
         Credential credential=null;
-        try {
-            credential = objectMapper.readValue(credentialString, Credential.class);
-        } catch (IOException e) {
+        credential = gson.fromJson(credentialString, Credential.class);
+        if(credential==null){
             throw new InvalidCredentialException("Invalid Credentials ");
         }
         this.credential = credential;

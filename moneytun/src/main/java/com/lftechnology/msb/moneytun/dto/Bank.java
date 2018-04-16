@@ -1,22 +1,22 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import javax.ws.rs.QueryParam;
+import com.google.gson.annotations.SerializedName;
 
 public class Bank {
 
-    @QueryParam("BankName")
+    @SerializedName("BankName")
     String name;
 
-    @QueryParam("BankCode")
+    @SerializedName("BankCode")
     String code;
 
-    @QueryParam("PayeeCode")
+    @SerializedName("PayeeCode")
     String payeeCode;
 
-    @QueryParam("SubPayeeAgencyName")
+    @SerializedName("SubPayeeAgencyName")
     String subPayeeAgencyName;
 
-    @QueryParam("DestinationCountryISOCode")
+    @SerializedName("DestinationCountryISOCode")
     String countryISOCode;
 
     public String getName() {
@@ -57,5 +57,17 @@ public class Bank {
 
     public void setCountryISOCode(String countryISOCode) {
         this.countryISOCode = countryISOCode;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Bank{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", code='").append(code).append('\'');
+        sb.append(", payeeCode='").append(payeeCode).append('\'');
+        sb.append(", subPayeeAgencyName='").append(subPayeeAgencyName).append('\'');
+        sb.append(", countryISOCode='").append(countryISOCode).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

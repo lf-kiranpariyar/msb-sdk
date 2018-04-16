@@ -1,76 +1,55 @@
 package com.lftechnology.msb.moneytun.service;
 
-import com.lftechnology.msb.moneytun.dto.*;
+import com.lftechnology.msb.moneytun.dto.Bank;
+import com.lftechnology.msb.moneytun.dto.Country;
+import com.lftechnology.msb.moneytun.dto.DeliveryMethod;
+import com.lftechnology.msb.moneytun.dto.ListResponse;
+import com.lftechnology.msb.moneytun.dto.Payer;
+import com.lftechnology.msb.moneytun.dto.Token;
+import com.lftechnology.msb.moneytun.dto.Transaction;
+import com.lftechnology.msb.moneytun.dto.TransactionDetail;
+import com.lftechnology.msb.moneytun.dto.TransactionResponse;
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
-import javax.ws.rs.*;
-import java.util.List;
 
-@Path("/")
-@Consumes("application/json")
 public interface WhiteWingResource {
 
-    //TODO : Probably We should Break This Service Into Multiple Interface.
-
-    @GET
-    @Produces("application/json")
-    @Path("countrylist")
-    ListResponse<Country> getCountry();
-
-    @GET
-    @Produces("application/json")
-    @Path("deliverymethodlist")
-    ListResponse<DeliveryMethod> getDeliveryMethod();
-
-    @GET
-    @Produces("application/json")
-    @Path("token")
-    Token getSecretToken(@QueryParam("id") String accessToken);
-
-    @POST
-    @Produces("application/json")
-    @Path("statelist")
-    ListResponse<State> getState(Country country);
-
-    @POST
-    @Produces("application/json")
-    @Path("city")
-    ListResponse<City> getCity(City city);
-
-    @GET
-    @Produces("application/json")
-    @Path("currencylist")
-    ListResponse<Currency> getState(Currency currency);
-
-    @GET
-    @Produces("application/json")
-    @Path("payerlist")
-    ListResponse<Payer> getPayer(@QueryParam("isocode") String countryISOCode, Payer payer);
-
-    @GET
-    @Produces("application/json")
-    @Path("payerlist")
-    TransactionResponse getPayerList(@HeaderParam("TransferNumber") String referenceNumber);
+    @GET("countrylist")
+    Call<ListResponse<Country>> getCountry(@Header("Authentication") String authentication, @Path("id") String id);
 
 
-    @POST
-    @Produces("application/json")
-    @Path("transaction")
-    TransactionResponse createTransaction(@HeaderParam("Authentication") String authentication , @QueryParam("id") String action, Transaction transaction);
-
-    @GET
-    @Produces("application/json")
-    @Path("transaction")
-    ListResponse<TransactionDetail> getStatus(@HeaderParam("Authentication") String authentication , @HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
-
-    @GET
-    @Produces("application/json")
-    @Path("transaction")
-    TransactionResponse getDetail(@HeaderParam("Authentication") String authentication , @HeaderParam("TransferNumber") String referenceNumber,@QueryParam("id") String action);
+    @GET("deliverymethodlist")
+    Call<ListResponse<DeliveryMethod>> getDeliveryMethod(@Header("Authentication") String authentication);
 
 
-    @GET
-    @Produces("application/json")
-    @Path("bank")
-    ListResponse< Bank> getBankList(@HeaderParam("Authentication") String authentication ,@HeaderParam("Data") String data, @QueryParam("qry") String action);
+    @GET("deliverymethodlist")
+    Call<Token> getToken(@Query("id") String accessToken);
+
+    @GET("payerlist")
+    Call<ListResponse<Payer>> getPayer(@Header("Authentication") String authentication, @Query("isocode") String countryISOCode);
+
+    @POST("transactions")
+    Call<TransactionResponse> create(@Header("Authentication") String authentication, @Query("id") String action, @Body Transaction transaction);
+
+
+    @GET("transactions")
+    Call<TransactionResponse> getTransaction(@Header("Authentication") String authentication, @Header("id") String action, @Header("TransferNumber") String referenceNumber);
+
+
+    @GET("transactions")
+    Call<Transaction> create(@Header("Authentication") String authentication, @Header("TransferNumber") String referenceNumber, @Header("id") String action);
+
+    @GET("transaction")
+    Call<ListResponse<TransactionDetail>> getStatus(@Header("Authentication") String authentication, @Query("id") String action, @Header("TransferNumber") String referenceNumber);
+
+
+    @GET("bank")
+    Call<ListResponse<Bank>> getBankList(@Header("Authentication") String authentication, @Query("qry") String action, @Header("Data") String data);
 
 }

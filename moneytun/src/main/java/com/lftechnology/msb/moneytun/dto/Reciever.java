@@ -1,42 +1,40 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Reciever {
 
-    @JsonProperty("ReceiverFirstName")
+    @SerializedName("ReceiverFirstName")
     String firstName;
 
-    @JsonProperty("ReceiverLastName")
+    @SerializedName("ReceiverLastName")
     String lastName;
 
-    @JsonProperty("ReceiverMiddleName")
+    @SerializedName("ReceiverMiddleName")
     String middleName;
 
-    @JsonProperty("ReceiverAddressLine1")
+    @SerializedName("ReceiverAddressLine1")
     String addressLine1;
 
-    @JsonProperty("ReceiverAddressLine2")
+    @SerializedName("ReceiverAddressLine2")
     String addressLine2;
 
-    @JsonProperty("ReceiverCountryISOCode")
+    @SerializedName("ReceiverCountryISOCode")
     String countryISOCode;
 
-    @JsonProperty("ReceiverState")
+    @SerializedName("ReceiverState")
     String state;
 
-    @JsonProperty("ReceiverStateISOCode")
+    @SerializedName("ReceiverStateISOCode")
     String stateISOCode = "Default State";
 
-    @JsonProperty("ReceiverCity")
+    @SerializedName("ReceiverCity")
     String city="Default City";
 
-    @JsonProperty("ReceiverPhone1")
+    @SerializedName("ReceiverPhone1")
     String phoneNumber;
 
-    @JsonProperty("ReceiverGender")
+    @SerializedName("ReceiverGender")
     String gender;
 
     private Reciever(Builder builder) {

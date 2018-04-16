@@ -1,27 +1,22 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.validation.constraints.NotNull;
+import com.google.gson.annotations.SerializedName;
 
 public class ExchangeRate {
 
-    @NotNull
-    @JsonProperty("DestinationCurrencyISoCode")
+    @SerializedName("DestinationCurrencyISoCode")
     String destinationCurrencyISOCode;
 
-    @JsonProperty("PayeeCode")
+    @SerializedName("PayeeCode")
     String payeeCode = "";
 
-    @NotNull
-    @JsonProperty("SourceCurrencyISoCode")
+    @SerializedName("SourceCurrencyISoCode")
     String sourceCurrencyISOCode;
 
-    @NotNull
-    @JsonProperty("SenderAgencyCode")
+    @SerializedName("SenderAgencyCode")
     String senderAgencyCode;
 
-    @JsonProperty("SubPayer")
+    @SerializedName("SubPayer")
     String subPayer="";
 
     public String getDestinationCurrencyISOCode() {

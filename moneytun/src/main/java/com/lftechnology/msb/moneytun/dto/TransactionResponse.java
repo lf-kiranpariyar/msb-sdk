@@ -1,19 +1,19 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class TransactionResponse extends Response{
 
-    @JsonProperty("TransferNumber")
+    @SerializedName("TransferNumber")
     String referenceNumber;
 
-    @JsonProperty("InvoiceNumber")
+    @SerializedName("InvoiceNumber")
     String invoiceNumber;
 
-    @JsonProperty("SenderId")
+    @SerializedName("SenderId")
     String senderId;
 
-    @JsonProperty("RecipientId")
+    @SerializedName("RecipientId")
     String recipientId;
 
     public String getReferenceNumber() {

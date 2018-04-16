@@ -1,46 +1,46 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 public class Payer {
 
-    @JsonProperty("PayeeId")
+    @SerializedName("PayeeId")
     Integer id;
 
-    @JsonProperty("PayeeCode")
+    @SerializedName("PayeeCode")
     String code;
 
-    @JsonProperty("PayeeName")
+    @SerializedName("PayeeName")
     String name;
 
-    @JsonProperty("CountryISOCode")
+    @SerializedName("CountryISOCode")
     String countryISOCode;
 
-    @JsonProperty("StateISOCode")
+    @SerializedName("StateISOCode")
     String stateISOCode;
 
-    @JsonProperty("StateName")
+    @SerializedName("StateName")
     String stateName;
 
-    @JsonProperty("CityName")
+    @SerializedName("CityName")
     String cityName;
 
-    @JsonProperty("AddressLine1")
+    @SerializedName("AddressLine1")
     String addressLine1;
 
-    @JsonProperty("AddressLine2")
+    @SerializedName("AddressLine2")
     String getAddressLine2;
 
-    @JsonProperty("Phone1")
+    @SerializedName("Phone1")
     String primaryPhoneNumber;
 
-    @JsonProperty("Phone2")
+    @SerializedName("Phone2")
     String secondaryPhoneNumber;
 
-    @JsonProperty("Fax")
+    @SerializedName("Fax")
     String fax;
 
-    @JsonProperty("Zip")
+    @SerializedName("Zip")
     String zipCode;
 
     public Integer getId() {

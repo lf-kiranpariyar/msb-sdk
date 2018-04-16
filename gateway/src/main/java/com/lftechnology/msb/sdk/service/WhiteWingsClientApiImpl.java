@@ -6,7 +6,6 @@ import com.lftechnology.msb.moneytun.enums.ApiMode;
 import com.lftechnology.msb.moneytun.enums.TxnStatus;
 import com.lftechnology.msb.moneytun.service.WhiteWingApiService;
 import com.lftechnology.msb.moneytun.service.impl.WhiteWingApiServiceImpl;
-import com.lftechnology.msb.sdk.annotation.SystemProperty;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
 import com.lftechnology.msb.sdk.dto.SyncBankRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankResponse;
@@ -18,7 +17,6 @@ import com.lftechnology.msb.sdk.exception.UnsupportedException;
 import com.lftechnology.msb.sdk.mapper.MoneyTunObjectMapper;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

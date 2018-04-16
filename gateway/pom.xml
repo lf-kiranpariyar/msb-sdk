@@ -16,9 +16,9 @@
         <maven.plugin.version>3.0.2</maven.plugin.version>
         <retrofit.version>2.3.0</retrofit.version>
         <gson.converter.version>2.1.0</gson.converter.version>
-        <jackson.core.version>2.8.9</jackson.core.version>
-        <jackson.databind.version>2.8.9</jackson.databind.version>
-        <jackson.annotations.version>2.9.3</jackson.annotations.version>
+        <jackson.core.version>2.9.5</jackson.core.version>
+        <jackson.databind.version>2.9.5</jackson.databind.version>
+        <jackson.annotations.version>2.9.5</jackson.annotations.version>
         <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
         <javaee.version>7.0</javaee.version>
     </properties>

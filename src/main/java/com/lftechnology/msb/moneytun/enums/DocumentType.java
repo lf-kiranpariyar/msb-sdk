@@ -1,6 +1,5 @@
 package com.lftechnology.msb.moneytun.enums;
 
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.lftechnology.msb.sdk.exception.ApiException;
 
 public enum DocumentType {
@@ -13,7 +12,6 @@ public enum DocumentType {
         this.value = value;
     }
 
-    @JsonValue
     public String getType() {
         return value;
     }

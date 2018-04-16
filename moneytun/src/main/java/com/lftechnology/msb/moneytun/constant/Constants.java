@@ -10,7 +10,7 @@ public class Constants {
     public static final String TRANSACTION_DETAIL="detail";
     public static final String COUNTRY="country";
 
-    public static final String SANDBOX_ENDPOINT = "https://api.sandbox.paypal.com/";
+    public static final String SANDBOX_ENDPOINT = "http://webservices-moneytun.staging.wwcny.com/Inbound/API/";
 
-    public static final String LIVE_ENDPOINT = "https://api.paypal.com/";
+    public static final String LIVE_ENDPOINT = "http://webservices-moneytun.staging.wwcny.com/Inbound/API/";
 }

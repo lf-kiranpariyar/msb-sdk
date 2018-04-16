@@ -1,6 +1,5 @@
 package com.lftechnology.msb.moneytun.enums;
 
-import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum DocumentType {
 
@@ -12,21 +11,7 @@ public enum DocumentType {
         this.value = value;
     }
 
-    @JsonValue
     public String getType() {
         return value;
     }
-
-  /*  public DocumentType getDocumentType(com.lftechnology.msb.sdk.enums.DocumentType documentType){
-        switch (documentType){
-            case PASSPORT:
-                return DocumentType.PASSPORT;
-            case STATE_ID:
-                return STATE_ID;
-            case DRIVING_LICENCE:
-                return  LICENSE;
-            default:
-                throw new ApiException("Invalid Document Type Supplied");
-        }
-    }*/
 }

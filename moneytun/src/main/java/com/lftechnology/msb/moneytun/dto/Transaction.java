@@ -1,61 +1,57 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.google.gson.annotations.SerializedName;
 
 import java.math.BigDecimal;
 
 public class Transaction {
 
-    @JsonProperty("AgentId")
+    @SerializedName("AgentId")
     String agentId;
 
-    @JsonProperty("DeliveryMethod")
+    @SerializedName("DeliveryMethod")
     String deliveryMethod;
 
-    @JsonProperty("Employee")
+    @SerializedName("Employee")
     Employee employee;
 
-    @JsonProperty("SendingCurrencyCode")
+    @SerializedName("SendingCurrencyCode")
     String sourceCurrencyCode;
 
-    @JsonProperty("PaymentMethod")
+    @SerializedName("PaymentMethod")
     String paymentMethod;
 
-    @JsonUnwrapped
     Sender sender;
 
-    @JsonUnwrapped
     Document document;
 
-    @JsonUnwrapped
     Reciever reciever;
 
-    @JsonProperty("ConversionRate")
+    @SerializedName("ConversionRate")
     BigDecimal exchangeRate;
 
-    @JsonProperty("SendAmount")
+    @SerializedName("SendAmount")
     BigDecimal amount;
 
-    @JsonProperty("ReceivedAmount")
+    @SerializedName("ReceivedAmount")
     BigDecimal recieverAmount;
 
-    @JsonProperty("PointofContact")
+    @SerializedName("PointofContact")
     Integer pointOfContactId;
 
-    @JsonProperty("Bank")
+    @SerializedName("Bank")
     String bankName;
 
-    @JsonProperty("BankBranch")
+    @SerializedName("BankBranch")
     String bankBranch;
 
-    @JsonProperty("BankAccount")
+    @SerializedName("BankAccount")
     String bankAccount;
 
-    @JsonProperty("BankAccountType")
+    @SerializedName("BankAccountType")
     String accountType;
 
-    @JsonProperty("ReceivingCurrencyCode")
+    @SerializedName("ReceivingCurrencyCode")
     String receiverCurrencyCode;
 
     private Transaction(Builder builder) {

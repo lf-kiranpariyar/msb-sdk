@@ -1,40 +1,39 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.lftechnology.msb.moneytun.serializer.DateSerializer;
 
 import java.time.LocalDate;
 
 public class Document {
 
-    @JsonProperty(value = "SenderIDDocumentType")
+    @SerializedName(value = "SenderIDDocumentType")
     String type;
 
-    @JsonProperty(value = "SenderIDDocumentNumber")
+    @SerializedName(value = "SenderIDDocumentNumber")
     String identificationNumber;
 
-    @JsonProperty("SenderIDDocumentCountry")
+    @SerializedName("SenderIDDocumentCountry")
     String countryName;
 
-    @JsonProperty("SenderIDDocumentCity")
+    @SerializedName("SenderIDDocumentCity")
     String city="";
 
-    @JsonProperty("SenderIDDocumentState")
+    @SerializedName("SenderIDDocumentState")
     String state="";
 
-    @JsonProperty("SenderIDDocumentCountryISOCode")
+    @SerializedName("SenderIDDocumentCountryISOCode")
     String documentCountryISOCode;
 
-    @JsonProperty("SenderIDDocumentStateISOCode")
+    @SerializedName("SenderIDDocumentStateISOCode")
     String stateISOCode="";
 
-    @JsonProperty("SenderIDIssueDate")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
+    @JsonAdapter(DateSerializer.class)
+    @SerializedName("SenderIDIssueDate")
     LocalDate issueDate;
 
-    @JsonProperty("SenderIDExpiryDate")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
+    @SerializedName("SenderIDExpiryDate")
     LocalDate expiryDate;
 
     public String getType() {

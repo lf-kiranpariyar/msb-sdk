@@ -3,6 +3,7 @@
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/service/MsbClientService.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/util/DateUtil.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/SyncBankResponse.java
+/home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/ExchangeRateRequest.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/enums/DocumentType.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/enums/TransactionPaymentType.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/TransactionStatusChangeRequest.java

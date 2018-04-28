@@ -1,5 +1,8 @@
 package com.lftechnology.msb.moneytun.dto;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
@@ -15,6 +18,8 @@ public class Credential {
     private String employeePassword;
 
     private String payerId;
+    private String groupId;
+    private Map<String, List<String>> payerDetails;
 
     public String getName() {
         return name;
@@ -74,5 +79,21 @@ public class Credential {
 
     public String getAuthenticationDetail(){
         return this.accessCode.concat(":").concat(this.secretCode);
+    }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public Map<String, List<String>> getPayerDetails() {
+        return payerDetails;
+    }
+
+    public void setPayerDetails(Map<String, List<String>> payerDetails) {
+        this.payerDetails = payerDetails;
     }
 }

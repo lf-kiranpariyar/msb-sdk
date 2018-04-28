@@ -1,14 +1,13 @@
 package com.lftechnology.msb.sdk.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.msb.moneytun.enums.TxnStatus;
 import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 import com.lftechnology.msb.prabhu.dto.Agent;
 import com.lftechnology.msb.prabhu.dto.BankInfo;
 import com.lftechnology.msb.prabhu.dto.Credential;
 import com.lftechnology.msb.prabhu.service.PrabhuClientApi;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
-import com.lftechnology.msb.sdk.dto.Bank;
+import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankResponse;
 import com.lftechnology.msb.sdk.dto.Transaction;
@@ -21,8 +20,12 @@ import com.lftechnology.msb.sdk.exception.UnsupportedException;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Implementation details for holding Prabhu MSB's functionality.
+ */
 @TransactionOriginator("PMT")
 @Stateless
 public class PrabhuMSBClientApiImpl implements MsbClientService {
@@ -63,6 +66,21 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
         bankInfo.setPaymentType(TransactionPaymentType.getPrabhuPaymentMode(request.getType()).name());
         List<Agent> agents = prabhuClientApi.getAgents(credential,bankInfo);
         return null;
+    }
+
+    @Override
+    public BigDecimal rate(ExchangeRateRequest request, String credentails) {
+        return null;
+    }
+
+    @Override
+    public void updateExchangeRate(ExchangeRateRequest request, String credentails) {
+
+    }
+
+    @Override
+    public BigDecimal fetchPurchaseRate(ExchangeRateRequest request, String credentials) {
+        throw new UnsupportedException("Purchase Rate Query Not Supported by Prabhu MSB");
     }
 
     private Credential getCredential(String credentialString){

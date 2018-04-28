@@ -1,7 +1,6 @@
 package com.lftechnology.msb.moneytun.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
@@ -9,33 +8,33 @@ import java.time.LocalDate;
 public class Document {
 
     @JsonProperty(value = "SenderIDDocumentType")
-    String type;
+    private String type;
 
     @JsonProperty(value = "SenderIDDocumentNumber")
-    String identificationNumber;
+    private String identificationNumber;
 
     @JsonProperty("SenderIDDocumentCountry")
-    String countryName;
+    private String countryName;
 
     @JsonProperty("SenderIDDocumentCity")
-    String city="";
+    private String city="";
 
     @JsonProperty("SenderIDDocumentState")
-    String state="";
+    private String state="";
 
     @JsonProperty("SenderIDDocumentCountryISOCode")
-    String documentCountryISOCode;
+    private String documentCountryISOCode;
 
     @JsonProperty("SenderIDDocumentStateISOCode")
-    String stateISOCode="";
+    private String stateISOCode="";
 
     @JsonProperty("SenderIDIssueDate")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
-    LocalDate issueDate;
+    private LocalDate issueDate;
 
     @JsonProperty("SenderIDExpiryDate")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
-    LocalDate expiryDate;
+    private LocalDate expiryDate;
 
     public String getType() {
         return type;

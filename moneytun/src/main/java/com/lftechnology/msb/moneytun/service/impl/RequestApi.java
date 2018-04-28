@@ -12,7 +12,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 import java.io.IOException;
 
 /**
- * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
+ * @author Pawal Adhikari
  */
 public class RequestApi {
 

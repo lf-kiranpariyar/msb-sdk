@@ -16,6 +16,7 @@ com/lftechnology/msb/sdk/dto/Bank.class
 com/lftechnology/msb/sdk/dto/Contact.class
 com/lftechnology/msb/sdk/mapper/PrabhuObjectMapper.class
 com/lftechnology/msb/sdk/dto/TransactionStatusChangeRequest.class
+com/lftechnology/msb/sdk/dto/ExchangeRateRequest.class
 com/lftechnology/msb/sdk/dto/SyncBranchResponse.class
 com/lftechnology/msb/sdk/service/WhiteWingsClientApiImpl.class
 com/lftechnology/msb/sdk/enums/TransactionPaymentType$1.class

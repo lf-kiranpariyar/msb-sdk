@@ -1,5 +1,6 @@
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/enums/TxnStatus.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/constant/Constants.java
+/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/CustomExchangeRate.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/service/impl/RequestApi.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Credential.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Bank.java
@@ -19,6 +20,7 @@
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/ListResponse.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Response.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/enums/AccountType.java
+/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/ApiResponse.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/serializer/DateSerializer.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/enums/DocumentType.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Employee.java

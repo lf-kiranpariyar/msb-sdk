@@ -2,22 +2,33 @@ package com.lftechnology.msb.moneytun.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
+
 public class ExchangeRate {
 
     @JsonProperty("DestinationCurrencyISoCode")
-    String destinationCurrencyISOCode;
+    private String destinationCurrencyISOCode;
 
     @JsonProperty("PayeeCode")
-    String payeeCode = "";
+    private String payeeCode = "";
 
     @JsonProperty("SourceCurrencyISoCode")
-    String sourceCurrencyISOCode;
+    private String sourceCurrencyISOCode;
 
     @JsonProperty("SenderAgencyCode")
-    String senderAgencyCode;
+    private String senderAgencyCode;
 
     @JsonProperty("SubPayer")
-    String subPayer="";
+    private String subPayer = "";
+
+    @JsonProperty("GroupId")
+    private String groupId;
+
+    @JsonProperty("SellRate")
+    private BigDecimal sellRate;
+
+    @JsonProperty("SenderAgencyCode")
+    private String agencyCode;
 
     public String getDestinationCurrencyISOCode() {
         return destinationCurrencyISOCode;
@@ -57,5 +68,21 @@ public class ExchangeRate {
 
     public void setSubPayer(String subPayer) {
         this.subPayer = subPayer;
+    }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    public BigDecimal getSellRate() {
+        return sellRate;
+    }
+
+    public void setSellRate(BigDecimal sellRate) {
+        this.sellRate = sellRate;
     }
 }

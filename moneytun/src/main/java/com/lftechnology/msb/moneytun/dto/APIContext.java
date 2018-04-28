@@ -4,8 +4,7 @@ import com.google.gson.Gson;
 import com.lftechnology.msb.moneytun.constant.Constants;
 import com.lftechnology.msb.moneytun.enums.ApiMode;
 import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
-
-import javax.ws.rs.BadRequestException;
+import com.lftechnology.msb.moneytun.exception.WhiteWingBadRequestException;
 
 public class APIContext {
 
@@ -94,7 +93,7 @@ public class APIContext {
             case SANDBOX:
                 return Constants.SANDBOX_ENDPOINT;
             default:
-                throw new BadRequestException("Invalid Mode or URL");
+                throw new WhiteWingBadRequestException("Invalid Mode or URL");
         }
     }
 

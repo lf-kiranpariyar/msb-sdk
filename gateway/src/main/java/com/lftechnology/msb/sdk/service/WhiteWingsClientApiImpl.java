@@ -2,11 +2,15 @@ package com.lftechnology.msb.sdk.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.msb.moneytun.dto.APIContext;
+import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
+import com.lftechnology.msb.moneytun.dto.ExchangeRate;
 import com.lftechnology.msb.moneytun.enums.ApiMode;
 import com.lftechnology.msb.moneytun.enums.TxnStatus;
 import com.lftechnology.msb.moneytun.service.WhiteWingApiService;
 import com.lftechnology.msb.moneytun.service.impl.WhiteWingApiServiceImpl;
+import com.lftechnology.msb.sdk.annotation.SystemProperty;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
+import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankResponse;
 import com.lftechnology.msb.sdk.dto.Transaction;
@@ -17,6 +21,7 @@ import com.lftechnology.msb.sdk.exception.UnsupportedException;
 import com.lftechnology.msb.sdk.mapper.MoneyTunObjectMapper;
 
 import javax.ejb.Stateless;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +36,7 @@ import java.util.Map;
 public class WhiteWingsClientApiImpl implements MsbClientService {
 
 
+    //@SystemProperty("MTS_ENVIRONMENT")
     private static String apiMode="SANDBOX";
 
     @Override
@@ -47,7 +53,11 @@ public class WhiteWingsClientApiImpl implements MsbClientService {
         WhiteWingApiService wingApiService = new WhiteWingApiServiceImpl();
         APIContext apiContext = new APIContext(credentials, ApiMode.valueOf(apiMode));
         com.lftechnology.msb.moneytun.dto.TransactionResponse detail = wingApiService.getTransaction(referenceId, apiContext);
-        return null;
+        TransactionResponse transactionResponse = new TransactionResponse();
+        ObjectMapper objectMapper = new ObjectMapper();
+        transactionResponse.setMetadata(objectMapper.convertValue(detail, Map.class));
+        transactionResponse.setReferenceNumber(detail.getReferenceNumber());
+        return transactionResponse;
     }
 
     @Override
@@ -83,5 +93,40 @@ public class WhiteWingsClientApiImpl implements MsbClientService {
                 }
         );
         return responseList;
+    }
+
+    @Override
+    public BigDecimal rate(ExchangeRateRequest request, String credentials) {
+        WhiteWingApiService wingApiService = new WhiteWingApiServiceImpl();
+        APIContext apiContext = new APIContext(credentials, ApiMode.valueOf(apiMode));
+        ExchangeRate rate = new ExchangeRate();
+        rate.setDestinationCurrencyISOCode(request.getDestination().getThreeCharISOCode());
+        rate.setSourceCurrencyISOCode(request.getSource().getThreeCharISOCode());
+        CustomExchangeRate conversionRate = wingApiService.getRate(rate, apiContext);
+        return conversionRate.getSellRate();
+    }
+
+    @Override
+    public void updateExchangeRate(ExchangeRateRequest request, String credentials) {
+        WhiteWingApiService wingApiService = new WhiteWingApiServiceImpl();
+        APIContext apiContext = new APIContext(credentials, ApiMode.valueOf(apiMode));
+        ExchangeRate rate = new ExchangeRate();
+        rate.setSellRate(request.getAmount());
+        rate.setSourceCurrencyISOCode(request.getSource().getThreeCharISOCode());
+        rate.setDestinationCurrencyISOCode(request.getDestination().getThreeCharISOCode());
+        rate.setSenderAgencyCode(apiContext.getEmployeeDetail().getCode());
+        rate.setGroupId(apiContext.getCredential().getGroupId());
+        wingApiService.updateRate(rate,apiContext);
+    }
+
+    @Override
+    public BigDecimal fetchPurchaseRate(ExchangeRateRequest request, String credentials) {
+        WhiteWingApiService wingApiService = new WhiteWingApiServiceImpl();
+        APIContext apiContext = new APIContext(credentials, ApiMode.valueOf(apiMode));
+        ExchangeRate rate = new ExchangeRate();
+        rate.setDestinationCurrencyISOCode(request.getDestination().getThreeCharISOCode());
+        rate.setSourceCurrencyISOCode(request.getSource().getThreeCharISOCode());
+        CustomExchangeRate conversionRate = wingApiService.getRate(rate, apiContext);
+        return conversionRate.getPurchaseRate();
     }
 }

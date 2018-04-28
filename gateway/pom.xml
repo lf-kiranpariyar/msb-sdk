@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.lftechnology</groupId>
     <artifactId>msb-gateway</artifactId>
     <version>0.0.1</version>
@@ -14,8 +13,6 @@
         <slf4j.api.version>1.7.25</slf4j.api.version>
         <javax.xml.soap.version>1.3.5</javax.xml.soap.version>
         <maven.plugin.version>3.0.2</maven.plugin.version>
-        <retrofit.version>2.3.0</retrofit.version>
-        <gson.converter.version>2.1.0</gson.converter.version>
         <jackson.core.version>2.9.5</jackson.core.version>
         <jackson.databind.version>2.9.5</jackson.databind.version>
         <jackson.annotations.version>2.9.5</jackson.annotations.version>
@@ -28,13 +25,11 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${javaee.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <version>1.0-SP1</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
@@ -94,7 +89,6 @@
     </dependencies>
     <build>
         <finalName>${project.artifactId}</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

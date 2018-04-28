@@ -27,4 +27,12 @@ public class TransactionResponse {
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
+
+    public String getTxnStatus() {
+        return txnStatus;
+    }
+
+    public void setTxnStatus(String txnStatus) {
+        this.txnStatus = txnStatus;
+    }
 }

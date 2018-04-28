@@ -3,6 +3,10 @@ package com.lftechnology.msb.sdk.enums;
 import com.lftechnology.msb.prabhu.enums.PaymentMode;
 import com.lftechnology.msb.sdk.exception.UnsupportedException;
 
+
+/**
+ * Stores Payment Method and provided methods to Map it against Different MSB's.
+ */
 public enum TransactionPaymentType {
     BANK_ACCOUNT, HOME_DELIVERY, CASH, PARTNER_BANK_ACCOUNT;
 

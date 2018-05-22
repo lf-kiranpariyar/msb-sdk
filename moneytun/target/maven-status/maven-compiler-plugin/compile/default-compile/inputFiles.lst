@@ -4,7 +4,6 @@
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/service/impl/RequestApi.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Credential.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Bank.java
-/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Reciever.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Token.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/APIContext.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/IdentificationType.java
@@ -13,6 +12,7 @@
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/enums/QueryType.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/PointOfContact.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Document.java
+/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/PointOfContactRequest.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/BankAccountType.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/exception/WhiteWingBadRequestException.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/TransactionResponse.java
@@ -34,9 +34,12 @@
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/exception/InvalidCredentialException.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/SubPayer.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Payer.java
+/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/SecondaryDocument.java
+/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Receiver.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/DeliveryMethod.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/Currency.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/service/impl/WhiteWingApiServiceImpl.java
+/home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/PayoutPartner.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/JaxRsActivator.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/City.java
 /home/eyeshield/codehome/msb-sdk/moneytun/src/main/java/com/lftechnology/msb/moneytun/dto/ExchangeRateResponse.java

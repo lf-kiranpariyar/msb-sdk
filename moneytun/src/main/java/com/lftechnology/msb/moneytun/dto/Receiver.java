@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Reciever {
+public class Receiver {
 
     @JsonProperty("ReceiverFirstName")
     String firstName;
@@ -39,7 +39,7 @@ public class Reciever {
     @JsonProperty("ReceiverGender")
     String gender;
 
-    private Reciever(Builder builder) {
+    private Receiver(Builder builder) {
         setFirstName(builder.firstName);
         setLastName(builder.lastName);
         setMiddleName(builder.middleName);
@@ -158,14 +158,14 @@ public class Reciever {
         public Builder() {
         }
 
-        public Reciever.Builder name(String firstName, String middleName, String lastName){
+        public Receiver.Builder name(String firstName, String middleName, String lastName){
             this.firstName = firstName;
             this.lastName=lastName;
             this.middleName = middleName;
             return  this;
         }
 
-        public Reciever.Builder addressDetails(String addressLine1, String addressLine2, String countryISOCode, String stateISOCode, String state, String city){
+        public Receiver.Builder addressDetails(String addressLine1, String addressLine2, String countryISOCode, String stateISOCode, String state, String city){
             this.addressLine1 = addressLine1;
             this.addressLine2 =addressLine2;
             this.countryISOCode = countryISOCode;
@@ -175,7 +175,7 @@ public class Reciever {
             return  this;
         }
 
-        public Reciever.Builder contactDetails(String phone){
+        public Receiver.Builder contactDetails(String phone){
             this.phoneNumber=phone;
             return this;
         }
@@ -185,8 +185,8 @@ public class Reciever {
             return this;
         }
 
-        public Reciever build() {
-            return new Reciever(this);
+        public Receiver build() {
+            return new Receiver(this);
         }
     }
 }

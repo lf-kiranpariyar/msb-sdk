@@ -4,13 +4,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 
+
+/**
+ * Request Format :
+ *
+ * <pre>
+ *     {
+     "SenderAgencyCode" : "machnet",
+     "SourceCurrencyISoCode" : "usd",
+     "DestinationCurrencyISoCode": "vnd",
+     "PayeeCode": "trg",
+     "SubPayer": "",
+     "GroupId": "1636",
+     "SellRate": 12.0000000000
+ }
+ *
+ *
+ * </pre>
+ */
 public class ExchangeRate {
 
     @JsonProperty("DestinationCurrencyISoCode")
     private String destinationCurrencyISOCode;
 
     @JsonProperty("PayeeCode")
-    private String payeeCode = "";
+    private String payeeCode;
 
     @JsonProperty("SourceCurrencyISoCode")
     private String sourceCurrencyISOCode;
@@ -27,8 +45,6 @@ public class ExchangeRate {
     @JsonProperty("SellRate")
     private BigDecimal sellRate;
 
-    @JsonProperty("SenderAgencyCode")
-    private String agencyCode;
 
     public String getDestinationCurrencyISOCode() {
         return destinationCurrencyISOCode;
@@ -84,5 +100,19 @@ public class ExchangeRate {
 
     public void setSellRate(BigDecimal sellRate) {
         this.sellRate = sellRate;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("ExchangeRate{");
+        sb.append("destinationCurrencyISOCode='").append(destinationCurrencyISOCode).append('\'');
+        sb.append(", payeeCode='").append(payeeCode).append('\'');
+        sb.append(", sourceCurrencyISOCode='").append(sourceCurrencyISOCode).append('\'');
+        sb.append(", senderAgencyCode='").append(senderAgencyCode).append('\'');
+        sb.append(", subPayer='").append(subPayer).append('\'');
+        sb.append(", groupId='").append(groupId).append('\'');
+        sb.append(", sellRate=").append(sellRate);
+        sb.append('}');
+        return sb.toString();
     }
 }

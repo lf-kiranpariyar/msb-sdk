@@ -19,7 +19,7 @@ public class Credential {
 
     private String payerId;
     private String groupId;
-    private Map<String, List<String>> payerDetails;
+    private Map<String, List<PayoutPartner>> payerDetails;
 
     public String getName() {
         return name;
@@ -89,11 +89,11 @@ public class Credential {
         this.groupId = groupId;
     }
 
-    public Map<String, List<String>> getPayerDetails() {
+    public Map<String, List<PayoutPartner>> getPayerDetails() {
         return payerDetails;
     }
 
-    public void setPayerDetails(Map<String, List<String>> payerDetails) {
+    public void setPayerDetails(Map<String, List<PayoutPartner>> payerDetails) {
         this.payerDetails = payerDetails;
     }
 }

@@ -12,15 +12,12 @@ public class APIContext {
 
     private ApiMode mode;
 
-    private String endPointUrl;
-
     public APIContext(String credentialString, ApiMode mode) {
         Gson gson = new Gson();
         if (credentialString == null) {
             throw new InvalidCredentialException("Credentials not found");
         }
-        Credential credential=null;
-        credential = gson.fromJson(credentialString, Credential.class);
+        Credential credential= gson.fromJson(credentialString, Credential.class);
         if(credential==null){
             throw new InvalidCredentialException("Invalid Credentials ");
         }
@@ -95,9 +92,5 @@ public class APIContext {
             default:
                 throw new WhiteWingBadRequestException("Invalid Mode or URL");
         }
-    }
-
-    public void setEndPointUrl(String endPointUrl) {
-        this.endPointUrl = endPointUrl;
     }
 }

@@ -6,7 +6,8 @@ public enum DocumentType {
 
     PASSPORT("Passport"),
     DRIVING_LICENCE("License"),
-    STATE_ID("ID Card");
+    STATE_ID("ID Card"),
+    SSN("Social Security Number");
 
     private final String value;
 
@@ -30,6 +31,8 @@ public enum DocumentType {
                 return  com.lftechnology.msb.moneytun.enums.DocumentType.PASSPORT;
             case STATE_ID:
                 return  com.lftechnology.msb.moneytun.enums.DocumentType.STATE_ID;
+            case SSN:
+                return com.lftechnology.msb.moneytun.enums.DocumentType.SSN;
             default:
                 throw new UnsupportedException("Invalid Document Type Supplied");
         }

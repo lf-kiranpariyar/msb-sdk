@@ -4,7 +4,7 @@ public enum QueryType {
 
     BANK("bankList"), TRANSACTION_PROCESS("process"), TRANSACTION_GET_STATUS("getStatus"), TRANSACTION_DETAIL("detail"), COUNTRY("country"), GET_RATE("getRate"), UPDATE_RATE("updatecustomrate");
 
-    String value;
+    private String value;
 
     QueryType(String value) {
         this.value = value;

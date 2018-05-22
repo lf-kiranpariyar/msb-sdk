@@ -12,5 +12,5 @@ import java.lang.annotation.Target;
 @Target({ElementType.PARAMETER, ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
 public @interface SystemProperty {
     @Nonbinding String value();
-    String fallback() default "";
+    String fallback() default "SANDBOX";
 }

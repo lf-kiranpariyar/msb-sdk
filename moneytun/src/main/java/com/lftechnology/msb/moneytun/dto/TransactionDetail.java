@@ -13,7 +13,7 @@ public class TransactionDetail {
     @JsonProperty("Sender")
     Long senderId;
 
-    @JsonProperty("Reciever")
+    @JsonProperty("Receiver")
     Long recipientId;
 
     @JsonProperty("")

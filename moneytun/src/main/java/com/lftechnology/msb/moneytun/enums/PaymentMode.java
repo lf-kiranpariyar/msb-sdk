@@ -4,7 +4,7 @@ public enum PaymentMode {
 
     CASH_PICKUP("CASH PICKUP"), ACCOUNT_DEPOSIT("SEND TO ACCOUNT"),HOME_DELIVERY("CASH DELIVERY");
 
-    String value;
+    private String value;
 
     PaymentMode(String value) {
         this.value = value;
@@ -13,4 +13,6 @@ public enum PaymentMode {
     public String getMode() {
         return value;
     }
+
+
 }

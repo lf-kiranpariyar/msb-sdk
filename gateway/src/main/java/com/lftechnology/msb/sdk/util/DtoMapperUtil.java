@@ -29,7 +29,7 @@ public class DtoMapperUtil {
         document.setDocumentCountryISOCode("RUS");
 
 
-        Reciever reciever =new Reciever();
+        Receiver reciever =new Receiver();
         reciever.setFirstName("GEVORG");
         reciever.setLastName("GYURJYAN");
         reciever.setCountryISOCode("VNM");
@@ -41,7 +41,7 @@ public class DtoMapperUtil {
 
         transaction.setAgentId("machnet");
         transaction.setSender(sender);
-        transaction.setReciever(reciever);
+        transaction.setReceiver(reciever);
         transaction.setDocument(document);
         transaction.setAccountType("1");
         transaction.setPointOfContactId(68447);

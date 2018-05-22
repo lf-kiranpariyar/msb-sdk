@@ -4,11 +4,12 @@ import com.lftechnology.msb.moneytun.dto.APIContext;
 import com.lftechnology.msb.moneytun.dto.Bank;
 import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ExchangeRate;
+import com.lftechnology.msb.moneytun.dto.PointOfContact;
+import com.lftechnology.msb.moneytun.dto.PointOfContactRequest;
 import com.lftechnology.msb.moneytun.dto.Transaction;
 import com.lftechnology.msb.moneytun.dto.TransactionResponse;
 import com.lftechnology.msb.moneytun.enums.TxnStatus;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public interface WhiteWingApiService {
@@ -24,4 +25,6 @@ public interface WhiteWingApiService {
     CustomExchangeRate getRate(ExchangeRate rate, APIContext apiContext);
 
     void updateRate(ExchangeRate rate, APIContext apiContext);
+
+    List<PointOfContact> getPointOfContacts(PointOfContactRequest pointOfContactRequest, APIContext apiContext);
 }

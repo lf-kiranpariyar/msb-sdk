@@ -5,34 +5,34 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
-public class Document {
+public class SecondaryDocument {
 
-    @JsonProperty(value = "SenderIDDocumentType")
+    @JsonProperty(value = "SenderIDDocumentType2")
     private String type;
 
-    @JsonProperty(value = "SenderIDDocumentNumber")
+    @JsonProperty(value = "SenderIDDocumentNumber2")
     private String identificationNumber;
 
-    @JsonProperty("SenderIDDocumentCountry")
+    @JsonProperty("SenderIDDocumentCountry2")
     private String countryName;
 
-    @JsonProperty("SenderIDDocumentCity")
+    @JsonProperty("SenderIDDocumentCity2")
     private String city="";
 
-    @JsonProperty("SenderIDDocumentState")
+    @JsonProperty("SenderIDDocumentState2")
     private String state="";
 
-    @JsonProperty("SenderIDDocumentCountryISOCode")
+    @JsonProperty("SenderIDDocumentCountryISOCode2")
     private String documentCountryISOCode;
 
-    @JsonProperty("SenderIDDocumentStateISOCode")
+    @JsonProperty("SenderIDDocumentStateISOCode2")
     private String stateISOCode="";
 
-    @JsonProperty("SenderIDIssueDate")
+    @JsonProperty("SenderIDIssueDate2")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/YYYY")
     private LocalDate issueDate;
 
-    @JsonProperty("SenderIDExpiryDate")
+    @JsonProperty("SenderIDExpiryDate2")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/YYYY")
     private LocalDate expiryDate;
 

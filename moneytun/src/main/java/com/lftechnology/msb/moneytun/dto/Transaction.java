@@ -8,55 +8,55 @@ import java.math.BigDecimal;
 public class Transaction {
 
     @JsonProperty("AgentId")
-    String agentId;
+    private String agentId;
 
     @JsonProperty("DeliveryMethod")
-    String deliveryMethod;
+    private String deliveryMethod;
 
     @JsonProperty("Employee")
-    Employee employee;
+    private Employee employee;
 
     @JsonProperty("SendingCurrencyCode")
-    String sourceCurrencyCode;
+    private String sourceCurrencyCode;
 
     @JsonProperty("PaymentMethod")
-    String paymentMethod;
+    private String paymentMethod;
 
     @JsonUnwrapped
-    Sender sender;
+    private Sender sender;
 
     @JsonUnwrapped
-    Document document;
+    private Document document;
 
     @JsonUnwrapped
-    Reciever reciever;
+    private Receiver receiver;
 
     @JsonProperty("ConversionRate")
-    BigDecimal exchangeRate;
+    private BigDecimal exchangeRate;
 
     @JsonProperty("SendAmount")
-    BigDecimal amount;
+    private BigDecimal amount;
 
     @JsonProperty("ReceivedAmount")
-    BigDecimal recieverAmount;
+    private BigDecimal recieverAmount;
 
     @JsonProperty("PointofContact")
-    Integer pointOfContactId;
+    private Long pointOfContactId;
 
     @JsonProperty("Bank")
-    String bankName;
+    private String bankName;
 
     @JsonProperty("BankBranch")
-    String bankBranch;
+    private String bankBranch;
 
     @JsonProperty("BankAccount")
-    String bankAccount;
+    private String bankAccount;
 
     @JsonProperty("BankAccountType")
-    String accountType;
+    private String accountType;
 
     @JsonProperty("ReceivingCurrencyCode")
-    String receiverCurrencyCode;
+    private String receiverCurrencyCode;
 
     private Transaction(Builder builder) {
         setAgentId(builder.agentId);
@@ -66,7 +66,7 @@ public class Transaction {
         setPaymentMethod(builder.paymentMethod);
         setSender(builder.sender);
         setDocument(builder.document);
-        setReciever(builder.reciever);
+        setReceiver(builder.receiver);
         setExchangeRate(builder.exchangeRate);
         setAmount(builder.amount);
         setRecieverAmount(builder.recieverAmount);
@@ -118,12 +118,12 @@ public class Transaction {
         this.document = document;
     }
 
-    public Reciever getReciever() {
-        return reciever;
+    public Receiver getReceiver() {
+        return receiver;
     }
 
-    public void setReciever(Reciever reciever) {
-        this.reciever = reciever;
+    public void setReceiver(Receiver receiver) {
+        this.receiver = receiver;
     }
 
     public BigDecimal getExchangeRate() {
@@ -134,11 +134,11 @@ public class Transaction {
         this.exchangeRate = exchangeRate;
     }
 
-    public Integer getPointOfContactId() {
+    public Long getPointOfContactId() {
         return pointOfContactId;
     }
 
-    public void setPointOfContactId(Integer pointOfContactId) {
+    public void setPointOfContactId(Long pointOfContactId) {
         this.pointOfContactId = pointOfContactId;
     }
 
@@ -223,11 +223,11 @@ public class Transaction {
         private String paymentMethod;
         private Sender sender;
         private Document document;
-        private Reciever reciever;
+        private Receiver receiver;
         private BigDecimal exchangeRate;
         private BigDecimal amount;
         private BigDecimal recieverAmount;
-        private Integer pointOfContactId;
+        private Long pointOfContactId;
         private String bankName;
         private String bankBranch;
         private String bankAccount;
@@ -269,14 +269,14 @@ public class Transaction {
             return  this;
         }
 
-        public Builder party(Sender sender, Reciever reciever, Document document){
+        public Builder party(Sender sender, Receiver receiver, Document document){
             this.sender = sender;
-            this.reciever= reciever;
+            this.receiver = receiver;
             this.document = document;
             return  this;
         }
 
-        public Builder pointOfContactId(Integer val) {
+        public Builder pointOfContactId(Long val) {
             pointOfContactId = val;
             return this;
         }

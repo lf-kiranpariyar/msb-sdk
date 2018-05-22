@@ -4,7 +4,7 @@ public enum AccountType {
 
     CREDIT("Credit Card"), DEBIT("Debit Card"), SAVINGS("Savings"), CHECKING("Checking");
 
-    String value;
+    private String value;
 
     AccountType(String value){
         this.value =value;

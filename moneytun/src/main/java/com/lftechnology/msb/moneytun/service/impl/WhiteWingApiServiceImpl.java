@@ -6,6 +6,8 @@ import com.lftechnology.msb.moneytun.dto.Bank;
 import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ListResponse;
+import com.lftechnology.msb.moneytun.dto.PointOfContact;
+import com.lftechnology.msb.moneytun.dto.PointOfContactRequest;
 import com.lftechnology.msb.moneytun.dto.Transaction;
 import com.lftechnology.msb.moneytun.dto.TransactionDetail;
 import com.lftechnology.msb.moneytun.dto.TransactionResponse;
@@ -23,6 +25,10 @@ import retrofit2.Retrofit;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * WhiteWings API Integration.
+ *
+ */
 public class WhiteWingApiServiceImpl implements WhiteWingApiService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(WhiteWingApiServiceImpl.class);
@@ -89,7 +95,6 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             if (!response.isSuccessful()) {
                 throw new WhiteWingBadRequestException(response.errorBody().string());
             }
-            ListResponse<Bank> bankListResponse = response.body();
             return response.body().getResults();
         } catch (IOException e) {
             throw new WhiteWingBadRequestException(e.getMessage());
@@ -118,12 +123,37 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
         LOGGER.info("Moneytun Update Exchange Rate Request : {}", rate);
         Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
         WhiteWingResource service = retrofit.create(WhiteWingResource.class);
+        LOGGER.info("MoneyTun >>>>>>> ::: " );
         Call<com.lftechnology.msb.moneytun.dto.Response> call = service.updateRate(apiContext.getCredential().getAuthenticationDetail(), QueryType.UPDATE_RATE.getValue(),rate);
         try {
             Response<com.lftechnology.msb.moneytun.dto.Response> response = call.execute();
+            LOGGER.info("Moneytun Update Exchange Rate Request : {}", response.message());
+            LOGGER.info("Moneytun Update Exchange Rate Request : {}", response.code());
+            LOGGER.info("Moneytun Update Exchange Rate Request : {}", response.isSuccessful());
+
             if (!response.isSuccessful()) {
                 throw new WhiteWingBadRequestException(response.errorBody().string());
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            LOGGER.error("ERROR :::: {}",e);
+            throw new WhiteWingBadRequestException(e.getMessage());
+        }
+    }
+
+    @Override
+    public List<PointOfContact> getPointOfContacts(PointOfContactRequest pointOfContactRequest, APIContext apiContext) {
+        LOGGER.info("MoneyTun Get Point Of Contacts List : {}", pointOfContactRequest);
+        Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
+        WhiteWingResource service = retrofit.create(WhiteWingResource.class);
+        Call<ListResponse<PointOfContact>> call = service.getPointOfContact(apiContext.getCredential().getAuthenticationDetail(), pointOfContactRequest.getCountryCode(), pointOfContactRequest.getCountryCode());
+        try {
+            Response<ListResponse<PointOfContact>> response = call.execute();
+            if (!response.isSuccessful()) {
+                throw new WhiteWingBadRequestException(response.errorBody().string());
+            }
+            return  response.body().getResults();
         } catch (IOException e) {
             throw new WhiteWingBadRequestException(e.getMessage());
         }

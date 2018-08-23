@@ -2,6 +2,8 @@ package com.lftechnology.msb.moneytun.service;
 
 import com.lftechnology.msb.moneytun.dto.ApiResponse;
 import com.lftechnology.msb.moneytun.dto.Bank;
+import com.lftechnology.msb.moneytun.dto.City;
+import com.lftechnology.msb.moneytun.dto.CityRequest;
 import com.lftechnology.msb.moneytun.dto.Country;
 import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.DeliveryMethod;
@@ -10,6 +12,8 @@ import com.lftechnology.msb.moneytun.dto.ListResponse;
 import com.lftechnology.msb.moneytun.dto.Payer;
 import com.lftechnology.msb.moneytun.dto.PointOfContact;
 import com.lftechnology.msb.moneytun.dto.Response;
+import com.lftechnology.msb.moneytun.dto.State;
+import com.lftechnology.msb.moneytun.dto.StateRequest;
 import com.lftechnology.msb.moneytun.dto.Token;
 import com.lftechnology.msb.moneytun.dto.Transaction;
 import com.lftechnology.msb.moneytun.dto.TransactionDetail;
@@ -39,11 +43,17 @@ public interface WhiteWingResource {
     @GET("payerlist")
     Call<ListResponse<Payer>> getPayer(@Header("Authentication") String authentication, @Query("isocode") String countryISOCode);
 
+    @POST("city")
+    Call<ListResponse<City>> getCity(@Header("Authentication") String authentication, @Body CityRequest cityRequest);
+
+    @POST("statelist")
+    Call<ListResponse<State>> getState(@Header("Authentication") String authentication, @Body StateRequest stateRequest);
+
     @FormUrlEncoded
     @POST("poc")
     Call<ListResponse<PointOfContact>> getPointOfContact(@Header("Authentication") String authentication, @Field("CountryISOCode") String countryISOCode, @Field("Payee") String payee);
 
-    @POST("transactions")
+    @POST("transaction")
     Call<TransactionResponse> create(@Header("Authentication") String authentication, @Query("id") String action, @Body Transaction transaction);
 
     @GET("transactions")

@@ -13,7 +13,7 @@ public class TransactionResponse extends Response{
     @JsonProperty("SenderId")
     String senderId;
 
-    @JsonProperty("RecipientId")
+    @JsonProperty("ReceiverId")
     String recipientId;
 
     public String getReferenceNumber() {

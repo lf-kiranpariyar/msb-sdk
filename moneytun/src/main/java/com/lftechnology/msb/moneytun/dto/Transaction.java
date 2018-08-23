@@ -214,7 +214,6 @@ public class Transaction {
         this.deliveryMethod = deliveryMethod;
     }
 
-
     public static final class Builder {
         private String agentId;
         private String deliveryMethod;

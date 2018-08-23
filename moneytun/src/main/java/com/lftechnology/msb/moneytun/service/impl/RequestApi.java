@@ -11,6 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Forward, Logs and Map Request and Response for {@link OkHttpClient}
@@ -21,8 +22,10 @@ public class RequestApi {
 
     public static Retrofit getRetrofitObject(APIContext apiContext){
 
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(new HttpLoggingInterceptor());
+        httpClient.connectTimeout(5, TimeUnit.MINUTES).writeTimeout(5, TimeUnit.MINUTES).readTimeout(5, TimeUnit.MINUTES);
         httpClient.addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
@@ -33,6 +36,7 @@ public class RequestApi {
             }
         });
 
+        httpClient.addInterceptor(interceptor);
         ObjectMapper objectMapper = new ObjectMapper();
         return new Retrofit
                 .Builder()

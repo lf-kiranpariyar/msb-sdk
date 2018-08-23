@@ -2,9 +2,9 @@ package com.lftechnology.msb.moneytun.dto;
 
 public class PayoutPartner {
 
-    String groupId;
-    String payeeCode;
-    String payeeId;
+    private String groupId;
+    private String payeeCode;
+    private String payeeId;
 
     public String getGroupId() {
         return groupId;

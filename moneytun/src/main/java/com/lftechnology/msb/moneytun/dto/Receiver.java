@@ -25,7 +25,7 @@ public class Receiver {
     String countryISOCode;
 
     @JsonProperty("ReceiverState")
-    String state;
+    String state = "Default State";
 
     @JsonProperty("ReceiverStateISOCode")
     String stateISOCode = "Default State";
@@ -37,7 +37,7 @@ public class Receiver {
     String phoneNumber;
 
     @JsonProperty("ReceiverGender")
-    String gender;
+    String gender = "M";
 
     private Receiver(Builder builder) {
         setFirstName(builder.firstName);
@@ -169,8 +169,16 @@ public class Receiver {
             this.addressLine1 = addressLine1;
             this.addressLine2 =addressLine2;
             this.countryISOCode = countryISOCode;
-            this.stateISOCode=stateISOCode;
-            this.state = state;
+            if(stateISOCode != null && !"".equals(stateISOCode)){
+                this.stateISOCode=stateISOCode;
+            }else{
+                this.stateISOCode = "Default State";
+            }
+            if(state !=null && !"".equals(state)){
+                this.state = state;
+            }else{
+                this.state = "Default State";
+            }
             this.city=city;
             return  this;
         }
@@ -181,7 +189,11 @@ public class Receiver {
         }
 
         public Builder gender(String gender) {
-            this.gender = gender;
+            if(gender!=null && !"".equalsIgnoreCase(gender)){
+                this.gender = gender;
+            }{
+                this.gender = "M";
+            }
             return this;
         }
 

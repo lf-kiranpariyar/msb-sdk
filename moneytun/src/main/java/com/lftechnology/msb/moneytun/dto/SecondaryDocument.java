@@ -2,6 +2,8 @@ package com.lftechnology.msb.moneytun.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.msb.moneytun.serializer.DocumentDateSerializer;
 
 import java.time.LocalDate;
 
@@ -29,11 +31,11 @@ public class SecondaryDocument {
     private String stateISOCode="";
 
     @JsonProperty("SenderIDIssueDate2")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/YYYY")
+    @JsonSerialize(using = DocumentDateSerializer.class)
     private LocalDate issueDate;
 
     @JsonProperty("SenderIDExpiryDate2")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM/dd/YYYY")
+    @JsonSerialize(using = DocumentDateSerializer.class)
     private LocalDate expiryDate;
 
     public String getType() {

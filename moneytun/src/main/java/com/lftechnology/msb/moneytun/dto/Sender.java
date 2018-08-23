@@ -3,6 +3,8 @@ package com.lftechnology.msb.moneytun.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.msb.moneytun.serializer.BirthDateSerializer;
 
 import java.time.LocalDate;
 
@@ -45,7 +47,7 @@ public class Sender {
     @JsonProperty("SenderNationality")
     String nationality;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-YYYY")
+    @JsonSerialize(using = BirthDateSerializer.class)
     @JsonProperty("SenderDateOfBirth")
     LocalDate dateOfBirth;
 
@@ -219,7 +221,7 @@ public class Sender {
 
         }
         public Builder contactDetails(String zipCode, String phone){
-            this.zipCode = zipCode;
+            this.zipCode = zipCode.substring(0,4);
             this.phone=phone;
             return this;
         }

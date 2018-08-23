@@ -2,8 +2,9 @@ package com.lftechnology.msb.moneytun.exception;
 
 public class WhiteWingBadRequestException extends RuntimeException {
 
-    String message;
-    Integer code;
+    private String message;
+    private Integer code;
+    private Exception exception;
 
     public WhiteWingBadRequestException(String message) {
         super(message);
@@ -30,5 +31,13 @@ public class WhiteWingBadRequestException extends RuntimeException {
 
     public void setCode(Integer code) {
         this.code = code;
+    }
+
+    public Exception getException() {
+        return exception;
+    }
+
+    public void setException(Exception exception) {
+        this.exception = exception;
     }
 }

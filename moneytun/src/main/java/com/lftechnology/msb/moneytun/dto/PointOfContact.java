@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class PointOfContact {
 
     @JsonProperty("POCID")
-    Integer id;
+    Long id;
 
     @JsonProperty("Payee")
     String payee;
@@ -16,7 +16,7 @@ public class PointOfContact {
     @JsonProperty("CountryISOCode")
     String countryISOCode;
 
-    @JsonProperty("StateISOCode")
+    @JsonProperty("StateISoCode")
     String stateISOCode;
 
     @JsonProperty("StateName")
@@ -49,11 +49,11 @@ public class PointOfContact {
     @JsonProperty("SubPayer")
     String subPayer;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

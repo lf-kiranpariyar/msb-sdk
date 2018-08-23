@@ -6,6 +6,7 @@ com/lftechnology/msb/moneytun/dto/CustomExchangeRate.class
 com/lftechnology/msb/moneytun/dto/Receiver$1.class
 com/lftechnology/msb/moneytun/service/WhiteWingResource.class
 com/lftechnology/msb/moneytun/dto/PointOfContactRequest.class
+com/lftechnology/msb/moneytun/serializer/DocumentDateSerializer.class
 com/lftechnology/msb/moneytun/enums/TxnStatus.class
 com/lftechnology/msb/moneytun/exception/WhiteWingBadRequestException.class
 com/lftechnology/msb/moneytun/dto/City.class
@@ -42,12 +43,14 @@ com/lftechnology/msb/moneytun/dto/SubPayer.class
 com/lftechnology/msb/moneytun/dto/ExchangeRateResponse.class
 com/lftechnology/msb/moneytun/dto/PayoutPartner.class
 com/lftechnology/msb/moneytun/dto/Employee.class
+com/lftechnology/msb/moneytun/dto/StateRequest.class
 com/lftechnology/msb/moneytun/dto/Credential.class
 com/lftechnology/msb/moneytun/dto/Document.class
-com/lftechnology/msb/moneytun/serializer/DateSerializer.class
+com/lftechnology/msb/moneytun/serializer/BirthDateSerializer.class
 com/lftechnology/msb/moneytun/JaxRsActivator.class
 com/lftechnology/msb/moneytun/constant/Constants.class
 com/lftechnology/msb/moneytun/enums/PaymentMode.class
 com/lftechnology/msb/moneytun/service/impl/WhiteWingApiServiceImpl.class
 com/lftechnology/msb/moneytun/exception/InvalidCredentialException.class
+com/lftechnology/msb/moneytun/dto/CityRequest.class
 com/lftechnology/msb/moneytun/dto/Payer.class

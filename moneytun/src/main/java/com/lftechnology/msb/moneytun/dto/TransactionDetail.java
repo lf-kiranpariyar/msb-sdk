@@ -16,8 +16,8 @@ public class TransactionDetail {
     @JsonProperty("Receiver")
     Long recipientId;
 
-    @JsonProperty("")
-    TxnStatus status;
+    @JsonProperty("Status")
+    String status;
 
     @JsonProperty("ConversionRate")
     BigDecimal rate;
@@ -31,7 +31,7 @@ public class TransactionDetail {
     @JsonProperty("ReceivedAmount")
     BigDecimal recipientAmount;
 
-    @JsonProperty("SenderCurrency")
+    @JsonProperty("SendCurrency")
     Integer sourceCurrencyId;
 
     @JsonProperty("ReceivedCurrency")
@@ -64,11 +64,11 @@ public class TransactionDetail {
         this.recipientId = recipientId;
     }
 
-    public TxnStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(TxnStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

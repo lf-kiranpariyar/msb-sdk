@@ -1,6 +1,9 @@
 package com.lftechnology.msb.sdk.service;
 
+import com.lftechnology.msb.sdk.dto.City;
+import com.lftechnology.msb.sdk.dto.Country;
 import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
+import com.lftechnology.msb.sdk.dto.State;
 import com.lftechnology.msb.sdk.dto.SyncBankRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankResponse;
 import com.lftechnology.msb.sdk.dto.Transaction;
@@ -32,4 +35,9 @@ public interface MsbClientService {
     void updateExchangeRate(ExchangeRateRequest request, String credentails);
 
     BigDecimal fetchPurchaseRate(ExchangeRateRequest request, String credentials);
+
+    List<State> getStates(Country country, String credentials);
+
+    List<City> getCities(Country country, String credentials);
+
 }

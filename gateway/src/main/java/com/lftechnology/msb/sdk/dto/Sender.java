@@ -63,4 +63,17 @@ public class Sender extends Person {
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Sender{");
+        sb.append("referenceId='").append(referenceId).append('\'');
+        sb.append(", occupation='").append(occupation).append('\'');
+        sb.append(", address=").append(address);
+        sb.append(", contact=").append(contact);
+        sb.append(", documentList=").append(documentList);
+        sb.append(", metadata=").append(metadata);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -1,10 +1,14 @@
 package com.lftechnology.msb.sdk.enums;
 
+import com.google.common.collect.Maps;
+
+import java.util.Map;
+
 public enum Gender {
 
-    MALE("Male", "M"),
-    FEMALE("Female", "F"),
-    OTHER("Other", "O");
+    MALE("male", "M"),
+    FEMALE("female", "F"),
+    OTHER("other", "O");
 
     private final String code;
     private final String gender;
@@ -33,5 +37,17 @@ public enum Gender {
             default:
                 return null;
         }
+    }
+
+    public static final Map<String, Gender> genderHashMap = Maps.newHashMapWithExpectedSize(Gender.values().length);
+
+    static {
+        for (Gender gen : Gender.values()) {
+            genderHashMap.put(gen.gender, gen);
+        }
+    }
+
+    public static Gender getGender(String value){
+        return genderHashMap.get(value);
     }
 }

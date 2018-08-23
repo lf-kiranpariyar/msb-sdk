@@ -1,13 +1,16 @@
 package com.lftechnology.msb.sdk.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lftechnology.msb.moneytun.dto.City;
 import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 import com.lftechnology.msb.prabhu.dto.Agent;
 import com.lftechnology.msb.prabhu.dto.BankInfo;
 import com.lftechnology.msb.prabhu.dto.Credential;
 import com.lftechnology.msb.prabhu.service.PrabhuClientApi;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
+import com.lftechnology.msb.sdk.dto.Country;
 import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
+import com.lftechnology.msb.sdk.dto.State;
 import com.lftechnology.msb.sdk.dto.SyncBankRequest;
 import com.lftechnology.msb.sdk.dto.SyncBankResponse;
 import com.lftechnology.msb.sdk.dto.Transaction;
@@ -81,6 +84,16 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
     @Override
     public BigDecimal fetchPurchaseRate(ExchangeRateRequest request, String credentials) {
         throw new UnsupportedException("Purchase Rate Query Not Supported by Prabhu MSB");
+    }
+
+    @Override
+    public List<State> getStates(Country country, String credentials) {
+        throw new UnsupportedException("Fetch State Not Supported by Prabhu MSB");
+    }
+
+    @Override
+    public List<com.lftechnology.msb.sdk.dto.City> getCities(Country country, String credentials) {
+        throw new UnsupportedException("Purchase State Not Supported by Prabhu MSB");
     }
 
     private Credential getCredential(String credentialString){

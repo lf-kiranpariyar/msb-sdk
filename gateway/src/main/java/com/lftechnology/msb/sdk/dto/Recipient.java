@@ -58,4 +58,15 @@ public class Recipient extends Person{
         this.metadata = metadata;
     }
 
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Recipient{");
+        sb.append("referenceId='").append(referenceId).append('\'');
+        sb.append(", address=").append(address);
+        sb.append(", contact=").append(contact);
+        sb.append(", documentList=").append(documentList);
+        sb.append(", metadata=").append(metadata);
+        sb.append('}');
+        return sb.toString();
+    }
 }

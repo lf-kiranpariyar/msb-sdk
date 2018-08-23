@@ -115,4 +115,23 @@ public class Transaction {
     public void setRecipientAmount(BigDecimal recipientAmount) {
         this.recipientAmount = recipientAmount;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Transaction{");
+        sb.append("sender=").append(sender);
+        sb.append(", recipient=").append(recipient);
+        sb.append(", document=").append(document);
+        sb.append(", bank=").append(bank);
+        sb.append(", transactionId='").append(transactionId).append('\'');
+        sb.append(", amount=").append(amount);
+        sb.append(", rate=").append(rate);
+        sb.append(", recipientAmount=").append(recipientAmount);
+        sb.append(", type=").append(type);
+        sb.append(", sourceOfIncome='").append(sourceOfIncome).append('\'');
+        sb.append(", purpose='").append(purpose).append('\'');
+        sb.append(", note='").append(note).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

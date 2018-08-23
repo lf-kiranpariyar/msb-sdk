@@ -1,5 +1,6 @@
 com/lftechnology/msb/sdk/dto/Recipient.class
 com/lftechnology/msb/sdk/literal/TransactionOriginatorLiteral.class
+com/lftechnology/msb/sdk/exception/WhiteWingBadRequestExceptionMapper.class
 com/lftechnology/msb/sdk/dto/Sender.class
 com/lftechnology/msb/sdk/util/DtoMapperUtil.class
 com/lftechnology/msb/sdk/dto/SyncBankResponse.class
@@ -12,6 +13,7 @@ com/lftechnology/msb/sdk/dto/SyncBankRequest.class
 com/lftechnology/msb/sdk/enums/TransactionPaymentType.class
 com/lftechnology/msb/sdk/annotation/TransactionOriginator.class
 com/lftechnology/msb/sdk/service/MsbClientService.class
+com/lftechnology/msb/sdk/dto/City.class
 com/lftechnology/msb/sdk/dto/Bank.class
 com/lftechnology/msb/sdk/dto/Contact.class
 com/lftechnology/msb/sdk/mapper/PrabhuObjectMapper.class

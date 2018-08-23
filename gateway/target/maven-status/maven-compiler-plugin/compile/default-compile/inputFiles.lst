@@ -6,6 +6,7 @@
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/ExchangeRateRequest.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/enums/DocumentType.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/enums/TransactionPaymentType.java
+/home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/City.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/TransactionStatusChangeRequest.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/Country.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/Document.java
@@ -13,6 +14,7 @@
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/Sender.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/util/DtoMapperUtil.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/exception/UnsupportedException.java
+/home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/exception/WhiteWingBadRequestExceptionMapper.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/Recipient.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/annotation/SystemPropertyProvider.java
 /home/eyeshield/codehome/msb-sdk/gateway/src/main/java/com/lftechnology/msb/sdk/dto/Address.java

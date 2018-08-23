@@ -85,9 +85,9 @@ public class PrabhuClientApiImplTest {
 
     private Credential getCredential(){
         Credential credential = new Credential();
-        credential.setAgentCode("sadasdf");
-        credential.setAgentUserId("asdffsd");
-        credential.setAgentPassword("asdfasfd");
+        credential.setAgentCode("SODA01");
+        credential.setAgentUserId("SODACREWAPI");
+        credential.setAgentPassword("Sh_X=p5$43");
         credential.setAgentSessionId("1234");
         return credential;
     }

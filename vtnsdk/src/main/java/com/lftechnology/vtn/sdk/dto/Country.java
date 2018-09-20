@@ -6,7 +6,6 @@ public class Country {
     private String name;
     private String threeCharCode;
     private String phoneCode;
-    private String currency;
 
     public String getReferenceId() {
         return referenceId;
@@ -40,13 +39,6 @@ public class Country {
         this.phoneCode = phoneCode;
     }
 
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
-    }
 
     @Override
     public String toString(){
@@ -54,7 +46,7 @@ public class Country {
                 "name : " + name + " , " +
                 "threeCharCode : " + threeCharCode + " , " +
                 "phoneCode : " + phoneCode + " , " +
-                "currency : " + currency + " }";
+                "}";
     }
 
 }

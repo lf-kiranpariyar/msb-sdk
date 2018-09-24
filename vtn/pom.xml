@@ -7,15 +7,13 @@
     <groupId>com.lftechnology</groupId>
     <artifactId>vtn-sdk</artifactId>
     <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.plugin.version>3.0.2</maven.plugin.version>
+    </properties>
 
 <dependencies>
-    <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
-    <dependency>
-        <groupId>joda-time</groupId>
-        <artifactId>joda-time</artifactId>
-        <version>2.9.9</version>
-    </dependency>
-
 
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
@@ -25,7 +23,65 @@
         <scope>provided</scope>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit -->
+    <dependency>
+        <groupId>com.squareup.retrofit2</groupId>
+        <artifactId>retrofit</artifactId>
+        <version>2.3.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jaxb -->
+    <dependency>
+        <groupId>com.squareup.retrofit2</groupId>
+        <artifactId>converter-jaxb</artifactId>
+        <version>2.4.0</version>
+    </dependency>
+
+
+
 </dependencies>
+
+
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 
 </project>

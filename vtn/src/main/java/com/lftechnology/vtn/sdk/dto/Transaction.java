@@ -1,26 +1,25 @@
 package com.lftechnology.vtn.sdk.dto;
 
 import lombok.Data;
-import org.joda.time.DateTime;
+
 
 import javax.xml.bind.annotation.XmlElement;
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 @Data
 public class Transaction extends Response{
     @XmlElement(name = "TransactionId")
     private String transactionId;
 
     @XmlElement(name = "TransferDate")
-    private DateTime transferDate;
+    private LocalDateTime transferDate;
 
     @XmlElement(name = "TransferType")
-    private int transferType;
+    private Integer transferType;
 
     private Sender sender;
     private Receiver receiver;
-
-
+    private Bank bank;
 
 
 }
-

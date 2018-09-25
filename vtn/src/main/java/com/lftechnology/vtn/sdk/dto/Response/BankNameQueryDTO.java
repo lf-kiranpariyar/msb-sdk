@@ -1,14 +1,14 @@
-package com.lftechnology.vtn.sdk.dto;
+package com.lftechnology.vtn.sdk.dto.Response;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
 @Data
-public class Bank extends Response {
+@XmlRootElement(name="RemittanceNameEnquiryResponse")
+public class BankNameQueryDTO extends ResponseDTO {
 
     @XmlElement(name = "BankAccountNumber")
     private BigDecimal accountNumber;
@@ -18,7 +18,6 @@ public class Bank extends Response {
 
     @XmlElement(name="BankName")
     private  BigDecimal bankName;
-    private Country country;
 
 }
 

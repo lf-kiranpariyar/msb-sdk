@@ -1,14 +1,13 @@
-package com.lftechnology.vtn.sdk.dto;
+package com.lftechnology.vtn.sdk.dto.Response;
 
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.Date;
 
 @Data
 @XmlRootElement(name="RemittanceAccountStatusResponse")
-public class Account extends Response{
+public class AccountStatusResponseDTO extends ResponseDTO {
     @XmlElement(name="FirstName")
     private String firstName;
     @XmlElement(name="LastName")
@@ -17,7 +16,4 @@ public class Account extends Response{
     private String email;
     @XmlElement(name="Phone")
     private String phone;
-    @XmlElement(name = "DateOfBirth")
-    private Date dob;
-
 }

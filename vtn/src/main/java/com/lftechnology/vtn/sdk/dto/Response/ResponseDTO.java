@@ -1,11 +1,11 @@
-package com.lftechnology.vtn.sdk.dto;
+package com.lftechnology.vtn.sdk.dto.Response;
 
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlElement;
 
 @Data
-public class Response {
+public class ResponseDTO {
     @XmlElement(name="ResponseCode")
     private String code;
     @XmlElement(name="ResponseMessage")

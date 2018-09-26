@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class AccountStatusDTO extends Credentials {
+public class AccountStatusRequestDTO extends Credentials {
 
     @XmlElement(name = "Email")
     private String email;

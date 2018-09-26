@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @XmlRootElement(name="RemittanceResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TransactionDTO extends ResponseDTO {
+public class TransactionResponseDTO extends ResponseDTO {
 
     @XmlElement(name = "TransactionId")
     private String transactionId;

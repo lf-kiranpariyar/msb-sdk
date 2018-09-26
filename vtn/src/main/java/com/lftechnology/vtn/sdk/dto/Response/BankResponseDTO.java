@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 @XmlRootElement(name="RemittanceNameEnquiryResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BankNameQueryDTO extends ResponseDTO {
+public class BankResponseDTO extends ResponseDTO {
 
     public BigDecimal getAccountNumber() {
         return accountNumber;
@@ -48,7 +48,7 @@ public class BankNameQueryDTO extends ResponseDTO {
 
     @Override
     public String toString() {
-        return "BankNameQueryDTO{" +
+        return "BankResponseDTO{" +
                 "accountNumber=" + accountNumber +
                 ", accountName='" + accountName + '\'' +
                 ", bankName='" + bankName + '\'' +

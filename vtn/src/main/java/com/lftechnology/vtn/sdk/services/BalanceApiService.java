@@ -1,8 +1,7 @@
 package com.lftechnology.vtn.sdk.services;
 
 
-import com.lftechnology.vtn.sdk.dto.Response.AccountStatusResponseDTO;
-import com.lftechnology.vtn.sdk.dto.Response.BalanceQueryDTO;
+import com.lftechnology.vtn.sdk.dto.Response.BalanceResponseDTO;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -13,6 +12,6 @@ public interface BalanceApiService {
 
     @POST("RemittanceBalanceStatus.asp")
     @FormUrlEncoded
-    Call<BalanceQueryDTO> getBalance(@Field("AccessToken") String accessToken,
-                                     @Field("AccessKey") String accessKey);
+    Call<BalanceResponseDTO> getBalance(@Field("AccessToken") String accessToken,
+                                        @Field("AccessKey") String accessKey);
 }

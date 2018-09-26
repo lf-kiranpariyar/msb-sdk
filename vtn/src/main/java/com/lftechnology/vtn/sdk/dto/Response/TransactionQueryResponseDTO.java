@@ -11,7 +11,7 @@ import java.util.List;
 
 @XmlRootElement(name = "RemittanceTransactionResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TransactionQueryDTO extends ResponseDTO {
+public class TransactionQueryResponseDTO extends ResponseDTO {
 
     @XmlElement(name = "TransactionId")
     private String transactionId;

@@ -2,15 +2,30 @@ package com.lftechnology.vtn.sdk.dto.Response;
 
 
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
+
 
 @XmlRootElement(name="FxRatesResponse")
-@XmlAccessorType(XmlAccessType.FIELD)
-public class FxRateQueryDTO extends ResponseDTO {
 
-    @XmlElement
+public class FxRateResponseDTO extends ResponseDTO {
+
+    @XmlElement(name = "ExchangeRates")
     private ExchangeRate exchangeRate;
+
+    public ExchangeRate getExchangeRate() {
+        return exchangeRate;
+    }
+
+    @Override
+    public String toString() {
+        return "FxRateResponseDTO{" +
+                "exchangeRate=" + exchangeRate +
+                '}';
+    }
+
+    public void setExchangeRate(ExchangeRate exchangeRate) {
+        this.exchangeRate = exchangeRate;
+    }
+
+
 }

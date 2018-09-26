@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -15,8 +16,9 @@ public class TransactionRequestDTO extends Credentials{
     @XmlElement(name = "TransactionId")
     private String transactionId;
 
+    @Xml
     @XmlElement(name = "TransferDate")
-    private LocalDateTime transferDate;
+    private LocalDate transferDate;
 
     @XmlElement(name = "TransferType")
     private Integer transferType;

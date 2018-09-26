@@ -2,7 +2,7 @@ package com.lftechnology.vtn.sdk.api;
 
 
 import com.lftechnology.vtn.sdk.dto.Request.Credentials;
-import com.lftechnology.vtn.sdk.dto.Response.BalanceQueryDTO;
+import com.lftechnology.vtn.sdk.dto.Response.BalanceResponseDTO;
 import com.lftechnology.vtn.sdk.exception.ApiException;
 import com.lftechnology.vtn.sdk.services.BalanceApiService;
 import retrofit2.Call;
@@ -29,11 +29,11 @@ public class BalanceApi {
      * and map the response to Balance dto
      * @return
      */
-    public BalanceQueryDTO getBalance(Credentials credentials) {
+    public BalanceResponseDTO getBalance(Credentials credentials) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BalanceApiService service = retrofit.create(BalanceApiService.class);
-        Call<BalanceQueryDTO> call = service.getBalance(credentials.getAccessToken(),credentials.getAccessKey());
-        BalanceQueryDTO b = executeApiCall(call);
+        Call<BalanceResponseDTO> call = service.getBalance(credentials.getAccessToken(),credentials.getAccessKey());
+        BalanceResponseDTO b = executeApiCall(call);
 
 
       return  b;
@@ -47,9 +47,9 @@ public class BalanceApi {
      * @param call
      * @return
      */
-    private BalanceQueryDTO executeApiCall(Call<BalanceQueryDTO> call) {
+    private BalanceResponseDTO executeApiCall(Call<BalanceResponseDTO> call) {
         try {
-            Response<BalanceQueryDTO> response = call.execute();
+            Response<BalanceResponseDTO> response = call.execute();
 
             if (!response.isSuccessful()) {
                 throw new ApiException(response.errorBody().string());

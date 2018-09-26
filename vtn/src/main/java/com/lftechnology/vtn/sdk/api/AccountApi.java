@@ -1,17 +1,15 @@
 package com.lftechnology.vtn.sdk.api;
 
-import com.lftechnology.vtn.sdk.dto.Request.AccountStatusDTO;
+import com.lftechnology.vtn.sdk.dto.Request.AccountStatusRequestDTO;
 import com.lftechnology.vtn.sdk.dto.Request.Credentials;
 import com.lftechnology.vtn.sdk.dto.Response.AccountStatusResponseDTO;
 import com.lftechnology.vtn.sdk.exception.ApiException;
 import com.lftechnology.vtn.sdk.services.AccountApiService;
-import com.lftechnology.vtn.sdk.services.BalanceApiService;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
 import java.io.IOException;
-import java.util.Date;
 
 public class AccountApi {
 
@@ -22,7 +20,7 @@ public class AccountApi {
         this.requestApi = new RequestApi();
     }
 
-    public AccountStatusResponseDTO getAccount(AccountStatusDTO account, Credentials credentials) {
+    public AccountStatusResponseDTO getAccount(AccountStatusRequestDTO account, Credentials credentials) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         AccountApiService service = retrofit.create(AccountApiService.class);
         Call<AccountStatusResponseDTO> call =  service.getAccount(credentials.getAccessToken(),credentials.getAccessKey(),account.getEmail());;

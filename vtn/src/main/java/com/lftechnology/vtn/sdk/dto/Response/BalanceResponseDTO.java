@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 @XmlRootElement(name="RemittanceBalanceResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BalanceQueryDTO extends ResponseDTO {
+public class BalanceResponseDTO extends ResponseDTO {
 
     @XmlElement(name ="AccountBalance")
     private String  balance;
@@ -24,7 +24,7 @@ public class BalanceQueryDTO extends ResponseDTO {
 
     @Override
     public String toString() {
-        return "BalanceQueryDTO{" +
+        return "BalanceResponseDTO{" +
                 "balance=" + balance +
                 '}';
     }

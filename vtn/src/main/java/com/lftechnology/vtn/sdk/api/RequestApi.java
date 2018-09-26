@@ -16,7 +16,7 @@ public class RequestApi {
     private String baseUrl;
 
     public RequestApi(){
-        this.baseUrl =CommonConstant.baseUrl;
+        this.baseUrl = CommonConstant.baseUrl;
 
     }
 
@@ -24,6 +24,7 @@ public class RequestApi {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(new Interceptor() {
+            @Override
             public Response intercept(Interceptor.Chain chain) throws IOException {
                 Request original = chain.request();
                 Request.Builder requestBuilder = original.newBuilder();

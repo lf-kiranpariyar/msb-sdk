@@ -1,14 +1,41 @@
 package com.lftechnology.vtn.sdk.dto.Response;
 
-import lombok.Data;
 
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
-@Data
+
 @XmlRootElement(name="RemittanceNameEnquiryResponse")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class BankNameQueryDTO extends ResponseDTO {
+
+    public BigDecimal getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(BigDecimal accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
 
     @XmlElement(name = "BankAccountNumber")
     private BigDecimal accountNumber;
@@ -17,7 +44,15 @@ public class BankNameQueryDTO extends ResponseDTO {
     private String accountName;
 
     @XmlElement(name="BankName")
-    private  BigDecimal bankName;
+    private  String bankName;
 
+    @Override
+    public String toString() {
+        return "BankNameQueryDTO{" +
+                "accountNumber=" + accountNumber +
+                ", accountName='" + accountName + '\'' +
+                ", bankName='" + bankName + '\'' +
+                '}';
+    }
 }
 

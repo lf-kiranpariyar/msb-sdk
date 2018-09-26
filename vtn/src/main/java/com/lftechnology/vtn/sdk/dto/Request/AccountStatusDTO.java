@@ -1,17 +1,20 @@
 package com.lftechnology.vtn.sdk.dto.Request;
 
-import lombok.Data;
 
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
-@Data
-public class AccountStatusDTO {
+@XmlAccessorType(XmlAccessType.FIELD)
+public class AccountStatusDTO extends Credentials {
 
     @XmlElement(name = "Email")
     private String email;
 
     @XmlElement(name = "Phone")
     private String phone;
+
 
 
 }

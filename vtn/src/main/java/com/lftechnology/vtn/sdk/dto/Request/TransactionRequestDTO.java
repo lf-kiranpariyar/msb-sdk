@@ -1,13 +1,15 @@
 package com.lftechnology.vtn.sdk.dto.Request;
 
-import lombok.Data;
 
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
-public class TransactionRequestDTO {
+@XmlAccessorType(XmlAccessType.FIELD)
+public class TransactionRequestDTO extends Credentials{
 
     @XmlElement(name = "TransactionId")
     private String transactionId;

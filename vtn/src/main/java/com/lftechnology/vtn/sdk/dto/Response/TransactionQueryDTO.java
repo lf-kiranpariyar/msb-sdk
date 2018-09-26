@@ -1,12 +1,16 @@
 package com.lftechnology.vtn.sdk.dto.Response;
 
-import lombok.Data;
 
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
-@Data
+
 @XmlRootElement(name = "RemittanceTransactionResponse")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class TransactionQueryDTO extends ResponseDTO {
 
     @XmlElement(name = "TransactionId")
@@ -16,6 +20,6 @@ public class TransactionQueryDTO extends ResponseDTO {
     private Integer numberOfEntries;
 
     @XmlElement(name = "TransactionDetails")
-    private TransactionDTO transactionDTO;
+    private List<TransactionDTO> transactionDTO;
 
 }

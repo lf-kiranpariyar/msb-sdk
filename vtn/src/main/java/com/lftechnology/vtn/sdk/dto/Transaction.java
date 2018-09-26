@@ -4,7 +4,6 @@ import lombok.Data;
 import org.joda.time.DateTime;
 
 import javax.xml.bind.annotation.XmlElement;
-import java.math.BigDecimal;
 @Data
 public class Transaction extends Response{
     @XmlElement(name = "TransactionId")

@@ -1,8 +1,6 @@
 package com.lftechnology.vtn.sdk.dto;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.math.BigDecimal;

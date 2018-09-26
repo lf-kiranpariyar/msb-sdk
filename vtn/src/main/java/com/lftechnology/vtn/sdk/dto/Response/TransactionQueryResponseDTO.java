@@ -20,6 +20,6 @@ public class TransactionQueryDTO extends ResponseDTO {
     private Integer numberOfEntries;
 
     @XmlElement(name = "TransactionDetails")
-    private List<TransactionDTO> transactionDTO;
+    private List<TransactionResponseDTO> transactionResponseDTO;
 
 }

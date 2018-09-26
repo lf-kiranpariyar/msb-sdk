@@ -1,14 +1,22 @@
 package com.lftechnology.vtn.sdk.services;
 
-import com.lftechnology.vtn.sdk.dto.Account;
-import com.lftechnology.vtn.sdk.dto.Balance;
+
+import com.lftechnology.vtn.sdk.dto.Response.AccountStatusResponseDTO;
+import com.lftechnology.vtn.sdk.dto.Response.BankNameQueryDTO;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 public interface AccountApiService {
 
     @POST("RemittanceAccountStatus.asp")
-    Call<Account> getAccount(@Body Account account);
+    @FormUrlEncoded
+    Call<AccountStatusResponseDTO> getAccount(@Field("AccessToken") String accessToken,
+                                              @Field("AccessKey") String accessKey,
+                                              @Field("Email") String email
+                             );
+
+
 }

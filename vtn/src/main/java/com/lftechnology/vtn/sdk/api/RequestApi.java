@@ -1,7 +1,6 @@
 package com.lftechnology.vtn.sdk.api;
 
 import com.lftechnology.vtn.sdk.constants.CommonConstant;
-import com.lftechnology.vtn.sdk.dto.Credential;
 import okhttp3.*;
 import retrofit2.Retrofit;
 import retrofit2.converter.jaxb.JaxbConverterFactory;
@@ -33,19 +32,16 @@ public class RequestApi {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(new Interceptor() {
-            public Response intercept(Chain chain) throws IOException {
-                Request original;
-                original = chain.request();
+
+            @Override
+            public Response intercept(Interceptor.Chain chain) throws IOException {
+                Request original = chain.request();
+
                 Request.Builder requestBuilder = original.newBuilder();
 
-                RequestBody credential
-                        = new FormBody.Builder()
-                        .add("AccessToken", Credential.getAccessToken())
-                        .add("AccessKey", Credential.getAccessKey())
-                        .build();
+
 
                 Request request = requestBuilder.addHeader("Content-Type", CommonConstant.CONTENT_TYPE)
-                        .post(credential)
                         .build();
 
 

@@ -1,9 +1,9 @@
 package com.lftechnology.vtn.sdk.api;
 
-import com.lftechnology.vtn.sdk.dto.Balance;
-import com.lftechnology.vtn.sdk.dto.Credential;
+
+import com.lftechnology.vtn.sdk.dto.Request.Credentials;
+import com.lftechnology.vtn.sdk.dto.Response.BalanceQueryDTO;
 import com.lftechnology.vtn.sdk.exception.ApiException;
-import com.lftechnology.vtn.sdk.exception.VtnException;
 import com.lftechnology.vtn.sdk.services.BalanceApiService;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -29,40 +29,27 @@ public class BalanceApi {
      * and map the response to Balance dto
      * @return
      */
-    public Balance getBalance() {
+    public BalanceQueryDTO getBalance(Credentials credentials) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BalanceApiService service = retrofit.create(BalanceApiService.class);
-        Call<Balance> call = service.getBalance();
-        Balance b = executeApiCall(call);
+        Call<BalanceQueryDTO> call = service.getBalance(credentials.getAccessToken(),credentials.getAccessKey());
+        BalanceQueryDTO b = executeApiCall(call);
 
 
-        if(b.getResponseCode().equals("R00"))
-        {
-            System.out.println("success response");
-            return b;
-        }
-        throw new VtnException(b.getResponseMessage(),b.getResponseCode());
+      return  b;
 
     }
 
 
-    public static void main(String[] args) {
-        System.out.println("runninigi");
-        Credential.configure("LKNgtr4Of7VmHrr7Q8JJcgbt543sFB4","MNV73Bc6655dJ8UdkG4IKNGyk82nONK4");
-        BalanceApi balanceApi = new BalanceApi();
-        Balance b = balanceApi.getBalance();
-        System.out.println(b.getResponseMessage());
-
-    }
 
     /**
      * Executes Api call and Handle any Error on Api Call
      * @param call
      * @return
      */
-    private Balance executeApiCall(Call<Balance> call) {
+    private BalanceQueryDTO executeApiCall(Call<BalanceQueryDTO> call) {
         try {
-            Response<Balance> response = call.execute();
+            Response<BalanceQueryDTO> response = call.execute();
 
             if (!response.isSuccessful()) {
                 throw new ApiException(response.errorBody().string());

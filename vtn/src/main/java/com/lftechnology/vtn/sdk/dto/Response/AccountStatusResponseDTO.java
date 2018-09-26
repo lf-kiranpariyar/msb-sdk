@@ -1,6 +1,4 @@
-package com.lftechnology.vtn.sdk.dto;
-
-import lombok.Data;
+package com.lftechnology.vtn.sdk.dto.Response;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,7 +9,9 @@ import java.util.Date;
 
 @XmlRootElement(name="RemittanceAccountStatusResponse")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Account extends Response {
+
+public class AccountStatusResponseDTO extends ResponseDTO {
+
     @XmlElement(name="FirstName")
     private String firstName;
     @XmlElement(name="LastName")
@@ -20,17 +20,11 @@ public class Account extends Response {
     private String email;
     @XmlElement(name="Phone")
     private String phone;
+
     @XmlElement(name = "DateOfBirth")
-    private Date dob;
+    private String dob;
 
 
-    public Account(String firstName, String lastName, String email, String phone, Date dob) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-        this.dob = dob;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -64,11 +58,22 @@ public class Account extends Response {
         this.phone = phone;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountStatusResponseDTO{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", dob='" + dob + '\'' +
+                '}';
     }
 }

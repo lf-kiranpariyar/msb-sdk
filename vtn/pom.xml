@@ -7,29 +7,17 @@
     <groupId>com.lftechnology</groupId>
     <artifactId>vtn-sdk</artifactId>
     <version>0.0.1</version>
+    <packaging>jar</packaging>
 
     <properties>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <slf4j.api.version>1.7.25</slf4j.api.version>
         <maven.plugin.version>3.0.2</maven.plugin.version>
     </properties>
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.9.9</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
-            <scope>provided</scope>
-        </dependency>
+<dependencies>
 
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
@@ -37,13 +25,23 @@
             <version>RELEASE</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jaxb -->
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>converter-jaxb</artifactId>
             <version>2.4.0</version>
         </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+
+
 
     </dependencies>
 
@@ -85,6 +83,11 @@
             </plugin>
         </plugins>
     </build>
+
+
+
+
+
 
 
 </project>

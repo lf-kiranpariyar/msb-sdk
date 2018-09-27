@@ -26,7 +26,7 @@ public class ManualUpdateResponseDTO extends ResponseDTO {
     private String manualUpdateStatus;
 
     @XmlElement(name = "RevertedDate")
-
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
     private LocalDate revertedDate;
 
     @XmlElement(name = "TotalAmount")
@@ -95,6 +95,9 @@ public class ManualUpdateResponseDTO extends ResponseDTO {
                 ", revertedDate=" + revertedDate +
                 ", totalAmount=" + totalAmount +
                 ", numberOfEntries=" + numberOfEntries +
+
+                ", responseCode=" + getCode() +
+                ", responseMessage=" + getMessage() +
                 '}';
     }
 }

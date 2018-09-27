@@ -31,16 +31,8 @@ public class ManualUpdateApi {
     }
 
 
-    /**
-     * This method will call api using requestApi object and  if sucucess return AccountStatusResponseDTO and on failure it will throw an error
-     *
-     * @param account     :@see com.lftechnology.vtn.sdk.dto.Response.AccountStatusResponseDTO
-     * @param credentials :@see com.lftechnology.vtn.sdk.dto.Request.Credentials
-     * @return AccountStatusResponseDTO : return if accountStatsusResponseDto code is R00
-     */
 
-
-    public ManualUpdateListResponseDTO getStatus(Credentials credentials,String transactionId) {
+    public ManualUpdateListResponseDTO getUpdateStatus(Credentials credentials,String transactionId) {
 
 
         Retrofit retrofit = this.requestApi.getRetrofitObject();
@@ -49,38 +41,28 @@ public class ManualUpdateApi {
         ManualUpdateService service = retrofit.create(ManualUpdateService.class);
 
 
-        Call<ManualUpdateListResponseDTO> call = service.getStatus(credentials.getAccessToken(), credentials.getAccessKey(), transactionId);
+        Call<ManualUpdateListResponseDTO> call = service.getUpdateStatus(credentials.getAccessToken(), credentials.getAccessKey(), transactionId);
 
 
 
 
 
         ManualUpdateListResponseDTO manualUpdateListResponseDTO = executeApiCall(call);
-        System.out.println(manualUpdateListResponseDTO.getTransaction()+"fsalkfj");
 
 
-//        if (manualUpdateListResponseDTO.getCode().equals("R00")) {
-//
-//
-//            return accountStatusResponseDTO;
-//
-//
-//        }
-//
-//
-//        throw new VtnException(accountStatusResponseDTO.getMessage(), accountStatusResponseDTO.getCode());
-//
-        return  manualUpdateListResponseDTO;
+        if (manualUpdateListResponseDTO.getCode().equals("R00")) {
+
+
+            return  manualUpdateListResponseDTO;
+
+        }
+
+return manualUpdateListResponseDTO;
+//        throw new VtnException(manualUpdateListResponseDTO.getMessage(), manualUpdateListResponseDTO.getCode());
+
+
 
     }
-
-
-
-
-//
-
-
-//
 
     /**
      * //
@@ -124,19 +106,6 @@ public class ManualUpdateApi {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

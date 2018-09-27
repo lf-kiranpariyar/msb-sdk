@@ -12,7 +12,6 @@ public class FxRateApiTest {
         FxRateApi fxRateApi  = new FxRateApi();
         FxRateResponseDTO fxRateResponseDTO = fxRateApi.getRate(c,"USD");
         System.out.println(fxRateResponseDTO.toString());
-        System.out.println(fxRateResponseDTO.getCode());
 
     }
 

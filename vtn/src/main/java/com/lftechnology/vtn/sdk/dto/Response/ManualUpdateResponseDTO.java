@@ -88,4 +88,18 @@ public class ManualUpdateResponseDTO extends ResponseDTO {
     public void setNumberOfEntries(Integer numberOfEntries) {
         this.numberOfEntries = numberOfEntries;
     }
+
+    @Override
+    public String toString() {
+        return "ManualUpdateResponseDTO{" +
+                "transactionId='" + transactionId + '\'' +
+                ", revertStatus='" + revertStatus + '\'' +
+                ", manualUpdateStatus='" + manualUpdateStatus + '\'' +
+                ", revertedDate=" + revertedDate +
+                ", totalAmount=" + totalAmount +
+                ", numberOfEntries=" + numberOfEntries +
+                ", responseCode=" + getCode() +
+                ", responseMessage=" + getMessage() +
+                '}';
+    }
 }

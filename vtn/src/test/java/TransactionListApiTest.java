@@ -11,10 +11,8 @@ public class TransactionListApiTest {
     @Test
     public void checkTransaction(){
         Credentials credentials =new Credentials("LKNgtr4Of7VmHrr7Q8JJcgbt543sFB4","MNV73Bc6655dJ8UdkG4IKNGyk82nONK4");
-        TransactionListRequestDTO transactionListRequestDTO;
-        transactionListRequestDTO = new TransactionListRequestDTO("a6c3055c-bbed-11e8-a355-529269fb1459");
         TransactionListApi transactionListApi = new TransactionListApi();
-        TransactionListResponseDTO transactionListResponseDTO = transactionListApi.retrieveTransaction(credentials,transactionListRequestDTO);
+        TransactionListResponseDTO transactionListResponseDTO = transactionListApi.retrieveTransaction(credentials,"a6c3055c-bbed-11e8-a355-529269fb1455");
         System.out.println(transactionListResponseDTO.toString());
     }
 }

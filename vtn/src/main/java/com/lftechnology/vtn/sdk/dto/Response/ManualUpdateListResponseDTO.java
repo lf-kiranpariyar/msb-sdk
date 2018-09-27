@@ -11,17 +11,13 @@ import java.util.List;
 public class ManualUpdateListResponseDTO {
 
     @XmlElement(name = "TransactionDetails" )
-    private List<ManualUpdateResponseDTO> transactionList;
+    private ManualUpdateResponseDTO transaction;
 
-    public ManualUpdateListResponseDTO(List<ManualUpdateResponseDTO> transactionList) {
-        this.transactionList = transactionList;
+    public ManualUpdateResponseDTO getTransaction() {
+        return transaction;
     }
 
-    public List<ManualUpdateResponseDTO> getTransactionList() {
-        return transactionList;
-    }
-
-    public void setTransactionList(List<ManualUpdateResponseDTO> transactionList) {
-        this.transactionList = transactionList;
+    public void setTransaction(ManualUpdateResponseDTO transaction) {
+        this.transaction = transaction;
     }
 }

@@ -25,6 +25,7 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
      */
     @Override
     public LocalDate unmarshal(String string) {
+
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
         LocalDate date = LocalDate.parse(string, formatter);
 

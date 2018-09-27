@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class TransactionListRequestDTO extends Credentials{
+public class TransactionListRequestDTO {
 
 
 

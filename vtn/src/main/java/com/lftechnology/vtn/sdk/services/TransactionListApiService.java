@@ -10,7 +10,7 @@ public interface TransactionListApiService {
 
     @POST("RemittanceTransactionStatus.asp")
     @FormUrlEncoded
-    Call<TransactionListResponseDTO> retrieveTransaction(@Field("AccessToken") String accessToken,
+    Call<TransactionListResponseDTO> getTransaction(@Field("AccessToken") String accessToken,
                                                          @Field("AccessKey") String accessKey,
                                                          @Field("TransactionId") String transactionId );
 

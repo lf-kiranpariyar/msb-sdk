@@ -1,7 +1,6 @@
 package com.lftechnology.vtn.sdk.api;
 
 import com.lftechnology.vtn.sdk.dto.Request.Credentials;
-import com.lftechnology.vtn.sdk.dto.Request.TransactionListRequestDTO;
 import com.lftechnology.vtn.sdk.dto.Response.TransactionListResponseDTO;
 import com.lftechnology.vtn.sdk.exception.ApiException;
 import com.lftechnology.vtn.sdk.exception.VtnException;
@@ -16,24 +15,21 @@ public class TransactionListApi {
 
     private RequestApi requestApi;
 
-    public TransactionListApi(){
+    public TransactionListApi() {
         this.requestApi = new RequestApi();
     }
 
-    public TransactionListResponseDTO retrieveTransaction(Credentials credentials, TransactionListRequestDTO transactionListRequestDTO) {
+    public TransactionListResponseDTO retrieveTransaction(Credentials credentials, String transactionId) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         TransactionListApiService service = retrofit.create(TransactionListApiService.class);
-        Call<TransactionListResponseDTO> call = service.retrieveTransaction(credentials.getAccessToken(),credentials.getAccessKey(),
-                transactionListRequestDTO.getTransactionId() );
+        Call<TransactionListResponseDTO> call = service.getTransaction(credentials.getAccessToken(), credentials.getAccessKey(), transactionId);
         TransactionListResponseDTO transactionListResponseDTO = executeApiCall(call);
-        if(transactionListResponseDTO.getCode().equals("R00")){
+        if (transactionListResponseDTO.getCode().equals("R00")) {
             return transactionListResponseDTO;
         }
 
-        throw  new VtnException(transactionListResponseDTO.getMessage(),transactionListResponseDTO.getCode());
-
+        throw new VtnException(transactionListResponseDTO.getMessage(), transactionListResponseDTO.getCode());
     }
-
 
 
     private TransactionListResponseDTO executeApiCall(Call<TransactionListResponseDTO> call) {

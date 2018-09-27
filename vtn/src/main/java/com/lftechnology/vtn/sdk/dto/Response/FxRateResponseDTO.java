@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 
 
 @XmlRootElement(name="FxRatesResponse")
-
+@XmlAccessorType(XmlAccessType.FIELD)
 public class FxRateResponseDTO extends ResponseDTO {
 
     @XmlElement(name = "ExchangeRates")

@@ -33,7 +33,8 @@ public class BankApi {
      * @param credentials :@see com.lftechnology.vtn.sdk.dto.Request.Credentials
      * @return
      */
-    public BankResponseDTO verifyBank(BankRequestDTO bankRequestDTO, Credentials credentials) {
+    public BankResponseDTO verifyBank(BankRequestDTO bankRequestDTO, Credentials credentials){
+
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BankApiService service = retrofit.create(BankApiService.class);
         String accessToken = credentials.getAccessToken();

@@ -10,12 +10,12 @@ import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ExchangeRate {
+
 
     @XmlElement(name = "RateDate")
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
@@ -38,7 +38,6 @@ public class ExchangeRate {
     @XmlElement(name = "SellingRate")
     @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal sellingRate;
-
 
     public LocalDate getRateDate() {
         return rateDate;

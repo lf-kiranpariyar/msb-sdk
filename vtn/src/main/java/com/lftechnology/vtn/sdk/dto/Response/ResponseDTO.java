@@ -11,6 +11,9 @@ public class ResponseDTO {
     @XmlElement(name="ResponseCode")
     private String code;
 
+    @XmlElement(name="ResponseMessage")
+    private String message;
+
     public String getCode() {
         return code;
     }
@@ -27,6 +30,12 @@ public class ResponseDTO {
         this.message = message;
     }
 
-    @XmlElement(name="ResponseMessage")
-    private String message;
+    @Override
+    public String toString() {
+        return "ResponseDTO{" +
+                "code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
+
 }

@@ -34,6 +34,7 @@ public class TransactionApi {
                 transactionRequestDTO.getAccountNumber(),transactionRequestDTO.getBankAccountName(),transactionRequestDTO.getBankName()
         );
         TransactionResponseDTO transactionResponseDTO = executeApiCall(call);
+        System.out.println(transactionResponseDTO.getCode());
         if(transactionResponseDTO.getCode().equals("R00")){
             return transactionResponseDTO;
         }

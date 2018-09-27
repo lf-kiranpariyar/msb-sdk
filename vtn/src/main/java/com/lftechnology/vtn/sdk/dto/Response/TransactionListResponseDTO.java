@@ -2,10 +2,7 @@ package com.lftechnology.vtn.sdk.dto.Response;
 
 
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 
@@ -19,7 +16,8 @@ public class TransactionListResponseDTO extends ResponseDTO {
     @XmlElement(name = "NumberOfEntries")
     private Integer numberOfEntries;
 
-    @XmlElement(name = "TransactionDetails")
+    @XmlElementWrapper(name = "TransactionDetails" )
+    @XmlElement(name="Transaction")
     private List<TransactionResponseDTO> transactionResponseDTO;
 
     public String getTransactionId() {

@@ -34,13 +34,15 @@ public class TransactionApi {
                 transactionRequestDTO.getAccountNumber(),transactionRequestDTO.getBankAccountName(),transactionRequestDTO.getBankName()
         );
         TransactionResponseDTO transactionResponseDTO = executeApiCall(call);
+        System.out.println(transactionResponseDTO.getMessage());
+        System.out.println(transactionResponseDTO.getCode());
         if(transactionResponseDTO.getCode().equals("R00")){
             return transactionResponseDTO;
         }
 
-        throw  new VtnException(transactionResponseDTO.getMessage(),transactionResponseDTO.getCode());
+//        throw  new VtnException(transactionResponseDTO.getMessage(),transactionResponseDTO.getCode());
 
-
+return transactionResponseDTO;
 
     }
 

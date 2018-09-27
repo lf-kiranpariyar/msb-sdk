@@ -11,6 +11,8 @@ import retrofit2.http.POST;
 public interface ManualUpdateService {
     @POST("ManualUpdateStatus.asp")
     @FormUrlEncoded
-    Call<ManualUpdateListResponseDTO> getStatus(@Field("AccessToken") String accessToken, @Field("AccessKey") String accessKey, @Field("TransactionId") String transactionId);
+    Call<ManualUpdateListResponseDTO> getStatus(@Field("AccessToken") String accessToken,
+                                                @Field("AccessKey") String accessKey,
+                                                @Field("TransactionId") String transactionId);
 
 }

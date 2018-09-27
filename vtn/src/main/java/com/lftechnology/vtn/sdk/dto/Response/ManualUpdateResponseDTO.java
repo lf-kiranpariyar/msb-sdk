@@ -15,8 +15,6 @@ import java.time.LocalDate;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ManualUpdateResponseDTO extends ResponseDTO {
 
-    public ManualUpdateResponseDTO() {
-    }
 
     @XmlElement(name="TransactionId")
     private String transactionId;
@@ -28,11 +26,10 @@ public class ManualUpdateResponseDTO extends ResponseDTO {
     private String manualUpdateStatus;
 
     @XmlElement(name = "RevertedDate")
-    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+
     private LocalDate revertedDate;
 
     @XmlElement(name = "TotalAmount")
-    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal totalAmount;
 
     @XmlElement(name = "NumberOfEntries")
@@ -87,5 +84,17 @@ public class ManualUpdateResponseDTO extends ResponseDTO {
 
     public void setNumberOfEntries(Integer numberOfEntries) {
         this.numberOfEntries = numberOfEntries;
+    }
+
+    @Override
+    public String toString() {
+        return "ManualUpdateResponseDTO{" +
+                "transactionId='" + transactionId + '\'' +
+                ", revertStatus='" + revertStatus + '\'' +
+                ", manualUpdateStatus='" + manualUpdateStatus + '\'' +
+                ", revertedDate=" + revertedDate +
+                ", totalAmount=" + totalAmount +
+                ", numberOfEntries=" + numberOfEntries +
+                '}';
     }
 }

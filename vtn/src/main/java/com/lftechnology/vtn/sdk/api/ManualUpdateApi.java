@@ -18,55 +18,125 @@ import java.io.IOException;
 
 public class ManualUpdateApi {
 
+
     private RequestApi requestApi;
+
 
     public ManualUpdateApi() {
 
+
         this.requestApi = new RequestApi();
+
+
     }
 
 
     /**
+     * This method will call api using requestApi object and  if sucucess return AccountStatusResponseDTO and on failure it will throw an error
      *
+     * @param account     :@see com.lftechnology.vtn.sdk.dto.Response.AccountStatusResponseDTO
      * @param credentials :@see com.lftechnology.vtn.sdk.dto.Request.Credentials
-     * @param transactionId :it of recent transaction
-     * @return
+     * @return AccountStatusResponseDTO : return if accountStatsusResponseDto code is R00
      */
-    public ManualUpdateListResponseDTO getStatus(Credentials credentials, String transactionId) {
+
+
+    public ManualUpdateListResponseDTO getStatus(Credentials credentials,String transactionId) {
+
+
         Retrofit retrofit = this.requestApi.getRetrofitObject();
+
+
         ManualUpdateService service = retrofit.create(ManualUpdateService.class);
+
+
         Call<ManualUpdateListResponseDTO> call = service.getStatus(credentials.getAccessToken(), credentials.getAccessKey(), transactionId);
 
+
+
+
+
         ManualUpdateListResponseDTO manualUpdateListResponseDTO = executeApiCall(call);
-        System.out.println(manualUpdateListResponseDTO.getTransaction().getCode());
-        if (manualUpdateListResponseDTO.getTransaction().getCode().equals("R00")) {
-            return manualUpdateListResponseDTO;
-        }
-        throw new VtnException(manualUpdateListResponseDTO.getTransaction().getMessage(), manualUpdateListResponseDTO.getTransaction().getCode());
+        System.out.println(manualUpdateListResponseDTO.getTransaction()+"fsalkfj");
+
+
+//        if (manualUpdateListResponseDTO.getCode().equals("R00")) {
+//
+//
+//            return accountStatusResponseDTO;
+//
+//
+//        }
+//
+//
+//        throw new VtnException(accountStatusResponseDTO.getMessage(), accountStatusResponseDTO.getCode());
+//
+        return  manualUpdateListResponseDTO;
 
     }
 
 
+
+
+//
+
+
+//
+
     /**
+     * //
      * exceute request and mapped to response dto
      *
      * @param call
-     * @return ManualUpdateResponseDTO if response is sucessful
+     * @return AccountStatusResponseDTO if response is sucessful
      */
+
+
     private ManualUpdateListResponseDTO executeApiCall(Call<ManualUpdateListResponseDTO> call) {
+
+
         try {
+
+
             Response<ManualUpdateListResponseDTO> response = call.execute();
-            System.out.println(response.body().getTransaction().toString());
+
 
             if (!response.isSuccessful()) {
+
+
                 throw new ApiException(response.errorBody().string());
+
+
             }
 
+
             return response.body();
+
+
         } catch (IOException e) {
+
+
             throw new ApiException();
+
+
         }
+
+
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

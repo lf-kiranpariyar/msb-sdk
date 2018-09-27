@@ -22,7 +22,9 @@ public class BigDecimalAdapter extends XmlAdapter<String, BigDecimal> {
     @Override
     public BigDecimal unmarshal(String string) throws Exception {
 
+        System.out.println(string);
         BigDecimal decimalCurrency = new BigDecimal(string.replaceAll(",", ""));
+        System.out.println(decimalCurrency);
         return decimalCurrency;
     }
 

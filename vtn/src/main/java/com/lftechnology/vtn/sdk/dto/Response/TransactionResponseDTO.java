@@ -1,11 +1,16 @@
 package com.lftechnology.vtn.sdk.dto.Response;
 
 
+import com.lftechnology.vtn.sdk.utils.BigDecimalAdapter;
+import com.lftechnology.vtn.sdk.utils.LocalDateAdapter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 
 @XmlRootElement(name="RemittanceResponse")
@@ -16,7 +21,8 @@ public class TransactionResponseDTO extends ResponseDTO {
     private String transactionId;
 
     @XmlElement(name = "TransferDate")
-    private String transferDate;
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate transferDate;
 
     @XmlElement(name = "TransferType")
     private Integer transferType;
@@ -37,10 +43,12 @@ public class TransactionResponseDTO extends ResponseDTO {
     private String currency;
 
     @XmlElement(name = "Amount")
-    private String ammount;
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
+    private BigDecimal ammount;
 
     @XmlElement(name = "AmmountInNaira")
-    private String ammountInNaira;
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
+    private BigDecimal ammountInNaira;
 
     @XmlElement(name = "BankAccountNumber")
     private String accountNumber;
@@ -65,11 +73,11 @@ public class TransactionResponseDTO extends ResponseDTO {
         this.transactionId = transactionId;
     }
 
-    public String getTransferDate() {
+    public LocalDate getTransferDate() {
         return transferDate;
     }
 
-    public void setTransferDate(String transferDate) {
+    public void setTransferDate(LocalDate transferDate) {
         this.transferDate = transferDate;
     }
 
@@ -121,19 +129,19 @@ public class TransactionResponseDTO extends ResponseDTO {
         this.currency = currency;
     }
 
-    public String getAmmount() {
+    public BigDecimal getAmmount() {
         return ammount;
     }
 
-    public void setAmmount(String ammount) {
+    public void setAmmount(BigDecimal ammount) {
         this.ammount = ammount;
     }
 
-    public String getAmmountInNaira() {
+    public BigDecimal getAmmountInNaira() {
         return ammountInNaira;
     }
 
-    public void setAmmountInNaira(String ammountInNaira) {
+    public void setAmmountInNaira(BigDecimal ammountInNaira) {
         this.ammountInNaira = ammountInNaira;
     }
 
@@ -194,7 +202,9 @@ public class TransactionResponseDTO extends ResponseDTO {
                 ", bankAccountName='" + bankAccountName + '\'' +
                 ", bankName='" + bankName + '\'' +
                 ", notificationMessage='" + notificationMessage + '\'' +
-                ", transactionStatus=" + transactionStatus +
+                ", transactionStatus=" + transactionStatus + '\'' +
+                ", responseCode=" + getCode() + '\'' +
+                ", response message=" + getMessage() +
                 '}';
     }
 }

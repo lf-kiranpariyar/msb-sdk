@@ -20,14 +20,15 @@ public class BankApi {
     }
 
 
-    public BankResponseDTO verifyBank(BankRequestDTO bankNameRequestDTO) {
+
+    public BankResponseDTO verifyBank(BankRequestDTO bankRequestDTO) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BankApiService service = retrofit.create(BankApiService.class);
-        String accessToken = bankNameRequestDTO.getAccessToken();
-        String accessKey = bankNameRequestDTO.getAccessKey();
-        String bankName = bankNameRequestDTO.getBankName();
-        String bankAccountName = bankNameRequestDTO.getBankAccountName();
-        String bankAccountNum = bankNameRequestDTO.getBankAccountNumber();
+        String accessToken = bankRequestDTO.getAccessToken();
+        String accessKey = bankRequestDTO.getAccessKey();
+        String bankName = bankRequestDTO.getBankName();
+        String bankAccountName = bankRequestDTO.getBankAccountName();
+        String bankAccountNum = bankRequestDTO.getBankAccountNumber();
         Call<BankResponseDTO> call = service.verifyBank(accessToken,accessKey,bankName,bankAccountName,bankAccountNum);
         return executeApiCall(call);
     }

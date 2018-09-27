@@ -16,7 +16,6 @@ public class TransactionRequestDTO extends Credentials{
     @XmlElement(name = "TransactionId")
     private String transactionId;
 
-    @Xml
     @XmlElement(name = "TransferDate")
     private LocalDate transferDate;
 
@@ -77,8 +76,7 @@ public class TransactionRequestDTO extends Credentials{
     @XmlElement(name = "BankName")
     private String bankName;
 
-
-    public TransactionRequestDTO(String transactionId, LocalDateTime transferDate, Integer transferType, String senderEmail, String senderPhone, String senderFirstName, String senderLastName, String senderCountry, String receiverEmail, String receiverPhone, String receiverFirstName, String getReceiverLastName, String receiverCountry, String currencyCode, int ammountInSenderCountry, double ammountInNaira, int feeInSenderCountry, int feeInNaira, String accountNumber, String bankAccountName, String bankName) {
+    public TransactionRequestDTO(String transactionId, LocalDate transferDate, Integer transferType, String senderEmail, String senderPhone, String senderFirstName, String senderLastName, String senderCountry, String receiverEmail, String receiverPhone, String receiverFirstName, String getReceiverLastName, String receiverCountry, String currencyCode, BigDecimal ammountInSenderCountry, BigDecimal ammountInNaira, BigDecimal feeInSenderCountry, BigDecimal feeInNaira, String accountNumber, String bankAccountName, String bankName) {
         this.transactionId = transactionId;
         this.transferDate = transferDate;
         this.transferType = transferType;
@@ -102,10 +100,6 @@ public class TransactionRequestDTO extends Credentials{
         this.bankName = bankName;
     }
 
-
-
-
-
     public String getTransactionId() {
         return transactionId;
     }
@@ -114,11 +108,11 @@ public class TransactionRequestDTO extends Credentials{
         this.transactionId = transactionId;
     }
 
-    public LocalDateTime getTransferDate() {
+    public LocalDate getTransferDate() {
         return transferDate;
     }
 
-    public void setTransferDate(LocalDateTime transferDate) {
+    public void setTransferDate(LocalDate transferDate) {
         this.transferDate = transferDate;
     }
 
@@ -272,5 +266,32 @@ public class TransactionRequestDTO extends Credentials{
 
     public void setBankName(String bankName) {
         this.bankName = bankName;
+    }
+
+    @Override
+    public String toString() {
+        return "TransactionRequestDTO{" +
+                "transactionId='" + transactionId + '\'' +
+                ", transferDate=" + transferDate +
+                ", transferType=" + transferType +
+                ", senderEmail='" + senderEmail + '\'' +
+                ", senderPhone='" + senderPhone + '\'' +
+                ", senderFirstName='" + senderFirstName + '\'' +
+                ", senderLastName='" + senderLastName + '\'' +
+                ", senderCountry='" + senderCountry + '\'' +
+                ", receiverEmail='" + receiverEmail + '\'' +
+                ", receiverPhone='" + receiverPhone + '\'' +
+                ", receiverFirstName='" + receiverFirstName + '\'' +
+                ", getReceiverLastName='" + getReceiverLastName + '\'' +
+                ", receiverCountry='" + receiverCountry + '\'' +
+                ", currencyCode='" + currencyCode + '\'' +
+                ", ammountInSenderCountry=" + ammountInSenderCountry +
+                ", ammountInNaira=" + ammountInNaira +
+                ", feeInSenderCountry=" + feeInSenderCountry +
+                ", feeInNaira=" + feeInNaira +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", bankAccountName='" + bankAccountName + '\'' +
+                ", bankName='" + bankName + '\'' +
+                '}';
     }
 }

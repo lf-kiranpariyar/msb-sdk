@@ -8,7 +8,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public interface TransactionApiService {
 
@@ -18,7 +18,7 @@ public interface TransactionApiService {
     Call<TransactionResponseDTO> createTransaction(@Field("AccessToken") String accessToken,
                                             @Field("AccessKey") String accessKey,
                                             @Field("TransactionId") String transactionId,
-                                            @Field("TransferDate") LocalDateTime transferDate,
+                                            @Field("TransferDate") LocalDate transferDate,
                                             @Field("TransferType") Integer transferType,
                                             @Field("SenderEmail") String senderEmail,
                                             @Field("SenderPhone") String senderPhone,

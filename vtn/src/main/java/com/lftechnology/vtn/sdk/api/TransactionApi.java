@@ -41,11 +41,6 @@ public class TransactionApi {
 
 
 
-    /**
-     * Executes Api call and Handle any Error on Api Call
-     * @param call
-     * @return
-     */
     private TransactionResponseDTO executeApiCall(Call<TransactionResponseDTO> call) {
         try {
             Response<TransactionResponseDTO> response = call.execute();

@@ -3,23 +3,47 @@ package com.lftechnology.vtn.sdk.dto.Response;
 
 
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import com.lftechnology.vtn.sdk.utils.BigDecimalAdapter;
+import com.lftechnology.vtn.sdk.utils.LocalDateAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
-@XmlRootElement(name = "ExchangeRates")
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ExchangeRate {
 
-    public LocalDateTime getRateDate() {
+
+    @XmlElement(name = "RateDate")
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate rateDate;
+
+    @XmlElement(name = "CurrencyName")
+    private String currencyName;
+
+    @XmlElement(name = "CurrencyCode")
+    private String currencyCode;
+
+    @XmlElement(name = "BuyingRate")
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
+    private BigDecimal buyingRate;
+
+    @XmlElement(name = "CentralRate")
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
+    private BigDecimal centralRate;
+
+    @XmlElement(name = "SellingRate")
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
+    private BigDecimal sellingRate;
+
+    public LocalDate getRateDate() {
         return rateDate;
     }
 
-    public void setRateDate(LocalDateTime rateDate) {
+    public void setRateDate(LocalDate rateDate) {
         this.rateDate = rateDate;
     }
 
@@ -63,22 +87,15 @@ public class ExchangeRate {
         this.sellingRate = sellingRate;
     }
 
-    @XmlElement(name = "RateDate")
-    private LocalDateTime rateDate;
-
-    @XmlElement(name = "CurrencyName")
-    private String currencyName;
-
-    @XmlElement(name = "CurrencyCode")
-    private String currencyCode;
-
-    @XmlElement(name = "BuyingRate")
-    private BigDecimal buyingRate;
-
-    @XmlElement(name = "CentralRate")
-    private BigDecimal centralRate;
-
-    @XmlElement(name = "SellingRate")
-    private BigDecimal sellingRate;
-
+    @Override
+    public String toString() {
+        return "ExchangeRate{" +
+                "rateDate=" + rateDate +
+                ", currencyName='" + currencyName + '\'' +
+                ", currencyCode='" + currencyCode + '\'' +
+                ", buyingRate=" + buyingRate +
+                ", centralRate=" + centralRate +
+                ", sellingRate=" + sellingRate +
+                '}';
+    }
 }

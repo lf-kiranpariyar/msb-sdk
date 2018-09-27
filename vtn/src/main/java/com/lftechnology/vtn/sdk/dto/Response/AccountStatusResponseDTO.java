@@ -1,9 +1,13 @@
 package com.lftechnology.vtn.sdk.dto.Response;
 
+import com.lftechnology.vtn.sdk.utils.LocalDateAdapter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -22,7 +26,8 @@ public class AccountStatusResponseDTO extends ResponseDTO {
     private String phone;
 
     @XmlElement(name = "DateOfBirth")
-    private String dob;
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate dob;
 
 
 
@@ -58,12 +63,17 @@ public class AccountStatusResponseDTO extends ResponseDTO {
         this.phone = phone;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
+    }
+
+    @Override
+    public String getMessage() {
+        return super.getMessage();
     }
 
     @Override

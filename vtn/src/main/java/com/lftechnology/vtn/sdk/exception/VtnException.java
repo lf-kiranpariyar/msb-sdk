@@ -27,7 +27,7 @@ public class VtnException extends RuntimeException {
         super(message);
     }
     public VtnException(String message, String code) {
-        super(message);
+        this.message=message;
         this.code = code;
     }
 

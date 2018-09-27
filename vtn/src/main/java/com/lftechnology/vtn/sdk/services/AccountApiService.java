@@ -13,8 +13,7 @@ public interface AccountApiService {
     @FormUrlEncoded
     Call<AccountStatusResponseDTO> getAccount(@Field("AccessToken") String accessToken,
                                               @Field("AccessKey") String accessKey,
-                                              @Field("Email") String email
-                             );
+                                              @Field("Email") String email);
 
 
 }

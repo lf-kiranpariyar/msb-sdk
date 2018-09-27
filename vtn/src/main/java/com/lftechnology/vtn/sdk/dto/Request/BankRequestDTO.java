@@ -6,12 +6,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BankRequestDTO extends Credentials{
+public class BankRequestDTO {
     public BankRequestDTO() {
     }
 
-    public BankRequestDTO(String bankAccountNumber, String bankAccountName, String bankName , String accessToken , String accessKey) {
-        super(accessToken,accessKey);
+    public BankRequestDTO(String bankAccountNumber, String bankAccountName, String bankName) {
         this.bankAccountNumber = bankAccountNumber;
         this.bankAccountName = bankAccountName;
         this.bankName = bankName;

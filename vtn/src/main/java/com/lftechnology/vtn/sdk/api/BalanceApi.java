@@ -4,6 +4,7 @@ package com.lftechnology.vtn.sdk.api;
 import com.lftechnology.vtn.sdk.dto.Request.Credentials;
 import com.lftechnology.vtn.sdk.dto.Response.BalanceResponseDTO;
 import com.lftechnology.vtn.sdk.exception.ApiException;
+import com.lftechnology.vtn.sdk.exception.VtnException;
 import com.lftechnology.vtn.sdk.services.BalanceApiService;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -25,18 +26,18 @@ public class BalanceApi {
     }
 
     /**
-     * Request on this <a>https://www.VirtualTerminalNetwork.com/API/RemittanceBalanceStatus.asp</a> with Crendential
-     * and map the response to Balance dto
-     * @return
+     * This method is used to get Balance from API
+     * @param credentials :Take accessToken and accessKey only
+     * @return BalanceResponceDTO : return only if there responce code is R00
      */
     public BalanceResponseDTO getBalance(Credentials credentials) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BalanceApiService service = retrofit.create(BalanceApiService.class);
         Call<BalanceResponseDTO> call = service.getBalance(credentials.getAccessToken(),credentials.getAccessKey());
-        BalanceResponseDTO b = executeApiCall(call);
-
-
-      return  b;
+        BalanceResponseDTO balanceResponseDTO = executeApiCall(call);
+        if(balanceResponseDTO.getCode().equals("R00"))
+            return balanceResponseDTO;
+        throw new VtnException(balanceResponseDTO.getMessage(),balanceResponseDTO.getCode());
 
     }
 

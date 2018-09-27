@@ -1,7 +1,10 @@
 package com.lftechnology.vtn.sdk.api;
 
 import com.lftechnology.vtn.sdk.constants.CommonConstant;
-import okhttp3.*;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jaxb.JaxbConverterFactory;
 
@@ -16,8 +19,8 @@ public class RequestApi {
 
     private String baseUrl;
 
-    public RequestApi(){
-        this.baseUrl =CommonConstant.BASE_URL;
+    public RequestApi() {
+        this.baseUrl = CommonConstant.BASE_URL;
 
     }
 
@@ -28,7 +31,7 @@ public class RequestApi {
      *
      * @return : Retrofit objcect
      */
-    public Retrofit getRetrofitObject(){
+    public Retrofit getRetrofitObject() {
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(new Interceptor() {
@@ -36,19 +39,12 @@ public class RequestApi {
             @Override
             public Response intercept(Interceptor.Chain chain) throws IOException {
                 Request original = chain.request();
-
                 Request.Builder requestBuilder = original.newBuilder();
-
-
-
                 Request request = requestBuilder.addHeader("Content-Type", CommonConstant.CONTENT_TYPE)
                         .build();
-
-
                 return chain.proceed(request);
             }
         });
-
 
 
         return new Retrofit

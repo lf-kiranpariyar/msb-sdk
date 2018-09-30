@@ -66,6 +66,7 @@ public class RequestApi {
                 request = requestBuilder
                         .post(RequestBody.create(MediaType.parse("application/x-www-form-urlencoded;charset=UTF-8"), postBodyString))
                         .build();
+
                 return chain.proceed(request);
             }
         });
@@ -100,6 +101,12 @@ public class RequestApi {
         }
     }
 
+    /**
+     * This generic method will excute call object
+     * @param call
+     * @param <T>
+     * @return
+     */
     public <T> T executeApiCall(Call<T> call) {
         try {
             retrofit2.Response<T> response = call.execute();

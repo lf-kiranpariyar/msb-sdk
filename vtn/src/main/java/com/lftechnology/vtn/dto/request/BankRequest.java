@@ -39,5 +39,6 @@ public class BankRequest {
     public void setBankName(String bankName) {
         this.bankName = bankName;
     }
+
 }
 

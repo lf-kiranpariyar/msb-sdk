@@ -3,6 +3,8 @@ package com.lftechnology.vtn.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.vtn.serializer.LocalDateSearializer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,6 +16,7 @@ public class TransactionRequest extends Credential {
     private String transactionId;
 
     @JsonProperty(value = "TransferDate")
+    @JsonSerialize(using = LocalDateSearializer.class)
     private LocalDate transferDate;
 
     @JsonProperty(value = "TransferType")
@@ -44,7 +47,7 @@ public class TransactionRequest extends Credential {
     private String receiverFirstName;
 
     @JsonProperty(value = "ReceiverLastName")
-    private String getReceiverLastName;
+    private String receiverLastName;
 
     @JsonProperty(value = "ReceiverCountry")
     private String receiverCountry;
@@ -52,20 +55,20 @@ public class TransactionRequest extends Credential {
     @JsonProperty(value = "CurrencyCode")
     private String currencyCode;
 
-    @JsonProperty(value = "AmountInSenderCountry")
-    private BigDecimal ammountInSenderCountry;
+    @JsonProperty(value = "AmountInSenderCurrency")
+    private BigDecimal amountInSenderCurrency;
 
-    @JsonProperty(value = "AmmountInNaira")
-    private BigDecimal ammountInNaira;
+    @JsonProperty(value = "AmountInNaira")
+    private BigDecimal amountInNaira;
 
-    @JsonProperty(value = "FeeInSenderCountry")
-    private BigDecimal feeInSenderCountry;
+    @JsonProperty(value = "FeeInSenderCurrency")
+    private BigDecimal feeInSenderCurrency;
 
     @JsonProperty(value = "FeeInNaira")
     private BigDecimal feeInNaira;
 
     @JsonProperty(value = "BankAccountNumber")
-    private String accountNumber;
+    private String bankAccountNumber;
 
     @JsonProperty(value = "BankAccountName")
     private String bankAccountName;
@@ -163,11 +166,11 @@ public class TransactionRequest extends Credential {
     }
 
     public String getGetReceiverLastName() {
-        return getReceiverLastName;
+        return receiverLastName;
     }
 
-    public void setGetReceiverLastName(String getReceiverLastName) {
-        this.getReceiverLastName = getReceiverLastName;
+    public void setReceiverLastName(String receiverLastName) {
+        this.receiverLastName = receiverLastName;
     }
 
     public String getReceiverCountry() {
@@ -186,28 +189,28 @@ public class TransactionRequest extends Credential {
         this.currencyCode = currencyCode;
     }
 
-    public BigDecimal getAmmountInSenderCountry() {
-        return ammountInSenderCountry;
+    public BigDecimal getAmountInSenderCurrency() {
+        return amountInSenderCurrency;
     }
 
-    public void setAmmountInSenderCountry(BigDecimal ammountInSenderCountry) {
-        this.ammountInSenderCountry = ammountInSenderCountry;
+    public void setAmountInSenderCurrency(BigDecimal amountInSenderCurrency) {
+        this.amountInSenderCurrency = amountInSenderCurrency;
     }
 
-    public BigDecimal getAmmountInNaira() {
-        return ammountInNaira;
+    public BigDecimal getAmountInNaira() {
+        return amountInNaira;
     }
 
-    public void setAmmountInNaira(BigDecimal ammountInNaira) {
-        this.ammountInNaira = ammountInNaira;
+    public void setAmountInNaira(BigDecimal amountInNaira) {
+        this.amountInNaira = amountInNaira;
     }
 
-    public BigDecimal getFeeInSenderCountry() {
-        return feeInSenderCountry;
+    public BigDecimal getFeeInSenderCurrency() {
+        return feeInSenderCurrency;
     }
 
-    public void setFeeInSenderCountry(BigDecimal feeInSenderCountry) {
-        this.feeInSenderCountry = feeInSenderCountry;
+    public void setFeeInSenderCurrency(BigDecimal feeInSenderCurrency) {
+        this.feeInSenderCurrency = feeInSenderCurrency;
     }
 
     public BigDecimal getFeeInNaira() {
@@ -218,12 +221,12 @@ public class TransactionRequest extends Credential {
         this.feeInNaira = feeInNaira;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public String getBankAccountNumber() {
+        return bankAccountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setBankAccountNumber(String bankAccountNumber) {
+        this.bankAccountNumber = bankAccountNumber;
     }
 
     public String getBankAccountName() {
@@ -242,6 +245,170 @@ public class TransactionRequest extends Credential {
         this.bankName = bankName;
     }
 
+
+    /**
+     * @author shankar ghimire
+     */
+    public static class Builder{
+
+        private String transactionId;
+        private LocalDate transferDate;
+        private String senderEmail;
+        private String senderPhone;
+        private String senderFirstName;
+        private String senderLastName;
+        private String senderCountry;
+        private String receiverEmail;
+        private String receiverPhone;
+        private String receiverFirstName;
+        private String receiverLastName;
+        private String receiverCountry;
+        private String currencyCode;
+        private BigDecimal ammountInSenderCurrency;
+        private BigDecimal ammountInNaira;
+        private BigDecimal feeInSenderCurrency;
+        private BigDecimal feeInNaira;
+        private String bankAccountNumber;
+        private String bankAccountName;
+        private String bankName;
+        private Integer transferType;
+
+
+        public Builder setTransactionId(String transactionId) {
+            this.transactionId = transactionId;
+            return this;
+        }
+
+        public Builder setTransferDate(LocalDate transferDate) {
+            this.transferDate = transferDate;
+            return this;
+        }
+
+        public Builder setTransferType(Integer transferType) {
+            this.transferType = transferType;
+            return this;
+        }
+
+        public Builder setSenderEmail(String senderEmail) {
+            this.senderEmail = senderEmail;
+            return this;
+        }
+
+        public Builder setSenderPhone(String senderPhone) {
+            this.senderPhone = senderPhone;
+            return this;
+        }
+
+        public Builder setSenderFirstName(String senderFirstName) {
+            this.senderFirstName = senderFirstName;
+            return this;
+        }
+
+        public Builder setSenderLastName(String senderLastName) {
+            this.senderLastName = senderLastName;
+            return this;
+        }
+
+        public Builder setSenderCountry(String senderCountry) {
+            this.senderCountry = senderCountry;
+            return this;
+        }
+
+        public Builder setReceiverEmail(String receiverEmail) {
+            this.receiverEmail = receiverEmail;
+            return this;
+        }
+
+        public Builder setReceiverPhone(String receiverPhone) {
+            this.receiverPhone = receiverPhone;
+            return this;
+        }
+
+        public Builder setReceiverFirstName(String receiverFirstName) {
+            this.receiverFirstName = receiverFirstName;
+            return this;
+        }
+
+        public Builder setReceiverLastName(String receiverLastName) {
+            this.receiverLastName = receiverLastName;
+            return this;
+        }
+
+        public Builder setReceiverCountry(String receiverCountry) {
+            this.receiverCountry = receiverCountry;
+            return this;
+        }
+
+        public Builder setCurrencyCode(String currencyCode) {
+            this.currencyCode = currencyCode;
+            return this;
+        }
+
+        public Builder setAmmountInSenderCurrency(BigDecimal ammountInSenderCurrency) {
+            this.ammountInSenderCurrency = ammountInSenderCurrency;
+            return this;
+        }
+
+        public Builder setAmmountInNaira(BigDecimal ammountInNaira) {
+            this.ammountInNaira = ammountInNaira;
+            return this;
+        }
+
+        public Builder setFeeInSenderCurrency(BigDecimal feeInSenderCurrency) {
+            this.feeInSenderCurrency = feeInSenderCurrency;
+            return this;
+        }
+
+        public Builder setFeeInNaira(BigDecimal feeInNaira) {
+            this.feeInNaira = feeInNaira;
+            return this;
+        }
+
+        public Builder setBankAccountNumber(String bankAccountNumber) {
+            this.bankAccountNumber = bankAccountNumber;
+            return this;
+        }
+
+        public Builder setBankAccountName(String bankAccountName) {
+            this.bankAccountName = bankAccountName;
+            return this;
+        }
+
+        public Builder setBankName(String bankName) {
+            this.bankName = bankName;
+            return this;
+        }
+
+        public TransactionRequest build(){
+            TransactionRequest transactionRequest = new TransactionRequest();
+            transactionRequest.setTransactionId(this.transactionId);
+            transactionRequest.setTransferDate(this.transferDate);
+            transactionRequest.setTransferType(this.transferType);
+            transactionRequest.setSenderEmail(this.senderEmail);
+            transactionRequest.setSenderPhone(this.senderPhone);
+            transactionRequest.setSenderFirstName(this.senderFirstName);
+            transactionRequest.setSenderLastName(this.senderLastName);
+            transactionRequest.setSenderCountry(this.senderCountry);
+            transactionRequest.setReceiverCountry(this.receiverCountry);
+            transactionRequest.setReceiverEmail(this.receiverEmail);
+            transactionRequest.setReceiverFirstName(this.receiverFirstName);
+            transactionRequest.setReceiverLastName(this.receiverLastName);
+            transactionRequest.setReceiverPhone(this.receiverPhone);
+            transactionRequest.setCurrencyCode(this.currencyCode);
+            transactionRequest.setAmountInNaira(this.ammountInNaira);
+            transactionRequest.setAmountInSenderCurrency(this.ammountInSenderCurrency);
+            transactionRequest.setFeeInNaira(this.feeInNaira);
+            transactionRequest.setBankAccountNumber(this.bankAccountNumber);
+            transactionRequest.setBankAccountName(this.bankAccountName);
+            transactionRequest.setBankName(this.bankName);
+            transactionRequest.setFeeInSenderCurrency(this.feeInSenderCurrency);
+
+
+            return  transactionRequest;
+
+        }
+    }
+
     @Override
     public String toString() {
         return "TransactionRequest{" +
@@ -256,14 +423,14 @@ public class TransactionRequest extends Credential {
                 ", receiverEmail='" + receiverEmail + '\'' +
                 ", receiverPhone='" + receiverPhone + '\'' +
                 ", receiverFirstName='" + receiverFirstName + '\'' +
-                ", getReceiverLastName='" + getReceiverLastName + '\'' +
+                ", receiverLastName='" + receiverLastName + '\'' +
                 ", receiverCountry='" + receiverCountry + '\'' +
                 ", currencyCode='" + currencyCode + '\'' +
-                ", ammountInSenderCountry=" + ammountInSenderCountry +
-                ", ammountInNaira=" + ammountInNaira +
-                ", feeInSenderCountry=" + feeInSenderCountry +
+                ", amountInSenderCurrency=" + amountInSenderCurrency +
+                ", amountInNaira=" + amountInNaira +
+                ", feeInSenderCurrency=" + feeInSenderCurrency +
                 ", feeInNaira=" + feeInNaira +
-                ", accountNumber='" + accountNumber + '\'' +
+                ", bankAccountNumber='" + bankAccountNumber + '\'' +
                 ", bankAccountName='" + bankAccountName + '\'' +
                 ", bankName='" + bankName + '\'' +
                 '}';

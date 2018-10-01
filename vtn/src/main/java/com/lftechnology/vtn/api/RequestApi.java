@@ -36,10 +36,24 @@ public class RequestApi {
         this.accessKey = credential.getAccessKey();
     }
 
+    private static String bodyToString(final RequestBody request) throws IOException {
+        try {
+            final RequestBody copy = request;
+            final Buffer buffer = new Buffer();
+            if (copy != null)
+                copy.writeTo(buffer);
+            else
+                return "";
+            return buffer.readUtf8();
+        } catch (final IOException e) {
+            throw new IOException("Error while parsing request Body.");
+        }
+    }
+
     /**
      * Return Retrofit object which uses oKHttpClient interceptor to add  credential on request body and
      * header on request,
-     *
+     * <p>
      * JaxbConverterFactroy to convert XML into java Object
      *
      * @return : Retrofit Object
@@ -81,31 +95,15 @@ public class RequestApi {
 
     private String getPostBodyString(RequestBody credentials, RequestBody request) throws IOException {
         String postBodyString = bodyToString(request);
-        postBodyString += ((postBodyString.length() > 0) ? "&" : "") +  bodyToString(credentials);
+        postBodyString += ((postBodyString.length() > 0) ? "&" : "") + bodyToString(credentials);
         return postBodyString;
     }
 
-
-    private static String bodyToString(final RequestBody request) throws IOException {
-        try {
-            final RequestBody copy = request;
-            final Buffer buffer = new Buffer();
-            if(copy != null)
-                copy.writeTo(buffer);
-            else
-                return "";
-            return buffer.readUtf8();
-        }
-        catch (final IOException e) {
-           throw new IOException("Error while parsing request Body.");
-        }
-    }
-
     /**
-     * This generic method will excute call object
+     * This generic method will excute call object of generic type
      * @param call
      * @param <T>
-     * @return
+     * @return response body from api call if successful response
      */
     public <T> T executeApiCall(Call<T> call) {
         try {

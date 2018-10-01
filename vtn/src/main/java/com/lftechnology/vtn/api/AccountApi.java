@@ -13,9 +13,8 @@ import retrofit2.Retrofit;
 import java.util.Map;
 
 /**
- * AccountApi is used to call account related Api
- *
- * @author shankar ghimire
+ * AccountApi is used to call account related method
+ * @author Shankar Ghimire < shankarghimire@lftechnology.com >
  */
 public class AccountApi {
 
@@ -29,7 +28,7 @@ public class AccountApi {
     /**
      * This method will call api using requestApi object and  if sucucess return AccountStatusResponse and on failure it will throw an error
      *
-     * @param account :@see AccountStatusResponse
+     * @param account :@see AccountStatusRequest
      * @return AccountStatusResponse : return if accountStatsusResponseDto code is R00
      */
     public AccountStatusResponse getAccount(AccountStatusRequest account) {

@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * Bank related Api request are handle by this class
  *
- * @author shankar ghimire
+ * @author Shankar Ghimire < shankarghimire@lftechnology.com >
  */
 
 public class BankApi {
@@ -32,22 +32,14 @@ public class BankApi {
      * verifyBank will call Api to verify Bank  and if sucess return BankResponse object
      *
      * @param bankRequest :@see BankRequest
-     * @return
+     * @return BankResponse object it return if ResponseCode is R00
      */
     public BankResponse verifyBank(BankRequest bankRequest) {
 
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BankApiService service = retrofit.create(BankApiService.class);
-        Map<String, String> requestField = new HashMap<String, String>();
-        requestField.put("BankName", bankRequest.getBankName());
-        requestField.put("BankAccountName", bankRequest.getBankAccountName());
-        requestField.put("BankAccountNumber", bankRequest.getBankAccountNumber());
-
-
         ObjectMapper oMapper = new ObjectMapper();
         Map<String, String> map = oMapper.convertValue(bankRequest, Map.class);
-
-
         Call<BankResponse> call = service.verifyBank(map);
         BankResponse bankResponse = requestApi.executeApiCall(call);
         if (!bankResponse.getCode().equals(CommonConstant.SUCCESS))

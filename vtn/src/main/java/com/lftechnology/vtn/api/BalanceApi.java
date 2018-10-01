@@ -12,7 +12,7 @@ import retrofit2.Retrofit;
 /**
  * Balance related Api request are handle by this class
  *
- * @author shankar ghimire
+ * @author Shankar Ghimire < shankarghimire@lftechnology.com >
  */
 
 public class BalanceApi {
@@ -24,14 +24,12 @@ public class BalanceApi {
     }
 
     /**
-     * This method is used to get Balance from API
+     * This method is used to get Balance status from API
      * @return BalanceResponceDTO : return only if there response code is R00
      */
     public BalanceResponse getBalance() {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         BalanceApiService service = retrofit.create(BalanceApiService.class);
-
-
         Call<BalanceResponse> call = service.getBalance();
         BalanceResponse balanceResponse = requestApi.executeApiCall(call);
         if (!balanceResponse.getCode().equals(CommonConstant.SUCCESS))

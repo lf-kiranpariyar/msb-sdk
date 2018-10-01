@@ -21,7 +21,7 @@ public class TransactionListResponse extends Response {
 
     @XmlElement(name = "Transaction")
     @XmlElementWrapper(name = "TransactionDetails")
-    private List<TransactionResponse> transactionResponseDTO;
+    private List<TransactionResponse> transactionResponses;
 
     public String getTransactionId() {
         return transactionId;
@@ -39,12 +39,12 @@ public class TransactionListResponse extends Response {
         this.numberOfEntries = numberOfEntries;
     }
 
-    public List<TransactionResponse> getTransactionResponseDTO() {
-        return transactionResponseDTO;
+    public List<TransactionResponse> getTransactionResponses() {
+        return transactionResponses;
     }
 
-    public void setTransactionResponseDTO(List<TransactionResponse> transactionResponseDTO) {
-        this.transactionResponseDTO = transactionResponseDTO;
+    public void setTransactionResponses(List<TransactionResponse> transactionResponses) {
+        this.transactionResponses = transactionResponses;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class TransactionListResponse extends Response {
         final StringBuilder sb = new StringBuilder("TransactionListResponse{");
         sb.append("transactionId='").append(transactionId).append('\'');
         sb.append(", numberOfEntries=").append(numberOfEntries);
-        sb.append(", transactionResponseDTO=").append(transactionResponseDTO);
+        sb.append(", transactionResponses=").append(transactionResponses);
         sb.append('}');
         return sb.toString();
     }

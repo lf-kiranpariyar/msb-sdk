@@ -8,18 +8,14 @@ import com.lftechnology.vtn.service.FxRateApiService;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 
-import java.util.HashMap;
-import java.util.Map;
-
 
 /**
  * Foreign Exchange Rate related api
  *
- * @author shankar ghimire
+ * @author Shankar Ghimire < shankarghimire@lftechnology.com >
  */
 
 public class FxRateApi {
-
 
     private RequestApi requestApi;
 
@@ -29,16 +25,15 @@ public class FxRateApi {
     }
 
     /**
+     * This method is used to get foreign exchange rate like selling rate and buying rate
      * @param currencyCode : string currency code (e.g USD)
-     * @return
+     * @return FxRateResponse which gives foreign exchange rates
      */
     public FxRateResponse getRate(String currencyCode) {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         FxRateApiService service = retrofit.create(FxRateApiService.class);
-        Map<String, String> requestField = new HashMap<>();
-        requestField.put("CurrencyCode", currencyCode);
-        Call<FxRateResponse> call = service.getRate(requestField);
-        FxRateResponse fxRateResponse =requestApi.executeApiCall(call);
+        Call<FxRateResponse> call = service.getRate(currencyCode);
+        FxRateResponse fxRateResponse = requestApi.executeApiCall(call);
         if (!fxRateResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new VtnException(fxRateResponse.getMessage(), fxRateResponse.getCode());
 

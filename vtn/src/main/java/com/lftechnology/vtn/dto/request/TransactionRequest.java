@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.lftechnology.vtn.serializer.LocalDateSearializer;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -245,11 +244,38 @@ public class TransactionRequest extends Credential {
         this.bankName = bankName;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("TransactionRequest{");
+        sb.append("transactionId='").append(transactionId).append('\'');
+        sb.append(", transferDate=").append(transferDate);
+        sb.append(", transferType=").append(transferType);
+        sb.append(", senderEmail='").append(senderEmail).append('\'');
+        sb.append(", senderPhone='").append(senderPhone).append('\'');
+        sb.append(", senderFirstName='").append(senderFirstName).append('\'');
+        sb.append(", senderLastName='").append(senderLastName).append('\'');
+        sb.append(", senderCountry='").append(senderCountry).append('\'');
+        sb.append(", receiverEmail='").append(receiverEmail).append('\'');
+        sb.append(", receiverPhone='").append(receiverPhone).append('\'');
+        sb.append(", receiverFirstName='").append(receiverFirstName).append('\'');
+        sb.append(", receiverLastName='").append(receiverLastName).append('\'');
+        sb.append(", receiverCountry='").append(receiverCountry).append('\'');
+        sb.append(", currencyCode='").append(currencyCode).append('\'');
+        sb.append(", amountInSenderCurrency=").append(amountInSenderCurrency);
+        sb.append(", amountInNaira=").append(amountInNaira);
+        sb.append(", feeInSenderCurrency=").append(feeInSenderCurrency);
+        sb.append(", feeInNaira=").append(feeInNaira);
+        sb.append(", bankAccountNumber='").append(bankAccountNumber).append('\'');
+        sb.append(", bankAccountName='").append(bankAccountName).append('\'');
+        sb.append(", bankName='").append(bankName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 
     /**
      * @author shankar ghimire
      */
-    public static class Builder{
+    public static class Builder {
 
         private String transactionId;
         private LocalDate transferDate;
@@ -379,7 +405,7 @@ public class TransactionRequest extends Credential {
             return this;
         }
 
-        public TransactionRequest build(){
+        public TransactionRequest build() {
             TransactionRequest transactionRequest = new TransactionRequest();
             transactionRequest.setTransactionId(this.transactionId);
             transactionRequest.setTransferDate(this.transferDate);
@@ -404,35 +430,8 @@ public class TransactionRequest extends Credential {
             transactionRequest.setFeeInSenderCurrency(this.feeInSenderCurrency);
 
 
-            return  transactionRequest;
+            return transactionRequest;
 
         }
-    }
-
-    @Override
-    public String toString() {
-        return "TransactionRequest{" +
-                "transactionId='" + transactionId + '\'' +
-                ", transferDate=" + transferDate +
-                ", transferType=" + transferType +
-                ", senderEmail='" + senderEmail + '\'' +
-                ", senderPhone='" + senderPhone + '\'' +
-                ", senderFirstName='" + senderFirstName + '\'' +
-                ", senderLastName='" + senderLastName + '\'' +
-                ", senderCountry='" + senderCountry + '\'' +
-                ", receiverEmail='" + receiverEmail + '\'' +
-                ", receiverPhone='" + receiverPhone + '\'' +
-                ", receiverFirstName='" + receiverFirstName + '\'' +
-                ", receiverLastName='" + receiverLastName + '\'' +
-                ", receiverCountry='" + receiverCountry + '\'' +
-                ", currencyCode='" + currencyCode + '\'' +
-                ", amountInSenderCurrency=" + amountInSenderCurrency +
-                ", amountInNaira=" + amountInNaira +
-                ", feeInSenderCurrency=" + feeInSenderCurrency +
-                ", feeInNaira=" + feeInNaira +
-                ", bankAccountNumber='" + bankAccountNumber + '\'' +
-                ", bankAccountName='" + bankAccountName + '\'' +
-                ", bankName='" + bankName + '\'' +
-                '}';
     }
 }

@@ -28,4 +28,14 @@ public class AccountStatusRequest {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AccountStatusRequest{");
+        sb.append("email='").append(email).append('\'');
+        sb.append(", phone='").append(phone).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

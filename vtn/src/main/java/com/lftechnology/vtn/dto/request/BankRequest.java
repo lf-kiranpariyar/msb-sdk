@@ -40,5 +40,14 @@ public class BankRequest {
         this.bankName = bankName;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("BankRequest{");
+        sb.append("bankAccountNumber='").append(bankAccountNumber).append('\'');
+        sb.append(", bankAccountName='").append(bankAccountName).append('\'');
+        sb.append(", bankName='").append(bankName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
 

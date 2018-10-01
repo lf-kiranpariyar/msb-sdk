@@ -1,4 +1,4 @@
-package com.lftechnology.vtn.serializer;
+package com.lftechnology.vtn.serilizer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

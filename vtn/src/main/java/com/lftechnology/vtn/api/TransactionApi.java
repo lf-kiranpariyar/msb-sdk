@@ -5,7 +5,7 @@ import com.lftechnology.vtn.constant.CommonConstant;
 import com.lftechnology.vtn.dto.request.Credential;
 import com.lftechnology.vtn.dto.request.TransactionRequest;
 import com.lftechnology.vtn.dto.response.TransactionResponse;
-import com.lftechnology.vtn.enums.ResponseMessageEnum;
+import com.lftechnology.vtn.enums.ResponseCode;
 import com.lftechnology.vtn.exception.VtnException;
 import com.lftechnology.vtn.service.TransactionApiService;
 import retrofit2.Call;
@@ -37,7 +37,7 @@ public class TransactionApi {
         Call<TransactionResponse> call = service.createTransaction(map);
         TransactionResponse transactionResponseDTO = requestApi.executeApiCall(call);
         if (!transactionResponseDTO.getCode().equals(CommonConstant.SUCCESS))
-            throw new VtnException(ResponseMessageEnum.valueOf(transactionResponseDTO.getCode()).getValue(), transactionResponseDTO.getCode());
+            throw new VtnException(ResponseCode.valueOf(transactionResponseDTO.getCode()).getMessage(), transactionResponseDTO.getCode());
 
         return transactionResponseDTO;
     }

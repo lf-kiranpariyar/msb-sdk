@@ -4,7 +4,7 @@ package com.lftechnology.vtn.dto.request;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.lftechnology.vtn.serializer.LocalDateSerializer;
+import com.lftechnology.vtn.serilizer.LocalDateSerializer;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

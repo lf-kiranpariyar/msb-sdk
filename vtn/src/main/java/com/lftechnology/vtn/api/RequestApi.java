@@ -37,9 +37,8 @@ public class RequestApi {
     }
 
     private static String bodyToString(final RequestBody request) throws IOException {
-        try {
+        try(final Buffer buffer = new Buffer()) {
             final RequestBody copy = request;
-            final Buffer buffer = new Buffer();
             if (copy != null)
                 copy.writeTo(buffer);
             else
@@ -48,6 +47,7 @@ public class RequestApi {
         } catch (final IOException e) {
             throw new IOException("Error while parsing request Body.");
         }
+
     }
 
     /**

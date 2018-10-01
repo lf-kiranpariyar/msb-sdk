@@ -4,11 +4,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
-@XmlAccessorType(XmlAccessType.FIELD)
 public class Credential {
-    @XmlElement(name = "AccessToken")
     private String accessToken;
-    @XmlElement(name = "AccessKey")
     private String accessKey;
 
     public Credential() {

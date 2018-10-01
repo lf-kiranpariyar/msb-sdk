@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class LocalDateSearializer extends JsonSerializer<LocalDate> {
+public class LocalDateSerializer extends JsonSerializer<LocalDate> {
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 

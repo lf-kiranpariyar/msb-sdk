@@ -4,7 +4,7 @@ package com.lftechnology.vtn.dto.request;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.lftechnology.vtn.serializer.LocalDateSearializer;
+import com.lftechnology.vtn.serializer.LocalDateSerializer;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -15,7 +15,7 @@ public class TransactionRequest extends Credential {
     private String transactionId;
 
     @JsonProperty(value = "TransferDate")
-    @JsonSerialize(using = LocalDateSearializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate transferDate;
 
     @JsonProperty(value = "TransferType")

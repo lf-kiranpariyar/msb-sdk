@@ -18,8 +18,6 @@ public class RequestApi {
         this.headers = buildHeader(headerMap);
     }
 
-
-
     public Retrofit getRetrofitObject(){
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
@@ -34,9 +32,6 @@ public class RequestApi {
                 return chain.proceed(request);
             }
         });
-
-
-
 
         return new Retrofit
                 .Builder()
@@ -54,9 +49,5 @@ public class RequestApi {
         }
         return builder.build();
     }
-
-
-
-
 
 }

@@ -1,9 +1,15 @@
-package com.lftechnology.moneytun.outbound.api;
+package com.lftechnology.moneytun.outbound.service.impl;
 
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
-import okhttp3.*;
+import com.lftechnology.moneytun.outbound.exception.ApiException;
+import okhttp3.Headers;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
 
 import java.io.IOException;
 import java.util.Map;
@@ -21,12 +27,11 @@ public class RequestApi {
 
 
     public Retrofit getRetrofitObject(){
-
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(new Interceptor() {
 
             @Override
-            public Response intercept(Interceptor.Chain chain) throws IOException {
+            public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
                 Request.Builder requestBuilder = original.newBuilder()
                         .headers(headers);
@@ -34,9 +39,6 @@ public class RequestApi {
                 return chain.proceed(request);
             }
         });
-
-
-
 
         return new Retrofit
                 .Builder()
@@ -56,7 +58,25 @@ public class RequestApi {
     }
 
 
+    /**
+     * This generic method will excute call object of generic type
+     * @param call
+     * @param <T>
+     * @return response body from api call if successful response
+     */
+    public <T> T executeApiCall(Call<T> call) {
+        try {
+            retrofit2.Response<T> response = call.execute();
 
+            if (!response.isSuccessful()) {
+                throw new ApiException(response.errorBody().string());
+            }
+
+            return response.body();
+        } catch (IOException e) {
+            throw new ApiException();
+        }
+    }
 
 
 }

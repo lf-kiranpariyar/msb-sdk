@@ -3,6 +3,10 @@ package com.lftechnology.moneytun.outbound.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.lftechnology.moneytun.outbound.adapter.LocalDateDeserializer;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,10 +14,32 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
 
-    
-    private Response response;
+    /*@JsonUnwrapped
+    private Response response;*/
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    @JsonProperty("Code")
+    private Integer code;
+    @JsonProperty("Message")
+    private String message;
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonProperty("SendDate")
-    private LocalDateTime sendDate;
+    private LocalDate sendDate;
     @JsonProperty("InoiceNumber")
     private String inoiceNumber;
     @JsonProperty("TransferNo")
@@ -24,9 +50,11 @@ public class Transaction {
     private Receiver receiver;
     @JsonProperty("Status")
     private String status;
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonProperty("CancelledDate")
     private LocalDate cancelledDate;
     @JsonProperty("PaidDate")
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDateTime paidDate;
     @JsonUnwrapped
     private Bank bank;
@@ -53,19 +81,19 @@ public class Transaction {
     @JsonProperty("ConversionRate")
     private BigDecimal conversionRate;
 
-    public Response getResponse() {
+   /* public Response getResponse() {
         return response;
     }
 
     public void setResponse(Response response) {
         this.response = response;
-    }
+    }*/
 
-    public LocalDateTime getSendDate() {
+    public LocalDate getSendDate() {
         return sendDate;
     }
 
-    public void setSendDate(LocalDateTime sendDate) {
+    public void setSendDate(LocalDate sendDate) {
         this.sendDate = sendDate;
     }
 
@@ -225,7 +253,8 @@ public class Transaction {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Transaction{");
-        sb.append("response=").append(response);
+        sb.append("code=").append(code);
+        sb.append("message=").append(message);
         sb.append(", sendDate=").append(sendDate);
         sb.append(", inoiceNumber='").append(inoiceNumber).append('\'');
         sb.append(", transferNo='").append(transferNo).append('\'');

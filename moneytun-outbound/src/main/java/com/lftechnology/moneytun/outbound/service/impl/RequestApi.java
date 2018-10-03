@@ -1,5 +1,7 @@
 package com.lftechnology.moneytun.outbound.service.impl;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
 import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.exception.ApiException;
@@ -49,11 +51,16 @@ public class RequestApi {
             }
         });
 
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+
         return new Retrofit
                 .Builder()
                 .baseUrl(this.baseURL)
                 .client(httpClient.build())
-                .addConverterFactory(JacksonConverterFactory.create())
+                .addConverterFactory(JacksonConverterFactory.create(mapper))
                 .build();
     }
 

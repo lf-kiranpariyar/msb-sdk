@@ -29,7 +29,7 @@ public class OutboundServiceImplTest {
         credential.setSecretkey("rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=");
 
         OutboundService outboundService = new OutboundServiceImpl();
-        List<Transaction> response = outboundService.getUnpaidTransactionList(credential,"033341240","TRG");
+        UnpaidTransactionList response = outboundService.getUnpaidTransactionList(credential,"033341240","TRG");
         System.out.println(response.toString());
 
     }

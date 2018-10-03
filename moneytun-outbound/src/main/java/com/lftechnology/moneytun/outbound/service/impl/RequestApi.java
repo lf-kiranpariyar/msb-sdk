@@ -24,7 +24,8 @@ public class RequestApi {
         this.headers = buildHeader(headerMap);
     }
 
-
+    public RequestApi() {
+    }
 
     public Retrofit getRetrofitObject(){
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
@@ -77,6 +78,7 @@ public class RequestApi {
             throw new ApiException();
         }
     }
+
 
 
 }

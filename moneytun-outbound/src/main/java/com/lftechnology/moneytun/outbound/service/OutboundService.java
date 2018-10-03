@@ -11,7 +11,7 @@ public interface OutboundService {
 
     Response getToken(String accessKey);
 
-    List<Transaction> getUnpaidTransactionList(Credential credential, String transferNo, String payeeCode);
+    UnpaidTransactionList getUnpaidTransactionList(Credential credential, String transferNo, String payeeCode);
 
     Response confirmTransaction(Credential credential, String transferNo, String payeeCode);
 }

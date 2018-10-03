@@ -1,7 +1,10 @@
 package com.lftechnology.moneytun.outbound.service.impl;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
 import com.lftechnology.moneytun.outbound.dto.Credential;
+import com.lftechnology.moneytun.outbound.dto.Transaction;
 import com.lftechnology.moneytun.outbound.exception.ApiException;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -13,6 +16,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 
 import java.io.IOException;
+import java.util.List;
 
 public class RequestApi {
 
@@ -49,6 +53,8 @@ public class RequestApi {
             }
         });
 
+
+
         return new Retrofit
                 .Builder()
                 .baseUrl(this.baseURL)
@@ -58,13 +64,6 @@ public class RequestApi {
     }
 
 
-//    public static Headers buildHeader(Map<String,String> headerMap){
-//        Headers.Builder builder = new Headers.Builder();
-//        for (Map.Entry<String, String> entry : headerMap.entrySet()) {
-//            builder.add(entry.getKey(), entry.getValue());
-//        }
-//        return builder.build();
-//    }
 
 
     /**
@@ -80,10 +79,10 @@ public class RequestApi {
             if (!response.isSuccessful()) {
                 throw new ApiException(response.errorBody().string());
             }
-
-
             return response.body();
         } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
             throw new ApiException();
         }
     }

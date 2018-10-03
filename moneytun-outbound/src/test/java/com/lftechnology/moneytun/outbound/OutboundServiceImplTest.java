@@ -1,6 +1,9 @@
 package com.lftechnology.moneytun.outbound;
 
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.dto.Response;
 import com.lftechnology.moneytun.outbound.dto.Transaction;
@@ -29,8 +32,9 @@ public class OutboundServiceImplTest {
         credential.setSecretkey("rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=");
 
         OutboundService outboundService = new OutboundServiceImpl();
-        List<Transaction> response = outboundService.getUnpaidTransactionList(credential,"033341240","TRG");
+        UnpaidTransactionList response = outboundService.getUnpaidTransactionList(credential,"033341240","TRG");
         System.out.println(response.toString());
+        System.out.println(response.getTransactions().get(0).getBank());
 
     }
 
@@ -45,5 +49,7 @@ public class OutboundServiceImplTest {
         Response response = outboundService.confirmTransaction(credential,"033341240","TRG");
         System.out.println(response.toString());
 
+
     }
+
 }

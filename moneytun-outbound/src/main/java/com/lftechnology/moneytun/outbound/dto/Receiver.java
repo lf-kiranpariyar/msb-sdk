@@ -24,8 +24,7 @@ public class Receiver {
     private String receiverState;
     @JsonProperty("ReceiverCountry")
     private String receiverCountry;
-    @JsonProperty("ReceiverCode")
-    private String receiverCode;
+
 
     public String getreceiverFirstName() {
         return receiverFirstName;
@@ -99,13 +98,6 @@ public class Receiver {
         this.receiverCountry = receiverCountry;
     }
 
-    public String getreceiverCode() {
-        return receiverCode;
-    }
-
-    public void setreceiverCode(String receiverCode) {
-        this.receiverCode = receiverCode;
-    }
 
 
     @Override
@@ -120,7 +112,6 @@ public class Receiver {
         sb.append(", receiverCity='").append(receiverCity).append('\'');
         sb.append(", receiverState='").append(receiverState).append('\'');
         sb.append(", receiverCountry='").append(receiverCountry).append('\'');
-        sb.append(", receiverCode='").append(receiverCode).append('\'');
         sb.append('}');
         return sb.toString();
     }

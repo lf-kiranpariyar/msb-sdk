@@ -31,18 +31,20 @@ public class OutboundServiceImpl implements OutboundService {
     }
 
     @Override
-    public List<Transaction> getUnpaidTransactionList(Credential credential, String transferNo, String payeeCode) {
+    public UnpaidTransactionList getUnpaidTransactionList(Credential credential, String transferNo, String payeeCode) {
         RequestApi requestApi = new RequestApi(credential);
         //LOGGER.info("MoneyTun-Outbound get unpaid transaction list");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<List<Transaction>> call = service.getUnpaidTRansactionList(MethodName.ALL.name(), transferNo, payeeCode);
-       List<Transaction> transactionList = requestApi.executeApiCall(call);
+        Call<List<Transaction>> call = service.getUnpaidTransactionList(MethodName.ALL.name(), transferNo, payeeCode);
+        List<Transaction> transactionList = requestApi.executeApiCall(call);
         if(transactionList == null){
             throw new ApiException();
 
         }
-        return transactionList;
+        UnpaidTransactionList unpaidTransactionList = new UnpaidTransactionList();
+        unpaidTransactionList.setTransactions(transactionList);
+        return  unpaidTransactionList;
     }
 
     @Override

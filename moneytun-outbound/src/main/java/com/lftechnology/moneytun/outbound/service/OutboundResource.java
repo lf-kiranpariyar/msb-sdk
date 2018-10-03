@@ -17,7 +17,7 @@ public interface OutboundResource {
     Call<Response> getToken(@Query("id") String id);
 
     @GET("transaction")
-    Call<List<Transaction>> getUnpaidTRansactionList(@Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
+    Call<List<Transaction>> getUnpaidTransactionList(@Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
 
 
     @GET("transaction")

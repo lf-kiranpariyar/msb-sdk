@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
 
-    @JsonUnwrapped
-    private Token token;
+    
+    private Response response;
     @JsonProperty("SendDate")
     private LocalDateTime sendDate;
     @JsonProperty("InoiceNumber")
@@ -53,12 +53,12 @@ public class Transaction {
     @JsonProperty("ConversionRate")
     private BigDecimal conversionRate;
 
-    public Token getToken() {
-        return token;
+    public Response getResponse() {
+        return response;
     }
 
-    public void setToken(Token token) {
-        this.token = token;
+    public void setResponse(Response response) {
+        this.response = response;
     }
 
     public LocalDateTime getSendDate() {
@@ -225,7 +225,7 @@ public class Transaction {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Transaction{");
-        sb.append("token=").append(token);
+        sb.append("response=").append(response);
         sb.append(", sendDate=").append(sendDate);
         sb.append(", inoiceNumber='").append(inoiceNumber).append('\'');
         sb.append(", transferNo='").append(transferNo).append('\'');

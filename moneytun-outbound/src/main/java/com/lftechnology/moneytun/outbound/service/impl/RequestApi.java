@@ -1,41 +1,49 @@
 package com.lftechnology.moneytun.outbound.service.impl;
 
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
+import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.exception.ApiException;
-import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.jackson.JacksonConverterFactory;
 
 
 import java.io.IOException;
-import java.util.Map;
 
 public class RequestApi {
 
     private String baseURL;
-    private Headers headers;
+    private String accessKey;
+    private String secretKey;
 
-    public RequestApi(Map<String,String> headerMap){
+    public RequestApi(Credential credential){
         this.baseURL = CommonConstant.BASE_URL;
-        this.headers = buildHeader(headerMap);
+        this.accessKey = credential.getAccessKey();
+        this.secretKey = credential.getSecretkey();
     }
 
-    public RequestApi() {
+    public RequestApi(){
+        this.baseURL = CommonConstant.BASE_URL;
     }
+
 
     public Retrofit getRetrofitObject(){
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        httpClient.addInterceptor(logging);
         httpClient.addInterceptor(new Interceptor() {
 
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
                 Request.Builder requestBuilder = original.newBuilder()
-                        .headers(headers);
+                        .addHeader("Content-Type" , CommonConstant.CONTENT_TYPE)
+                        .addHeader("Authentication" ,accessKey + ":" + secretKey);
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
             }
@@ -45,18 +53,18 @@ public class RequestApi {
                 .Builder()
                 .baseUrl(this.baseURL)
                 .client(httpClient.build())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(JacksonConverterFactory.create())
                 .build();
     }
 
 
-    public static Headers buildHeader(Map<String,String> headerMap){
-        Headers.Builder builder = new Headers.Builder();
-        for (Map.Entry<String, String> entry : headerMap.entrySet()) {
-            builder.add(entry.getKey(), entry.getValue());
-        }
-        return builder.build();
-    }
+//    public static Headers buildHeader(Map<String,String> headerMap){
+//        Headers.Builder builder = new Headers.Builder();
+//        for (Map.Entry<String, String> entry : headerMap.entrySet()) {
+//            builder.add(entry.getKey(), entry.getValue());
+//        }
+//        return builder.build();
+//    }
 
 
     /**
@@ -72,6 +80,7 @@ public class RequestApi {
             if (!response.isSuccessful()) {
                 throw new ApiException(response.errorBody().string());
             }
+
 
             return response.body();
         } catch (IOException e) {

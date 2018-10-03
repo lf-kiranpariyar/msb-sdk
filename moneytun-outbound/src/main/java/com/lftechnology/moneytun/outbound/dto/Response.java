@@ -1,18 +1,20 @@
 package com.lftechnology.moneytun.outbound.dto;
 
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Response {
+
     @JsonProperty("Code")
-    private String code;
+    private Integer code;
     @JsonProperty("Message")
     private String message;
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

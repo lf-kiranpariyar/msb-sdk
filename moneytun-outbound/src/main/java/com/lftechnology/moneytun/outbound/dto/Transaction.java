@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.lftechnology.moneytun.outbound.adapter.LocalDateDeserializer;
+import com.lftechnology.moneytun.outbound.deserialize.LocalDateTimeDeserialization;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,9 +17,9 @@ public class Transaction {
     @JsonUnwrapped
     private OutboundResponse outboundResponse;
 
-    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserialization.class)
     @JsonProperty("SendDate")
-    private LocalDate sendDate;
+    private java.time.LocalDateTime sendDate;
 
     @JsonProperty("InoiceNumber")
     private String inoiceNumber;
@@ -34,15 +34,17 @@ public class Transaction {
     private Receiver receiver;
 
     @JsonProperty("Status")
+
     private String status;
 
-    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserialization.class)
     @JsonProperty("CancelledDate")
     private LocalDate cancelledDate;
 
     @JsonProperty("PaidDate")
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    private LocalDateTime paidDate;
+
+    @JsonDeserialize(using = LocalDateTimeDeserialization.class)
+    private java.time.LocalDateTime paidDate;
 
     @JsonUnwrapped
     private Bank bank;
@@ -80,6 +82,7 @@ public class Transaction {
     @JsonProperty("ConversionRate")
     private BigDecimal conversionRate;
 
+
     public OutboundResponse getOutboundResponse() {
         return outboundResponse;
     }
@@ -88,11 +91,11 @@ public class Transaction {
         this.outboundResponse = outboundResponse;
     }
 
-    public LocalDate getSendDate() {
+    public LocalDateTime getSendDate() {
         return sendDate;
     }
 
-    public void setSendDate(LocalDate sendDate) {
+    public void setSendDate(LocalDateTime sendDate) {
         this.sendDate = sendDate;
     }
 
@@ -144,11 +147,11 @@ public class Transaction {
         this.cancelledDate = cancelledDate;
     }
 
-    public LocalDateTime getPaidDate() {
+    public java.time.LocalDateTime getPaidDate() {
         return paidDate;
     }
 
-    public void setPaidDate(LocalDateTime paidDate) {
+    public void setPaidDate(java.time.LocalDateTime paidDate) {
         this.paidDate = paidDate;
     }
 

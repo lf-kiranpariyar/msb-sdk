@@ -11,7 +11,6 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-
 import java.io.IOException;
 
 public class RequestApi {
@@ -20,18 +19,18 @@ public class RequestApi {
     private String accessKey;
     private String secretKey;
 
-    public RequestApi(Credential credential){
+    public RequestApi(Credential credential) {
         this.baseURL = CommonConstant.BASE_URL;
         this.accessKey = credential.getAccessKey();
         this.secretKey = credential.getSecretkey();
     }
 
-    public RequestApi(){
+    public RequestApi() {
         this.baseURL = CommonConstant.BASE_URL;
     }
 
 
-    public Retrofit getRetrofitObject(){
+    public Retrofit getRetrofitObject() {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -42,14 +41,14 @@ public class RequestApi {
             public okhttp3.Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
                 Request.Builder requestBuilder = original.newBuilder()
-                        .addHeader("Content-Type" , CommonConstant.CONTENT_TYPE)
-                        .addHeader("Authentication" ,accessKey+ ":" +secretKey);
+                        .addHeader("Content-Type", CommonConstant.CONTENT_TYPE)
+                        .addHeader("Authentication", accessKey + ":" + secretKey);
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
             }
         });
 
-         return new Retrofit
+        return new Retrofit
                 .Builder()
                 .baseUrl(this.baseURL)
                 .client(httpClient.build())
@@ -59,6 +58,7 @@ public class RequestApi {
 
     /**
      * This generic method will execute call object of generic type
+     *
      * @param call
      * @param <T>
      * @return response body from api call if successful response
@@ -71,15 +71,13 @@ public class RequestApi {
             if (!response.isSuccessful()) {
                 throw new ApiException(response.errorBody().string());
             }
-
-
             return response.body();
         } catch (IOException e) {
+            e.printStackTrace();
             throw new ApiException();
 
         }
     }
-
 
 
 }

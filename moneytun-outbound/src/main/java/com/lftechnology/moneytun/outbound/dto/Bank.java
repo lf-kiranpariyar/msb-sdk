@@ -14,6 +14,8 @@ public class Bank {
 
     @JsonProperty("BankCode")
     private String bankCode;
+    @JsonProperty("BankBranch")
+    private String bankBranch;
 
     public String getBankName() {
         return bankName;
@@ -39,6 +41,13 @@ public class Bank {
         this.bankCode = bankCode;
     }
 
+    public String getBankBranch() {
+        return bankBranch;
+    }
+
+    public void setBankBranch(String bankBranch) {
+        this.bankBranch = bankBranch;
+    }
 
     @Override
     public String toString() {

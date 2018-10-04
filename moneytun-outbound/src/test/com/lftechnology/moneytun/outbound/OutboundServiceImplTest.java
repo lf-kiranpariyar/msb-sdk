@@ -1,6 +1,7 @@
 package com.lftechnology.moneytun.outbound;
 
 
+
 import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.dto.OutboundResponse;
 import com.lftechnology.moneytun.outbound.dto.UnpaidTransactionList;
@@ -27,7 +28,7 @@ public class OutboundServiceImplTest {
 
         OutboundService outboundService = new OutboundServiceImpl();
         UnpaidTransactionList response = outboundService.getUnpaidTransactionList(credential,"033341240","TRG");
-        System.out.println(response.toString());
+        System.out.println(response.getUnpaidTransactions().toString());
 
     }
 
@@ -42,5 +43,7 @@ public class OutboundServiceImplTest {
         OutboundResponse outboundResponse = outboundService.confirmTransaction(credential,"033341240","TRG");
         System.out.println(outboundResponse.toString());
 
+
     }
+
 }

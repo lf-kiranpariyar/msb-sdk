@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Sender {
+
     @JsonProperty("SenderFirstName")
     private String senderFirstName;
 
@@ -114,13 +115,9 @@ public class Sender {
         this.senderCountry = senderCountry;
     }
 
-    public String getSenderCode() {
-        return senderCode;
-    }
 
-    public void setSenderCode(String senderCode) {
-        this.senderCode = senderCode;
-    }
+
+
 
 
     @Override
@@ -135,7 +132,6 @@ public class Sender {
         sb.append(", senderCity='").append(senderCity).append('\'');
         sb.append(", senderState='").append(senderState).append('\'');
         sb.append(", senderCountry='").append(senderCountry).append('\'');
-        sb.append(", senderCode='").append(senderCode).append('\'');
         sb.append('}');
         return sb.toString();
     }

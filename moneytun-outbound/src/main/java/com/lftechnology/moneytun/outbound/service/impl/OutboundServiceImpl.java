@@ -3,8 +3,10 @@ package com.lftechnology.moneytun.outbound.service.impl;
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
 import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.dto.OutboundResponse;
+import com.lftechnology.moneytun.outbound.dto.Transaction;
 import com.lftechnology.moneytun.outbound.dto.UnpaidTransactionList;
 import com.lftechnology.moneytun.outbound.enums.MethodName;
+import com.lftechnology.moneytun.outbound.exception.ApiException;
 import com.lftechnology.moneytun.outbound.exception.OutboundException;
 import com.lftechnology.moneytun.outbound.service.OutboundResource;
 import com.lftechnology.moneytun.outbound.service.OutboundService;
@@ -12,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import retrofit2.Call;
 import retrofit2.Retrofit;
+
+import java.util.List;
 
 
 public class OutboundServiceImpl implements OutboundService {
@@ -56,17 +60,15 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound get unpaid transaction list");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<UnpaidTransactionList> call = service.getUnpaidTRansactionList(MethodName.ALL.name(), transferNo, payeeCode);
-        UnpaidTransactionList transactionList = requestApi.executeApiCall(call);
-        if(!transactionList.getUnpaidTransactions().isEmpty()){
-            Integer responseCode = transactionList.getUnpaidTransactions().get(0).getOutboundResponse().getCode();
-            String responsemessage = transactionList.getUnpaidTransactions().get(0).getOutboundResponse().getMessage();
-            if(!responseCode.equals(CommonConstant.SUCCESS)) {
-                throw new OutboundException(responseCode,responsemessage);
-            }
-        }
+        Call<List<Transaction>> call = service.getUnpaidTransactionList(MethodName.ALL.name(), transferNo, payeeCode);
+        List<Transaction> transactionList = requestApi.executeApiCall(call);
+        if(transactionList == null){
+            throw new ApiException();
 
-        return transactionList;
+        }
+        UnpaidTransactionList unpaidTransactionList = new UnpaidTransactionList();
+        unpaidTransactionList.setUnpaidTransactions(transactionList);
+        return  unpaidTransactionList;
     }
 
     /**

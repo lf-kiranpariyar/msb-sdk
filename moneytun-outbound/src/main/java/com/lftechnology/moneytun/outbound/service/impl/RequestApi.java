@@ -1,7 +1,5 @@
 package com.lftechnology.moneytun.outbound.service.impl;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
 import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.exception.ApiException;
@@ -45,40 +43,26 @@ public class RequestApi {
                 Request original = chain.request();
                 Request.Builder requestBuilder = original.newBuilder()
                         .addHeader("Content-Type" , CommonConstant.CONTENT_TYPE)
-                        .addHeader("Authentication" ,accessKey + ":" + secretKey);
+                        .addHeader("Authentication" ,accessKey+ ":" +secretKey);
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
             }
         });
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-
-        return new Retrofit
+         return new Retrofit
                 .Builder()
                 .baseUrl(this.baseURL)
                 .client(httpClient.build())
-                .addConverterFactory(JacksonConverterFactory.create(mapper))
+                .addConverterFactory(JacksonConverterFactory.create())
                 .build();
     }
 
-
-//    public static Headers buildHeader(Map<String,String> headerMap){
-//        Headers.Builder builder = new Headers.Builder();
-//        for (Map.Entry<String, String> entry : headerMap.entrySet()) {
-//            builder.add(entry.getKey(), entry.getValue());
-//        }
-//        return builder.build();
-//    }
-
-
     /**
-     * This generic method will excute call object of generic type
+     * This generic method will execute call object of generic type
      * @param call
      * @param <T>
      * @return response body from api call if successful response
+     * @throws ApiException when the response code is not equals to 200 OK
      */
     public <T> T executeApiCall(Call<T> call) {
         try {
@@ -92,6 +76,7 @@ public class RequestApi {
             return response.body();
         } catch (IOException e) {
             throw new ApiException();
+
         }
     }
 

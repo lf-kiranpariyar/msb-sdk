@@ -14,22 +14,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Sender {
     @JsonProperty("SenderFirstName")
     private String senderFirstName;
+
     @JsonProperty("SenderMiddleName")
     private String senderMiddleName;
+
     @JsonProperty("SenderLastName")
     private String senderLastName;
-    @JsonProperty("senderMotherMaidenName")
+
+    @JsonProperty("SENDERMOTHERMAIDENNAME")
     private String senderMotherMaidenName;
+
     @JsonProperty("SenderAddress")
     private String senderAddress;
+
     @JsonProperty("SenderPhone")
     private String senderPhone;
+
     @JsonProperty("SenderCity")
     private String senderCity;
+
     @JsonProperty("SenderState")
     private String senderState;
+
     @JsonProperty("SenderCountry")
     private String senderCountry;
+
     @JsonProperty("SenderCode")
     private String senderCode;
 

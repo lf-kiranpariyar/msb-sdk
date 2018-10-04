@@ -5,16 +5,16 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 public class TransactinPay {
     @JsonUnwrapped
-    private Response response;
+    private OutboundResponse outboundResponse;
     @JsonProperty("Detail")
     private String detail;
 
-    public Response getResponse() {
-        return response;
+    public OutboundResponse getOutboundResponse() {
+        return outboundResponse;
     }
 
-    public void setResponse(Response response) {
-        this.response = response;
+    public void setOutboundResponse(OutboundResponse outboundResponse) {
+        this.outboundResponse = outboundResponse;
     }
 
     public String getDetail() {
@@ -28,7 +28,7 @@ public class TransactinPay {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("TransactinPay{");
-        sb.append("response=").append(response);
+        sb.append("outboundResponse=").append(outboundResponse);
         sb.append(", detail='").append(detail).append('\'');
         sb.append('}');
         return sb.toString();

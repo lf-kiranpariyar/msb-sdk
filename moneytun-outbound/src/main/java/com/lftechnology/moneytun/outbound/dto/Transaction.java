@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.lftechnology.moneytun.outbound.adapter.LocalDateDeserializer;
 
 import java.math.BigDecimal;
@@ -14,80 +13,80 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
 
-    /*@JsonUnwrapped
-    private Response response;*/
 
-    public Integer getCode() {
-        return code;
-    }
+    @JsonUnwrapped
+    private OutboundResponse outboundResponse;
 
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    @JsonProperty("Code")
-    private Integer code;
-    @JsonProperty("Message")
-    private String message;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonProperty("SendDate")
     private LocalDate sendDate;
+
     @JsonProperty("InoiceNumber")
     private String inoiceNumber;
+
     @JsonProperty("TransferNo")
     private String transferNo;
+
     @JsonUnwrapped
     private Sender sender;
+
     @JsonUnwrapped
     private Receiver receiver;
+
     @JsonProperty("Status")
     private String status;
+
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonProperty("CancelledDate")
     private LocalDate cancelledDate;
+
     @JsonProperty("PaidDate")
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDateTime paidDate;
+
     @JsonUnwrapped
     private Bank bank;
+
     @JsonProperty("AccountType")
     private String accountType;
+
     @JsonProperty("DeliverMethod")
     private String deliverMethod;
+
     @JsonProperty("SendAmount")
     private BigDecimal sendAmount;
+
     @JsonProperty("SendCurrencyName")
     private String sendCurrencyName;
+
     @JsonProperty("SendCurrencyCode")
     private String sendCurrencyCode;
+
     @JsonProperty("CustomerFee")
     private BigDecimal customerFee;
+
     @JsonProperty("ReceivedAmount")
     private BigDecimal receivedAmount;
+
     @JsonProperty("ReceivedCurrencyName")
-    private  String receivedCurrencyName;
+    private String receivedCurrencyName;
+
     @JsonProperty("ReceivedCurrencyCode")
     private String receivedCurrencyCode;
+
     @JsonUnwrapped
     private Payout payout;
+
     @JsonProperty("ConversionRate")
     private BigDecimal conversionRate;
 
-   /* public Response getResponse() {
-        return response;
+    public OutboundResponse getOutboundResponse() {
+        return outboundResponse;
     }
 
-    public void setResponse(Response response) {
-        this.response = response;
-    }*/
+    public void setOutboundResponse(OutboundResponse outboundResponse) {
+        this.outboundResponse = outboundResponse;
+    }
 
     public LocalDate getSendDate() {
         return sendDate;
@@ -253,8 +252,8 @@ public class Transaction {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Transaction{");
-        sb.append("code=").append(code);
-        sb.append("message=").append(message);
+        sb.append("code=").append(outboundResponse.getCode());
+        sb.append("message=").append(outboundResponse.getMessage());
         sb.append(", sendDate=").append(sendDate);
         sb.append(", inoiceNumber='").append(inoiceNumber).append('\'');
         sb.append(", transferNo='").append(transferNo).append('\'');

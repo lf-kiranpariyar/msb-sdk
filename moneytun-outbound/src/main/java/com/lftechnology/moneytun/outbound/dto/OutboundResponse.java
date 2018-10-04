@@ -1,15 +1,15 @@
 package com.lftechnology.moneytun.outbound.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Token {
+public class OutboundResponse {
+
     @JsonProperty("Code")
     private Integer code;
+
     @JsonProperty("Message")
     private String message;
-
 
     public Integer getCode() {
         return code;
@@ -29,8 +29,8 @@ public class Token {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Token{");
-        sb.append("code=").append(code);
+        final StringBuilder sb = new StringBuilder("OutboundResponse{");
+        sb.append("code='").append(code).append('\'');
         sb.append(", message='").append(message).append('\'');
         sb.append('}');
         return sb.toString();

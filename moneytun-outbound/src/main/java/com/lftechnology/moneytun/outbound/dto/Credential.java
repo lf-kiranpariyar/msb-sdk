@@ -1,7 +1,9 @@
 package com.lftechnology.moneytun.outbound.dto;
 
 public class Credential {
+
     private String accessKey;
+
     private String secretkey;
 
     public String getAccessKey() {

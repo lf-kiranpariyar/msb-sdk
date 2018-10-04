@@ -1,7 +1,6 @@
 package com.lftechnology.moneytun.outbound.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +8,9 @@ import java.util.List;
 public class TransactionHistory {
     @JsonProperty("Code")
     private String code;
+
     @JsonProperty("Message")
-    private List<Message> messages = new ArrayList<Message>();
+    private List<Message> messages = new ArrayList<>();
 
 
     public String getCode() {

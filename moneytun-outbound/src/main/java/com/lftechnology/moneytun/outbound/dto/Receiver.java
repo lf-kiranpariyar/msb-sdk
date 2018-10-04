@@ -8,22 +8,31 @@ public class Receiver {
 
     @JsonProperty("ReceiverFirstName")
     private String receiverFirstName;
+
     @JsonProperty("ReceiverMiddleName")
     private String receiverMiddleName;
+
     @JsonProperty("ReceiverLastName")
     private String receiverLastName;
+
     @JsonProperty("ReceiverMotherMaidenName")
     private String receiverMotherMaidenName;
+
     @JsonProperty("ReceiverAddress")
     private String receiverAddress;
+
     @JsonProperty("ReceiverPhone")
     private String receiverPhone;
+
     @JsonProperty("ReceiverCity")
     private String receiverCity;
+
     @JsonProperty("ReceiverState")
     private String receiverState;
+
     @JsonProperty("ReceiverCountry")
     private String receiverCountry;
+
     @JsonProperty("ReceiverCode")
     private String receiverCode;
 

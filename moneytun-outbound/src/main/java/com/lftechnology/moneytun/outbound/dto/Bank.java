@@ -8,8 +8,10 @@ public class Bank {
 
     @JsonProperty("Bank")
     private String bankName;
+
     @JsonProperty("BankAccount")
     private String bankAccount;
+
     @JsonProperty("BankCode")
     private String bankCode;
 

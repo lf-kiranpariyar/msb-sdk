@@ -24,7 +24,7 @@ public class OutboundServiceImplTest {
     public void getTransactionListTest(){
         Credential credential = new Credential();
         credential.setAccessKey("VTNB745695C-77A9-4373-BF6B-FB653C0FD3B1");
-        credential.setSecretkey("rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=");
+        credential.setSecretKey("rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=");
 
         OutboundService outboundService = new OutboundServiceImpl();
         UnpaidTransactionList response = outboundService.getUnpaidTransactionList(credential,"033341240","TRG");
@@ -37,7 +37,7 @@ public class OutboundServiceImplTest {
     public void confirmTransactionTest(){
         Credential credential = new Credential();
         credential.setAccessKey("VTNB745695C-77A9-4373-BF6B-FB653C0FD3B1");
-        credential.setSecretkey("rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=");
+        credential.setSecretKey("rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=");
 
         OutboundService outboundService = new OutboundServiceImpl();
         OutboundResponse outboundResponse = outboundService.confirmTransaction(credential,"033341240","TRG");

@@ -22,7 +22,7 @@ public class RequestApi {
     public RequestApi(Credential credential) {
         this.baseURL = CommonConstant.BASE_URL;
         this.accessKey = credential.getAccessKey();
-        this.secretKey = credential.getSecretkey();
+        this.secretKey = credential.getSecretKey();
     }
 
     public RequestApi() {

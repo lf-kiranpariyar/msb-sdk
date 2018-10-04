@@ -1,10 +1,14 @@
 package com.lftechnology.moneytun.outbound.dto;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Credential {
 
+    @SerializedName("accessKey")
     private String accessKey;
 
-    private String secretkey;
+    @SerializedName("secretKey")
+    private String secretKey;
 
     public String getAccessKey() {
         return accessKey;
@@ -14,11 +18,11 @@ public class Credential {
         this.accessKey = accessKey;
     }
 
-    public String getSecretkey() {
-        return secretkey;
+    public String getSecretKey() {
+        return secretKey;
     }
 
-    public void setSecretkey(String secretkey) {
-        this.secretkey = secretkey;
+    public void setSecretKey(String secretKey) {
+        this.secretKey = secretKey;
     }
 }

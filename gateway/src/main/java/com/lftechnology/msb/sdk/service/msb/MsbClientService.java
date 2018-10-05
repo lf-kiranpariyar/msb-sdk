@@ -1,4 +1,4 @@
-package com.lftechnology.msb.sdk.service;
+package com.lftechnology.msb.sdk.service.msb;
 
 import com.lftechnology.msb.sdk.dto.City;
 import com.lftechnology.msb.sdk.dto.Country;

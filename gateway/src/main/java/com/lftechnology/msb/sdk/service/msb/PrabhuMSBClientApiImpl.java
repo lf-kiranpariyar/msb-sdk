@@ -1,7 +1,6 @@
-package com.lftechnology.msb.sdk.service;
+package com.lftechnology.msb.sdk.service.msb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.msb.moneytun.dto.City;
 import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 import com.lftechnology.msb.prabhu.dto.Agent;
 import com.lftechnology.msb.prabhu.dto.BankInfo;

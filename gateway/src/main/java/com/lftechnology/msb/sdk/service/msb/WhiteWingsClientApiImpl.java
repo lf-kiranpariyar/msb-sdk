@@ -1,4 +1,4 @@
-package com.lftechnology.msb.sdk.service;
+package com.lftechnology.msb.sdk.service.msb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.msb.moneytun.dto.APIContext;

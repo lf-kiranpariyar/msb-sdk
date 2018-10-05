@@ -37,8 +37,6 @@ public class AccountApi {
 
         ObjectMapper oMapper = new ObjectMapper();
         Map<String, String> map = oMapper.convertValue(account, Map.class);
-
-        System.out.println(map);
         Call<AccountStatusResponse> call = service.getAccount(map);
         AccountStatusResponse accountStatusResponse = requestApi.executeApiCall(call);
         if (!accountStatusResponse.getCode().equals(CommonConstant.SUCCESS))

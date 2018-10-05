@@ -1,15 +1,15 @@
 package com.lftechnology.vtn.api;
 
-import com.lftechnology.vtn.constant.CommonConstant;
-import com.lftechnology.vtn.dto.response.TransactionListResponse;
-import com.lftechnology.vtn.exception.VtnException;
 import com.lftechnology.vtn.dto.request.Credential;
+import com.lftechnology.vtn.dto.response.TransactionListResponse;
+import com.lftechnology.vtn.enums.ResponseCode;
+import com.lftechnology.vtn.exception.VtnException;
 import com.lftechnology.vtn.service.TransactionListApiService;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 
 /**
- *   @author Shankar Ghimire < shankarghimire@lftechnology.com >
+ * @author Shankar Ghimire < shankarghimire@lftechnology.com >
  */
 
 public class TransactionListApi {
@@ -22,6 +22,7 @@ public class TransactionListApi {
 
     /**
      * This method will list out all the transaction details
+     *
      * @param transactionId it will take transactionId string as input
      * @return list of multiple transaction with details
      */
@@ -31,7 +32,7 @@ public class TransactionListApi {
 
         Call<TransactionListResponse> call = service.getTransaction(transactionId);
         TransactionListResponse transactionListResponseDTO = requestApi.executeApiCall(call);
-        if (!transactionListResponseDTO.getCode().equals(CommonConstant.SUCCESS))
+        if (ResponseCode.R00.name().equals(transactionListResponseDTO.getCode()))
             throw new VtnException(transactionListResponseDTO.getMessage(), transactionListResponseDTO.getCode());
 
         return transactionListResponseDTO;

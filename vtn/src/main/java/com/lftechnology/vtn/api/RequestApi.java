@@ -20,6 +20,7 @@ import java.io.IOException;
 
 /**
  * All the request are made of this class
+ *
  * @author Shankar Ghimire <shankarghimire@lftechnology.com>
  */
 
@@ -37,7 +38,8 @@ public class RequestApi {
     }
 
     private static String bodyToString(final RequestBody request) throws IOException {
-        try(final Buffer buffer = new Buffer()) {
+        final Buffer buffer = new Buffer();
+        try {
             final RequestBody copy = request;
             if (copy != null)
                 copy.writeTo(buffer);
@@ -78,7 +80,7 @@ public class RequestApi {
                         .build();
                 String postBodyString = getPostBodyString(credentials, request.body());
                 request = requestBuilder
-                        .post(RequestBody.create(MediaType.parse("application/x-www-form-urlencoded;charset=UTF-8"), postBodyString))
+                        .post(RequestBody.create(MediaType.parse(CommonConstant.CONTENT_TYPE), postBodyString))
                         .build();
 
                 return chain.proceed(request);
@@ -101,6 +103,7 @@ public class RequestApi {
 
     /**
      * This generic method will excute call object of generic type
+     *
      * @param call
      * @param <T>
      * @return response body from api call if successful response
@@ -110,7 +113,7 @@ public class RequestApi {
             retrofit2.Response<T> response = call.execute();
 
             if (!response.isSuccessful()) {
-                throw new ApiException(response.errorBody().string());
+                throw new ApiException();
             }
 
             return response.body();

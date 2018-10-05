@@ -1,8 +1,8 @@
 package com.lftechnology.vtn.api;
 
-import com.lftechnology.vtn.constant.CommonConstant;
 import com.lftechnology.vtn.dto.request.Credential;
 import com.lftechnology.vtn.dto.response.ManualTransactionResponse;
+import com.lftechnology.vtn.enums.ResponseCode;
 import com.lftechnology.vtn.exception.VtnException;
 import com.lftechnology.vtn.service.ManualUpdateService;
 import retrofit2.Call;
@@ -23,6 +23,7 @@ public class ManualUpdateApi {
 
     /**
      * This method will get the update status of cancelled transaction
+     *
      * @param transactionId transaction id as input
      * @return ManualTransactionResponse which have detailed of canceled transaction
      */
@@ -32,7 +33,7 @@ public class ManualUpdateApi {
         ManualUpdateService service = retrofit.create(ManualUpdateService.class);
         Call<ManualTransactionResponse> call = service.getUpdateStatus(transactionId);
         ManualTransactionResponse manualTransactionResponse = requestApi.executeApiCall(call);
-        if (!manualTransactionResponse.getCode().equals(CommonConstant.SUCCESS)) {
+        if (ResponseCode.R00.name().equals(manualTransactionResponse.getCode())) {
             throw new VtnException(manualTransactionResponse.getMessage(), manualTransactionResponse.getCode());
         }
 

@@ -1,10 +1,10 @@
 package com.lftechnology.vtn.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.vtn.constant.CommonConstant;
 import com.lftechnology.vtn.dto.request.AccountStatusRequest;
 import com.lftechnology.vtn.dto.request.Credential;
 import com.lftechnology.vtn.dto.response.AccountStatusResponse;
+import com.lftechnology.vtn.enums.ResponseCode;
 import com.lftechnology.vtn.exception.VtnException;
 import com.lftechnology.vtn.service.AccountApiService;
 import retrofit2.Call;
@@ -14,6 +14,7 @@ import java.util.Map;
 
 /**
  * AccountApi is used to call account related method
+ *
  * @author Shankar Ghimire < shankarghimire@lftechnology.com >
  */
 public class AccountApi {
@@ -39,7 +40,7 @@ public class AccountApi {
         Map<String, String> map = oMapper.convertValue(account, Map.class);
         Call<AccountStatusResponse> call = service.getAccount(map);
         AccountStatusResponse accountStatusResponse = requestApi.executeApiCall(call);
-        if (!accountStatusResponse.getCode().equals(CommonConstant.SUCCESS))
+        if (!ResponseCode.R00.name().equals(accountStatusResponse.getCode()))
             throw new VtnException(accountStatusResponse.getMessage(), accountStatusResponse.getCode());
 
         return accountStatusResponse;

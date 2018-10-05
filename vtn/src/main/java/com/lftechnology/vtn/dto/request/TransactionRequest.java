@@ -4,8 +4,8 @@ package com.lftechnology.vtn.dto.request;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.lftechnology.vtn.adapter.BigDecimalAdapter;
 import com.lftechnology.vtn.serilizer.LocalDateSerializer;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -301,8 +301,7 @@ public class TransactionRequest extends Credential {
         private Integer transferType;
 
 
-
-        public Builder setTransactionDetail(String transactionId,LocalDate transferDate,Integer transferType){
+        public Builder setTransactionDetail(String transactionId, LocalDate transferDate, Integer transferType) {
 
             this.transactionId = transactionId;
             this.transferDate = transferDate;
@@ -311,7 +310,7 @@ public class TransactionRequest extends Credential {
         }
 
 
-        public Builder setSenderDetail(String senderFirstName,String senderLastName,String senderEmail,String senderPhone,String senderCountry){
+        public Builder setSenderDetail(String senderFirstName, String senderLastName, String senderEmail, String senderPhone, String senderCountry) {
             this.senderFirstName = senderFirstName;
             this.senderLastName = senderLastName;
             this.senderEmail = senderEmail;
@@ -320,17 +319,18 @@ public class TransactionRequest extends Credential {
 
             return this;
         }
-        public Builder setReceiverDetail(String receiverFirstName,String receiverLastName,String receiverEmail,String receiverPhone,String receiverCountry){
+
+        public Builder setReceiverDetail(String receiverFirstName, String receiverLastName, String receiverEmail, String receiverPhone, String receiverCountry) {
             this.receiverFirstName = receiverFirstName;
             this.receiverLastName = receiverLastName;
             this.receiverEmail = receiverEmail;
             this.receiverPhone = receiverPhone;
             this.receiverCountry = receiverCountry;
 
-             return this;
+            return this;
         }
 
-        public Builder setAmount(BigDecimal amountInSenderCurrency,BigDecimal amountInNaira, String currencyCode ){
+        public Builder setAmount(BigDecimal amountInSenderCurrency, BigDecimal amountInNaira, String currencyCode) {
             this.amountInSenderCurrency = amountInSenderCurrency;
             this.amountInNaira = amountInNaira;
             this.currencyCode = currencyCode;
@@ -339,7 +339,7 @@ public class TransactionRequest extends Credential {
         }
 
 
-        public Builder setFee(BigDecimal feeInSenderCurrency , BigDecimal feeInNaira){
+        public Builder setFee(BigDecimal feeInSenderCurrency, BigDecimal feeInNaira) {
             this.feeInSenderCurrency = feeInSenderCurrency;
             this.feeInNaira = feeInNaira;
 
@@ -347,7 +347,7 @@ public class TransactionRequest extends Credential {
         }
 
 
-        public Builder setBankDetail (String bankName ,String bankAccountName,String bankAccountNumber){
+        public Builder setBankDetail(String bankName, String bankAccountName, String bankAccountNumber) {
             this.bankName = bankName;
             this.bankAccountName = bankAccountName;
             this.bankAccountNumber = bankAccountNumber;

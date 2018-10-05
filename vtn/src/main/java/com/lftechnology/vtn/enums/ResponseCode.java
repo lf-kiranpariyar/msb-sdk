@@ -39,21 +39,15 @@ public enum ResponseCode {
     R34("System Failure"),
     R35("Server Time Out"),
     R36("Invalid Bank Name"),
-    R37(""),
     R38("Empty Data"),
     R39("Amount in Naira less than required Minimum amount"),
     R40("Fee in Naira less than required Minimum fee"),
     R41("Invalid Transaction"),
-    R42("'Bank Account Name' received from Bank/NIBSS does\n" +
-            "not match what you provided."),
-    R43("Transactions received with same ID within 60\n" +
-            "seconds. Please try after 60 seconds"),
-    R44("You have exceeded your VTN limit for the day.\n" +
-            "Please try again at 2 PM Nigeria time"),
+    R42("'Bank Account Name' received from Bank/NIBSS does not match what you provided."),
+    R43("Transactions received with same ID within 60 seconds. Please try after 60 seconds"),
+    R44("You have exceeded your VTN limit for the day Please try again at 2 PM Nigeria time"),
     Z01("Bank Transfer Queued"),
-    Z02("Bank Transfer Failed and the amount was returned\n" +
-            "back to Remittance Provider.\n" +
-            "Try again with another TransactionId"),
+    Z02("Bank Transfer Failed and the amount was returned back to Remittance Provider. Try again with another TransactionId"),
     Z03("Bank Transfer failed, but amount is held"),
     Z04("Refund Bank Reversal"),
     Z05("Refund Manually"),
@@ -61,16 +55,14 @@ public enum ResponseCode {
     Z07("VTN NIBSS transfer limit exceeded");
 
 
+    private String message;
+
+    ResponseCode(String message) {
+        this.message = message;
+    }
+
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    private String message;
-    ResponseCode(String message){
-        this.message = message;
-    }
 }

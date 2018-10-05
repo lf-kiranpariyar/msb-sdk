@@ -2,16 +2,15 @@ package com.lftechnology.vtn.api;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.vtn.constant.CommonConstant;
 import com.lftechnology.vtn.dto.request.BankRequest;
 import com.lftechnology.vtn.dto.request.Credential;
 import com.lftechnology.vtn.dto.response.BankResponse;
+import com.lftechnology.vtn.enums.ResponseCode;
 import com.lftechnology.vtn.exception.VtnException;
 import com.lftechnology.vtn.service.BankApiService;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -42,7 +41,7 @@ public class BankApi {
         Map<String, String> map = oMapper.convertValue(bankRequest, Map.class);
         Call<BankResponse> call = service.verifyBank(map);
         BankResponse bankResponse = requestApi.executeApiCall(call);
-        if (!bankResponse.getCode().equals(CommonConstant.SUCCESS))
+        if (!ResponseCode.R00.name().equals(bankResponse.getCode()))
             throw new VtnException(bankResponse.getMessage(), bankResponse.getCode());
 
         return bankResponse;

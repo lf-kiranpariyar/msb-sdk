@@ -14,6 +14,8 @@ public class Recipient extends Person{
     Contact contact;
     List<Document> documentList;
 
+
+
     //FIXME : Maybe Replace it with List Of Custom Object eg. CustomField which will hold key, value and mapping attibute
     private Map<String, Object> metadata = new HashMap<>();
 
@@ -58,9 +60,10 @@ public class Recipient extends Person{
         this.metadata = metadata;
     }
 
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Recipient{");
+        final StringBuilder sb = new StringBuilder("Recipient{");
         sb.append("referenceId='").append(referenceId).append('\'');
         sb.append(", address=").append(address);
         sb.append(", contact=").append(contact);

@@ -10,7 +10,8 @@ public class LocalDateTimeAdapter extends XmlAdapter<String, LocalDateTime> {
     @Override
     public String marshal(LocalDateTime date) {
         if (date == null) return null;
-        return date.toString();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy h:mm:ss a", Locale.getDefault());
+        return date.format(formatter);
     }
 
     /**

@@ -7,124 +7,113 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Receiver {
 
     @JsonProperty("ReceiverFirstName")
-    private String receiverFirstName;
+    private String firstName;
 
     @JsonProperty("ReceiverMiddleName")
-    private String receiverMiddleName;
+    private String middleName;
 
     @JsonProperty("ReceiverLastName")
-    private String receiverLastName;
+    private String lastName;
 
     @JsonProperty("ReceiverMotherMaidenName")
-    private String receiverMotherMaidenName;
+    private String motherMaidenName;
 
     @JsonProperty("ReceiverAddress")
-    private String receiverAddress;
+    private String address;
 
     @JsonProperty("ReceiverPhone")
-    private String receiverPhone;
+    private String phone;
 
     @JsonProperty("ReceiverCity")
-    private String receiverCity;
+    private String city;
 
     @JsonProperty("ReceiverState")
-    private String receiverState;
+    private String state;
 
     @JsonProperty("ReceiverCountry")
-    private String receiverCountry;
+    private String country;
 
     @JsonProperty("ReceiverCode")
     private String receiverCode;
 
-    public String getreceiverFirstName() {
-        return receiverFirstName;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setreceiverFirstName(String receiverFirstName) {
-        this.receiverFirstName = receiverFirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getreceiverMiddleName() {
-        return receiverMiddleName;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setreceiverMiddleName(String receiverMiddleName) {
-        this.receiverMiddleName = receiverMiddleName;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getreceiverLastName() {
-        return receiverLastName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setreceiverLastName(String receiverLastName) {
-        this.receiverLastName = receiverLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getreceiverMotherMaidenName() {
-        return receiverMotherMaidenName;
+    public String getMotherMaidenName() {
+        return motherMaidenName;
     }
 
-    public void setreceiverMotherMaidenName(String receiverMotherMaidenName) {
-        this.receiverMotherMaidenName = receiverMotherMaidenName;
+    public void setMotherMaidenName(String motherMaidenName) {
+        this.motherMaidenName = motherMaidenName;
     }
 
-    public String getreceiverAddress() {
-        return receiverAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setreceiverAddress(String receiverAddress) {
-        this.receiverAddress = receiverAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getreceiverPhone() {
-        return receiverPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setreceiverPhone(String receiverPhone) {
-        this.receiverPhone = receiverPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getreceiverCity() {
-        return receiverCity;
+    public String getCity() {
+        return city;
     }
 
-    public void setreceiverCity(String receiverCity) {
-        this.receiverCity = receiverCity;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getreceiverState() {
-        return receiverState;
+    public String getState() {
+        return state;
     }
 
-    public void setreceiverState(String receiverState) {
-        this.receiverState = receiverState;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public String getreceiverCountry() {
-        return receiverCountry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setreceiverCountry(String receiverCountry) {
-        this.receiverCountry = receiverCountry;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("receiver{");
-        sb.append("receiverFirstName='").append(receiverFirstName).append('\'');
-        sb.append(", receiverMiddleName='").append(receiverMiddleName).append('\'');
-        sb.append(", receiverLastName='").append(receiverLastName).append('\'');
-        sb.append(", receiverMotherMaidenName='").append(receiverMotherMaidenName).append('\'');
-        sb.append(", receiverAddress='").append(receiverAddress).append('\'');
-        sb.append(", receiverPhone='").append(receiverPhone).append('\'');
-        sb.append(", receiverCity='").append(receiverCity).append('\'');
-        sb.append(", receiverState='").append(receiverState).append('\'');
-        sb.append(", receiverCountry='").append(receiverCountry).append('\'');
-        sb.append('}');
-        return sb.toString();
+    public String getReceiverCode() {
+        return receiverCode;
     }
 
-
+    public void setReceiverCode(String receiverCode) {
+        this.receiverCode = receiverCode;
+    }
 }

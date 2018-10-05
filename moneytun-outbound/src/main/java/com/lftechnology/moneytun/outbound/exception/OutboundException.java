@@ -1,14 +1,14 @@
 package com.lftechnology.moneytun.outbound.exception;
 
 public class OutboundException extends RuntimeException {
-private Integer code;
-private String message;
+    private Integer code;
+    private String message;
 
     public OutboundException(String message) {
         super(message);
     }
 
-    public OutboundException(Integer code, String message){
+    public OutboundException(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

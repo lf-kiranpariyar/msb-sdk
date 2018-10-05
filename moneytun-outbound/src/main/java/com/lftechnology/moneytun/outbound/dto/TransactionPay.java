@@ -3,7 +3,7 @@ package com.lftechnology.moneytun.outbound.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-public class TransactinPay {
+public class TransactionPay {
     @JsonUnwrapped
     private OutboundResponse outboundResponse;
     @JsonProperty("Detail")
@@ -27,7 +27,7 @@ public class TransactinPay {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("TransactinPay{");
+        final StringBuilder sb = new StringBuilder("TransactionPay{");
         sb.append("outboundResponse=").append(outboundResponse);
         sb.append(", detail='").append(detail).append('\'');
         sb.append('}');

@@ -7,55 +7,43 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Bank {
 
     @JsonProperty("Bank")
-    private String bankName;
-
+    private String name;
     @JsonProperty("BankAccount")
-    private String bankAccount;
-
+    private String account;
     @JsonProperty("BankCode")
-    private String bankCode;
+    private String code;
     @JsonProperty("BankBranch")
-    private String bankBranch;
+    private String branch;
 
-    public String getBankName() {
-        return bankName;
+    public String getName() {
+        return name;
     }
 
-    public void setBankName(String bankName) {
-        this.bankName = bankName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBankAccount() {
-        return bankAccount;
+    public String getAccount() {
+        return account;
     }
 
-    public void setBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public String getBankCode() {
-        return bankCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getBankBranch() {
-        return bankBranch;
+    public String getBranch() {
+        return branch;
     }
 
-    public void setBankBranch(String bankBranch) {
-        this.bankBranch = bankBranch;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Bank{");
-        sb.append("bankName='").append(bankName).append('\'');
-        sb.append(", bankAccount='").append(bankAccount).append('\'');
-        sb.append(", bankCode='").append(bankCode).append('\'');
-        sb.append('}');
-        return sb.toString();
+    public void setBranch(String branch) {
+        this.branch = branch;
     }
 }

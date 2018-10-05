@@ -19,7 +19,7 @@ public class Transaction {
 
     @JsonDeserialize(using = LocalDateTimeDeserialization.class)
     @JsonProperty("SendDate")
-    private java.time.LocalDateTime sendDate;
+    private LocalDateTime sendDate;
 
     @JsonProperty("InoiceNumber")
     private String inoiceNumber;
@@ -34,7 +34,6 @@ public class Transaction {
     private Receiver receiver;
 
     @JsonProperty("Status")
-
     private String status;
 
     @JsonDeserialize(using = LocalDateTimeDeserialization.class)
@@ -42,7 +41,6 @@ public class Transaction {
     private LocalDate cancelledDate;
 
     @JsonProperty("PaidDate")
-
     @JsonDeserialize(using = LocalDateTimeDeserialization.class)
     private java.time.LocalDateTime paidDate;
 

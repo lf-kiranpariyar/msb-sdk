@@ -7,87 +7,74 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Payout {
 
     @JsonProperty("PayoutLocationName")
-    private String payoutLocationName;
+    private String name;
     @JsonProperty("PayoutLocationAddress")
-    private String payoutLocationAddress;
+    private String address;
     @JsonProperty("PayoutLocationZip")
-    private String payoutLocationZip;
+    private String zip;
     @JsonProperty("PayoutLocationPhone")
-    private String payoutLocationPhone;
+    private String phone;
     @JsonProperty("PayoutLocationCity")
-    private String payoutLocationCity;
+    private String city;
     @JsonProperty("PayoutLocationState")
-    private String payoutLocationState;
+    private String state;
     @JsonProperty("PayoutLocationCountry")
-    private String payoutLocationCountry;
+    private String country;
 
-    public String getPayoutLocationName() {
-        return payoutLocationName;
+
+    public String getName() {
+        return name;
     }
 
-    public void setPayoutLocationName(String payoutLocationName) {
-        this.payoutLocationName = payoutLocationName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPayoutLocationAddress() {
-        return payoutLocationAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPayoutLocationAddress(String payoutLocationAddress) {
-        this.payoutLocationAddress = payoutLocationAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPayoutLocationZip() {
-        return payoutLocationZip;
+    public String getZip() {
+        return zip;
     }
 
-    public void setPayoutLocationZip(String payoutLocationZip) {
-        this.payoutLocationZip = payoutLocationZip;
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 
-    public String getPayoutLocationPhone() {
-        return payoutLocationPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPayoutLocationPhone(String payoutLocationPhone) {
-        this.payoutLocationPhone = payoutLocationPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getPayoutLocationCity() {
-        return payoutLocationCity;
+    public String getCity() {
+        return city;
     }
 
-    public void setPayoutLocationCity(String payoutLocationCity) {
-        this.payoutLocationCity = payoutLocationCity;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getPayoutLocationState() {
-        return payoutLocationState;
+    public String getState() {
+        return state;
     }
 
-    public void setPayoutLocationState(String payoutLocationState) {
-        this.payoutLocationState = payoutLocationState;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public String getPayoutLocationCountry() {
-        return payoutLocationCountry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setPayoutLocationCountry(String payoutLocationCountry) {
-        this.payoutLocationCountry = payoutLocationCountry;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Payout{");
-        sb.append("payoutLocationName='").append(payoutLocationName).append('\'');
-        sb.append(", payoutLocationAddress='").append(payoutLocationAddress).append('\'');
-        sb.append(", payoutLocationZip='").append(payoutLocationZip).append('\'');
-        sb.append(", payoutLocationPhone='").append(payoutLocationPhone).append('\'');
-        sb.append(", payoutLocationCity='").append(payoutLocationCity).append('\'');
-        sb.append(", payoutLocationState='").append(payoutLocationState).append('\'');
-        sb.append(", payoutLocationCountry='").append(payoutLocationCountry).append('\'');
-        sb.append('}');
-        return sb.toString();
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

@@ -18,6 +18,6 @@ public interface OutboundResource {
     Call<List<Transaction>> getUnpaidTransactionList(@Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
 
     @GET("transaction")
-    Call<OutboundResponse> conformTRansaction(@Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
+    Call<OutboundResponse> conformTransaction(@Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
 
 }

@@ -1,7 +1,7 @@
 package com.lftechnology.moneytun.outbound.service.impl;
 
 import com.lftechnology.moneytun.outbound.constant.CommonConstant;
-import com.lftechnology.moneytun.outbound.dto.Credential;
+import com.lftechnology.moneytun.outbound.dto.APIContext;
 import com.lftechnology.moneytun.outbound.exception.ApiException;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -15,18 +15,10 @@ import java.io.IOException;
 
 public class RequestApi {
 
-    private String baseURL;
-    private String accessKey;
-    private String secretKey;
+    private APIContext apiContext;
 
-    public RequestApi(Credential credential) {
-        this.baseURL = CommonConstant.BASE_URL;
-        this.accessKey = credential.getAccessKey();
-        this.secretKey = credential.getSecretKey();
-    }
-
-    public RequestApi() {
-        this.baseURL = CommonConstant.BASE_URL;
+    public RequestApi(APIContext apiContext) {
+        this.apiContext = apiContext;
     }
 
 
@@ -42,7 +34,7 @@ public class RequestApi {
                 Request original = chain.request();
                 Request.Builder requestBuilder = original.newBuilder()
                         .addHeader("Content-Type", CommonConstant.CONTENT_TYPE)
-                        .addHeader("Authentication", accessKey + ":" + secretKey);
+                        .addHeader("Authentication", apiContext.getAuthentication());
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
             }
@@ -50,7 +42,7 @@ public class RequestApi {
 
         return new Retrofit
                 .Builder()
-                .baseUrl(this.baseURL)
+                .baseUrl(apiContext.getEndPointUrl())
                 .client(httpClient.build())
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
@@ -69,13 +61,11 @@ public class RequestApi {
             retrofit2.Response<T> response = call.execute();
 
             if (!response.isSuccessful()) {
-                throw new ApiException(response.errorBody().string());
+                throw new ApiException();
             }
             return response.body();
         } catch (IOException e) {
-            e.printStackTrace();
             throw new ApiException();
-
         }
     }
 

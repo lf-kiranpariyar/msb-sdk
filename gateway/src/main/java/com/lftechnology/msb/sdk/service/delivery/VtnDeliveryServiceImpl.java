@@ -58,28 +58,4 @@ public class VtnDeliveryServiceImpl implements DeliveryService {
     }
 
 
-    public static void main(String[] args) {
-
-        try {
-//            VtnDeliveryServiceImpl vtnDeliveryService = new VtnDeliveryServiceImpl();
-//            BigDecimal ca = vtnDeliveryService.getBalance("{\"accessToken\":\"LKNgtr4Of7VmHrr7Q8JJcgbt543sFB4\",\"accessKey\":\"MNV73Bc6655dJ8UdkG4IKNGyk82nONK4\"}");
-//            System.out.println(ca);
-
-            Bank bank = new Bank();
-            bank.setAccountNumber("2173986879");
-            bank.setAccountHolderName("PETER   OJO");
-            bank.setName("000015");
-
-            VtnDeliveryServiceImpl vtnDeliveryService = new VtnDeliveryServiceImpl();
-            Bank bank1 = vtnDeliveryService.verifyBank(bank,"{\"accessToken\":\"LKNgtr4Of7VmHrr7Q8JJcgbt543sFB4\",\"accessKey\":\"MNV73Bc6655dJ8UdkG4IKNGyk82nONK4\"}");
-            System.out.println(bank1.getAccountHolderName());
-
-        } catch (ApiException e){
-            System.out.println(e.getMessage());
-        }catch (VtnException e){
-
-            System.out.println(e.getMessage());
-        }
-    }
-
 }

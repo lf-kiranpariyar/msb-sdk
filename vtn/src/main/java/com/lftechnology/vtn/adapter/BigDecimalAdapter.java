@@ -29,8 +29,7 @@ public class BigDecimalAdapter extends XmlAdapter<String, BigDecimal> {
 
     @Override
     public String marshal(BigDecimal v) throws Exception {
-        String stringValue = String.valueOf(v);
-        return stringValue;
+        return String.valueOf(v);
     }
 
 }

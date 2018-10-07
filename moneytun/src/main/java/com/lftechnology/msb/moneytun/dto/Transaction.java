@@ -16,6 +16,10 @@ public class Transaction {
     @JsonProperty("Employee")
     private Employee employee;
 
+
+    @JsonUnwrapped
+    private Country country;
+
     @JsonProperty("SendingCurrencyCode")
     private String sourceCurrencyCode;
 

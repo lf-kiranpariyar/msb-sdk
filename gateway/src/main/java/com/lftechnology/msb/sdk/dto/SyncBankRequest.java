@@ -4,8 +4,8 @@ import com.lftechnology.msb.sdk.enums.TransactionPaymentType;
 
 public class SyncBankRequest {
 
-    Country country;
-    TransactionPaymentType type;
+    private Country country;
+    private TransactionPaymentType type;
 
     public Country getCountry() {
         return country;
@@ -22,4 +22,6 @@ public class SyncBankRequest {
     public void setType(TransactionPaymentType type) {
         this.type = type;
     }
+
+
 }

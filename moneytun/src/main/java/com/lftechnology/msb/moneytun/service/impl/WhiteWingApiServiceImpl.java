@@ -31,7 +31,6 @@ import java.util.List;
 
 /**
  * WhiteWings API Integration.
- *
  */
 public class WhiteWingApiServiceImpl implements WhiteWingApiService {
 
@@ -62,7 +61,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
         LOGGER.info("Moneytun Fetch Transaction Request : {}", referenceNumber);
         Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
         WhiteWingResource service = retrofit.create(WhiteWingResource.class);
-        Call<TransactionResponse> call = service.getTransaction(apiContext.getCredential().getAuthenticationDetail(), QueryType.TRANSACTION_PROCESS.getValue(), referenceNumber);
+        Call<TransactionResponse> call = service.getTransaction(apiContext.getCredential().getAuthenticationDetail(), QueryType.TRANSACTION_DETAIL.getValue(), referenceNumber);
         try {
             Response<TransactionResponse> response = call.execute();
             if (!response.isSuccessful()) {
@@ -100,7 +99,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
         LOGGER.info("Moneytun Fetch Bank List : {}", countryISOCode);
         Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
         WhiteWingResource service = retrofit.create(WhiteWingResource.class);
-        String bankRequestQuery= apiContext.getCredential().getPayerDetails().get(countryISOCode).get(0).getPayeeCode().concat(",").concat(countryISOCode);
+        String bankRequestQuery = createBankFeatchPayload(countryISOCode, apiContext);
         Call<ListResponse<Bank>> call = service.getBankList(apiContext.getCredential().getAuthenticationDetail(), QueryType.BANK.getValue(), bankRequestQuery);
         try {
             Response<ListResponse<Bank>> response = call.execute();
@@ -112,6 +111,10 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             LOGGER.error("Error while parsing white wings response : {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());
         }
+    }
+
+    private String createBankFeatchPayload(String countryISOCode, APIContext apiContext) {
+        return apiContext.getCredential().getPayerDetails().get(countryISOCode).get(0).getPayeeCode().concat(",").concat(countryISOCode);
     }
 
     @Override

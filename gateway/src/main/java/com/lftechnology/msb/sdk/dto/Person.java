@@ -3,6 +3,8 @@ package com.lftechnology.msb.sdk.dto;
 import com.lftechnology.msb.sdk.enums.Gender;
 
 import java.time.LocalDate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Stores Person Details Information.
@@ -62,5 +64,11 @@ public class Person {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public String getFullName(){
+        return Stream.of(surname, firstName, middleName, lastName)
+                .filter(s -> s != null && !s.isEmpty())
+                .collect(Collectors.joining(" "));
     }
 }

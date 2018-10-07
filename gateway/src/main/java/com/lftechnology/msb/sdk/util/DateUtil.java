@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
  */
 public class DateUtil {
 
+    public final static String ISO_DATE_FORMAT = "yyyy-MM-dd";
+
+
     /**
      * Returns Formatted @{@link String} date for given {@link LocalDate}.
      *
@@ -19,4 +22,6 @@ public class DateUtil {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
         return date.format(formatter);
     }
+
+
 }

@@ -16,6 +16,12 @@ public class Response {
     @JsonProperty("Status")
     Integer status;
 
+
+    String clientId;
+
+    String clientSecret;
+
+
     public String getMessage() {
         return message;
     }

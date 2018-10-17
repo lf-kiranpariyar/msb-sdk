@@ -5,6 +5,7 @@ import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 import com.lftechnology.msb.prabhu.dto.Agent;
 import com.lftechnology.msb.prabhu.dto.BankInfo;
 import com.lftechnology.msb.prabhu.dto.Credential;
+import com.lftechnology.msb.prabhu.dto.TransactionDetail;
 import com.lftechnology.msb.prabhu.service.PrabhuClientApi;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
 import com.lftechnology.msb.sdk.dto.Country;
@@ -18,6 +19,7 @@ import com.lftechnology.msb.sdk.dto.TransactionStatusChangeRequest;
 import com.lftechnology.msb.sdk.enums.MSBTransactionStatus;
 import com.lftechnology.msb.sdk.enums.TransactionPaymentType;
 import com.lftechnology.msb.sdk.exception.UnsupportedException;
+import com.lftechnology.msb.sdk.mapper.PrabhuObjectMapper;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -37,7 +39,10 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
 
     @Override
     public TransactionResponse create(Transaction transaction, String credentials) {
-        return null;
+        Credential credential= getCredential(credentials);
+        TransactionDetail transactionDetail= PrabhuObjectMapper.toTransaction(transaction);
+        com.lftechnology.msb.prabhu.dto.TransactionResponse response = prabhuClientApi.createTransaction(credential, transactionDetail);
+        return PrabhuObjectMapper.fromTransactionResponse(response);
     }
 
     @Override

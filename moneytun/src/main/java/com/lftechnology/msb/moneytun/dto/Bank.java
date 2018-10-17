@@ -21,6 +21,9 @@ public class Bank {
     @JsonProperty("DestinationCountryISOCode")
     String countryISOCode;
 
+
+
+
     public String getName() {
         return name;
     }

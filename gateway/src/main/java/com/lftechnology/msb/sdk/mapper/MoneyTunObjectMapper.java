@@ -42,14 +42,7 @@ public class MoneyTunObjectMapper {
         com.lftechnology.msb.moneytun.dto.Transaction transactiondetail = new com.lftechnology.msb.moneytun.dto.Transaction.Builder().
                 party(sender, receiver, document).bankDetails(bank.getName(), bank.getBranch().getName(), bank.getAccountNumber(), bank.getType()).
                 paymentMethod(paymentMode.getMode()).transactionAmount(transaction.getAmount(), transaction.getRate(), transaction.getRecipientAmount()).build();
-
-        if(apiContext.getMode() == ApiMode.LIVE){
-            transactiondetail.setPointOfContactId(Long.valueOf(bank.getMetadata().get("pocId").toString()));
-            transactiondetail.setDeliveryMethod(PaymentMode.ACCOUNT_DEPOSIT.getMode());
-        }else{
-            transactiondetail.setPointOfContactId(87198l);
-            transactiondetail.setDeliveryMethod(PaymentMode.CASH_PICKUP.getMode());
-        }
+        fetchPOC(apiContext, bank, transactiondetail);
         transactiondetail.setSender(toSender(transaction.getSender()));
         transactiondetail.setReceiver(toReciever(transaction.getRecipient()));
         transactiondetail.setReceiverCurrencyCode(transaction.getRecipient().getAddress().getCountry().getCurrencyCode());
@@ -66,25 +59,33 @@ public class MoneyTunObjectMapper {
         return transactiondetail;
     }
 
+    private static void fetchPOC(APIContext apiContext, Bank bank, com.lftechnology.msb.moneytun.dto.Transaction transactiondetail) {
+        if(apiContext.getMode() == ApiMode.LIVE){
+            transactiondetail.setPointOfContactId(Long.valueOf(bank.getMetadata().get("pocId").toString()));
+            transactiondetail.setDeliveryMethod(PaymentMode.ACCOUNT_DEPOSIT.getMode());
+        }else{
+            transactiondetail.setPointOfContactId(87198l);
+            transactiondetail.setDeliveryMethod(PaymentMode.CASH_PICKUP.getMode());
+        }
+    }
+
     public static com.lftechnology.msb.moneytun.dto.Sender toSender(Sender sender) {
         Address address = sender.getAddress();
         Contact contact = sender.getContact();
-        com.lftechnology.msb.moneytun.dto.Sender senderDetails = new com.lftechnology.msb.moneytun.dto.Sender.Builder().
+        return  new com.lftechnology.msb.moneytun.dto.Sender.Builder().
                 name(sender.getFirstName(), sender.getMiddleName(), sender.getLastName()).
                 addressDetails(address.getAddressLine1(), address.getAddressLine2(), address.getCountry().getThreeCharISOCode(), address.getCountry().getTwoCharISOCode() + "-" +address.getState().getTwoCharISOCode(), address.getState().getTwoCharISOCode(), address.getCity()).
                 nationality(address.getCountry().getThreeCharISOCode()).
                 contactDetails(contact.getMobilePhone(), address.getPostCode()).dateOfBirth(sender.getDateOfBirth()).gender(sender.getGender().code()).build();
-        return senderDetails;
     }
 
     public static Receiver toReciever(Recipient recipient) {
         Address address = recipient.getAddress();
         Contact contact = recipient.getContact();
-        Receiver receiver = new Receiver.Builder().
+        return new Receiver.Builder().
                 name(recipient.getFirstName(), recipient.getMiddleName(), recipient.getLastName()).
                 addressDetails(address.getAddressLine1(), address.getAddressLine2(), address.getCountry().getThreeCharISOCode(), "", address.getState().getName(), address.getCity()).
                 contactDetails(contact.getMobilePhone()).gender("").build();
-        return receiver;
     }
 
     public static com.lftechnology.msb.moneytun.dto.Document toDocument(Document document) {

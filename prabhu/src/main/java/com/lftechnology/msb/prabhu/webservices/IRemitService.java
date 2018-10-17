@@ -32,7 +32,7 @@ public class IRemitService
         URL url = null;
         WebServiceException e = null;
         try {
-            String wsdlFileLoation = System.getProperty("WSDL_FILE_LOCATION");
+            String wsdlFileLoation = "file:/home/eyeshield/Desktop/prabhu/txnservice.xml";
             if(wsdlFileLoation==null){
                 wsdlFileLoation = System.getenv("WSDL_FILE_LOCATION");
             }

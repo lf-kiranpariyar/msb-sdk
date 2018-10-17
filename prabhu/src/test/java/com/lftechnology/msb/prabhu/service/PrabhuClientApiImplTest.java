@@ -1,5 +1,7 @@
 package com.lftechnology.msb.prabhu.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.msb.prabhu.dto.TransactionDetail;
 import com.lftechnology.msb.prabhu.dto.TransactionResponse;
 import com.lftechnology.msb.prabhu.webservices.ArrayOfReturnAGENTLIST;
@@ -38,6 +40,16 @@ public class PrabhuClientApiImplTest {
                 null
         );
         List<ReturnAGENTLIST> returnAGENTLIST = arrayOfReturnAGENTLIST.getReturnAGENTLIST();
+        returnAGENTLIST.forEach(it->{
+            try {
+                System.out.println(new ObjectMapper().writeValueAsString(returnAGENTLIST));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            System.out.println(it.getAGENT());
+            System.out.println(it.getBANKBRANCHID());
+            System.out.println(it.getLOCATIONID());
+        });
         Assert.assertNotEquals(1,returnAGENTLIST.size());
     }
 
@@ -59,7 +71,7 @@ public class PrabhuClientApiImplTest {
         transactionDetail.setSenderCity("texas");
         transactionDetail.setSenderCountry("United States");
         transactionDetail.setSenderIdType("passport");
-        transactionDetail.setSenderIdNumber("12345");
+        transactionDetail.setSenderIdNumber("13213123");
         transactionDetail.setSenderIdIsuueDate("2016-05-12");
         transactionDetail.setSenderIdExpireDate("2020-12-10");
         transactionDetail.setSenderDateofBirth("1993-02-15");
@@ -67,19 +79,19 @@ public class PrabhuClientApiImplTest {
         transactionDetail.setReceiverAddress("Daehak");
         transactionDetail.setReceiverContactNumber("1234567895");
         transactionDetail.setReceiverCity("city");
-        transactionDetail.setReceiverCountry("Republic of Korea");
+        transactionDetail.setReceiverCountry("Vietnam");
         transactionDetail.setTransferAmount("10");
         transactionDetail.setPaymentMode("D");
-        transactionDetail.setBankBranchName("KukMin Bank");
+        transactionDetail.setBankBranchName("An Binh Commercial Joint Stock Bank");
         transactionDetail.setBankAccountNumber("123456");
-        transactionDetail.setBankLocationId("96855786");
-        transactionDetail.setBankId("7205");
+        transactionDetail.setBankLocationId("39325698");
+        transactionDetail.setBankId("6451");
         transactionDetail.setCalcBy("C");
         transactionDetail.setSenderOccupation("Software Engineer");
         transactionDetail.setSenderSourceOfFund("Business");
         transactionDetail.setSenderBeneficiaryRelationship("Brother");
         transactionDetail.setPurposeOfRemittance("Home Maintenance");
-        transactionDetail.setSenderSSN("123456789");
+        transactionDetail.setSenderSSN("123456780");
         return transactionDetail;
     }
 
@@ -94,7 +106,7 @@ public class PrabhuClientApiImplTest {
 
     private BankInfo getBankInfo(){
         BankInfo bankInfo = new BankInfo();
-        bankInfo.setPayoutCountry("REPUBLIC OF KOREA");
+        bankInfo.setPayoutCountry("VIETNAM");
         bankInfo.setPaymentType("D");
         return bankInfo;
     }

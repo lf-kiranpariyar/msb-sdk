@@ -4,7 +4,42 @@ import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
 
 import javax.enterprise.util.AnnotationLiteral;
 
-public class TransactionOriginatorLiteral extends AnnotationLiteral<TransactionOriginator> implements TransactionOriginator {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private String value;
 

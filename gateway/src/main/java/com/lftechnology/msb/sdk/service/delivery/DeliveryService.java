@@ -6,7 +6,10 @@ import java.math.BigDecimal;
 
 public interface DeliveryService {
     TransactionResponse create(Transaction transaction, String credential);
+
     Bank verifyBank(Bank request, String credential);
+
     ExchangeRateResponse rate(ExchangeRateRequest request, String credential);
+
     BigDecimal getBalance(String credential);
 }

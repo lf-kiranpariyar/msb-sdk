@@ -1,5 +1,4 @@
-package com.lftechnology.msb.moneytun.serializer;
-
+package com.lftechnology.vtn.serilizer;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
@@ -9,7 +8,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class BirthDateSerializer extends JsonSerializer<LocalDate> {
+public class LocalDateSerializer extends JsonSerializer<LocalDate> {
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 

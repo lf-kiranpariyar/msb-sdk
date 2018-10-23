@@ -20,23 +20,35 @@ import java.util.List;
 public class WhiteWingsOutboundApiImpl implements DeliveryConfirmationService {
 
     @Override
-    public TransactionStatusChangeResponse confirmTransaction(String credentialString, String transferNo, String payeeCode) throws OutboundException,ApiException {
+    public TransactionStatusChangeResponse confirmTransaction(String credentialString, String transferNo, String payeeCode) {
+        try{
         com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = MoneyTunOutboundObjectMapper.toCrendential(credentialString);
         APIContext apiContext = new APIContext(outboundCrendential, ApiMode.SANDBOX);
         OutboundService service = new OutboundServiceImpl();
         OutboundResponse outboundResponse = service.confirmTransaction(apiContext,transferNo,payeeCode);
 
     return MoneyTunOutboundObjectMapper.toTransactionStatusChangeResponse(outboundResponse);
+    }catch(OutboundException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }catch(com.lftechnology.vtn.exception.ApiException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }
     }
 
     @Override
-    public List<TransactionResponse> getUnpaidTransactionList(String credentialString, String transferNo, String payeeCode) throws OutboundException, ApiException {
+    public List<TransactionResponse> getUnpaidTransactionList(String credentialString, String transferNo, String payeeCode){
+        try{
         com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = MoneyTunOutboundObjectMapper.toCrendential(credentialString);
         APIContext apiContext = new APIContext(outboundCrendential, ApiMode.SANDBOX);
         OutboundService service = new OutboundServiceImpl();
         List<Transaction> unpaidTransactionList =service.getUnpaidTransactionList(apiContext,transferNo,payeeCode);
         return MoneyTunOutboundObjectMapper.toTransactionResponse(unpaidTransactionList);
 
+    }catch(OutboundException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }catch(com.lftechnology.vtn.exception.ApiException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }
     }
 
 

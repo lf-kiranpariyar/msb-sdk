@@ -1,14 +1,7 @@
 package com.lftechnology.msb.sdk.service.msb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.msb.moneytun.dto.APIContext;
-import com.lftechnology.msb.moneytun.dto.CityRequest;
-import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
-import com.lftechnology.msb.moneytun.dto.ExchangeRate;
-import com.lftechnology.msb.moneytun.dto.PayoutPartner;
-import com.lftechnology.msb.moneytun.dto.PointOfContact;
-import com.lftechnology.msb.moneytun.dto.PointOfContactRequest;
-import com.lftechnology.msb.moneytun.dto.StateRequest;
+import com.lftechnology.msb.moneytun.dto.*;
 import com.lftechnology.msb.moneytun.enums.ApiMode;
 import com.lftechnology.msb.moneytun.enums.PaymentMode;
 import com.lftechnology.msb.moneytun.enums.TxnStatus;
@@ -16,12 +9,15 @@ import com.lftechnology.msb.moneytun.service.WhiteWingApiService;
 import com.lftechnology.msb.moneytun.service.impl.WhiteWingApiServiceImpl;
 import com.lftechnology.msb.sdk.annotation.SystemProperty;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
+import com.lftechnology.msb.sdk.dto.City;
+import com.lftechnology.msb.sdk.dto.Country;
 import com.lftechnology.msb.sdk.dto.*;
+import com.lftechnology.msb.sdk.dto.State;
+import com.lftechnology.msb.sdk.dto.Transaction;
+import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import com.lftechnology.msb.sdk.enums.MSBTransactionStatus;
 import com.lftechnology.msb.sdk.exception.UnsupportedException;
 import com.lftechnology.msb.sdk.mapper.MoneyTunObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.ejb.Stateless;
 import java.math.BigDecimal;
@@ -42,7 +38,6 @@ public class WhiteWingsClientApiImpl implements MsbClientService {
     @SystemProperty(value = "MTS_ENVIRONMENT", fallback = "SANDBOX")
     private static String apiMode = "SANDBOX";
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(WhiteWingsClientApiImpl.class);
 
     @Override
     public TransactionResponse create(Transaction transaction, String credentials) {
@@ -162,7 +157,7 @@ public class WhiteWingsClientApiImpl implements MsbClientService {
         APIContext apiContext = new APIContext(credentials, ApiMode.valueOf(apiMode));
         StateRequest stateRequest = new StateRequest(country.getThreeCharISOCode());
         List<com.lftechnology.msb.moneytun.dto.State> states = wingApiService.getStates(stateRequest, apiContext);
-        return  states.stream()
+        return states.stream()
                 .map(s -> new State(s.getName(), "", s.getIsoCode(), country.getName()))
                 .collect(Collectors.toList());
     }

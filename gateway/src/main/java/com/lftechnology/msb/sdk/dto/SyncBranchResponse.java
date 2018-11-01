@@ -33,4 +33,12 @@ public class SyncBranchResponse {
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
+
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
+    }
 }

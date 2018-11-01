@@ -1,7 +1,5 @@
 package com.lftechnology.msb.sdk.service.msb;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 import com.lftechnology.msb.prabhu.dto.*;
 import com.lftechnology.msb.prabhu.service.PrabhuClientApi;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
@@ -14,7 +12,6 @@ import com.lftechnology.msb.sdk.mapper.PrabhuObjectMapper;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -44,8 +41,8 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
 
         CancelTransactionDetail cancelTransactionDetail = PrabhuObjectMapper.toCancelTransactionDetail(changeRequest);
 
-        CancelResponse cancelResponse = prabhuClientApi.cancelTransaction(prabhuCredential,cancelTransactionDetail);
-        if(cancelResponse.getCode().equals(200))
+        CancelResponse cancelResponse = prabhuClientApi.cancelTransaction(prabhuCredential, cancelTransactionDetail);
+        if (cancelResponse.getCode().equals("200"))
             return Boolean.TRUE;
         else
             return Boolean.FALSE;
@@ -68,14 +65,14 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
         BankInfo bankInfo = new BankInfo();
         bankInfo.setPayoutCountry(request.getCountry().getName());
         bankInfo.setPaymentType(TransactionPaymentType.getPrabhuPaymentMode(request.getType()).name());
-        List<Agent> agents = prabhuClientApi.getAgents(credential,bankInfo);
+        List<Agent> agents = prabhuClientApi.getAgents(credential, bankInfo);
         return PrabhuObjectMapper.toSyncBankResponse(agents);
     }
 
     @Override
     public BigDecimal rate(ExchangeRateRequest request, String credentials) {
         Credential prabhuCredential = PrabhuObjectMapper.getCredential(credentials);
-        return prabhuClientApi.getExchangeRate(prabhuCredential,request.getDestination().getName());
+        return prabhuClientApi.getExchangeRate(prabhuCredential, request.getDestination().getName());
     }
 
     @Override
@@ -102,11 +99,9 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
     public TransactionResponse getTxnDetails(Transaction transaction, String credentials) {
         Credential prabhuCredential = PrabhuObjectMapper.getCredential(credentials);
         TransactionDetail transactionDetail = PrabhuObjectMapper.toTransactionDetail(transaction);
-        com.lftechnology.msb.prabhu.dto.TransactionResponse prabhuTransactionResponse = prabhuClientApi.getDetails(prabhuCredential,transactionDetail);
+        com.lftechnology.msb.prabhu.dto.TransactionResponse prabhuTransactionResponse = prabhuClientApi.getDetails(prabhuCredential, transactionDetail);
         return PrabhuObjectMapper.toTransactionResponse(prabhuTransactionResponse);
     }
-
-
 
 
 }

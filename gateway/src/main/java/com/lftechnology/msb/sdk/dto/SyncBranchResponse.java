@@ -7,6 +7,7 @@ public class SyncBranchResponse {
 
     String name;
     Address address;
+    private String referenceId;
     private Map<String, Object> metadata = new HashMap<>();
 
     public String getName() {

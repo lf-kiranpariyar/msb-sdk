@@ -2,9 +2,9 @@ package com.lftechnology.msb.sdk.dto;
 
 public class TransactionStatusChangeResponse {
 
-    Boolean success;
-    String message;
-    String code;
+   private Boolean success;
+   private String message;
+   private String code;
 
     public String getCode() {
         return code;

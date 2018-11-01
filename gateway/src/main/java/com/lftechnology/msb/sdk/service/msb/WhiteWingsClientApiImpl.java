@@ -16,15 +16,7 @@ import com.lftechnology.msb.moneytun.service.WhiteWingApiService;
 import com.lftechnology.msb.moneytun.service.impl.WhiteWingApiServiceImpl;
 import com.lftechnology.msb.sdk.annotation.SystemProperty;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
-import com.lftechnology.msb.sdk.dto.City;
-import com.lftechnology.msb.sdk.dto.Country;
-import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
-import com.lftechnology.msb.sdk.dto.State;
-import com.lftechnology.msb.sdk.dto.SyncBankRequest;
-import com.lftechnology.msb.sdk.dto.SyncBankResponse;
-import com.lftechnology.msb.sdk.dto.Transaction;
-import com.lftechnology.msb.sdk.dto.TransactionResponse;
-import com.lftechnology.msb.sdk.dto.TransactionStatusChangeRequest;
+import com.lftechnology.msb.sdk.dto.*;
 import com.lftechnology.msb.sdk.enums.MSBTransactionStatus;
 import com.lftechnology.msb.sdk.exception.UnsupportedException;
 import com.lftechnology.msb.sdk.mapper.MoneyTunObjectMapper;
@@ -185,4 +177,11 @@ public class WhiteWingsClientApiImpl implements MsbClientService {
                 .map(s -> new City(s.getName(), country.getThreeCharISOCode(), s.getStateIsoCode(), s.getStateName()))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public TransactionResponse getTxnDetails(Transaction transaction, String credentials) {
+        return null;
+    }
+
+
 }

@@ -33,6 +33,7 @@ public class TransactionDetail {
     private String senderBeneficiaryRelationship;
     private String purposeOfRemittance;
     private String senderSSN;
+    private String pinNo;
 
     public String getAgentTxnId() {
         return agentTxnId;
@@ -266,6 +267,14 @@ public class TransactionDetail {
         this.senderSSN = senderSSN;
     }
 
+    public String getPinNo() {
+        return pinNo;
+    }
+
+    public void setPinNo(String pinNo) {
+        this.pinNo = pinNo;
+    }
+
     @Override
     public String toString() {
         return "TransactionDetail{" +
@@ -298,6 +307,7 @@ public class TransactionDetail {
                 ", senderBeneficiaryRelationship='" + senderBeneficiaryRelationship + '\'' +
                 ", purposeOfRemittance='" + purposeOfRemittance + '\'' +
                 ", senderSSN='" + senderSSN + '\'' +
+                ", pinNo='" + pinNo + '\'' +
                 '}';
     }
 }

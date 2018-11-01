@@ -24,6 +24,7 @@ public class Transaction {
     private String currencyCode;
     private BigDecimal feeInSenderCurrency;
     private BigDecimal feeInRecipientCurrency;
+    private String referenceNumber;
 
     public Sender getSender() {
         return sender;
@@ -160,6 +161,14 @@ public class Transaction {
 
     public void setFeeInRecipientCurrency(BigDecimal feeInRecipientCurrency) {
         this.feeInRecipientCurrency = feeInRecipientCurrency;
+    }
+
+    public String getReferenceNumber() {
+        return referenceNumber;
+    }
+
+    public void setReferenceNumber(String referenceNumber) {
+        this.referenceNumber = referenceNumber;
     }
 
     @Override

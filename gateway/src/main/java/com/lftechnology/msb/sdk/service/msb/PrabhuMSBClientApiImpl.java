@@ -2,15 +2,15 @@ package com.lftechnology.msb.sdk.service.msb;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
-import com.lftechnology.msb.prabhu.dto.Agent;
-import com.lftechnology.msb.prabhu.dto.BankInfo;
-import com.lftechnology.msb.prabhu.dto.Credential;
+import com.lftechnology.msb.prabhu.dto.*;
 import com.lftechnology.msb.prabhu.service.PrabhuClientApi;
 import com.lftechnology.msb.sdk.annotation.TransactionOriginator;
 import com.lftechnology.msb.sdk.dto.*;
+import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import com.lftechnology.msb.sdk.enums.MSBTransactionStatus;
 import com.lftechnology.msb.sdk.enums.TransactionPaymentType;
 import com.lftechnology.msb.sdk.exception.UnsupportedException;
+import com.lftechnology.msb.sdk.mapper.PrabhuObjectMapper;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -40,7 +40,16 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
 
     @Override
     public Boolean changeTransactionStatus(TransactionStatusChangeRequest changeRequest, String credentials) {
-        throw new UnsupportedException("Unsupported");
+        Credential prabhuCredential = PrabhuObjectMapper.getCredential(credentials);
+
+        CancelTransactionDetail cancelTransactionDetail = PrabhuObjectMapper.toCancelTransactionDetail(changeRequest);
+
+        CancelResponse cancelResponse = prabhuClientApi.cancelTransaction(prabhuCredential,cancelTransactionDetail);
+        if(cancelResponse.getCode().equals(200))
+            return Boolean.TRUE;
+        else
+            return Boolean.FALSE;
+
     }
 
     @Override
@@ -55,17 +64,18 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
 
     @Override
     public List<SyncBankResponse> fetchBank(SyncBankRequest request, String credentials) {
-        Credential credential = getCredential(credentials);
+        Credential credential = PrabhuObjectMapper.getCredential(credentials);
         BankInfo bankInfo = new BankInfo();
         bankInfo.setPayoutCountry(request.getCountry().getName());
         bankInfo.setPaymentType(TransactionPaymentType.getPrabhuPaymentMode(request.getType()).name());
         List<Agent> agents = prabhuClientApi.getAgents(credential,bankInfo);
-        return null;
+        return PrabhuObjectMapper.toSyncBankResponse(agents);
     }
 
     @Override
-    public BigDecimal rate(ExchangeRateRequest request, String credentails) {
-        return null;
+    public BigDecimal rate(ExchangeRateRequest request, String credentials) {
+        Credential prabhuCredential = PrabhuObjectMapper.getCredential(credentials);
+        return prabhuClientApi.getExchangeRate(prabhuCredential,request.getDestination().getName());
     }
 
     @Override
@@ -88,17 +98,15 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
         throw new UnsupportedException("Purchase State Not Supported by Prabhu MSB");
     }
 
-    private Credential getCredential(String credentialString){
-        ObjectMapper objectMapper = new ObjectMapper();
-        if (credentialString == null) {
-            throw new InvalidCredentialException("Credentials not found");
-        }
-        Credential credential=null;
-        try {
-            credential = objectMapper.readValue(credentialString, Credential.class);
-        } catch (IOException e) {
-            throw new InvalidCredentialException("Invalid Credentials ");
-        }
-        return credential;
+    @Override
+    public TransactionResponse getTxnDetails(Transaction transaction, String credentials) {
+        Credential prabhuCredential = PrabhuObjectMapper.getCredential(credentials);
+        TransactionDetail transactionDetail = PrabhuObjectMapper.toTransactionDetail(transaction);
+        com.lftechnology.msb.prabhu.dto.TransactionResponse prabhuTransactionResponse = prabhuClientApi.getDetails(prabhuCredential,transactionDetail);
+        return PrabhuObjectMapper.toTransactionResponse(prabhuTransactionResponse);
     }
+
+
+
+
 }

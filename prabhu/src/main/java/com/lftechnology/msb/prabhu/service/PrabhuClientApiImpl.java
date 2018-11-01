@@ -65,7 +65,17 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
 
     @Override
     public TransactionResponse getDetails(Credential credential, TransactionDetail transactionDetail) {
-        return null;
+        IRemitService iRemitService =new IRemitService();
+        IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        ReturnTXNStatus returnTXNStatus = iRemitServiceSoap.queryTXNStatus(
+                credential.getAgentCode(),
+                credential.getAgentUserId(),
+                credential.getAgentPassword(),
+                transactionDetail.getPinNo(),
+                credential.getAgentSessionId(),
+                transactionDetail.getAgentTxnId()
+        );
+        return MSBUtil.mapToTransactionResponse(returnTXNStatus);
     }
 
     @Override

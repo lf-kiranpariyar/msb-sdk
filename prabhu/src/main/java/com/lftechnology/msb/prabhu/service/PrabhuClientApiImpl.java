@@ -58,7 +58,8 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
                 transactionDetail.getSenderBeneficiaryRelationship(),
                 transactionDetail.getPurposeOfRemittance(),
                 "", "",
-                transactionDetail.getSenderSSN()
+                transactionDetail.getSenderSSN(),
+                transactionDetail.getCustomerRate()
         );
         return MSBUtil.mapToTransactionResponse(returnCreateTXN);
     }

@@ -64,6 +64,7 @@ public class PrabhuObjectMapper {
         transactionDetail.setSenderBeneficiaryRelationship(transaction.getRecipient().getRelationship());
         transactionDetail.setPurposeOfRemittance(transaction.getPurpose());
         transactionDetail.setSenderSSN(ssnDocument.getIdNumber());
+        transactionDetail.setCustomerRate(String.valueOf(transaction.getRate()));
         return transactionDetail;
     }
 

@@ -34,6 +34,7 @@ public class TransactionDetail {
     private String purposeOfRemittance;
     private String senderSSN;
     private String pinNo;
+    private String customerRate;
 
     public String getAgentTxnId() {
         return agentTxnId;
@@ -275,39 +276,49 @@ public class TransactionDetail {
         this.pinNo = pinNo;
     }
 
+    public String getCustomerRate() {
+        return customerRate;
+    }
+
+    public void setCustomerRate(String customerRate) {
+        this.customerRate = customerRate;
+    }
+
     @Override
     public String toString() {
-        return "TransactionDetail{" +
-                "agentTxnId='" + agentTxnId + '\'' +
-                ", senderName='" + senderName + '\'' +
-                ", senderAddress='" + senderAddress + '\'' +
-                ", senderMobile='" + senderMobile + '\'' +
-                ", senderCity='" + senderCity + '\'' +
-                ", senderCountry='" + senderCountry + '\'' +
-                ", senderIdType='" + senderIdType + '\'' +
-                ", senderIdNumber='" + senderIdNumber + '\'' +
-                ", senderIdIsuueDate='" + senderIdIsuueDate + '\'' +
-                ", senderIdExpireDate='" + senderIdExpireDate + '\'' +
-                ", senderDateofBirth='" + senderDateofBirth + '\'' +
-                ", receiverName='" + receiverName + '\'' +
-                ", receiverAddress='" + receiverAddress + '\'' +
-                ", receiverContactNumber='" + receiverContactNumber + '\'' +
-                ", receiverCity='" + receiverCity + '\'' +
-                ", receiverCountry='" + receiverCountry + '\'' +
-                ", transferAmount='" + transferAmount + '\'' +
-                ", paymentMode='" + paymentMode + '\'' +
-                ", bankId='" + bankId + '\'' +
-                ", bankAccountNumber='" + bankAccountNumber + '\'' +
-                ", bankBranchName='" + bankBranchName + '\'' +
-                ", bankBranchId='" + bankBranchId + '\'' +
-                ", bankLocationId='" + bankLocationId + '\'' +
-                ", calcBy='" + calcBy + '\'' +
-                ", senderOccupation='" + senderOccupation + '\'' +
-                ", senderSourceOfFund='" + senderSourceOfFund + '\'' +
-                ", senderBeneficiaryRelationship='" + senderBeneficiaryRelationship + '\'' +
-                ", purposeOfRemittance='" + purposeOfRemittance + '\'' +
-                ", senderSSN='" + senderSSN + '\'' +
-                ", pinNo='" + pinNo + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("TransactionDetail{");
+        sb.append("agentTxnId='").append(agentTxnId).append('\'');
+        sb.append(", senderName='").append(senderName).append('\'');
+        sb.append(", senderAddress='").append(senderAddress).append('\'');
+        sb.append(", senderMobile='").append(senderMobile).append('\'');
+        sb.append(", senderCity='").append(senderCity).append('\'');
+        sb.append(", senderCountry='").append(senderCountry).append('\'');
+        sb.append(", senderIdType='").append(senderIdType).append('\'');
+        sb.append(", senderIdNumber='").append(senderIdNumber).append('\'');
+        sb.append(", senderIdIsuueDate='").append(senderIdIsuueDate).append('\'');
+        sb.append(", senderIdExpireDate='").append(senderIdExpireDate).append('\'');
+        sb.append(", senderDateofBirth='").append(senderDateofBirth).append('\'');
+        sb.append(", receiverName='").append(receiverName).append('\'');
+        sb.append(", receiverAddress='").append(receiverAddress).append('\'');
+        sb.append(", receiverContactNumber='").append(receiverContactNumber).append('\'');
+        sb.append(", receiverCity='").append(receiverCity).append('\'');
+        sb.append(", receiverCountry='").append(receiverCountry).append('\'');
+        sb.append(", transferAmount='").append(transferAmount).append('\'');
+        sb.append(", paymentMode='").append(paymentMode).append('\'');
+        sb.append(", bankId='").append(bankId).append('\'');
+        sb.append(", bankAccountNumber='").append(bankAccountNumber).append('\'');
+        sb.append(", bankBranchName='").append(bankBranchName).append('\'');
+        sb.append(", bankBranchId='").append(bankBranchId).append('\'');
+        sb.append(", bankLocationId='").append(bankLocationId).append('\'');
+        sb.append(", calcBy='").append(calcBy).append('\'');
+        sb.append(", senderOccupation='").append(senderOccupation).append('\'');
+        sb.append(", senderSourceOfFund='").append(senderSourceOfFund).append('\'');
+        sb.append(", senderBeneficiaryRelationship='").append(senderBeneficiaryRelationship).append('\'');
+        sb.append(", purposeOfRemittance='").append(purposeOfRemittance).append('\'');
+        sb.append(", senderSSN='").append(senderSSN).append('\'');
+        sb.append(", pinNo='").append(pinNo).append('\'');
+        sb.append(", customerRate='").append(customerRate).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

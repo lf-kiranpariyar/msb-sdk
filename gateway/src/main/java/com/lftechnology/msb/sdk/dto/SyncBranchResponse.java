@@ -7,6 +7,7 @@ public class SyncBranchResponse {
 
     String name;
     Address address;
+    private String referenceId;
     private Map<String, Object> metadata = new HashMap<>();
 
     public String getName() {
@@ -31,5 +32,13 @@ public class SyncBranchResponse {
 
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public String getReferenceId() {
+        return referenceId;
+    }
+
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
     }
 }

@@ -6,20 +6,11 @@ public enum DocumentType {
 
     String value;
 
+    public String getValue() {
+        return value;
+    }
+
     DocumentType(String value){
         this.value = value;
     }
-
-   /* public DocumentType getDocumentType(com.lftechnology.msb.sdk.enums.DocumentType documentType){
-        switch (documentType){
-            case PASSPORT:
-                return DocumentType.PASSPORT;
-            case STATE_ID:
-                return DocumentType.STATE_ID;
-            case DRIVING_LICENCE:
-                return  DocumentType.LICENSE;
-            default:
-                throw new ApiException("Invalid Document Type Supplied");
-        }
-    }*/
 }

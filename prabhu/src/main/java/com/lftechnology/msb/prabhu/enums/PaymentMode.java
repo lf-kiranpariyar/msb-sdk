@@ -5,6 +5,10 @@ public enum PaymentMode {
 
     String value;
 
+    public String getValue() {
+        return value;
+    }
+
     PaymentMode(String value) {
         this.value = value;
     }

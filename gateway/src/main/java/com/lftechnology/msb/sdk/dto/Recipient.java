@@ -9,7 +9,6 @@ import java.util.Map;
  */
 
 public class Recipient extends Person{
-
     private String referenceId;
     private Address address;
     private Contact contact;
@@ -18,9 +17,16 @@ public class Recipient extends Person{
 
 
 
-
     //FIXME : Maybe Replace it with List Of Custom Object eg. CustomField which will hold key, value and mapping attibute
     private Map<String, Object> metadata = new HashMap<>();
+
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
+    }
 
     public Address getAddress() {
         return address;
@@ -62,13 +68,6 @@ public class Recipient extends Person{
         this.metadata = metadata;
     }
 
-    public String getRelationship() {
-        return relationship;
-    }
-
-    public void setRelationship(String relationship) {
-        this.relationship = relationship;
-    }
 
     @Override
     public String toString() {

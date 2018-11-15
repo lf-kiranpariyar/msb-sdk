@@ -2,6 +2,8 @@ package com.lftechnology.msb.sdk.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Stores Address Information.
@@ -17,6 +19,10 @@ public class Address {
     private String street;
     private String postCode;
 
+
+    public String getFullAddress(){
+        return Stream.of(addressLine1,addressLine2).filter(it-> it!=null).collect(Collectors.joining(" "));
+    }
     public String getAddressLine1() {
         return addressLine1;
     }

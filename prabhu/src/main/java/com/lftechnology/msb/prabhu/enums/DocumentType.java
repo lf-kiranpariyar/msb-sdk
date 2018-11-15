@@ -8,6 +8,10 @@ public enum DocumentType {
 
     String value;
 
+    public String getValue() {
+        return value;
+    }
+
     DocumentType(String value){
         this.value = value;
     }

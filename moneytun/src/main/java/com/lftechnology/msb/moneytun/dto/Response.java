@@ -17,11 +17,6 @@ public class Response {
     Integer status;
 
 
-    String clientId;
-
-    String clientSecret;
-
-
     public String getMessage() {
         return message;
     }

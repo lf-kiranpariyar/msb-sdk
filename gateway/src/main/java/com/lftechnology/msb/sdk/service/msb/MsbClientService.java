@@ -1,14 +1,6 @@
 package com.lftechnology.msb.sdk.service.msb;
 
-import com.lftechnology.msb.sdk.dto.City;
-import com.lftechnology.msb.sdk.dto.Country;
-import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
-import com.lftechnology.msb.sdk.dto.State;
-import com.lftechnology.msb.sdk.dto.SyncBankRequest;
-import com.lftechnology.msb.sdk.dto.SyncBankResponse;
-import com.lftechnology.msb.sdk.dto.Transaction;
-import com.lftechnology.msb.sdk.dto.TransactionResponse;
-import com.lftechnology.msb.sdk.dto.TransactionStatusChangeRequest;
+import com.lftechnology.msb.sdk.dto.*;
 import com.lftechnology.msb.sdk.enums.MSBTransactionStatus;
 
 import javax.ejb.Stateless;
@@ -39,5 +31,8 @@ public interface MsbClientService {
     List<State> getStates(Country country, String credentials);
 
     List<City> getCities(Country country, String credentials);
+
+    TransactionResponse getTxnDetails(Transaction transaction, String credentials);
+
 
 }

@@ -10,6 +10,7 @@
     <modules>
         <module>prabhu</module>
         <module>moneytun</module>
+        <module>moneytun-outbound</module>
         <module>vtn</module>
         <module>gateway</module>
     </modules>

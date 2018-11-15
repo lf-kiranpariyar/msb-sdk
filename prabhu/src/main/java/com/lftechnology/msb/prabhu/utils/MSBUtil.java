@@ -1,15 +1,7 @@
 package com.lftechnology.msb.prabhu.utils;
 
-import com.lftechnology.msb.prabhu.dto.Agent;
-import com.lftechnology.msb.prabhu.dto.AgentBranch;
-import com.lftechnology.msb.prabhu.dto.CancelResponse;
-import com.lftechnology.msb.prabhu.dto.Credential;
-import com.lftechnology.msb.prabhu.dto.TransactionDetail;
-import com.lftechnology.msb.prabhu.dto.TransactionResponse;
-import com.lftechnology.msb.prabhu.webservices.ReturnCreateTXN;
-import com.lftechnology.msb.prabhu.webservices.ReturnTXNCancel;
-import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
-import com.lftechnology.msb.prabhu.webservices.SendTransaction;
+import com.lftechnology.msb.prabhu.dto.*;
+import com.lftechnology.msb.prabhu.webservices.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +13,10 @@ import java.util.stream.Collectors;
  */
 public class MSBUtil {
 
-    private MSBUtil(){
+    private MSBUtil() {
     }
 
-    public static TransactionResponse mapToTransactionResponse(ReturnCreateTXN returnCreateTXN){
+    public static TransactionResponse mapToTransactionResponse(ReturnCreateTXN returnCreateTXN) {
         TransactionResponse transactionResponse = new TransactionResponse();
         transactionResponse.setCode(returnCreateTXN.getCODE());
         transactionResponse.setPinNumber(returnCreateTXN.getPINNO());
@@ -73,7 +65,7 @@ public class MSBUtil {
         return sendTransaction;
     }
 
-    public static List<Agent> mapToListOfAgent(List<ReturnAGENTLIST> returnAGENTLISTS){
+    public static List<Agent> mapToListOfAgent(List<ReturnAGENTLIST> returnAGENTLISTS) {
         List<Agent> agentList = new ArrayList<>();
         Map<String, List<ReturnAGENTLIST>> agentGroups = returnAGENTLISTS.stream().collect(Collectors.groupingBy(ReturnAGENTLIST::getAGENT));
         for (Map.Entry<String, List<ReturnAGENTLIST>> entry : agentGroups.entrySet()) {
@@ -88,7 +80,7 @@ public class MSBUtil {
         return agentList;
     }
 
-    private static AgentBranch mapToAgentBranch(ReturnAGENTLIST returnAGENTLIST){
+    private static AgentBranch mapToAgentBranch(ReturnAGENTLIST returnAGENTLIST) {
         return new AgentBranch(
                 returnAGENTLIST.getLOCATIONID(),
                 returnAGENTLIST.getBRANCH(),
@@ -107,5 +99,21 @@ public class MSBUtil {
         cancelResponse.setCode(returnTXNCancel.getCODE());
         cancelResponse.setMsbTxnId(returnTXNCancel.getPINNO());
         return cancelResponse;
+    }
+
+    public static TransactionResponse mapToTransactionResponse(ReturnTXNStatus returnTXNStatus) {
+
+        TransactionResponse transactionResponse = new TransactionResponse();
+        transactionResponse.setCode(returnTXNStatus.getCODE());
+        transactionResponse.setPinNumber(returnTXNStatus.getPINNO());
+        transactionResponse.setCollectCurrency(returnTXNStatus.getCOLLECTCURRENCY());
+        transactionResponse.setAgentSessionId(returnTXNStatus.getAGENTSESSIONID());
+        transactionResponse.setMessage(returnTXNStatus.getMESSAGE());
+        transactionResponse.setCollectAmount(returnTXNStatus.getCOLLECTAMT());
+        transactionResponse.setPayoutAmount(returnTXNStatus.getPAYOUTAMT());
+        transactionResponse.setPayoutCurrency(returnTXNStatus.getPAYOUTCURRENCY());
+        transactionResponse.setExchangeRate(returnTXNStatus.getEXCHANGERATE());
+        return transactionResponse;
+
     }
 }

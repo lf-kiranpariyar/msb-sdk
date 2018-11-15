@@ -34,7 +34,7 @@ public class BalanceApi {
         Call<BalanceResponse> call = service.getBalance();
         BalanceResponse balanceResponse = requestApi.executeApiCall(call);
 
-        System.out.println(ResponseCode.R00.name().equals(balanceResponse.getCode()));
+        System.out.println(ResponseCode.R00.getMessage());
         if (!ResponseCode.R00.name().equals(balanceResponse.getCode()))
             throw new VtnException(balanceResponse.getMessage(), balanceResponse.getCode());
         return balanceResponse;

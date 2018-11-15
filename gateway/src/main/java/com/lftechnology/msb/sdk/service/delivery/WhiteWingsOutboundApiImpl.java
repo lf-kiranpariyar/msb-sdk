@@ -1,71 +1,57 @@
 package com.lftechnology.msb.sdk.service.delivery;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.lftechnology.moneytun.outbound.dto.Credential;
-import com.lftechnology.moneytun.outbound.dto.UnpaidTransactionList;
+import com.lftechnology.moneytun.outbound.dto.APIContext;
+import com.lftechnology.moneytun.outbound.dto.OutboundResponse;
+import com.lftechnology.moneytun.outbound.dto.Transaction;
+import com.lftechnology.moneytun.outbound.enums.ApiMode;
+import com.lftechnology.moneytun.outbound.exception.ApiException;
+import com.lftechnology.moneytun.outbound.exception.OutboundException;
 import com.lftechnology.moneytun.outbound.service.OutboundService;
 import com.lftechnology.moneytun.outbound.service.impl.OutboundServiceImpl;
 import com.lftechnology.msb.sdk.annotation.TransactionDeliveryConfirmation;
 import com.lftechnology.msb.sdk.dto.TransactionResponse;
-import com.lftechnology.msb.sdk.exception.UnsupportedException;
+import com.lftechnology.msb.sdk.dto.TransactionStatusChangeResponse;
+import com.lftechnology.msb.sdk.mapper.MoneyTunOutboundObjectMapper;
 import javax.ejb.Stateless;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @TransactionDeliveryConfirmation("MTN")
 @Stateless
-public class WhiteWingsOutboundApiImpl implements DelvieryConfirmationService {
+public class WhiteWingsOutboundApiImpl implements DeliveryConfirmationService {
 
     @Override
-    public Boolean confirmTransaction(String credentialString, String payeeCode) {
-
-    }
-
-    @Override
-    public List<TransactionResponse> getUnpaidTransactionList(String credentialString, String transferNo, String payeeCode) {
-        com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = toCrendential(credentialString);
+    public TransactionStatusChangeResponse confirmTransaction(String credentialString, String transferNo, String payeeCode) {
+        try{
+        com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = MoneyTunOutboundObjectMapper.toCrendential(credentialString);
+        APIContext apiContext = new APIContext(outboundCrendential, ApiMode.SANDBOX);
         OutboundService service = new OutboundServiceImpl();
-        UnpaidTransactionList unpaidTransactionList = service.getUnpaidTransactionList(outboundCrendential,transferNo,payeeCode);
-        return toTransactionResponse(unpaidTransactionList);
+        OutboundResponse outboundResponse = service.confirmTransaction(apiContext,transferNo,payeeCode);
 
-    }
-
-    private Credential toCrendential(String credentialString) {
-        System.out.println(credentialString);
-        Gson gson = new Gson();
-        Credential outCrendential = gson.fromJson(credentialString ,com.lftechnology.moneytun.outbound.dto.Credential.class);
-        System.out.println(outCrendential);
-        return outCrendential;
-    }
-
-    private List<TransactionResponse> toTransactionResponse(UnpaidTransactionList unpaidTransactionList){
-        List<TransactionResponse> transactionList = new ArrayList<>();
-
-
-        for(com.lftechnology.moneytun.outbound.dto.Transaction vTransaction : unpaidTransactionList.getUnpaidTransactions()){
-
-            TransactionResponse gTransactionResponse = new TransactionResponse();
-            ObjectMapper mapper = new ObjectMapper();
-            Map<String,Object> map = mapper.convertValue(vTransaction, Map.class);
-
-            gTransactionResponse.setReferenceNumber(vTransaction.getTransferNo());
-            gTransactionResponse.setMetadata(map);
-
-            transactionList.add(gTransactionResponse);
-
+    return MoneyTunOutboundObjectMapper.toTransactionStatusChangeResponse(outboundResponse);
+    }catch(OutboundException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }catch(com.lftechnology.vtn.exception.ApiException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
         }
-        return transactionList;
-
-
     }
 
-    public static void main(String[] args) {
+    @Override
+    public List<TransactionResponse> getUnpaidTransactionList(String credentialString, String transferNo, String payeeCode){
+        try{
+        com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = MoneyTunOutboundObjectMapper.toCrendential(credentialString);
+        APIContext apiContext = new APIContext(outboundCrendential, ApiMode.SANDBOX);
+        OutboundService service = new OutboundServiceImpl();
+        List<Transaction> unpaidTransactionList =service.getUnpaidTransactionList(apiContext,transferNo,payeeCode);
+        return MoneyTunOutboundObjectMapper.toTransactionResponse(unpaidTransactionList);
 
-        WhiteWingsOutboundApiImpl whiteWingsOutboundApi = new WhiteWingsOutboundApiImpl();
-        List<TransactionResponse>  transactionResponses = whiteWingsOutboundApi.getUnpaidTransactionList("{\"accessKey\":\"VTNB745695C-77A9-4373-BF6B-FB653C0FD3B1\",\"secretKey\":\"rPKq5Qn7+RtxgXf4TwieBEw/gQFfZA6c0gxsj7C8mzA=\"}","test","TRG");
-        System.out.println(transactionResponses.get(0).getMetadata().toString());
+    }catch(OutboundException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }catch(com.lftechnology.vtn.exception.ApiException e){
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }
     }
+
+
+
 
 }

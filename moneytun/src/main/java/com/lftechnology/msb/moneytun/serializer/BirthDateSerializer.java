@@ -18,4 +18,6 @@ public class BirthDateSerializer extends JsonSerializer<LocalDate> {
         String dateString = localDate.format(formatter);
         jsonGenerator.writeString(dateString);
     }
+
+
 }

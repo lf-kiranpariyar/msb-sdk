@@ -88,6 +88,13 @@
         </dependency>
         <dependency>
             <groupId>com.lftechnology</groupId>
+            <artifactId>vtn-sdk</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lftechnology</groupId>
             <artifactId>moneytun-outbound</artifactId>
             <version>0.0.1</version>
             <scope>compile</scope>

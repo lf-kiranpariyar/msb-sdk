@@ -3,6 +3,7 @@ package com.lftechnology.msb.sdk.dto;
 import com.lftechnology.msb.sdk.enums.TransactionPaymentType;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Transaction {
 
@@ -18,6 +19,11 @@ public class Transaction {
     private String sourceOfIncome;
     private String purpose;
     private String note;
+    private LocalDate transferDate;
+    private Integer transferType;
+    private String currencyCode;
+    private BigDecimal feeInSenderCurrency;
+    private BigDecimal feeInRecipientCurrency;
 
     public Sender getSender() {
         return sender;
@@ -116,9 +122,49 @@ public class Transaction {
         this.recipientAmount = recipientAmount;
     }
 
+    public LocalDate getTransferDate() {
+        return transferDate;
+    }
+
+    public void setTransferDate(LocalDate transferDate) {
+        this.transferDate = transferDate;
+    }
+
+    public Integer getTransferType() {
+        return transferType;
+    }
+
+    public void setTransferType(Integer transferType) {
+        this.transferType = transferType;
+    }
+
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    public BigDecimal getFeeInSenderCurrency() {
+        return feeInSenderCurrency;
+    }
+
+    public void setFeeInSenderCurrency(BigDecimal feeInSenderCurrency) {
+        this.feeInSenderCurrency = feeInSenderCurrency;
+    }
+
+    public BigDecimal getFeeInRecipientCurrency() {
+        return feeInRecipientCurrency;
+    }
+
+    public void setFeeInRecipientCurrency(BigDecimal feeInRecipientCurrency) {
+        this.feeInRecipientCurrency = feeInRecipientCurrency;
+    }
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Transaction{");
+        final StringBuilder sb = new StringBuilder("Transaction{");
         sb.append("sender=").append(sender);
         sb.append(", recipient=").append(recipient);
         sb.append(", document=").append(document);
@@ -131,6 +177,11 @@ public class Transaction {
         sb.append(", sourceOfIncome='").append(sourceOfIncome).append('\'');
         sb.append(", purpose='").append(purpose).append('\'');
         sb.append(", note='").append(note).append('\'');
+        sb.append(", transferDate=").append(transferDate);
+        sb.append(", transferType=").append(transferType);
+        sb.append(", currencyCode='").append(currencyCode).append('\'');
+        sb.append(", feeInSenderCurrency=").append(feeInSenderCurrency);
+        sb.append(", feeInRecipientCurrency=").append(feeInRecipientCurrency);
         sb.append('}');
         return sb.toString();
     }

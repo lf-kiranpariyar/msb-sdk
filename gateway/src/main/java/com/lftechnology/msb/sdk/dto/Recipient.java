@@ -13,12 +13,19 @@ public class Recipient extends Person{
     Address address;
     Contact contact;
     List<Document> documentList;
-
+    private String relationship;
 
 
     //FIXME : Maybe Replace it with List Of Custom Object eg. CustomField which will hold key, value and mapping attibute
     private Map<String, Object> metadata = new HashMap<>();
 
+    public String getRelationship() {
+        return relationship;
+    }
+
+    public void setRelationship(String relationship) {
+        this.relationship = relationship;
+    }
 
     public Address getAddress() {
         return address;

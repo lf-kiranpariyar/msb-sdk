@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -59,47 +58,45 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "agentcode",
-    "userid",
-    "password",
-    "agentsessionid",
-    "agenttxnid",
-    "locationid",
-    "sendername",
-    "senderaddress",
-    "sendermobile",
-    "sendercity",
-    "sendercountry",
-    "senderidtype",
-    "senderidnumber",
-    "senderidissuedate",
-    "senderidexpiredate",
-    "senderdateofbirth",
-    "receivername",
-    "receiveraddress",
-    "receivercontactnumber",
-    "receivercity",
-    "receivercountry",
-    "transferamount",
-    "paymentmode",
-    "bankid",
-    "bankaccountnumber",
-    "calcby",
-    "authorizedrequired",
-    "bankbranchname",
-    "bankbranchid",
-    "senderoccupation",
-    "sendersourceoffund",
-    "senderbeneficiaryrelationship",
-    "purposeofremittance",
-    "waivefee",
-    "promotionalcode",
-    "sendersocialsecuritynumber"
+        "agentcode",
+        "userid",
+        "password",
+        "agentsessionid",
+        "agenttxnid",
+        "locationid",
+        "sendername",
+        "senderaddress",
+        "sendermobile",
+        "sendercity",
+        "sendercountry",
+        "senderidtype",
+        "senderidnumber",
+        "senderidissuedate",
+        "senderidexpiredate",
+        "senderdateofbirth",
+        "receivername",
+        "receiveraddress",
+        "receivercontactnumber",
+        "receivercity",
+        "receivercountry",
+        "transferamount",
+        "paymentmode",
+        "bankid",
+        "bankaccountnumber",
+        "calcby",
+        "authorizedrequired",
+        "bankbranchname",
+        "bankbranchid",
+        "senderoccupation",
+        "sendersourceoffund",
+        "senderbeneficiaryrelationship",
+        "purposeofremittance",
+        "waivefee",
+        "promotionalcode",
+        "sendersocialsecuritynumber"
 })
 @XmlRootElement(name = "SendTransaction")
 public class SendTransaction {
@@ -179,11 +176,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the agentcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTCODE() {
         return agentcode;
@@ -191,11 +186,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the agentcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTCODE(String value) {
         this.agentcode = value;
@@ -203,11 +196,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the userid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUSERID() {
         return userid;
@@ -215,11 +206,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the userid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUSERID(String value) {
         this.userid = value;
@@ -227,11 +216,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPASSWORD() {
         return password;
@@ -239,11 +226,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPASSWORD(String value) {
         this.password = value;
@@ -251,11 +236,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -263,11 +246,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -275,11 +256,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the agenttxnid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTTXNID() {
         return agenttxnid;
@@ -287,11 +266,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the agenttxnid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTTXNID(String value) {
         this.agenttxnid = value;
@@ -299,11 +276,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the locationid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLOCATIONID() {
         return locationid;
@@ -311,11 +286,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the locationid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLOCATIONID(String value) {
         this.locationid = value;
@@ -323,11 +296,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the sendername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERNAME() {
         return sendername;
@@ -335,11 +306,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the sendername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERNAME(String value) {
         this.sendername = value;
@@ -347,11 +316,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderaddress property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERADDRESS() {
         return senderaddress;
@@ -359,11 +326,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderaddress property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERADDRESS(String value) {
         this.senderaddress = value;
@@ -371,11 +336,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the sendermobile property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERMOBILE() {
         return sendermobile;
@@ -383,11 +346,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the sendermobile property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERMOBILE(String value) {
         this.sendermobile = value;
@@ -395,11 +356,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the sendercity property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERCITY() {
         return sendercity;
@@ -407,11 +366,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the sendercity property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERCITY(String value) {
         this.sendercity = value;
@@ -419,11 +376,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the sendercountry property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERCOUNTRY() {
         return sendercountry;
@@ -431,11 +386,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the sendercountry property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERCOUNTRY(String value) {
         this.sendercountry = value;
@@ -443,11 +396,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderidtype property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERIDTYPE() {
         return senderidtype;
@@ -455,11 +406,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderidtype property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERIDTYPE(String value) {
         this.senderidtype = value;
@@ -467,11 +416,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderidnumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERIDNUMBER() {
         return senderidnumber;
@@ -479,11 +426,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderidnumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERIDNUMBER(String value) {
         this.senderidnumber = value;
@@ -491,11 +436,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderidissuedate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERIDISSUEDATE() {
         return senderidissuedate;
@@ -503,11 +446,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderidissuedate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERIDISSUEDATE(String value) {
         this.senderidissuedate = value;
@@ -515,11 +456,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderidexpiredate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERIDEXPIREDATE() {
         return senderidexpiredate;
@@ -527,11 +466,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderidexpiredate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERIDEXPIREDATE(String value) {
         this.senderidexpiredate = value;
@@ -539,11 +476,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderdateofbirth property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERDATEOFBIRTH() {
         return senderdateofbirth;
@@ -551,11 +486,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderdateofbirth property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERDATEOFBIRTH(String value) {
         this.senderdateofbirth = value;
@@ -563,11 +496,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the receivername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERNAME() {
         return receivername;
@@ -575,11 +506,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the receivername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERNAME(String value) {
         this.receivername = value;
@@ -587,11 +516,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the receiveraddress property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERADDRESS() {
         return receiveraddress;
@@ -599,11 +526,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the receiveraddress property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERADDRESS(String value) {
         this.receiveraddress = value;
@@ -611,11 +536,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the receivercontactnumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERCONTACTNUMBER() {
         return receivercontactnumber;
@@ -623,11 +546,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the receivercontactnumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERCONTACTNUMBER(String value) {
         this.receivercontactnumber = value;
@@ -635,11 +556,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the receivercity property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERCITY() {
         return receivercity;
@@ -647,11 +566,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the receivercity property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERCITY(String value) {
         this.receivercity = value;
@@ -659,11 +576,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the receivercountry property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERCOUNTRY() {
         return receivercountry;
@@ -671,11 +586,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the receivercountry property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERCOUNTRY(String value) {
         this.receivercountry = value;
@@ -683,11 +596,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the transferamount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTRANSFERAMOUNT() {
         return transferamount;
@@ -695,11 +606,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the transferamount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTRANSFERAMOUNT(String value) {
         this.transferamount = value;
@@ -707,11 +616,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the paymentmode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYMENTMODE() {
         return paymentmode;
@@ -719,11 +626,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the paymentmode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYMENTMODE(String value) {
         this.paymentmode = value;
@@ -731,11 +636,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the bankid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKID() {
         return bankid;
@@ -743,11 +646,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the bankid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKID(String value) {
         this.bankid = value;
@@ -755,11 +656,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the bankaccountnumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKACCOUNTNUMBER() {
         return bankaccountnumber;
@@ -767,11 +666,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the bankaccountnumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKACCOUNTNUMBER(String value) {
         this.bankaccountnumber = value;
@@ -779,11 +676,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the calcby property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCALCBY() {
         return calcby;
@@ -791,11 +686,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the calcby property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCALCBY(String value) {
         this.calcby = value;
@@ -803,11 +696,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the authorizedrequired property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAUTHORIZEDREQUIRED() {
         return authorizedrequired;
@@ -815,11 +706,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the authorizedrequired property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAUTHORIZEDREQUIRED(String value) {
         this.authorizedrequired = value;
@@ -827,11 +716,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the bankbranchname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKBRANCHNAME() {
         return bankbranchname;
@@ -839,11 +726,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the bankbranchname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKBRANCHNAME(String value) {
         this.bankbranchname = value;
@@ -851,11 +736,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the bankbranchid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKBRANCHID() {
         return bankbranchid;
@@ -863,11 +746,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the bankbranchid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKBRANCHID(String value) {
         this.bankbranchid = value;
@@ -875,11 +756,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderoccupation property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDEROCCUPATION() {
         return senderoccupation;
@@ -887,11 +766,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderoccupation property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDEROCCUPATION(String value) {
         this.senderoccupation = value;
@@ -899,11 +776,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the sendersourceoffund property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERSOURCEOFFUND() {
         return sendersourceoffund;
@@ -911,11 +786,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the sendersourceoffund property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERSOURCEOFFUND(String value) {
         this.sendersourceoffund = value;
@@ -923,11 +796,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the senderbeneficiaryrelationship property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERBENEFICIARYRELATIONSHIP() {
         return senderbeneficiaryrelationship;
@@ -935,11 +806,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the senderbeneficiaryrelationship property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERBENEFICIARYRELATIONSHIP(String value) {
         this.senderbeneficiaryrelationship = value;
@@ -947,11 +816,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the purposeofremittance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPURPOSEOFREMITTANCE() {
         return purposeofremittance;
@@ -959,11 +826,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the purposeofremittance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPURPOSEOFREMITTANCE(String value) {
         this.purposeofremittance = value;
@@ -971,11 +836,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the waivefee property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getWAIVEFEE() {
         return waivefee;
@@ -983,11 +846,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the waivefee property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setWAIVEFEE(String value) {
         this.waivefee = value;
@@ -995,11 +856,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the promotionalcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPROMOTIONALCODE() {
         return promotionalcode;
@@ -1007,11 +866,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the promotionalcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPROMOTIONALCODE(String value) {
         this.promotionalcode = value;
@@ -1019,11 +876,9 @@ public class SendTransaction {
 
     /**
      * Gets the value of the sendersocialsecuritynumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERSOCIALSECURITYNUMBER() {
         return sendersocialsecuritynumber;
@@ -1031,11 +886,9 @@ public class SendTransaction {
 
     /**
      * Sets the value of the sendersocialsecuritynumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERSOCIALSECURITYNUMBER(String value) {
         this.sendersocialsecuritynumber = value;

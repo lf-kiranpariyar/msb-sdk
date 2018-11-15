@@ -7,7 +7,7 @@ public enum DocumentType {
 
     private String value;
 
-    private DocumentType(String value){
+    private DocumentType(String value) {
         this.value = value;
     }
 

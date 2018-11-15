@@ -64,4 +64,33 @@ public class OutboundServiceImpl implements OutboundService {
         return outboundResponse;
     }
 
+    @Override
+    public OutboundResponse cancel(APIContext apiContext, String transferNo, String payeeCode) {
+        RequestApi requestApi = new RequestApi(apiContext);
+        LOGGER.info("MoneyTun-Outbound cancel transaction ");
+        Retrofit retrofit = requestApi.getRetrofitObject();
+        OutboundResource service = retrofit.create(OutboundResource.class);
+        Call<OutboundResponse> call = service.conformTransaction(MethodName.CANCEL.name(), transferNo, payeeCode);
+        OutboundResponse outboundResponse = requestApi.executeApiCall(call);
+        if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
+            throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());
+        }
+        return outboundResponse;
+    }
+
+    //FIXME : Make Common method to change status of the transaction
+    @Override
+    public OutboundResponse pay(APIContext apiContext, String transferNo, String payeeCode) {
+        RequestApi requestApi = new RequestApi(apiContext);
+        LOGGER.info("MoneyTun-Outbound pay transaction ");
+        Retrofit retrofit = requestApi.getRetrofitObject();
+        OutboundResource service = retrofit.create(OutboundResource.class);
+        Call<OutboundResponse> call = service.conformTransaction(MethodName.PAY.name(), transferNo, payeeCode);
+        OutboundResponse outboundResponse = requestApi.executeApiCall(call);
+        if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
+            throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());
+        }
+        return outboundResponse;
+    }
+
 }

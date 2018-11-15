@@ -11,4 +11,8 @@ public interface OutboundService {
     List<Transaction> getUnpaidTransactionList(APIContext apiContext, String transferNo, String payeeCode);
 
     OutboundResponse confirmTransaction(APIContext apiContext, String transferNo, String payeeCode);
+
+    OutboundResponse cancel(APIContext apiContext, String transferNo, String payeeCode);
+
+    OutboundResponse pay(APIContext apiContext, String transferNo, String payeeCode);
 }

@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "authorizedConfirmedResult"
+        "authorizedConfirmedResult"
 })
 @XmlRootElement(name = "Authorized_ConfirmedResponse")
 public class AuthorizedConfirmedResponse {
@@ -39,11 +36,9 @@ public class AuthorizedConfirmedResponse {
 
     /**
      * Gets the value of the authorizedConfirmedResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnTXNAuth }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnTXNAuth }
      */
     public ReturnTXNAuth getAuthorizedConfirmedResult() {
         return authorizedConfirmedResult;
@@ -51,11 +46,9 @@ public class AuthorizedConfirmedResponse {
 
     /**
      * Sets the value of the authorizedConfirmedResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnTXNAuth }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnTXNAuth }
      */
     public void setAuthorizedConfirmedResult(ReturnTXNAuth value) {
         this.authorizedConfirmedResult = value;

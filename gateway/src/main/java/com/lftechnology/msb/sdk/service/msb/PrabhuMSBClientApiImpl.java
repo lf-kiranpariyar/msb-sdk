@@ -41,7 +41,7 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
         Credential credential = PrabhuObjectMapper.toCredential(credentials);
         TransactionDetail transactionDetail = PrabhuObjectMapper.toTransactionDetail(transaction);
 
-        return  PrabhuObjectMapper.toTransactionResponse(prabhuClientApi.createTransaction(credential,transactionDetail));
+        return PrabhuObjectMapper.toTransactionResponse(prabhuClientApi.createTransaction(credential, transactionDetail));
 
     }
 

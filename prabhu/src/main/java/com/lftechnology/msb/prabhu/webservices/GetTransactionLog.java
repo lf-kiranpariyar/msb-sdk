@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -28,16 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "agentcode",
-    "userid",
-    "password",
-    "agentsessionid",
-    "pinno"
+        "agentcode",
+        "userid",
+        "password",
+        "agentsessionid",
+        "pinno"
 })
 @XmlRootElement(name = "GetTransactionLog")
 public class GetTransactionLog {
@@ -55,11 +52,9 @@ public class GetTransactionLog {
 
     /**
      * Gets the value of the agentcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTCODE() {
         return agentcode;
@@ -67,11 +62,9 @@ public class GetTransactionLog {
 
     /**
      * Sets the value of the agentcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTCODE(String value) {
         this.agentcode = value;
@@ -79,11 +72,9 @@ public class GetTransactionLog {
 
     /**
      * Gets the value of the userid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUSERID() {
         return userid;
@@ -91,11 +82,9 @@ public class GetTransactionLog {
 
     /**
      * Sets the value of the userid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUSERID(String value) {
         this.userid = value;
@@ -103,11 +92,9 @@ public class GetTransactionLog {
 
     /**
      * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPASSWORD() {
         return password;
@@ -115,11 +102,9 @@ public class GetTransactionLog {
 
     /**
      * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPASSWORD(String value) {
         this.password = value;
@@ -127,11 +112,9 @@ public class GetTransactionLog {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -139,11 +122,9 @@ public class GetTransactionLog {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -151,11 +132,9 @@ public class GetTransactionLog {
 
     /**
      * Gets the value of the pinno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPINNO() {
         return pinno;
@@ -163,11 +142,9 @@ public class GetTransactionLog {
 
     /**
      * Sets the value of the pinno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPINNO(String value) {
         this.pinno = value;

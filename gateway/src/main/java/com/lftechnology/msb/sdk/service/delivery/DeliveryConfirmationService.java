@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DeliveryConfirmationService {
 
-    TransactionStatusChangeResponse confirmTransaction(String credential, String transferNo, String payeeCode );
+    TransactionStatusChangeResponse confirmTransaction(String credential, String transferNo, String payeeCode);
 
     List<TransactionResponse> getUnpaidTransactionList(String credential, String transferNo, String payeeCode);
 }

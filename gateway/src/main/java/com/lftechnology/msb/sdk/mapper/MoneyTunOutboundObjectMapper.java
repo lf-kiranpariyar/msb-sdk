@@ -10,7 +10,6 @@ import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import com.lftechnology.msb.sdk.dto.TransactionStatusChangeResponse;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +26,7 @@ public class MoneyTunOutboundObjectMapper {
         Credential outboundCrendential;
         try {
             outboundCrendential = gson.fromJson(credentialString, com.lftechnology.moneytun.outbound.dto.Credential.class);
-        }catch(InvalidCredentialException e){
+        } catch (InvalidCredentialException e) {
             throw new InvalidCredentialException("Invalid Credentials ");
         }
         return outboundCrendential;
@@ -57,7 +56,7 @@ public class MoneyTunOutboundObjectMapper {
         TransactionStatusChangeResponse txn = new TransactionStatusChangeResponse();
         txn.setMessage(outboundResponse.getMessage());
         txn.setCode(String.valueOf(outboundResponse.getCode()));
-        if(outboundResponse.getCode()==1){
+        if (outboundResponse.getCode() == 1) {
             txn.setSuccess(true);
         }
         return txn;

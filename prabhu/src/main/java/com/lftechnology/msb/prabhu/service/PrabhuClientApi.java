@@ -1,6 +1,13 @@
 package com.lftechnology.msb.prabhu.service;
 
-import com.lftechnology.msb.prabhu.dto.*;
+import com.lftechnology.msb.prabhu.dto.Agent;
+import com.lftechnology.msb.prabhu.dto.BankInfo;
+import com.lftechnology.msb.prabhu.dto.CancelResponse;
+import com.lftechnology.msb.prabhu.dto.CancelTransactionDetail;
+import com.lftechnology.msb.prabhu.dto.Credential;
+import com.lftechnology.msb.prabhu.dto.TransactionAmendmentDetail;
+import com.lftechnology.msb.prabhu.dto.TransactionDetail;
+import com.lftechnology.msb.prabhu.dto.TransactionResponse;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,8 +27,8 @@ public interface PrabhuClientApi {
 
     CancelResponse cancelTransaction(Credential credential, CancelTransactionDetail cancelTransactionDetail);
 
-    Boolean acknowledgeTransaction(Credential credential,String msbTxnId);
+    Boolean acknowledgeTransaction(Credential credential, String msbTxnId);
 
-    BigDecimal getExchangeRate(Credential credential,String destinationCountryISOCode);
+    BigDecimal getExchangeRate(Credential credential, String destinationCountryISOCode);
 
 }

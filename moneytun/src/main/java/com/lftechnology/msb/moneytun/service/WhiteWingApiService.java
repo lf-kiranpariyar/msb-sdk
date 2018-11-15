@@ -21,11 +21,11 @@ public interface WhiteWingApiService {
 
     TransactionResponse createTransaction(Transaction transaction, APIContext apiContext);
 
-    TransactionResponse getTransaction(String referenceNumber,  APIContext apiContext);
+    TransactionResponse getTransaction(String referenceNumber, APIContext apiContext);
 
-    TxnStatus getStatus(String referenceNumber,  APIContext apiContext);
+    TxnStatus getStatus(String referenceNumber, APIContext apiContext);
 
-    List<Bank> getBankList(String countryISOCode,  APIContext apiContext);
+    List<Bank> getBankList(String countryISOCode, APIContext apiContext);
 
     CustomExchangeRate getRate(ExchangeRate rate, APIContext apiContext);
 

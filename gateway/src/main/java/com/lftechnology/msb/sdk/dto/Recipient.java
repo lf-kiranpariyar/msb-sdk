@@ -8,13 +8,12 @@ import java.util.Map;
  * Stores Recipient Information.
  */
 
-public class Recipient extends Person{
+public class Recipient extends Person {
     private String referenceId;
     private Address address;
     private Contact contact;
     private List<Document> documentList;
     private String relationship;
-
 
 
     //FIXME : Maybe Replace it with List Of Custom Object eg. CustomField which will hold key, value and mapping attibute

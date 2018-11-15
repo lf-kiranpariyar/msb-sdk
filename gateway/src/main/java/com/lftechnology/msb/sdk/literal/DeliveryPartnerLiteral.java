@@ -1,7 +1,6 @@
 package com.lftechnology.msb.sdk.literal;
 
 import com.lftechnology.msb.sdk.annotation.DeliveryPartner;
-import com.lftechnology.msb.sdk.annotation.TransactionDeliveryConfirmation;
 
 import javax.enterprise.util.AnnotationLiteral;
 

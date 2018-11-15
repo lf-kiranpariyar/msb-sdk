@@ -17,8 +17,8 @@ public class APIContext {
         if (credentialString == null) {
             throw new InvalidCredentialException("Credentials not found");
         }
-        Credential credential= gson.fromJson(credentialString, Credential.class);
-        if(credential==null){
+        Credential credential = gson.fromJson(credentialString, Credential.class);
+        if (credential == null) {
             throw new InvalidCredentialException("Invalid Credentials ");
         }
         this.credential = credential;
@@ -62,7 +62,7 @@ public class APIContext {
     public Employee getEmployeeDetail() throws InvalidCredentialException {
         Employee employee = new Employee();
         if (this.credential != null) {
-            employee =new Employee(this.credential.getEmployeeId(), this.credential.getEmployeePassword());
+            employee = new Employee(this.credential.getEmployeeId(), this.credential.getEmployeePassword());
         }
         return employee;
     }
@@ -84,7 +84,7 @@ public class APIContext {
     }
 
     public String getEndPointUrl() {
-        switch (mode){
+        switch (mode) {
             case LIVE:
                 return Constants.LIVE_ENDPOINT;
             case SANDBOX:

@@ -1,10 +1,5 @@
 package com.lftechnology.msb.sdk.dto;
 
-import com.lftechnology.vtn.adapter.BigDecimalAdapter;
-import com.lftechnology.vtn.adapter.LocalDateAdapter;
-
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

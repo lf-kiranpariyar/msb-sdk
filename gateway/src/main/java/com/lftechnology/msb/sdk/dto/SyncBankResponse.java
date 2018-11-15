@@ -6,10 +6,10 @@ import java.util.Map;
 
 public class SyncBankResponse {
 
+    List<SyncBranchResponse> branchResponseList;
     private String name;
     private Address address;
     private String referenceNumber;
-    List<SyncBranchResponse> branchResponseList;
     private Map<String, Object> metadata = new HashMap<>();
 
     public String getName() {

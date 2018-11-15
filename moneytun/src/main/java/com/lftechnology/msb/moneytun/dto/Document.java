@@ -18,16 +18,16 @@ public class Document {
     private String countryName;
 
     @JsonProperty("SenderIDDocumentCity")
-    private String city="";
+    private String city = "";
 
     @JsonProperty("SenderIDDocumentState")
-    private String state="";
+    private String state = "";
 
     @JsonProperty("SenderIDDocumentCountryISOCode")
     private String documentCountryISOCode;
 
     @JsonProperty("SenderIDDocumentStateISOCode")
-    private String stateISOCode="";
+    private String stateISOCode = "";
 
     @JsonProperty("SenderIDIssueDate")
     @JsonSerialize(using = DocumentDateSerializer.class)

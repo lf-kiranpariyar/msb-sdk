@@ -1,7 +1,8 @@
 package com.lftechnology.msb.sdk.dto;
 
-import java.time.LocalDate;
 import com.lftechnology.msb.sdk.enums.DocumentType;
+
+import java.time.LocalDate;
 
 public class Document {
 

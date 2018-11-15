@@ -13,7 +13,6 @@ public class Sender extends Person {
     List<Document> documentList;
 
 
-
     //FIXME : Maybe Replace it with List Of Custom Object eg. CustomField which will hold key, value and mapping attibute
     private Map<String, Object> metadata = new HashMap<>();
 

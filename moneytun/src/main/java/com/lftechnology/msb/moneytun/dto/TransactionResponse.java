@@ -2,7 +2,7 @@ package com.lftechnology.msb.moneytun.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TransactionResponse extends Response{
+public class TransactionResponse extends Response {
 
     @JsonProperty("TransferNumber")
     String referenceNumber;

@@ -1,11 +1,11 @@
 package com.lftechnology.msb.prabhu.utils;
 
 import com.lftechnology.msb.prabhu.dto.Agent;
+import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,16 +13,17 @@ import java.util.List;
 /**
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
-@RunWith(JUnit4.class) public class MSBUtilTest {
+@RunWith(JUnit4.class)
+public class MSBUtilTest {
 
     @Test
-    public void shouldMapToAgentBranch(){
+    public void shouldMapToAgentBranch() {
         List<ReturnAGENTLIST> returnAGENTLISTS = buildReturnAgentList();
         List<Agent> agents = MSBUtil.mapToListOfAgent(returnAGENTLISTS);
-        Assert.assertEquals(2,agents.size());
+        Assert.assertEquals(2, agents.size());
     }
 
-    private List<ReturnAGENTLIST> buildReturnAgentList(){
+    private List<ReturnAGENTLIST> buildReturnAgentList() {
         List<ReturnAGENTLIST> returnAGENTLISTS = new ArrayList<>();
         ReturnAGENTLIST returnAGENTLIST1 = new ReturnAGENTLIST();
         returnAGENTLIST1.setAGENT("global bankA");

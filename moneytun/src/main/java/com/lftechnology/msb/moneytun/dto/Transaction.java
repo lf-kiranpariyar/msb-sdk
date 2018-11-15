@@ -265,18 +265,18 @@ public class Transaction {
             return this;
         }
 
-        public Builder transactionAmount(BigDecimal amount, BigDecimal exchangeRate, BigDecimal recieverAmount){
-            this.amount= amount;
-            this.exchangeRate=exchangeRate;
+        public Builder transactionAmount(BigDecimal amount, BigDecimal exchangeRate, BigDecimal recieverAmount) {
+            this.amount = amount;
+            this.exchangeRate = exchangeRate;
             this.recieverAmount = recieverAmount;
-            return  this;
+            return this;
         }
 
-        public Builder party(Sender sender, Receiver receiver, Document document){
+        public Builder party(Sender sender, Receiver receiver, Document document) {
             this.sender = sender;
             this.receiver = receiver;
             this.document = document;
-            return  this;
+            return this;
         }
 
         public Builder pointOfContactId(Long val) {

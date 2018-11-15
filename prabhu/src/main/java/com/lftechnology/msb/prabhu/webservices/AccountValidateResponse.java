@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "accountValidateResult"
+        "accountValidateResult"
 })
 @XmlRootElement(name = "AccountValidateResponse")
 public class AccountValidateResponse {
@@ -39,11 +36,9 @@ public class AccountValidateResponse {
 
     /**
      * Gets the value of the accountValidateResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnAccountValidV2 }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnAccountValidV2 }
      */
     public ReturnAccountValidV2 getAccountValidateResult() {
         return accountValidateResult;
@@ -51,11 +46,9 @@ public class AccountValidateResponse {
 
     /**
      * Sets the value of the accountValidateResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnAccountValidV2 }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnAccountValidV2 }
      */
     public void setAccountValidateResult(ReturnAccountValidV2 value) {
         this.accountValidateResult = value;

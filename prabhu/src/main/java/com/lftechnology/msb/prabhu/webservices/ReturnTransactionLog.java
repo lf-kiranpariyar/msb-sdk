@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_TransactionLog complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_TransactionLog">
  *   &lt;complexContent>
@@ -25,14 +24,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_TransactionLog", propOrder = {
-    "code",
-    "message",
-    "logDate"
+        "code",
+        "message",
+        "logDate"
 })
 public class ReturnTransactionLog {
 
@@ -45,11 +42,9 @@ public class ReturnTransactionLog {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -57,11 +52,9 @@ public class ReturnTransactionLog {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -69,11 +62,9 @@ public class ReturnTransactionLog {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -81,11 +72,9 @@ public class ReturnTransactionLog {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -93,11 +82,9 @@ public class ReturnTransactionLog {
 
     /**
      * Gets the value of the logDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLogDate() {
         return logDate;
@@ -105,11 +92,9 @@ public class ReturnTransactionLog {
 
     /**
      * Sets the value of the logDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLogDate(String value) {
         this.logDate = value;

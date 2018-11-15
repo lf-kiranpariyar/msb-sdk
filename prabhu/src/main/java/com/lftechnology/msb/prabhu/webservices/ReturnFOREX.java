@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_FOREX complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_FOREX">
  *   &lt;complexContent>
@@ -35,24 +34,22 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_FOREX", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "collectamt",
-    "collectcurrency",
-    "servicecharge",
-    "exchangerate",
-    "payoutamt",
-    "payoutcurrency",
-    "exratesessionid",
-    "feediscount",
-    "additionalpremiumrate",
-    "payoutservicecharge"
+        "code",
+        "agentsessionid",
+        "message",
+        "collectamt",
+        "collectcurrency",
+        "servicecharge",
+        "exchangerate",
+        "payoutamt",
+        "payoutcurrency",
+        "exratesessionid",
+        "feediscount",
+        "additionalpremiumrate",
+        "payoutservicecharge"
 })
 public class ReturnFOREX {
 
@@ -85,11 +82,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -97,11 +92,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -109,11 +102,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -121,11 +112,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -133,11 +122,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -145,11 +132,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -157,11 +142,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the collectamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLLECTAMT() {
         return collectamt;
@@ -169,11 +152,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the collectamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLLECTAMT(String value) {
         this.collectamt = value;
@@ -181,11 +162,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the collectcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLLECTCURRENCY() {
         return collectcurrency;
@@ -193,11 +172,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the collectcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLLECTCURRENCY(String value) {
         this.collectcurrency = value;
@@ -205,11 +182,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the servicecharge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSERVICECHARGE() {
         return servicecharge;
@@ -217,11 +192,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the servicecharge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSERVICECHARGE(String value) {
         this.servicecharge = value;
@@ -229,11 +202,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the exchangerate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEXCHANGERATE() {
         return exchangerate;
@@ -241,11 +212,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the exchangerate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEXCHANGERATE(String value) {
         this.exchangerate = value;
@@ -253,11 +222,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the payoutamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAMT() {
         return payoutamt;
@@ -265,11 +232,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the payoutamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAMT(String value) {
         this.payoutamt = value;
@@ -277,11 +242,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the payoutcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTCURRENCY() {
         return payoutcurrency;
@@ -289,11 +252,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the payoutcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTCURRENCY(String value) {
         this.payoutcurrency = value;
@@ -301,11 +262,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the exratesessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEXRATESESSIONID() {
         return exratesessionid;
@@ -313,11 +272,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the exratesessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEXRATESESSIONID(String value) {
         this.exratesessionid = value;
@@ -325,11 +282,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the feediscount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFEEDISCOUNT() {
         return feediscount;
@@ -337,11 +292,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the feediscount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFEEDISCOUNT(String value) {
         this.feediscount = value;
@@ -349,11 +302,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the additionalpremiumrate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getADDITIONALPREMIUMRATE() {
         return additionalpremiumrate;
@@ -361,11 +312,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the additionalpremiumrate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setADDITIONALPREMIUMRATE(String value) {
         this.additionalpremiumrate = value;
@@ -373,11 +322,9 @@ public class ReturnFOREX {
 
     /**
      * Gets the value of the payoutservicecharge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTSERVICECHARGE() {
         return payoutservicecharge;
@@ -385,11 +332,9 @@ public class ReturnFOREX {
 
     /**
      * Sets the value of the payoutservicecharge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTSERVICECHARGE(String value) {
         this.payoutservicecharge = value;

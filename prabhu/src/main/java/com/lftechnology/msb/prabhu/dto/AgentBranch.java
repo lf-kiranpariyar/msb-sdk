@@ -16,7 +16,7 @@ public class AgentBranch {
     private String agentCode;
 
     public AgentBranch(String locationId, String branch, String address, String city, String currency, String bankId, String bankBranchId,
-            String bankBranchState, String agentCode) {
+                       String bankBranchState, String agentCode) {
         this.locationId = locationId;
         this.branch = branch;
         this.address = address;

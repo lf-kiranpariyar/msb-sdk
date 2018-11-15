@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "checkBalanceResult"
+        "checkBalanceResult"
 })
 @XmlRootElement(name = "CheckBalanceResponse")
 public class CheckBalanceResponse {
@@ -39,11 +36,9 @@ public class CheckBalanceResponse {
 
     /**
      * Gets the value of the checkBalanceResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnCHECKBALANCE }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnCHECKBALANCE }
      */
     public ReturnCHECKBALANCE getCheckBalanceResult() {
         return checkBalanceResult;
@@ -51,11 +46,9 @@ public class CheckBalanceResponse {
 
     /**
      * Sets the value of the checkBalanceResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnCHECKBALANCE }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnCHECKBALANCE }
      */
     public void setCheckBalanceResult(ReturnCHECKBALANCE value) {
         this.checkBalanceResult = value;

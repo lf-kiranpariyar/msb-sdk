@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -8,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_CardValid complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_CardValid">
  *   &lt;complexContent>
@@ -26,16 +25,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_CardValid", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "customername",
-    "cardno"
+        "code",
+        "agentsessionid",
+        "message",
+        "customername",
+        "cardno"
 })
 public class ReturnCardValid {
 
@@ -52,11 +49,9 @@ public class ReturnCardValid {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -64,11 +59,9 @@ public class ReturnCardValid {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -76,11 +69,9 @@ public class ReturnCardValid {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -88,11 +79,9 @@ public class ReturnCardValid {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -100,11 +89,9 @@ public class ReturnCardValid {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -112,11 +99,9 @@ public class ReturnCardValid {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -124,11 +109,9 @@ public class ReturnCardValid {
 
     /**
      * Gets the value of the customername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCUSTOMERNAME() {
         return customername;
@@ -136,11 +119,9 @@ public class ReturnCardValid {
 
     /**
      * Sets the value of the customername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCUSTOMERNAME(String value) {
         this.customername = value;
@@ -148,11 +129,9 @@ public class ReturnCardValid {
 
     /**
      * Gets the value of the cardno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCARDNO() {
         return cardno;
@@ -160,11 +139,9 @@ public class ReturnCardValid {
 
     /**
      * Sets the value of the cardno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCARDNO(String value) {
         this.cardno = value;

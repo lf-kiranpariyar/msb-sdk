@@ -23,16 +23,16 @@ import java.util.List;
 import java.util.Map;
 
 public class PrabhuObjectMapper {
-    public static com.lftechnology.msb.prabhu.dto.Credential toCredential(String credential){
+    public static com.lftechnology.msb.prabhu.dto.Credential toCredential(String credential) {
         Gson gson = new Gson();
-        return  gson.fromJson(credential, com.lftechnology.msb.prabhu.dto.Credential.class);
+        return gson.fromJson(credential, com.lftechnology.msb.prabhu.dto.Credential.class);
     }
 
     public static void main(String[] args) {
         System.out.println(LocalDate.now().toString());
     }
 
-    public static TransactionDetail toTransactionDetail(Transaction transaction){
+    public static TransactionDetail toTransactionDetail(Transaction transaction) {
         TransactionDetail transactionDetail = new TransactionDetail();
         Document ssnDocument = transaction.getSender().getDocumentList().stream().filter(it -> it.equals(it.getType() == DocumentType.SSN)).findFirst().get();
         Document otherDocument = transaction.getSender().getDocumentList().stream().filter(it -> it.equals(it.getType() != DocumentType.SSN)).findFirst().get();
@@ -91,7 +91,6 @@ public class PrabhuObjectMapper {
         cancelTransactionDetail.setCancelComment(transactionStatusChangeRequest.getNote());
         return cancelTransactionDetail;
     }
-
 
 
     public static TransactionResponse toTransactionResponse(com.lftechnology.msb.prabhu.dto.TransactionResponse transactionResponse) {

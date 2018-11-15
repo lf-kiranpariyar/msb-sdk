@@ -1,6 +1,5 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.lftechnology.msb.moneytun.serializer.DocumentDateSerializer;
@@ -19,16 +18,16 @@ public class SecondaryDocument {
     private String countryName;
 
     @JsonProperty("SenderIDDocumentCity2")
-    private String city="";
+    private String city = "";
 
     @JsonProperty("SenderIDDocumentState2")
-    private String state="";
+    private String state = "";
 
     @JsonProperty("SenderIDDocumentCountryISOCode2")
     private String documentCountryISOCode;
 
     @JsonProperty("SenderIDDocumentStateISOCode2")
-    private String stateISOCode="";
+    private String stateISOCode = "";
 
     @JsonProperty("SenderIDIssueDate2")
     @JsonSerialize(using = DocumentDateSerializer.class)

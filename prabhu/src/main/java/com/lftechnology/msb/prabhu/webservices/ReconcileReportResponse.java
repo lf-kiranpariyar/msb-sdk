@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "reconcileReportResult"
+        "reconcileReportResult"
 })
 @XmlRootElement(name = "ReconcileReportResponse")
 public class ReconcileReportResponse {
@@ -39,11 +36,9 @@ public class ReconcileReportResponse {
 
     /**
      * Gets the value of the reconcileReportResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfReturnTRANSREPORT }
-     *     
+     *
+     * @return possible object is
+     * {@link ArrayOfReturnTRANSREPORT }
      */
     public ArrayOfReturnTRANSREPORT getReconcileReportResult() {
         return reconcileReportResult;
@@ -51,11 +46,9 @@ public class ReconcileReportResponse {
 
     /**
      * Sets the value of the reconcileReportResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfReturnTRANSREPORT }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ArrayOfReturnTRANSREPORT }
      */
     public void setReconcileReportResult(ArrayOfReturnTRANSREPORT value) {
         this.reconcileReportResult = value;

@@ -10,6 +10,7 @@ public class Contact {
     String fax;
     String email;
     String website;
+    private Map<String, Object> metadata = new HashMap<>();
 
     public Map<String, Object> getMetadata() {
         return metadata;
@@ -18,9 +19,6 @@ public class Contact {
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
     }
-
-    private Map<String, Object> metadata = new HashMap<>();
-
 
     public String getHomePhone() {
         return homePhone;

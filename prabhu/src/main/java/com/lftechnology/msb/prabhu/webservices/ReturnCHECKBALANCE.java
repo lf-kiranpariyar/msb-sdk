@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_CHECKBALANCE complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_CHECKBALANCE">
  *   &lt;complexContent>
@@ -27,16 +26,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_CHECKBALANCE", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "currentbalance",
-    "currency"
+        "code",
+        "agentsessionid",
+        "message",
+        "currentbalance",
+        "currency"
 })
 public class ReturnCHECKBALANCE {
 
@@ -53,11 +50,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -65,11 +60,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -77,11 +70,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -89,11 +80,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -101,11 +90,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -113,11 +100,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -125,11 +110,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Gets the value of the currentbalance property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCURRENTBALANCE() {
         return currentbalance;
@@ -137,11 +120,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Sets the value of the currentbalance property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCURRENTBALANCE(String value) {
         this.currentbalance = value;
@@ -149,11 +130,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Gets the value of the currency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCURRENCY() {
         return currency;
@@ -161,11 +140,9 @@ public class ReturnCHECKBALANCE {
 
     /**
      * Sets the value of the currency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCURRENCY(String value) {
         this.currency = value;

@@ -68,7 +68,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
                 throw new WhiteWingBadRequestException(response.message());
             }
             return response.body();
-        } catch (IOException e ) {
+        } catch (IOException e) {
             LOGGER.error("Error while parsing white wings response : {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());
         }
@@ -122,7 +122,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
         LOGGER.info("Moneytun Get Exchange Rate Request : {}", rate);
         Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
         WhiteWingResource service = retrofit.create(WhiteWingResource.class);
-        Call<ApiResponse<CustomExchangeRate>> call = service.getRate(apiContext.getCredential().getAuthenticationDetail(), QueryType.GET_RATE.getValue(),rate);
+        Call<ApiResponse<CustomExchangeRate>> call = service.getRate(apiContext.getCredential().getAuthenticationDetail(), QueryType.GET_RATE.getValue(), rate);
         try {
             Response<ApiResponse<CustomExchangeRate>> response = call.execute();
             if (!response.isSuccessful()) {
@@ -140,7 +140,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
         LOGGER.info("Moneytun Update Exchange Rate Request : {}", rate);
         Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
         WhiteWingResource service = retrofit.create(WhiteWingResource.class);
-        Call<com.lftechnology.msb.moneytun.dto.Response> call = service.updateRate(apiContext.getCredential().getAuthenticationDetail(), QueryType.UPDATE_RATE.getValue(),rate);
+        Call<com.lftechnology.msb.moneytun.dto.Response> call = service.updateRate(apiContext.getCredential().getAuthenticationDetail(), QueryType.UPDATE_RATE.getValue(), rate);
         try {
             Response<com.lftechnology.msb.moneytun.dto.Response> response = call.execute();
             if (!response.isSuccessful()) {
@@ -148,7 +148,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             }
 
         } catch (IOException e) {
-            LOGGER.error("Exchange rate update request error : {}",e);
+            LOGGER.error("Exchange rate update request error : {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());
         }
     }
@@ -165,7 +165,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             if (!response.isSuccessful()) {
                 throw new WhiteWingBadRequestException(response.message());
             }
-            return  response.body().getResults();
+            return response.body().getResults();
         } catch (IOException e) {
             LOGGER.error("Error while fetching point of contact list {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());
@@ -184,7 +184,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             if (!response.isSuccessful()) {
                 throw new WhiteWingBadRequestException(response.message());
             }
-            return  response.body().getResults();
+            return response.body().getResults();
         } catch (IOException e) {
             LOGGER.error("Error while fetching point of contact list {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());
@@ -202,7 +202,7 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
             if (!response.isSuccessful()) {
                 throw new WhiteWingBadRequestException(response.message());
             }
-            return  response.body().getResults();
+            return response.body().getResults();
         } catch (IOException e) {
             LOGGER.error("Error while fetching point of contact list {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());

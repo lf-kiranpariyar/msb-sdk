@@ -66,7 +66,7 @@ public class Person {
         this.gender = gender;
     }
 
-    public String getFullName(){
+    public String getFullName() {
         return Stream.of(surname, firstName, middleName, lastName)
                 .filter(s -> s != null && !s.isEmpty())
                 .collect(Collectors.joining(" "));

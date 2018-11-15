@@ -2,18 +2,18 @@ package com.lftechnology.msb.prabhu.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lftechnology.msb.prabhu.dto.BankInfo;
+import com.lftechnology.msb.prabhu.dto.Credential;
 import com.lftechnology.msb.prabhu.dto.TransactionDetail;
 import com.lftechnology.msb.prabhu.dto.TransactionResponse;
 import com.lftechnology.msb.prabhu.webservices.ArrayOfReturnAGENTLIST;
+import com.lftechnology.msb.prabhu.webservices.IRemitService;
 import com.lftechnology.msb.prabhu.webservices.IRemitServiceSoap;
-import com.lftechnology.msb.prabhu.dto.BankInfo;
-import com.lftechnology.msb.prabhu.dto.Credential;
+import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.lftechnology.msb.prabhu.webservices.IRemitService;
-import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ import java.util.List;
 public class PrabhuClientApiImplTest {
 
     @Test
-    public void shouldReturnAgentList(){
+    public void shouldReturnAgentList() {
         IRemitService iRemitService = new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
         Credential credential = getCredential();
@@ -40,7 +40,7 @@ public class PrabhuClientApiImplTest {
                 null
         );
         List<ReturnAGENTLIST> returnAGENTLIST = arrayOfReturnAGENTLIST.getReturnAGENTLIST();
-        returnAGENTLIST.forEach(it->{
+        returnAGENTLIST.forEach(it -> {
             try {
                 System.out.println(new ObjectMapper().writeValueAsString(returnAGENTLIST));
             } catch (JsonProcessingException e) {
@@ -50,20 +50,20 @@ public class PrabhuClientApiImplTest {
             System.out.println(it.getBANKBRANCHID());
             System.out.println(it.getLOCATIONID());
         });
-        Assert.assertNotEquals(1,returnAGENTLIST.size());
+        Assert.assertNotEquals(1, returnAGENTLIST.size());
     }
 
     @Test
-    public void shouldReturnTransactionCreationResponse(){
+    public void shouldReturnTransactionCreationResponse() {
         PrabhuClientApi prabhuClientApi = new PrabhuClientApiImpl();
         Credential credential = getCredential();
         TransactionDetail transactionDetail = buildTransactionDetail();
-        TransactionResponse transactionResponse = prabhuClientApi.createTransaction(credential,transactionDetail);
+        TransactionResponse transactionResponse = prabhuClientApi.createTransaction(credential, transactionDetail);
         System.out.println(transactionDetail);
         System.out.println(transactionResponse);
     }
 
-    private TransactionDetail buildTransactionDetail(){
+    private TransactionDetail buildTransactionDetail() {
         TransactionDetail transactionDetail = new TransactionDetail();
         transactionDetail.setSenderName("kiran Pariyar");
         transactionDetail.setSenderAddress("texas");
@@ -95,7 +95,7 @@ public class PrabhuClientApiImplTest {
         return transactionDetail;
     }
 
-    private Credential getCredential(){
+    private Credential getCredential() {
         Credential credential = new Credential();
         credential.setAgentCode("SODA01");
         credential.setAgentUserId("SODACREWAPI");
@@ -104,7 +104,7 @@ public class PrabhuClientApiImplTest {
         return credential;
     }
 
-    private BankInfo getBankInfo(){
+    private BankInfo getBankInfo() {
         BankInfo bankInfo = new BankInfo();
         bankInfo.setPayoutCountry("VIETNAM");
         bankInfo.setPaymentType("D");

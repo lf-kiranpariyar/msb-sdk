@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_CreateTXN complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_CreateTXN">
  *   &lt;complexContent>
@@ -39,28 +38,26 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_CreateTXN", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "pinno",
-    "agenttxnid",
-    "collectamt",
-    "collectcurrency",
-    "exchangerate",
-    "servicecharge",
-    "payoutamt",
-    "payoutcurrency",
-    "txndate",
-    "partnersettlement",
-    "partnerccyrate",
-    "additionalpremiumrate",
-    "feediscount",
-    "payoutservicecharge"
+        "code",
+        "agentsessionid",
+        "message",
+        "pinno",
+        "agenttxnid",
+        "collectamt",
+        "collectcurrency",
+        "exchangerate",
+        "servicecharge",
+        "payoutamt",
+        "payoutcurrency",
+        "txndate",
+        "partnersettlement",
+        "partnerccyrate",
+        "additionalpremiumrate",
+        "feediscount",
+        "payoutservicecharge"
 })
 public class ReturnCreateTXN {
 
@@ -101,11 +98,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -113,11 +108,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -125,11 +118,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -137,11 +128,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -149,11 +138,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -161,11 +148,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -173,11 +158,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the pinno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPINNO() {
         return pinno;
@@ -185,11 +168,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the pinno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPINNO(String value) {
         this.pinno = value;
@@ -197,11 +178,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the agenttxnid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTTXNID() {
         return agenttxnid;
@@ -209,11 +188,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the agenttxnid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTTXNID(String value) {
         this.agenttxnid = value;
@@ -221,11 +198,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the collectamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLLECTAMT() {
         return collectamt;
@@ -233,11 +208,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the collectamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLLECTAMT(String value) {
         this.collectamt = value;
@@ -245,11 +218,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the collectcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLLECTCURRENCY() {
         return collectcurrency;
@@ -257,11 +228,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the collectcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLLECTCURRENCY(String value) {
         this.collectcurrency = value;
@@ -269,11 +238,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the exchangerate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEXCHANGERATE() {
         return exchangerate;
@@ -281,11 +248,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the exchangerate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEXCHANGERATE(String value) {
         this.exchangerate = value;
@@ -293,11 +258,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the servicecharge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSERVICECHARGE() {
         return servicecharge;
@@ -305,11 +268,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the servicecharge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSERVICECHARGE(String value) {
         this.servicecharge = value;
@@ -317,11 +278,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the payoutamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAMT() {
         return payoutamt;
@@ -329,11 +288,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the payoutamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAMT(String value) {
         this.payoutamt = value;
@@ -341,11 +298,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the payoutcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTCURRENCY() {
         return payoutcurrency;
@@ -353,11 +308,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the payoutcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTCURRENCY(String value) {
         this.payoutcurrency = value;
@@ -365,11 +318,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the txndate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTXNDATE() {
         return txndate;
@@ -377,11 +328,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the txndate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTXNDATE(String value) {
         this.txndate = value;
@@ -389,11 +338,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the partnersettlement property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPARTNERSETTLEMENT() {
         return partnersettlement;
@@ -401,11 +348,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the partnersettlement property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPARTNERSETTLEMENT(String value) {
         this.partnersettlement = value;
@@ -413,11 +358,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the partnerccyrate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPARTNERCCYRATE() {
         return partnerccyrate;
@@ -425,11 +368,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the partnerccyrate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPARTNERCCYRATE(String value) {
         this.partnerccyrate = value;
@@ -437,11 +378,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the additionalpremiumrate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getADDITIONALPREMIUMRATE() {
         return additionalpremiumrate;
@@ -449,11 +388,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the additionalpremiumrate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setADDITIONALPREMIUMRATE(String value) {
         this.additionalpremiumrate = value;
@@ -461,11 +398,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the feediscount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFEEDISCOUNT() {
         return feediscount;
@@ -473,11 +408,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the feediscount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFEEDISCOUNT(String value) {
         this.feediscount = value;
@@ -485,11 +418,9 @@ public class ReturnCreateTXN {
 
     /**
      * Gets the value of the payoutservicecharge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTSERVICECHARGE() {
         return payoutservicecharge;
@@ -497,11 +428,9 @@ public class ReturnCreateTXN {
 
     /**
      * Sets the value of the payoutservicecharge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTSERVICECHARGE(String value) {
         this.payoutservicecharge = value;

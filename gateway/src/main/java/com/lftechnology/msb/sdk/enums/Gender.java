@@ -10,20 +10,20 @@ public enum Gender {
     FEMALE("female", "F"),
     OTHER("other", "O");
 
+    public static final Map<String, Gender> genderHashMap = Maps.newHashMapWithExpectedSize(Gender.values().length);
+
+    static {
+        for (Gender gen : Gender.values()) {
+            genderHashMap.put(gen.gender, gen);
+        }
+    }
+
     private final String code;
     private final String gender;
 
     private Gender(String gender, String code) {
         this.code = code;
         this.gender = gender;
-    }
-
-    public String code() {
-        return code;
-    }
-
-    public String gender() {
-        return gender;
     }
 
     public static Gender forCode(String code) {
@@ -39,15 +39,15 @@ public enum Gender {
         }
     }
 
-    public static final Map<String, Gender> genderHashMap = Maps.newHashMapWithExpectedSize(Gender.values().length);
-
-    static {
-        for (Gender gen : Gender.values()) {
-            genderHashMap.put(gen.gender, gen);
-        }
+    public static Gender getGender(String value) {
+        return genderHashMap.get(value);
     }
 
-    public static Gender getGender(String value){
-        return genderHashMap.get(value);
+    public String code() {
+        return code;
+    }
+
+    public String gender() {
+        return gender;
     }
 }

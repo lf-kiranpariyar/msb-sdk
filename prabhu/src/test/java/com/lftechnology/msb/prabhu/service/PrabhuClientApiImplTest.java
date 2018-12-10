@@ -11,6 +11,7 @@ import com.lftechnology.msb.prabhu.webservices.IRemitService;
 import com.lftechnology.msb.prabhu.webservices.IRemitServiceSoap;
 import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -77,36 +78,37 @@ public class PrabhuClientApiImplTest {
         transactionDetail.setSenderDateofBirth("1993-02-15");
         transactionDetail.setReceiverName("summit bajracharya");
         transactionDetail.setReceiverAddress("Daehak");
-        transactionDetail.setReceiverContactNumber("1234567895");
+        transactionDetail.setReceiverContactNumber("96859123");
         transactionDetail.setReceiverCity("city");
-        transactionDetail.setReceiverCountry("Vietnam");
+        transactionDetail.setReceiverCountry("Nigeria");
         transactionDetail.setTransferAmount("10");
         transactionDetail.setPaymentMode("D");
-        transactionDetail.setBankBranchName("An Binh Commercial Joint Stock Bank");
+        transactionDetail.setBankBranchName("Access Bank");
         transactionDetail.setBankAccountNumber("123456");
-        transactionDetail.setBankLocationId("39325698");
-        transactionDetail.setBankId("6451");
+        transactionDetail.setBankLocationId("96859123");
+        transactionDetail.setBankId("9711");
         transactionDetail.setCalcBy("C");
         transactionDetail.setSenderOccupation("Software Engineer");
         transactionDetail.setSenderSourceOfFund("Business");
         transactionDetail.setSenderBeneficiaryRelationship("Brother");
         transactionDetail.setPurposeOfRemittance("Home Maintenance");
         transactionDetail.setSenderSSN("123456780");
+        transactionDetail.setCustomerRate("364.50");
         return transactionDetail;
     }
 
     private Credential getCredential() {
         Credential credential = new Credential();
-        credential.setAgentCode("SODA01");
-        credential.setAgentUserId("SODACREWAPI");
-        credential.setAgentPassword("Sh_X=p5$43");
+        credential.setAgentCode("REB001");
+        credential.setAgentUserId("REBAPI");
+        credential.setAgentPassword("b@eP#Ct_Qa2");
         credential.setAgentSessionId("1234");
         return credential;
     }
 
     private BankInfo getBankInfo() {
         BankInfo bankInfo = new BankInfo();
-        bankInfo.setPayoutCountry("VIETNAM");
+        bankInfo.setPayoutCountry("NIGERIA");
         bankInfo.setPaymentType("D");
         return bankInfo;
     }

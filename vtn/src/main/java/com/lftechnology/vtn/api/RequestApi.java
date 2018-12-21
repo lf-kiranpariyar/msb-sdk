@@ -17,6 +17,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jaxb.JaxbConverterFactory;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
  * All the request are made of this class
@@ -65,6 +66,8 @@ public class RequestApi {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        httpClient.retryOnConnectionFailure(false);
+        httpClient.connectTimeout(5, TimeUnit.MINUTES).writeTimeout(5, TimeUnit.MINUTES).readTimeout(5, TimeUnit.MINUTES);
         httpClient.addInterceptor(logging);
         httpClient.addInterceptor(new Interceptor() {
 

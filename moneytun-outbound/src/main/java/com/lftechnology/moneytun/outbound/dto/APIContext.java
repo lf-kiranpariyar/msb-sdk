@@ -26,6 +26,6 @@ public class APIContext {
     }
 
     public String getAuthentication() {
-        return credential.getAccessKey() + ":" + credential.getSecretKey();
+        return "VTNB745695C-77A9-4373-BF6B-FB653C0FD3B1" + ":" + "gQFfZA6c0gxsj7C8mzA=/rPKq5Qn7+RtxgXf4TwieBEw";
     }
 }

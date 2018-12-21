@@ -7,6 +7,7 @@ import com.lftechnology.moneytun.outbound.enums.ApiMode;
 import com.lftechnology.moneytun.outbound.exception.OutboundException;
 import com.lftechnology.moneytun.outbound.service.OutboundService;
 import com.lftechnology.moneytun.outbound.service.impl.OutboundServiceImpl;
+import com.lftechnology.msb.sdk.annotation.SystemProperty;
 import com.lftechnology.msb.sdk.annotation.TransactionDeliveryConfirmation;
 import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import com.lftechnology.msb.sdk.dto.TransactionStatusChangeResponse;
@@ -19,14 +20,16 @@ import java.util.List;
 @Stateless
 public class WhiteWingsOutboundApiImpl implements DeliveryConfirmationService {
 
+    @SystemProperty(value = "RAAS_ENVIRONMENT", fallback = "SANDBOX")
+    private static String apiMode = "LIVE";
+
     @Override
     public TransactionStatusChangeResponse confirmTransaction(String credentialString, String transferNo, String payeeCode) {
         try {
             com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = MoneyTunOutboundObjectMapper.toCrendential(credentialString);
-            APIContext apiContext = new APIContext(outboundCrendential, ApiMode.SANDBOX);
+            APIContext apiContext = new APIContext(outboundCrendential, ApiMode.valueOf(apiMode));
             OutboundService service = new OutboundServiceImpl();
             OutboundResponse outboundResponse = service.confirmTransaction(apiContext, transferNo, payeeCode);
-
             return MoneyTunOutboundObjectMapper.toTransactionStatusChangeResponse(outboundResponse);
         } catch (OutboundException e) {
             throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
@@ -39,7 +42,7 @@ public class WhiteWingsOutboundApiImpl implements DeliveryConfirmationService {
     public List<TransactionResponse> getUnpaidTransactionList(String credentialString, String transferNo, String payeeCode) {
         try {
             com.lftechnology.moneytun.outbound.dto.Credential outboundCrendential = MoneyTunOutboundObjectMapper.toCrendential(credentialString);
-            APIContext apiContext = new APIContext(outboundCrendential, ApiMode.SANDBOX);
+            APIContext apiContext = new APIContext(outboundCrendential, ApiMode.valueOf(apiMode));
             OutboundService service = new OutboundServiceImpl();
             List<Transaction> unpaidTransactionList = service.getUnpaidTransactionList(apiContext, transferNo, payeeCode);
             return MoneyTunOutboundObjectMapper.toTransactionResponse(unpaidTransactionList);

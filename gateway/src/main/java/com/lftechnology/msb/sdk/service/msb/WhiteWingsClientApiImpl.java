@@ -45,8 +45,8 @@ import java.util.stream.Collectors;
 @Stateless
 public class WhiteWingsClientApiImpl implements MsbClientService {
 
-    @SystemProperty(value = "MTS_ENVIRONMENT", fallback = "SANDBOX")
-    private static String apiMode = "SANDBOX";
+    @SystemProperty(value = "RAAS_ENVIRONMENT", fallback = "SANDBOX")
+    private static String apiMode = "LIVE";
 
 
     @Override

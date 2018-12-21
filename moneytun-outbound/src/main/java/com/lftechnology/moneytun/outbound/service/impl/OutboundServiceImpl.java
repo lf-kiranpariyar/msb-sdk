@@ -36,9 +36,10 @@ public class OutboundServiceImpl implements OutboundService {
     public List<Transaction> getUnpaidTransactionList(APIContext apiContext, String transferNo, String payeeCode) {
         RequestApi requestApi = new RequestApi(apiContext);
         LOGGER.info("MoneyTun-Outbound get unpaid transaction list");
+        LOGGER.info("MoneyTun-Outbound get unpaid transaction list {}" , apiContext.getAuthentication());
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<List<Transaction>> call = service.getUnpaidTransactionList(MethodName.ALL.name(), transferNo, payeeCode);
+        Call<List<Transaction>> call = service.getUnpaidTransactionList(apiContext.getAuthentication(), MethodName.ALL.name(), "", payeeCode);
         return requestApi.executeApiCall(call);
     }
 
@@ -56,7 +57,7 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound conform transaction ");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<OutboundResponse> call = service.conformTransaction(MethodName.CONFIRMATION.name(), transferNo, payeeCode);
+        Call<OutboundResponse> call = service.conformTransaction(apiContext.getAuthentication(), MethodName.CONFIRMATION.name(), transferNo, payeeCode);
         OutboundResponse outboundResponse = requestApi.executeApiCall(call);
         if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());
@@ -70,7 +71,7 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound cancel transaction ");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<OutboundResponse> call = service.conformTransaction(MethodName.CANCEL.name(), transferNo, payeeCode);
+        Call<OutboundResponse> call = service.conformTransaction(apiContext.getAuthentication(), MethodName.CANCEL.name(), transferNo, payeeCode);
         OutboundResponse outboundResponse = requestApi.executeApiCall(call);
         if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());
@@ -85,7 +86,7 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound pay transaction ");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<OutboundResponse> call = service.conformTransaction(MethodName.PAY.name(), transferNo, payeeCode);
+        Call<OutboundResponse> call = service.conformTransaction(apiContext.getAuthentication(), MethodName.PAY.name(), transferNo, payeeCode);
         OutboundResponse outboundResponse = requestApi.executeApiCall(call);
         if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());

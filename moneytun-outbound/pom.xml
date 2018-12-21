@@ -28,6 +28,7 @@
         <maven.plugin.version>3.0.2</maven.plugin.version>
         <retrofit.version>2.4.0</retrofit.version>
         <gson.converter.version>2.4.0</gson.converter.version>
+        <okhttp.interceptor>3.10.0</okhttp.interceptor>
     </properties>
 
 
@@ -35,7 +36,7 @@
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>retrofit</artifactId>
-            <version>2.3.0</version>
+            <version>${retrofit.version}</version>
         </dependency>
 
 
@@ -65,7 +66,7 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>logging-interceptor</artifactId>
-            <version>3.8.0</version>
+            <version>${okhttp.interceptor}</version>
         </dependency>
 
         <dependency>

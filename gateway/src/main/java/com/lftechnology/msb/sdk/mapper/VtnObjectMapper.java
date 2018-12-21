@@ -14,34 +14,34 @@ import com.lftechnology.vtn.dto.request.TransactionRequest;
 import com.lftechnology.vtn.dto.response.BankResponse;
 import com.lftechnology.vtn.dto.response.FxRateResponse;
 
+import java.math.BigDecimal;
 import java.util.Map;
 
 public class VtnObjectMapper {
 
-    public static TransactionRequest toTransaction(Transaction transaction) {
+    public static String generatePhoneNumber(String phoneNumber){
+        return String.valueOf(phoneNumber).replaceFirst("(\\d{3})(\\d{3})(\\d+)", "$1-$2-$3");
+    }
 
+    public static TransactionRequest toTransaction(Transaction transaction) {
         Sender sender = transaction.getSender();
         Recipient recipient = transaction.getRecipient();
         Bank bank = transaction.getBank();
-
+        String receiverEmail = recipient.getContact().getEmail()==null ? "test@machnetinc.com" : recipient.getContact().getEmail();
         TransactionRequest transactionRequest = new TransactionRequest.Builder()
-                .setTransactionDetail(transaction.getTransactionId(), transaction.getTransferDate(), transaction.getTransferType())
-                .setSenderDetail(sender.getFirstName(), sender.getLastName(), sender.getContact().getEmail(), sender.getContact().getMobilePhone(), sender.getAddress().getCountry().getName())
-                .setReceiverDetail(recipient.getFirstName(), recipient.getLastName(), recipient.getContact().getEmail(), recipient.getContact().getMobilePhone(), recipient.getAddress().getCountry().getName())
-                .setAmount(transaction.getAmount(), transaction.getRecipientAmount(), transaction.getCurrencyCode())
-                .setFee(transaction.getFeeInSenderCurrency(), transaction.getFeeInRecipientCurrency())
-                .setBankDetail(bank.getName(), bank.getAccountHolderName(), bank.getAccountNumber())
+                .setTransactionDetail(transaction.getReferenceNumber(), transaction.getTransferDate(), 2)
+                .setSenderDetail(sender.getFirstName(), sender.getLastName(), sender.getContact().getEmail(), generatePhoneNumber(sender.getContact().getMobilePhone()), sender.getAddress().getCountry().getName())
+                .setReceiverDetail(recipient.getFirstName(), recipient.getLastName(), receiverEmail, (recipient.getContact().getMobilePhone()!=null) ?generatePhoneNumber(recipient.getContact().getMobilePhone()):"", recipient.getAddress().getCountry().getName())
+                .setAmount(transaction.getAmount(), transaction.getRecipientAmount(), transaction.getRecipient().getAddress().getCountry().getCurrencyCode())
+                .setFee(new BigDecimal(1.75), new BigDecimal(160))
+                .setBankDetail(bank.getMetadata().get("BankCode").toString(), bank.getAccountHolderName(), bank.getAccountNumber())
                 .build();
-
-
         return transactionRequest;
     }
 
     public static com.lftechnology.vtn.dto.request.Credential toCredential(String credential) {
-        System.out.println(credential);
         Gson gson = new Gson();
         com.lftechnology.vtn.dto.request.Credential vtnCredential = gson.fromJson(credential, com.lftechnology.vtn.dto.request.Credential.class);
-        System.out.println(vtnCredential);
         return vtnCredential;
     }
 

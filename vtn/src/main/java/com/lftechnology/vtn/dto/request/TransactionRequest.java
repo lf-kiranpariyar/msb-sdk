@@ -342,7 +342,6 @@ public class TransactionRequest extends Credential {
         public Builder setFee(BigDecimal feeInSenderCurrency, BigDecimal feeInNaira) {
             this.feeInSenderCurrency = feeInSenderCurrency;
             this.feeInNaira = feeInNaira;
-
             return this;
         }
 
@@ -351,15 +350,15 @@ public class TransactionRequest extends Credential {
             this.bankName = bankName;
             this.bankAccountName = bankAccountName;
             this.bankAccountNumber = bankAccountNumber;
-
             return this;
         }
 
         public TransactionRequest build() {
+
             TransactionRequest transactionRequest = new TransactionRequest();
             transactionRequest.setTransactionId(this.transactionId);
             transactionRequest.setTransferDate(this.transferDate);
-            transactionRequest.setTransferType(this.transferType);
+            transactionRequest.setTransferType(2);
             transactionRequest.setSenderEmail(this.senderEmail);
             transactionRequest.setSenderPhone(this.senderPhone);
             transactionRequest.setSenderFirstName(this.senderFirstName);

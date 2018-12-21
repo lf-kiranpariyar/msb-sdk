@@ -1,6 +1,7 @@
 package com.lftechnology.msb.sdk.service.delivery;
 
 import com.lftechnology.msb.sdk.annotation.DeliveryPartner;
+import com.lftechnology.msb.sdk.annotation.SystemProperty;
 import com.lftechnology.msb.sdk.dto.Bank;
 import com.lftechnology.msb.sdk.dto.ExchangeRateRequest;
 import com.lftechnology.msb.sdk.dto.ExchangeRateResponse;
@@ -26,6 +27,10 @@ import java.math.BigDecimal;
 @DeliveryPartner("VTN")
 public class VtnDeliveryServiceImpl implements DeliveryService {
 
+    @SystemProperty(value = "RAAS_ENVIRONMENT", fallback = "SANDBOX")
+    private static String apiMode = "LIVE";
+
+
     @Override
     public TransactionResponse create(Transaction transaction, String credential) {
         try {
@@ -33,7 +38,6 @@ public class VtnDeliveryServiceImpl implements DeliveryService {
             com.lftechnology.vtn.dto.request.Credential vtnCredential = VtnObjectMapper.toCredential(credential);
             TransactionApi transactionApi = new TransactionApi(vtnCredential);
             com.lftechnology.vtn.dto.response.TransactionResponse transactionResponse = transactionApi.createTransaction(transactionRequest);
-
             return VtnObjectMapper.toTransactionResponse(transactionResponse);
         } catch (VtnException e) {
             throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
@@ -79,7 +83,6 @@ public class VtnDeliveryServiceImpl implements DeliveryService {
             com.lftechnology.vtn.dto.request.Credential vtnCredential = VtnObjectMapper.toCredential(credential);
             BalanceApi balanceApi = new BalanceApi(vtnCredential);
             BalanceResponse bankResponse = balanceApi.getBalance();
-
             return bankResponse.getBalance();
         } catch (VtnException e) {
             throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());

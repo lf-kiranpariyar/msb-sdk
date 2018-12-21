@@ -1,6 +1,7 @@
 package com.lftechnology.vtn.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.lftechnology.vtn.dto.request.Credential;
 import com.lftechnology.vtn.dto.request.TransactionRequest;
 import com.lftechnology.vtn.dto.response.TransactionResponse;
@@ -35,10 +36,12 @@ public class TransactionApi {
         Retrofit retrofit = this.requestApi.getRetrofitObject();
         TransactionApiService service = retrofit.create(TransactionApiService.class);
         ObjectMapper oMapper = new ObjectMapper();
+        oMapper.configure(SerializationFeature.WRITE_NULL_MAP_VALUES, false);
         Map<String, String> map = oMapper.convertValue(transactionRequest, Map.class);
+        map.remove("ReceiverPhone");
         Call<TransactionResponse> call = service.createTransaction(map);
         TransactionResponse transactionResponseDTO = requestApi.executeApiCall(call);
-        if (ResponseCode.R00.name().equals(transactionResponseDTO.getCode()))
+        if (!ResponseCode.R00.name().equals(transactionResponseDTO.getCode()))
             throw new VtnException(ResponseCode.valueOf(transactionResponseDTO.getCode()).getMessage(), transactionResponseDTO.getCode());
 
         return transactionResponseDTO;

@@ -1,11 +1,9 @@
 package com.lftechnology.msb.sdk.mapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import com.lftechnology.moneytun.outbound.dto.Credential;
 import com.lftechnology.moneytun.outbound.dto.OutboundResponse;
 import com.lftechnology.moneytun.outbound.dto.Transaction;
-import com.lftechnology.msb.moneytun.exception.InvalidCredentialException;
 import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import com.lftechnology.msb.sdk.dto.TransactionStatusChangeResponse;
 import org.slf4j.LoggerFactory;
@@ -19,16 +17,9 @@ public class MoneyTunOutboundObjectMapper {
 
     public static Credential toCrendential(String credentialString) {
         LOGGER.info("MoneyRunOutboundObjectMapper: string credential to Outbound credential object");
-        Gson gson = new Gson();
-        if (credentialString == null) {
-            throw new InvalidCredentialException("Credentials not found");
-        }
-        Credential outboundCrendential;
-        try {
-            outboundCrendential = gson.fromJson(credentialString, com.lftechnology.moneytun.outbound.dto.Credential.class);
-        } catch (InvalidCredentialException e) {
-            throw new InvalidCredentialException("Invalid Credentials ");
-        }
+        Credential outboundCrendential = new Credential();
+        outboundCrendential.setAccessKey("VTNB745695C-77A9-4373-BF6B-FB653C0FD3B1");
+        outboundCrendential.setSecretKey("gQFfZA6c0gxsj7C8mzA=/rPKq5Qn7+RtxgXf4TwieBEw");
         return outboundCrendential;
     }
 
@@ -42,7 +33,6 @@ public class MoneyTunOutboundObjectMapper {
 
             gTransactionResponse.setReferenceNumber(item.getTransferNo());
             gTransactionResponse.setMetadata(map);
-
             transactionList.add(gTransactionResponse);
 
         });

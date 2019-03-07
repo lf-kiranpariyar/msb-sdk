@@ -12,6 +12,7 @@ import com.lftechnology.vtn.api.BalanceApi;
 import com.lftechnology.vtn.api.BankApi;
 import com.lftechnology.vtn.api.FxRateApi;
 import com.lftechnology.vtn.api.TransactionApi;
+import com.lftechnology.vtn.api.TransactionListApi;
 import com.lftechnology.vtn.dto.request.BankRequest;
 import com.lftechnology.vtn.dto.request.TransactionRequest;
 import com.lftechnology.vtn.dto.response.BalanceResponse;
@@ -41,7 +42,7 @@ public class VtnDeliveryServiceImpl implements DeliveryService {
             return VtnObjectMapper.toTransactionResponse(transactionResponse);
         } catch (VtnException e) {
             throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
-        } catch (ApiException e) {
+        } catch (Exception e) {
             throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
         }
     }
@@ -53,7 +54,6 @@ public class VtnDeliveryServiceImpl implements DeliveryService {
             com.lftechnology.vtn.dto.request.Credential vtnCredential = VtnObjectMapper.toCredential(credential);
             BankApi bankApi = new BankApi(vtnCredential);
             BankResponse bankResponse = bankApi.verifyBank(bankRequest);
-
             return VtnObjectMapper.toBankResponse(bankResponse);
         } catch (VtnException e) {
             throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
@@ -91,5 +91,17 @@ public class VtnDeliveryServiceImpl implements DeliveryService {
         }
     }
 
-
+    @Override
+    public TransactionResponse fetch(String transactionId, String credential) {
+        try {
+            com.lftechnology.vtn.dto.request.Credential vtnCredential = VtnObjectMapper.toCredential(credential);
+            TransactionListApi transactionApi = new TransactionListApi(vtnCredential);
+            com.lftechnology.vtn.dto.response.TransactionListResponse transactionResponse = transactionApi.retrieveTransaction(transactionId);
+            return VtnObjectMapper.toTransactionResponse(transactionResponse.getTransactionResponses().get(0));
+        } catch (VtnException e) {
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        } catch (Exception e) {
+            throw new com.lftechnology.msb.sdk.exception.ApiException(e.getMessage());
+        }
+    }
 }

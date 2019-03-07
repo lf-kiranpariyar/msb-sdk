@@ -46,8 +46,7 @@ import java.util.stream.Collectors;
 public class WhiteWingsClientApiImpl implements MsbClientService {
 
     @SystemProperty(value = "RAAS_ENVIRONMENT", fallback = "SANDBOX")
-    private static String apiMode = "LIVE";
-
+    private static String apiMode = "SANDBOX";
 
     @Override
     public TransactionResponse create(Transaction transaction, String credentials) {

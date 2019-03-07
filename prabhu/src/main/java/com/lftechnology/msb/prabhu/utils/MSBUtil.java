@@ -76,6 +76,9 @@ public class MSBUtil {
 
     public static List<Agent> mapToListOfAgent(List<ReturnAGENTLIST> returnAGENTLISTS) {
         List<Agent> agentList = new ArrayList<>();
+        System.out.println(returnAGENTLISTS.get(0).getAGENT());
+        System.out.println("asdasdsad");
+
         Map<String, List<ReturnAGENTLIST>> agentGroups = returnAGENTLISTS.stream().collect(Collectors.groupingBy(ReturnAGENTLIST::getAGENT));
         for (Map.Entry<String, List<ReturnAGENTLIST>> entry : agentGroups.entrySet()) {
             Agent agent = new Agent();

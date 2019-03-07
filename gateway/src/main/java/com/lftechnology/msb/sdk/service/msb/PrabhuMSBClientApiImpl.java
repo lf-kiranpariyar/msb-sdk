@@ -79,7 +79,7 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
         Credential credential = PrabhuObjectMapper.getCredential(credentials);
         BankInfo bankInfo = new BankInfo();
         bankInfo.setPayoutCountry(request.getCountry().getName());
-        bankInfo.setPaymentType(TransactionPaymentType.getPrabhuPaymentMode(request.getType()).name());
+        bankInfo.setPaymentType(TransactionPaymentType.getPrabhuPaymentMode(request.getType()).getValue());
         List<Agent> agents = prabhuClientApi.getAgents(credential, bankInfo);
         return PrabhuObjectMapper.toSyncBankResponse(agents);
     }

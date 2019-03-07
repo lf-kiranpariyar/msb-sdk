@@ -11,8 +11,13 @@ import java.util.Map;
 
 public interface TransactionApiService {
 
-
     @POST("Remittance.asp")
     @FormUrlEncoded
     Call<TransactionResponse> createTransaction(@FieldMap Map<String, String> params);
+
+
+    @POST("RemittanceTransactionStatus.asp")
+    @FormUrlEncoded
+    Call<TransactionResponse> fetchStatus(@FieldMap Map<String, String> params);
+
 }

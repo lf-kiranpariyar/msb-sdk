@@ -9,6 +9,7 @@ import com.lftechnology.msb.prabhu.dto.Credential;
 import com.lftechnology.msb.prabhu.dto.TransactionAmendmentDetail;
 import com.lftechnology.msb.prabhu.dto.TransactionDetail;
 import com.lftechnology.msb.prabhu.dto.TransactionResponse;
+import com.lftechnology.msb.prabhu.enums.PaymentMode;
 import com.lftechnology.msb.prabhu.utils.MSBUtil;
 import com.lftechnology.msb.prabhu.webservices.ArrayOfReturnAGENTLIST;
 import com.lftechnology.msb.prabhu.webservices.IRemitService;
@@ -63,7 +64,7 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
                 transactionDetail.getReceiverCity(),
                 transactionDetail.getReceiverCountry(),
                 transactionDetail.getTransferAmount(),
-                transactionDetail.getPaymentMode(),
+                PaymentMode.ACCOUNT_DEPOSIT_ANOTHER_BANK.getValue(),
                 transactionDetail.getBankId(),
                 transactionDetail.getBankAccountNumber(),
                 transactionDetail.getCalcBy(), "",

@@ -15,6 +15,7 @@ import com.lftechnology.msb.sdk.dto.TransactionResponse;
 import com.lftechnology.msb.sdk.dto.TransactionStatusChangeRequest;
 import com.lftechnology.msb.sdk.enums.DocumentType;
 import com.lftechnology.msb.sdk.enums.TransactionPaymentType;
+import com.lftechnology.msb.sdk.util.DateUtil;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -33,10 +34,10 @@ public class PrabhuObjectMapper {
     }
 
     public static TransactionDetail toTransactionDetail(Transaction transaction) {
-        TransactionDetail transactionDetail = new TransactionDetail();
-        Document ssnDocument = transaction.getSender().getDocumentList().stream().filter(it -> it.equals(it.getType() == DocumentType.SSN)).findFirst().get();
-        Document otherDocument = transaction.getSender().getDocumentList().stream().filter(it -> it.equals(it.getType() != DocumentType.SSN)).findFirst().get();
+        Document ssnDocument = transaction.getSender().getDocumentList().stream().filter(it -> it.getType().getValue().equalsIgnoreCase(DocumentType.SSN.getValue())).findFirst().get();
+        Document otherDocument = transaction.getSender().getDocumentList().stream().filter(it -> it.getType() != DocumentType.SSN).findFirst().get();
 
+        TransactionDetail transactionDetail = new TransactionDetail();
         transactionDetail.setSenderName(transaction.getSender().getFullName());
         transactionDetail.setSenderAddress(transaction.getSender().getAddress().getFullAddress());
         transactionDetail.setSenderMobile(transaction.getSender().getContact().getMobilePhone());
@@ -44,9 +45,9 @@ public class PrabhuObjectMapper {
         transactionDetail.setSenderCountry(transaction.getSender().getAddress().getCountry().getName());
         transactionDetail.setSenderIdType(DocumentType.getPrabhuDocument(otherDocument.getType()).getValue());
         transactionDetail.setSenderIdNumber(otherDocument.getIdNumber());
-        transactionDetail.setSenderIdIsuueDate(otherDocument.getIssuedDate().toString());
-        transactionDetail.setSenderIdExpireDate(otherDocument.getExpiryDate().toString());
-        transactionDetail.setSenderDateofBirth(transaction.getSender().getDateOfBirth().toString());
+        transactionDetail.setSenderIdIsuueDate(DateUtil.getDateString(otherDocument.getIssuedDate(),DateUtil.ISO_DATE_FORMAT));
+        transactionDetail.setSenderIdExpireDate(DateUtil.getDateString(otherDocument.getExpiryDate(), DateUtil.ISO_DATE_FORMAT));
+        transactionDetail.setSenderDateofBirth(DateUtil.getDateString(transaction.getSender().getDateOfBirth(), DateUtil.ISO_DATE_FORMAT));
         transactionDetail.setReceiverName(transaction.getRecipient().getFullName());
         transactionDetail.setReceiverAddress(transaction.getRecipient().getAddress().getFullAddress());
         transactionDetail.setReceiverContactNumber(transaction.getRecipient().getContact().getMobilePhone());
@@ -58,14 +59,16 @@ public class PrabhuObjectMapper {
         transactionDetail.setBankBranchName(transaction.getBank().getBranch().getName());
         transactionDetail.setBankAccountNumber(transaction.getBank().getAccountNumber());
         transactionDetail.setBankLocationId(String.valueOf(transaction.getBank().getMetadata().get("locationId")));
-        transactionDetail.setBankId(transaction.getBank().getReferenceId());
+        transactionDetail.setBankId(String.valueOf(transaction.getBank().getMetadata().get("bankId")));
         transactionDetail.setCalcBy("C");
         transactionDetail.setSenderOccupation(transaction.getSender().getOccupation());
-        transactionDetail.setSenderSourceOfFund("Business");
+        transactionDetail.setSenderSourceOfFund(transaction.getSourceOfIncome());
         transactionDetail.setSenderBeneficiaryRelationship(transaction.getRecipient().getRelationship());
         transactionDetail.setPurposeOfRemittance(transaction.getPurpose());
-        transactionDetail.setSenderSSN(ssnDocument.getIdNumber());
+        String formattedSSN = String.format("%09d", Long.valueOf(ssnDocument.getIdNumber()));
+        transactionDetail.setSenderSSN(formattedSSN);
         transactionDetail.setCustomerRate(String.valueOf(transaction.getRate()));
+        transactionDetail.setAgentTxnId(transaction.getTransactionId());
         return transactionDetail;
     }
 
@@ -116,6 +119,7 @@ public class PrabhuObjectMapper {
                 branchResponse.setAddress(address);
                 branchResponse.setName(branch.getBranch());
                 branchResponse.setMetadata(new ObjectMapper().convertValue(branch, Map.class));
+                syncBankResponse.setMetadata(new ObjectMapper().convertValue(branch, Map.class));
                 branchResponseList.add(branchResponse);
             });
             syncBankResponse.setBranchResponseList(branchResponseList);

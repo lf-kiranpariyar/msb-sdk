@@ -6,12 +6,12 @@ import com.lftechnology.msb.prabhu.dto.BankInfo;
 import com.lftechnology.msb.prabhu.dto.Credential;
 import com.lftechnology.msb.prabhu.dto.TransactionDetail;
 import com.lftechnology.msb.prabhu.dto.TransactionResponse;
+import com.lftechnology.msb.prabhu.utils.MSBUtil;
 import com.lftechnology.msb.prabhu.webservices.ArrayOfReturnAGENTLIST;
 import com.lftechnology.msb.prabhu.webservices.IRemitService;
 import com.lftechnology.msb.prabhu.webservices.IRemitServiceSoap;
 import com.lftechnology.msb.prabhu.webservices.ReturnAGENTLIST;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -41,6 +41,7 @@ public class PrabhuClientApiImplTest {
                 null
         );
         List<ReturnAGENTLIST> returnAGENTLIST = arrayOfReturnAGENTLIST.getReturnAGENTLIST();
+        MSBUtil.mapToListOfAgent(returnAGENTLIST);
         returnAGENTLIST.forEach(it -> {
             try {
                 System.out.println(new ObjectMapper().writeValueAsString(returnAGENTLIST));
@@ -94,21 +95,22 @@ public class PrabhuClientApiImplTest {
         transactionDetail.setPurposeOfRemittance("Home Maintenance");
         transactionDetail.setSenderSSN("123456780");
         transactionDetail.setCustomerRate("364.50");
+        transactionDetail.setAgentTxnId("123123123");
         return transactionDetail;
     }
 
     private Credential getCredential() {
         Credential credential = new Credential();
-        credential.setAgentCode("REB001");
-        credential.setAgentUserId("REBAPI");
-        credential.setAgentPassword("b@eP#Ct_Qa2");
+        credential.setAgentCode("WISELYHO");
+        credential.setAgentUserId("APIWISELY");
+        credential.setAgentPassword("WISELYHO@321api");
         credential.setAgentSessionId("1234");
         return credential;
     }
 
     private BankInfo getBankInfo() {
         BankInfo bankInfo = new BankInfo();
-        bankInfo.setPayoutCountry("NIGERIA");
+        bankInfo.setPayoutCountry("THAILAND");
         bankInfo.setPaymentType("D");
         return bankInfo;
     }

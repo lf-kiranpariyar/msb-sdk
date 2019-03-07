@@ -1,5 +1,6 @@
 package com.lftechnology.vtn.api;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.lftechnology.vtn.dto.request.Credential;
@@ -11,6 +12,7 @@ import com.lftechnology.vtn.service.TransactionApiService;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 
+import javax.annotation.PostConstruct;
 import java.util.Map;
 
 /**
@@ -20,6 +22,8 @@ import java.util.Map;
  */
 public class TransactionApi {
     private RequestApi requestApi;
+
+
 
     public TransactionApi(Credential credential) {
         this.requestApi = new RequestApi(credential);
@@ -40,10 +44,6 @@ public class TransactionApi {
         Map<String, String> map = oMapper.convertValue(transactionRequest, Map.class);
         map.remove("ReceiverPhone");
         Call<TransactionResponse> call = service.createTransaction(map);
-        TransactionResponse transactionResponseDTO = requestApi.executeApiCall(call);
-        if (!ResponseCode.R00.name().equals(transactionResponseDTO.getCode()))
-            throw new VtnException(ResponseCode.valueOf(transactionResponseDTO.getCode()).getMessage(), transactionResponseDTO.getCode());
-
-        return transactionResponseDTO;
+        return  requestApi.executeApiCall(call);
     }
 }

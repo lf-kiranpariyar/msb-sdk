@@ -40,7 +40,7 @@ public class MoneyTunObjectMapper {
         document.setDocumentCountryISOCode(transaction.getSender().getAddress().getCountry().getThreeCharISOCode());
         Bank bank = transaction.getBank();
         com.lftechnology.msb.moneytun.dto.Transaction transactiondetail = new com.lftechnology.msb.moneytun.dto.Transaction.Builder().
-                party(sender, receiver, document).bankDetails(bank.getName(), bank.getBranch().getName(), bank.getAccountNumber(), bank.getType()).
+                party(sender, receiver, document).bankDetails(String.valueOf(bank.getMetadata().get("BankName")), bank.getBranch().getName(), bank.getAccountNumber(), bank.getType()).
                 paymentMethod(paymentMode.getMode()).transactionAmount(transaction.getAmount(), transaction.getRate(), transaction.getRecipientAmount()).build();
         fetchPOC(apiContext, bank, transactiondetail);
         transactiondetail.setSender(toSender(transaction.getSender()));

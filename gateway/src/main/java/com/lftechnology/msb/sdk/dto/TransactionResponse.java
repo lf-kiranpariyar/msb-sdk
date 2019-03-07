@@ -8,9 +8,11 @@ import java.util.Map;
  */
 public class TransactionResponse {
 
+    private Boolean isSuccess;
     private String referenceNumber;
     private String txnStatus;
     private Map<String, Object> metadata = new HashMap<>();
+    private Map<String, Object> errorReason = new HashMap<>();
 
     public String getReferenceNumber() {
         return referenceNumber;
@@ -34,5 +36,21 @@ public class TransactionResponse {
 
     public void setTxnStatus(String txnStatus) {
         this.txnStatus = txnStatus;
+    }
+
+    public Boolean getSuccess() {
+        return isSuccess;
+    }
+
+    public void setSuccess(Boolean success) {
+        isSuccess = success;
+    }
+
+    public Map<String, Object> getErrorReason() {
+        return errorReason;
+    }
+
+    public void setErrorReason(Map<String, Object> errorReason) {
+        this.errorReason = errorReason;
     }
 }

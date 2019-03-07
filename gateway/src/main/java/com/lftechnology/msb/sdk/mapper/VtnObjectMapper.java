@@ -13,6 +13,8 @@ import com.lftechnology.vtn.dto.request.BankRequest;
 import com.lftechnology.vtn.dto.request.TransactionRequest;
 import com.lftechnology.vtn.dto.response.BankResponse;
 import com.lftechnology.vtn.dto.response.FxRateResponse;
+import com.lftechnology.vtn.enums.ResponseCode;
+import com.lftechnology.vtn.exception.VtnException;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -48,6 +50,11 @@ public class VtnObjectMapper {
     public static TransactionResponse toTransactionResponse(com.lftechnology.vtn.dto.response.TransactionResponse transactionResponse) {
         TransactionResponse msbTransactionResponse = new TransactionResponse();
         msbTransactionResponse.setReferenceNumber(transactionResponse.getTransactionId());
+        if (!ResponseCode.R00.name().equals(transactionResponse.getCode())){
+            msbTransactionResponse.setSuccess(Boolean.FALSE);
+        }else{
+            msbTransactionResponse.setSuccess(Boolean.TRUE);
+        }
         ObjectMapper objectMapper = new ObjectMapper();
         msbTransactionResponse.setMetadata(objectMapper.convertValue(transactionResponse, Map.class));
         return msbTransactionResponse;

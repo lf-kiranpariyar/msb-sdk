@@ -16,4 +16,6 @@ public interface DeliveryService {
     ExchangeRateResponse rate(ExchangeRateRequest request, String credential);
 
     BigDecimal getBalance(String credential);
+
+    TransactionResponse fetch(String transactionId, String credential);
 }

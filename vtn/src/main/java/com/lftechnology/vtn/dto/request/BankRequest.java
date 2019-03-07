@@ -8,11 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BankRequest {
 
-
     @JsonProperty(value = "BankAccountNumber")
     private String bankAccountNumber;
+
     @JsonProperty(value = "BankAccountName")
     private String bankAccountName;
+
     @JsonProperty(value = "BankName")
     private String bankName;
 

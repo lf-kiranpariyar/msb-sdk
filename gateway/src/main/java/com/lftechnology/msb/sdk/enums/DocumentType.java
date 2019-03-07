@@ -43,11 +43,11 @@ public enum DocumentType {
         }
     }
 
-    String getValue() {
+    public String getValue() {
         return value;
     }
 
-    String getKey() {
+    public String getKey() {
         return name();
     }
 }

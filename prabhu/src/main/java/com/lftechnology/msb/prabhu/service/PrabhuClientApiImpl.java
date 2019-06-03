@@ -41,6 +41,7 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
     public TransactionResponse createTransaction(Credential credential, TransactionDetail transactionDetail) {
         IRemitService iRemitService = new IRemitService();
         IRemitServiceSoap iRemitServiceSoap = iRemitService.getIRemitServiceSoap();
+        LOGGER.info("Request Body : {} ", transactionDetail);
         ReturnCreateTXN returnCreateTXN = iRemitServiceSoap.sendTransaction(
                 credential.getAgentCode(),
                 credential.getAgentUserId(),

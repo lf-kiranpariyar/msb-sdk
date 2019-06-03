@@ -57,7 +57,7 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound conform transaction ");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<OutboundResponse> call = service.conformTransaction(apiContext.getAuthentication(), MethodName.CONFIRMATION.name(), transferNo, payeeCode);
+        Call<OutboundResponse> call = service.confirm(apiContext.getAuthentication(), MethodName.CONFIRMATION.name(), transferNo, payeeCode);
         OutboundResponse outboundResponse = requestApi.executeApiCall(call);
         if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());
@@ -71,7 +71,7 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound cancel transaction ");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<OutboundResponse> call = service.conformTransaction(apiContext.getAuthentication(), MethodName.CANCEL.name(), transferNo, payeeCode);
+        Call<OutboundResponse> call = service.confirm(apiContext.getAuthentication(), MethodName.CANCEL.name(), transferNo, payeeCode);
         OutboundResponse outboundResponse = requestApi.executeApiCall(call);
         if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());
@@ -86,7 +86,7 @@ public class OutboundServiceImpl implements OutboundService {
         LOGGER.info("MoneyTun-Outbound pay transaction ");
         Retrofit retrofit = requestApi.getRetrofitObject();
         OutboundResource service = retrofit.create(OutboundResource.class);
-        Call<OutboundResponse> call = service.conformTransaction(apiContext.getAuthentication(), MethodName.PAY.name(), transferNo, payeeCode);
+        Call<OutboundResponse> call = service.confirm(apiContext.getAuthentication(), MethodName.PAY.name(), transferNo, payeeCode);
         OutboundResponse outboundResponse = requestApi.executeApiCall(call);
         if (!outboundResponse.getCode().equals(CommonConstant.SUCCESS)) {
             throw new OutboundException(outboundResponse.getCode(), outboundResponse.getMessage());

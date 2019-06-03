@@ -20,7 +20,7 @@ public interface OutboundResource {
     Call<List<Transaction>> getUnpaidTransactionList(@Header("Authentication") String authentication, @Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
 
     @GET("transaction")
-    Call<OutboundResponse> conformTransaction(@Header("Authentication") String authentication, @Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
+    Call<OutboundResponse> confirm(@Header("Authentication") String authentication, @Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);
 
     @POST("transaction")
     Call<OutboundResponse> cancel(@Header("Authentication") String authentication, @Query("method_name") String methodName, @Query("TransferNo") String transferNo, @Query("payeecode") String payeeCode);

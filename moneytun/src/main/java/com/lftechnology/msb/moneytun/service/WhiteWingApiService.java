@@ -6,6 +6,7 @@ import com.lftechnology.msb.moneytun.dto.City;
 import com.lftechnology.msb.moneytun.dto.CityRequest;
 import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ExchangeRate;
+import com.lftechnology.msb.moneytun.dto.PayTransaction;
 import com.lftechnology.msb.moneytun.dto.PointOfContact;
 import com.lftechnology.msb.moneytun.dto.PointOfContactRequest;
 import com.lftechnology.msb.moneytun.dto.State;
@@ -36,5 +37,7 @@ public interface WhiteWingApiService {
     List<City> getCities(CityRequest cityRequest, APIContext apiContext);
 
     List<State> getStates(StateRequest stateRequest, APIContext apiContext);
+
+    void payTransaction(PayTransaction payTransaction, APIContext apiContext);
 
 }

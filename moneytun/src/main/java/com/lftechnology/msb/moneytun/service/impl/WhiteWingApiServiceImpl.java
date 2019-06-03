@@ -8,6 +8,7 @@ import com.lftechnology.msb.moneytun.dto.CityRequest;
 import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ListResponse;
+import com.lftechnology.msb.moneytun.dto.PayTransaction;
 import com.lftechnology.msb.moneytun.dto.PointOfContact;
 import com.lftechnology.msb.moneytun.dto.PointOfContactRequest;
 import com.lftechnology.msb.moneytun.dto.State;
@@ -203,6 +204,23 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
                 throw new WhiteWingBadRequestException(response.message());
             }
             return response.body().getResults();
+        } catch (IOException e) {
+            LOGGER.error("Error while fetching point of contact list {}", e);
+            throw new WhiteWingBadRequestException(e.getMessage());
+        }
+    }
+
+    @Override
+    public void payTransaction(PayTransaction payTransaction,APIContext apiContext) {
+        LOGGER.info("MoneyTun PayTransaction : {}", payTransaction.getTransferNumber());
+        Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
+        WhiteWingResource service = retrofit.create(WhiteWingResource.class);
+        Call<com.lftechnology.msb.moneytun.dto.Response> call = service.pay(apiContext.getCredential().getAuthenticationDetail(), QueryType.PAY_TRANSACTION.getValue(), payTransaction);
+        try {
+            Response<com.lftechnology.msb.moneytun.dto.Response> response = call.execute();
+            if (!response.isSuccessful()) {
+                throw new WhiteWingBadRequestException(response.message());
+            }
         } catch (IOException e) {
             LOGGER.error("Error while fetching point of contact list {}", e);
             throw new WhiteWingBadRequestException(e.getMessage());

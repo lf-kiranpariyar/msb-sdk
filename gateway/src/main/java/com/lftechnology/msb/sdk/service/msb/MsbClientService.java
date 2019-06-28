@@ -42,5 +42,6 @@ public interface MsbClientService {
 
     TransactionResponse getTxnDetails(Transaction transaction, String credentials);
 
+    Boolean payTransaction(String referenceNumber, String credentials);
 
 }

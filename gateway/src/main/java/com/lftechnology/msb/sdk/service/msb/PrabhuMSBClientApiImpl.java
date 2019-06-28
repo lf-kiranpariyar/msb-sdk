@@ -39,7 +39,24 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
     @Override
     public TransactionResponse create(Transaction transaction, String credentials) {
         Credential credential = PrabhuObjectMapper.toCredential(credentials);
+        credential =generateCredentials(credential, transaction);
         TransactionDetail transactionDetail = PrabhuObjectMapper.toTransactionDetail(transaction);
+
+        SyncBankRequest syncBankRequest = new SyncBankRequest();
+        Country country = new Country();
+        country.setName("United States");
+        country.setThreeCharISOCode("USA");
+        country.setTwoCharISOCode("US");
+        syncBankRequest.setCountry(country);
+        syncBankRequest.setType(TransactionPaymentType.PARTNER_BANK_ACCOUNT);
+
+        List<SyncBankResponse> syncBankRequests = fetchBank(syncBankRequest, credentials);
+        syncBankRequests.forEach(it->{
+            if(it.getBranchResponseList().get(0).getName().equalsIgnoreCase(String.valueOf(transaction.getBank().getName()))){
+                transactionDetail.setBankId(String.valueOf(it.getBranchResponseList().get(0).getMetadata().get("bankId")));
+                transactionDetail.setBankLocationId(String.valueOf(it.getBranchResponseList().get(0).getMetadata().get("locationId")));
+            }
+        });
 
         return PrabhuObjectMapper.toTransactionResponse(prabhuClientApi.createTransaction(credential, transactionDetail));
 
@@ -118,5 +135,141 @@ public class PrabhuMSBClientApiImpl implements MsbClientService {
         return PrabhuObjectMapper.toTransactionResponse(prabhuTransactionResponse);
     }
 
+    @Override
+    public Boolean payTransaction(String referenceNumber, String credentials) {
+        throw new UnsupportedException();
+    }
+
+    private Credential generateCredentials(Credential credential, Transaction transaction){
+        if(transaction.getReferenceNumber().startsWith("PMT-11")){
+            switch (transaction.getSender().getAddress().getState().getTwoCharISOCode()){
+                case "CA":
+                    credential.setAgentUserId("CALKORA");
+                    credential.setAgentPassword("CALKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("PNCAKT");
+                    credential.setAgentName("");
+                    break;
+                case "CT" :
+                    credential.setAgentUserId("CONKORA");
+                    credential.setAgentPassword("CALKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("PNCAKT");
+                    break;
+                case "FL" :
+                    credential.setAgentUserId("CALKORA");
+                    credential.setAgentPassword("CONKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POCTKT");
+                    break;
+                case "GA":
+                    credential.setAgentUserId("FLOKORA");
+                    credential.setAgentPassword("FLOKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POFAKT");
+                    break;
+                case "IL":
+                    credential.setAgentUserId("ILLKORA");
+                    credential.setAgentPassword("ILLKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POISKT");
+                    break;
+                case "MA":
+                    credential.setAgentUserId("MASKORA");
+                    credential.setAgentPassword("MASKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POMSKT");
+                    break;
+                case "MI":
+                    credential.setAgentUserId("MICKORA");
+                    credential.setAgentPassword("MICKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POMNKT");
+                    break;
+                case "NY":
+                    credential.setAgentUserId("NEWJKORA");
+                    credential.setAgentPassword("NEWJKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("PONYKT");
+                    break;
+                case "PA":
+                    credential.setAgentUserId("PENKORA");
+                    credential.setAgentPassword("PENKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POPAKT");
+                    break;
+                case "TX":
+                    credential.setAgentUserId("TEXKORA");
+                    credential.setAgentPassword("TEXKORA@567");
+                    credential.setAgentLocationId("96860880");
+                    credential.setAgentCode("POTSKT");
+                    break;
+            }
+        }else{
+            switch (transaction.getSender().getAddress().getState().getTwoCharISOCode()){
+                case "CA":
+                    credential.setAgentUserId("CALREBTEL");
+                    credential.setAgentPassword("POCARN@123!");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POCARN");
+                    break;
+                case "CT" :
+                    credential.setAgentUserId("CONREBTEL");
+                    credential.setAgentPassword("CONREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POCTRN");
+                    break;
+                case "FL" :
+                    credential.setAgentUserId("FLOREBTEL");
+                    credential.setAgentPassword("FLOREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POFARN");
+                    break;
+                case "GA":
+                    credential.setAgentUserId("GEOREBTEL");
+                    credential.setAgentPassword("GEOREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POGARN");
+                    break;
+                case "IL":
+                    credential.setAgentUserId("ILLREBTEL");
+                    credential.setAgentPassword("ILLREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POISRN");
+                    break;
+                case "MA":
+                    credential.setAgentUserId("MASREBTEL");
+                    credential.setAgentPassword("MASREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POMSRN");
+                    break;
+                case "MI":
+                    credential.setAgentUserId("MICREBTEL");
+                    credential.setAgentPassword("MICREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POMNRN");
+                    break;
+                case "NY":
+                    credential.setAgentUserId("NEWJREBTEL");
+                    credential.setAgentPassword("NEWJREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("PONYRN");
+                    break;
+                case "PA":
+                    credential.setAgentUserId("PENREBTEL");
+                    credential.setAgentPassword("PENREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POPARN");
+                    break;
+                case "TX":
+                    credential.setAgentUserId("TEXREBTEL");
+                    credential.setAgentPassword("TEXREBTEL@567");
+                    credential.setAgentLocationId("96860774");
+                    credential.setAgentCode("POTSRN");
+                    break;
+            }
+        }
+        return credential;
+    }
 
 }

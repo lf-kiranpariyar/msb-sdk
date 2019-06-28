@@ -215,15 +215,11 @@ public class WhiteWingApiServiceImpl implements WhiteWingApiService {
         LOGGER.info("MoneyTun PayTransaction : {}", payTransaction.getTransferNumber());
         Retrofit retrofit = RequestApi.getRetrofitObject(apiContext);
         WhiteWingResource service = retrofit.create(WhiteWingResource.class);
-        Call<com.lftechnology.msb.moneytun.dto.Response> call = service.pay(apiContext.getCredential().getAuthenticationDetail(), QueryType.PAY_TRANSACTION.getValue(), payTransaction);
+        Call<com.lftechnology.msb.moneytun.dto.Response> call = service.pay(apiContext.getCredential().getAuthenticationDetail(), payTransaction);
         try {
-            Response<com.lftechnology.msb.moneytun.dto.Response> response = call.execute();
-            if (!response.isSuccessful()) {
-                throw new WhiteWingBadRequestException(response.message());
-            }
-        } catch (IOException e) {
+            call.execute();
+        } catch (Exception e) {
             LOGGER.error("Error while fetching point of contact list {}", e);
-            throw new WhiteWingBadRequestException(e.getMessage());
         }
     }
 }

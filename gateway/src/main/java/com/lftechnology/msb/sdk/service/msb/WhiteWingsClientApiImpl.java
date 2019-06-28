@@ -5,6 +5,7 @@ import com.lftechnology.msb.moneytun.dto.APIContext;
 import com.lftechnology.msb.moneytun.dto.CityRequest;
 import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ExchangeRate;
+import com.lftechnology.msb.moneytun.dto.PayTransaction;
 import com.lftechnology.msb.moneytun.dto.PayoutPartner;
 import com.lftechnology.msb.moneytun.dto.PointOfContact;
 import com.lftechnology.msb.moneytun.dto.PointOfContactRequest;
@@ -185,6 +186,18 @@ public class WhiteWingsClientApiImpl implements MsbClientService {
     @Override
     public TransactionResponse getTxnDetails(Transaction transaction, String credentials) {
         return null;
+    }
+
+    @Override
+    public Boolean payTransaction(String referenceNumber, String credentials) {
+        PayTransaction payTransaction = new PayTransaction();
+        payTransaction.setTransferNumber(referenceNumber);
+        payTransaction.setReceiverId("");
+        payTransaction.setRemark("Successfully Paid Transaction to Receiver");
+        WhiteWingApiService wingApiService = new WhiteWingApiServiceImpl();
+        APIContext apiContext = new APIContext(credentials, ApiMode.valueOf(apiMode));
+        wingApiService.payTransaction(payTransaction, apiContext);
+        return Boolean.TRUE;
     }
 
 

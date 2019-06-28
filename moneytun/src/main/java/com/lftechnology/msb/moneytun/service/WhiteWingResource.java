@@ -75,8 +75,8 @@ public interface WhiteWingResource {
     @POST("customrate")
     Call<Response> updateRate(@Header("Authentication") String authentication, @Query("id") String action, @Body ExchangeRate rate);
 
-    @POST("transaction")
-    Call<Response> pay(@Header("Authentication") String authentication, @Query("method_name") String methodName, @Body PayTransaction payTransaction);
+    @POST("paytransaction")
+    Call<Response> pay(@Header("Authentication") String authentication, @Body PayTransaction payTransaction);
 
 
 }

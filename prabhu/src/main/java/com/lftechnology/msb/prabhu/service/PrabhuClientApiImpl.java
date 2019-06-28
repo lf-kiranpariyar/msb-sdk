@@ -188,4 +188,5 @@ public class PrabhuClientApiImpl implements PrabhuClientApi {
         );
         return new BigDecimal(forex.getEXCHANGERATE());
     }
+
 }

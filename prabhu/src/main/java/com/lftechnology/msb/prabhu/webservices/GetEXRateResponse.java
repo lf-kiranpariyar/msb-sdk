@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getEXRateResult"
+        "getEXRateResult"
 })
 @XmlRootElement(name = "GetEXRateResponse")
 public class GetEXRateResponse {
@@ -39,11 +36,9 @@ public class GetEXRateResponse {
 
     /**
      * Gets the value of the getEXRateResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnFOREX }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnFOREX }
      */
     public ReturnFOREX getGetEXRateResult() {
         return getEXRateResult;
@@ -51,11 +46,9 @@ public class GetEXRateResponse {
 
     /**
      * Sets the value of the getEXRateResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnFOREX }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnFOREX }
      */
     public void setGetEXRateResult(ReturnFOREX value) {
         this.getEXRateResult = value;

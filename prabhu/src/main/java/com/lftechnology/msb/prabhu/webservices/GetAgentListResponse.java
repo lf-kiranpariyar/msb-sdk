@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getAgentListResult"
+        "getAgentListResult"
 })
 @XmlRootElement(name = "GetAgentListResponse")
 public class GetAgentListResponse {
@@ -39,11 +36,9 @@ public class GetAgentListResponse {
 
     /**
      * Gets the value of the getAgentListResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfReturnAGENTLIST }
-     *     
+     *
+     * @return possible object is
+     * {@link ArrayOfReturnAGENTLIST }
      */
     public ArrayOfReturnAGENTLIST getGetAgentListResult() {
         return getAgentListResult;
@@ -51,11 +46,9 @@ public class GetAgentListResponse {
 
     /**
      * Sets the value of the getAgentListResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfReturnAGENTLIST }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ArrayOfReturnAGENTLIST }
      */
     public void setGetAgentListResult(ArrayOfReturnAGENTLIST value) {
         this.getAgentListResult = value;

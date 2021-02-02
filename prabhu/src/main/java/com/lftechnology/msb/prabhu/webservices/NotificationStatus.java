@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -30,18 +29,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "agentcode",
-    "userid",
-    "password",
-    "agentsessionid",
-    "fromdate",
-    "todate",
-    "showincremental"
+        "agentcode",
+        "userid",
+        "password",
+        "agentsessionid",
+        "fromdate",
+        "todate",
+        "showincremental"
 })
 @XmlRootElement(name = "NotificationStatus")
 public class NotificationStatus {
@@ -63,11 +60,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the agentcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTCODE() {
         return agentcode;
@@ -75,11 +70,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the agentcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTCODE(String value) {
         this.agentcode = value;
@@ -87,11 +80,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the userid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUSERID() {
         return userid;
@@ -99,11 +90,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the userid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUSERID(String value) {
         this.userid = value;
@@ -111,11 +100,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPASSWORD() {
         return password;
@@ -123,11 +110,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPASSWORD(String value) {
         this.password = value;
@@ -135,11 +120,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -147,11 +130,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -159,11 +140,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the fromdate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFROMDATE() {
         return fromdate;
@@ -171,11 +150,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the fromdate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFROMDATE(String value) {
         this.fromdate = value;
@@ -183,11 +160,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the todate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTODATE() {
         return todate;
@@ -195,11 +170,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the todate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTODATE(String value) {
         this.todate = value;
@@ -207,11 +180,9 @@ public class NotificationStatus {
 
     /**
      * Gets the value of the showincremental property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSHOWINCREMENTAL() {
         return showincremental;
@@ -219,11 +190,9 @@ public class NotificationStatus {
 
     /**
      * Sets the value of the showincremental property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSHOWINCREMENTAL(String value) {
         this.showincremental = value;

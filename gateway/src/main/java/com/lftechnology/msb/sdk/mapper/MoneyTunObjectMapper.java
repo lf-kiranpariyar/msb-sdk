@@ -32,7 +32,7 @@ public class MoneyTunObjectMapper {
     }
 
     public static com.lftechnology.msb.moneytun.dto.Transaction toTransaction(Transaction transaction, APIContext apiContext) {
-        LOGGER.debug("Transaction Object Reference For MoneyTun Transaction Creation : {}" , transaction);
+        LOGGER.debug("Transaction Object Reference For MoneyTun Transaction Creation : {}", transaction);
         com.lftechnology.msb.moneytun.dto.Sender sender = toSender(transaction.getSender());
         Receiver receiver = toReciever(transaction.getRecipient());
         PaymentMode paymentMode = TransactionPaymentType.getMoneyTunPaymentMode(transaction.getType());
@@ -40,7 +40,7 @@ public class MoneyTunObjectMapper {
         document.setDocumentCountryISOCode(transaction.getSender().getAddress().getCountry().getThreeCharISOCode());
         Bank bank = transaction.getBank();
         com.lftechnology.msb.moneytun.dto.Transaction transactiondetail = new com.lftechnology.msb.moneytun.dto.Transaction.Builder().
-                party(sender, receiver, document).bankDetails(bank.getName(), bank.getBranch().getName(), bank.getAccountNumber(), bank.getType()).
+                party(sender, receiver, document).bankDetails(String.valueOf(bank.getMetadata().get("BankName")), transaction.getRecipient().getAddress().getCountry().getThreeCharISOCode().equalsIgnoreCase("NGA") ?String.valueOf(bank.getMetadata().get("BankCode")) :  bank.getBranch().getName(), bank.getAccountNumber(), bank.getType()).
                 paymentMethod(paymentMode.getMode()).transactionAmount(transaction.getAmount(), transaction.getRate(), transaction.getRecipientAmount()).build();
         fetchPOC(apiContext, bank, transactiondetail);
         transactiondetail.setSender(toSender(transaction.getSender()));
@@ -50,20 +50,20 @@ public class MoneyTunObjectMapper {
         transactiondetail.setSourceCurrencyCode(transaction.getSender().getAddress().getCountry().getCurrencyCode());
 
         //FIXME : After MoneyTun Fix the Issue
-        if("SAVINGS".equalsIgnoreCase(transactiondetail.getAccountType())){
+        if ("SAVINGS".equalsIgnoreCase(transactiondetail.getAccountType())) {
             transactiondetail.setAccountType("7");
-        }else {
+        } else {
             transactiondetail.setAccountType("8");
         }
-        LOGGER.debug("Transaction Object For MoneyTun Transaction Creation : {}" , transactiondetail);
+        LOGGER.debug("Transaction Object For MoneyTun Transaction Creation : {}", transactiondetail);
         return transactiondetail;
     }
 
     private static void fetchPOC(APIContext apiContext, Bank bank, com.lftechnology.msb.moneytun.dto.Transaction transactiondetail) {
-        if(apiContext.getMode() == ApiMode.LIVE){
+        if (apiContext.getMode() == ApiMode.LIVE) {
             transactiondetail.setPointOfContactId(Long.valueOf(bank.getMetadata().get("pocId").toString()));
             transactiondetail.setDeliveryMethod(PaymentMode.ACCOUNT_DEPOSIT.getMode());
-        }else{
+        } else {
             transactiondetail.setPointOfContactId(87198l);
             transactiondetail.setDeliveryMethod(PaymentMode.CASH_PICKUP.getMode());
         }
@@ -72,9 +72,9 @@ public class MoneyTunObjectMapper {
     public static com.lftechnology.msb.moneytun.dto.Sender toSender(Sender sender) {
         Address address = sender.getAddress();
         Contact contact = sender.getContact();
-        return  new com.lftechnology.msb.moneytun.dto.Sender.Builder().
+        return new com.lftechnology.msb.moneytun.dto.Sender.Builder().
                 name(sender.getFirstName(), sender.getMiddleName(), sender.getLastName()).
-                addressDetails(address.getAddressLine1(), address.getAddressLine2(), address.getCountry().getThreeCharISOCode(), address.getCountry().getTwoCharISOCode() + "-" +address.getState().getTwoCharISOCode(), address.getState().getTwoCharISOCode(), address.getCity()).
+                addressDetails(address.getAddressLine1(), address.getAddressLine2(), address.getCountry().getThreeCharISOCode(), address.getCountry().getTwoCharISOCode() + "-" + address.getState().getTwoCharISOCode(), address.getState().getTwoCharISOCode(), address.getCity()).
                 nationality(address.getCountry().getThreeCharISOCode()).
                 contactDetails(contact.getMobilePhone(), address.getPostCode()).dateOfBirth(sender.getDateOfBirth()).gender(sender.getGender().code()).build();
     }

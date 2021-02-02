@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_Notification complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_Notification">
  *   &lt;complexContent>
@@ -34,23 +33,21 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_Notification", propOrder = {
-    "code",
-    "pinno",
-    "agenttxnid",
-    "notificationtype",
-    "notification",
-    "notificationdate",
-    "payoutagent",
-    "payoutbranch",
-    "payoutbeneficiaryidtype",
-    "payoutbeneficiaryidnumber",
-    "agentsessionid",
-    "notificationid"
+        "code",
+        "pinno",
+        "agenttxnid",
+        "notificationtype",
+        "notification",
+        "notificationdate",
+        "payoutagent",
+        "payoutbranch",
+        "payoutbeneficiaryidtype",
+        "payoutbeneficiaryidnumber",
+        "agentsessionid",
+        "notificationid"
 })
 public class ReturnNotification {
 
@@ -81,11 +78,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -93,11 +88,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -105,11 +98,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the pinno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPINNO() {
         return pinno;
@@ -117,11 +108,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the pinno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPINNO(String value) {
         this.pinno = value;
@@ -129,11 +118,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the agenttxnid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTTXNID() {
         return agenttxnid;
@@ -141,11 +128,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the agenttxnid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTTXNID(String value) {
         this.agenttxnid = value;
@@ -153,11 +138,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the notificationtype property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNOTIFICATIONTYPE() {
         return notificationtype;
@@ -165,11 +148,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the notificationtype property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNOTIFICATIONTYPE(String value) {
         this.notificationtype = value;
@@ -177,11 +158,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the notification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNOTIFICATION() {
         return notification;
@@ -189,11 +168,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the notification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNOTIFICATION(String value) {
         this.notification = value;
@@ -201,11 +178,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the notificationdate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNOTIFICATIONDATE() {
         return notificationdate;
@@ -213,11 +188,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the notificationdate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNOTIFICATIONDATE(String value) {
         this.notificationdate = value;
@@ -225,11 +198,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the payoutagent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAGENT() {
         return payoutagent;
@@ -237,11 +208,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the payoutagent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAGENT(String value) {
         this.payoutagent = value;
@@ -249,11 +218,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the payoutbranch property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTBRANCH() {
         return payoutbranch;
@@ -261,11 +228,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the payoutbranch property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTBRANCH(String value) {
         this.payoutbranch = value;
@@ -273,11 +238,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the payoutbeneficiaryidtype property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTBENEFICIARYIDTYPE() {
         return payoutbeneficiaryidtype;
@@ -285,11 +248,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the payoutbeneficiaryidtype property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTBENEFICIARYIDTYPE(String value) {
         this.payoutbeneficiaryidtype = value;
@@ -297,11 +258,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the payoutbeneficiaryidnumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTBENEFICIARYIDNUMBER() {
         return payoutbeneficiaryidnumber;
@@ -309,11 +268,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the payoutbeneficiaryidnumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTBENEFICIARYIDNUMBER(String value) {
         this.payoutbeneficiaryidnumber = value;
@@ -321,11 +278,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -333,11 +288,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -345,11 +298,9 @@ public class ReturnNotification {
 
     /**
      * Gets the value of the notificationid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNOTIFICATIONID() {
         return notificationid;
@@ -357,11 +308,9 @@ public class ReturnNotification {
 
     /**
      * Sets the value of the notificationid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNOTIFICATIONID(String value) {
         this.notificationid = value;

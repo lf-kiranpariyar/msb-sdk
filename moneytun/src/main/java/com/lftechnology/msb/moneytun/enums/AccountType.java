@@ -6,8 +6,8 @@ public enum AccountType {
 
     private String value;
 
-    AccountType(String value){
-        this.value =value;
+    AccountType(String value) {
+        this.value = value;
     }
 
     public String getType() {

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 
-public class ExchangeRateResponse  extends  Response{
+public class ExchangeRateResponse extends Response {
 
     @JsonProperty("Rate")
     BigDecimal rate;

@@ -4,9 +4,9 @@ package com.lftechnology.msb.prabhu.dto;
  * @author Kiran Pariyar <kiranpariyar@lftechnology.com>
  */
 public class TransactionAmendmentDetail {
-   String msbTxnId;
-   String fieldName;
-   String fieldValue;
+    String msbTxnId;
+    String fieldName;
+    String fieldValue;
 
     public String getMsbTxnId() {
         return msbTxnId;

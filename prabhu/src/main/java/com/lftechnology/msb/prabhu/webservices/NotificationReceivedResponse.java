@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "notificationReceivedResult"
+        "notificationReceivedResult"
 })
 @XmlRootElement(name = "NotificationReceivedResponse")
 public class NotificationReceivedResponse {
@@ -39,11 +36,9 @@ public class NotificationReceivedResponse {
 
     /**
      * Gets the value of the notificationReceivedResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnNotificationStatus }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnNotificationStatus }
      */
     public ReturnNotificationStatus getNotificationReceivedResult() {
         return notificationReceivedResult;
@@ -51,11 +46,9 @@ public class NotificationReceivedResponse {
 
     /**
      * Sets the value of the notificationReceivedResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnNotificationStatus }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnNotificationStatus }
      */
     public void setNotificationReceivedResult(ReturnNotificationStatus value) {
         this.notificationReceivedResult = value;

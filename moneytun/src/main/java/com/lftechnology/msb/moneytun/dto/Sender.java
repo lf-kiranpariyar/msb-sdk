@@ -1,6 +1,5 @@
 package com.lftechnology.msb.moneytun.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -203,26 +202,27 @@ public class Sender {
         public Builder() {
         }
 
-        public Builder name(String firstName, String middleName, String lastName){
+        public Builder name(String firstName, String middleName, String lastName) {
             this.firstName = firstName;
-            this.lastName=lastName;
+            this.lastName = lastName;
             this.middleName = middleName;
-            return  this;
+            return this;
         }
 
-        public Builder addressDetails(String addressLine1, String addressLine2, String senderCountryISOCode, String stateISOCode, String state, String city){
+        public Builder addressDetails(String addressLine1, String addressLine2, String senderCountryISOCode, String stateISOCode, String state, String city) {
             this.addressLine1 = addressLine1;
-            this.addressLine2 =addressLine2;
+            this.addressLine2 = addressLine2;
             this.senderCountryISOCode = senderCountryISOCode;
-            this.stateISOCode=stateISOCode;
+            this.stateISOCode = stateISOCode;
             this.state = state;
-            this.city=city;
-            return  this;
+            this.city = city;
+            return this;
 
         }
-        public Builder contactDetails(String zipCode, String phone){
-            this.zipCode = zipCode.substring(0,4);
-            this.phone=phone;
+
+        public Builder contactDetails(String zipCode, String phone) {
+            this.zipCode = zipCode.substring(0, 4);
+            this.phone = phone;
             return this;
         }
 

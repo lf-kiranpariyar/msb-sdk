@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_AccountValid_V2 complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_AccountValid_V2">
  *   &lt;complexContent>
@@ -35,24 +34,22 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_AccountValid_V2", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "customername",
-    "customermobileno",
-    "customeremail",
-    "accountno",
-    "accountnoold",
-    "branchname",
-    "idtype",
-    "idnumber",
-    "issuedate",
-    "expirydate"
+        "code",
+        "agentsessionid",
+        "message",
+        "customername",
+        "customermobileno",
+        "customeremail",
+        "accountno",
+        "accountnoold",
+        "branchname",
+        "idtype",
+        "idnumber",
+        "issuedate",
+        "expirydate"
 })
 public class ReturnAccountValidV2 {
 
@@ -85,11 +82,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -97,11 +92,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -109,11 +102,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -121,11 +112,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -133,11 +122,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -145,11 +132,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -157,11 +142,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the customername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCUSTOMERNAME() {
         return customername;
@@ -169,11 +152,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the customername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCUSTOMERNAME(String value) {
         this.customername = value;
@@ -181,11 +162,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the customermobileno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCUSTOMERMOBILENO() {
         return customermobileno;
@@ -193,11 +172,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the customermobileno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCUSTOMERMOBILENO(String value) {
         this.customermobileno = value;
@@ -205,11 +182,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the customeremail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCUSTOMEREMAIL() {
         return customeremail;
@@ -217,11 +192,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the customeremail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCUSTOMEREMAIL(String value) {
         this.customeremail = value;
@@ -229,11 +202,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the accountno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getACCOUNTNO() {
         return accountno;
@@ -241,11 +212,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the accountno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setACCOUNTNO(String value) {
         this.accountno = value;
@@ -253,11 +222,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the accountnoold property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getACCOUNTNOOLD() {
         return accountnoold;
@@ -265,11 +232,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the accountnoold property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setACCOUNTNOOLD(String value) {
         this.accountnoold = value;
@@ -277,11 +242,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the branchname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBRANCHNAME() {
         return branchname;
@@ -289,11 +252,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the branchname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBRANCHNAME(String value) {
         this.branchname = value;
@@ -301,11 +262,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the idtype property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getIDTYPE() {
         return idtype;
@@ -313,11 +272,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the idtype property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setIDTYPE(String value) {
         this.idtype = value;
@@ -325,11 +282,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the idnumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getIDNUMBER() {
         return idnumber;
@@ -337,11 +292,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the idnumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setIDNUMBER(String value) {
         this.idnumber = value;
@@ -349,11 +302,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the issuedate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getISSUEDATE() {
         return issuedate;
@@ -361,11 +312,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the issuedate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setISSUEDATE(String value) {
         this.issuedate = value;
@@ -373,11 +322,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Gets the value of the expirydate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEXPIRYDATE() {
         return expirydate;
@@ -385,11 +332,9 @@ public class ReturnAccountValidV2 {
 
     /**
      * Sets the value of the expirydate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEXPIRYDATE(String value) {
         this.expirydate = value;

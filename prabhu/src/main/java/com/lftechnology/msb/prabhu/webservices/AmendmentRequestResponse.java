@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "amendmentRequestResult"
+        "amendmentRequestResult"
 })
 @XmlRootElement(name = "AmendmentRequestResponse")
 public class AmendmentRequestResponse {
@@ -39,11 +36,9 @@ public class AmendmentRequestResponse {
 
     /**
      * Gets the value of the amendmentRequestResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnTXNAMEND }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnTXNAMEND }
      */
     public ReturnTXNAMEND getAmendmentRequestResult() {
         return amendmentRequestResult;
@@ -51,11 +46,9 @@ public class AmendmentRequestResponse {
 
     /**
      * Sets the value of the amendmentRequestResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnTXNAMEND }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnTXNAMEND }
      */
     public void setAmendmentRequestResult(ReturnTXNAMEND value) {
         this.amendmentRequestResult = value;

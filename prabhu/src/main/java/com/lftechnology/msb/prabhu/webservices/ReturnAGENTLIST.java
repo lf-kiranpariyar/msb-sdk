@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_AGENTLIST complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_AGENTLIST">
  *   &lt;complexContent>
@@ -36,25 +35,23 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_AGENTLIST", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "locationid",
-    "agent",
-    "branch",
-    "address",
-    "city",
-    "currency",
-    "bankid",
-    "bankbranchid",
-    "bankbranchstate",
-    "optionalfield",
-    "agentcode"
+        "code",
+        "agentsessionid",
+        "message",
+        "locationid",
+        "agent",
+        "branch",
+        "address",
+        "city",
+        "currency",
+        "bankid",
+        "bankbranchid",
+        "bankbranchstate",
+        "optionalfield",
+        "agentcode"
 })
 public class ReturnAGENTLIST {
 
@@ -89,11 +86,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -101,11 +96,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -113,11 +106,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -125,11 +116,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -137,11 +126,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -149,11 +136,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -161,11 +146,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the locationid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLOCATIONID() {
         return locationid;
@@ -173,11 +156,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the locationid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLOCATIONID(String value) {
         this.locationid = value;
@@ -185,11 +166,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the agent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENT() {
         return agent;
@@ -197,11 +176,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the agent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENT(String value) {
         this.agent = value;
@@ -209,11 +186,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the branch property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBRANCH() {
         return branch;
@@ -221,11 +196,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the branch property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBRANCH(String value) {
         this.branch = value;
@@ -233,11 +206,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the address property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getADDRESS() {
         return address;
@@ -245,11 +216,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the address property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setADDRESS(String value) {
         this.address = value;
@@ -257,11 +226,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the city property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCITY() {
         return city;
@@ -269,11 +236,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the city property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCITY(String value) {
         this.city = value;
@@ -281,11 +246,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the currency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCURRENCY() {
         return currency;
@@ -293,11 +256,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the currency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCURRENCY(String value) {
         this.currency = value;
@@ -305,11 +266,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the bankid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKID() {
         return bankid;
@@ -317,11 +276,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the bankid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKID(String value) {
         this.bankid = value;
@@ -329,11 +286,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the bankbranchid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKBRANCHID() {
         return bankbranchid;
@@ -341,11 +296,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the bankbranchid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKBRANCHID(String value) {
         this.bankbranchid = value;
@@ -353,11 +306,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the bankbranchstate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKBRANCHSTATE() {
         return bankbranchstate;
@@ -365,11 +316,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the bankbranchstate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKBRANCHSTATE(String value) {
         this.bankbranchstate = value;
@@ -377,11 +326,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the optionalfield property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getOPTIONALFIELD() {
         return optionalfield;
@@ -389,11 +336,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the optionalfield property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setOPTIONALFIELD(String value) {
         this.optionalfield = value;
@@ -401,11 +346,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Gets the value of the agentcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTCODE() {
         return agentcode;
@@ -413,11 +356,9 @@ public class ReturnAGENTLIST {
 
     /**
      * Sets the value of the agentcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTCODE(String value) {
         this.agentcode = value;

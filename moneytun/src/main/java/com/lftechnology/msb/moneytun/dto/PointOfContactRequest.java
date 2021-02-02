@@ -10,6 +10,11 @@ public class PointOfContactRequest {
     @JsonProperty("Payee")
     private String payeeCode;
 
+    public PointOfContactRequest(String countryCode, String payeeCode) {
+        this.countryCode = countryCode;
+        this.payeeCode = payeeCode;
+    }
+
     public String getCountryCode() {
         return countryCode;
     }
@@ -23,11 +28,6 @@ public class PointOfContactRequest {
     }
 
     public void setPayeeCode(String payeeCode) {
-        this.payeeCode = payeeCode;
-    }
-
-    public PointOfContactRequest(String countryCode, String payeeCode) {
-        this.countryCode = countryCode;
         this.payeeCode = payeeCode;
     }
 

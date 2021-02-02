@@ -77,7 +77,7 @@ public class Credential {
         this.secretCode = secretCode;
     }
 
-    public String getAuthenticationDetail(){
+    public String getAuthenticationDetail() {
         return this.accessCode.concat(":").concat(this.secretCode);
     }
 

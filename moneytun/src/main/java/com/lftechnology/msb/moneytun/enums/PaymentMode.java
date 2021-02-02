@@ -2,7 +2,7 @@ package com.lftechnology.msb.moneytun.enums;
 
 public enum PaymentMode {
 
-    CASH_PICKUP("CASH PICKUP"), ACCOUNT_DEPOSIT("SEND TO ACCOUNT"),HOME_DELIVERY("CASH DELIVERY");
+    CASH_PICKUP("CASH PICKUP"), ACCOUNT_DEPOSIT("SEND TO ACCOUNT"), HOME_DELIVERY("CASH DELIVERY");
 
     private String value;
 

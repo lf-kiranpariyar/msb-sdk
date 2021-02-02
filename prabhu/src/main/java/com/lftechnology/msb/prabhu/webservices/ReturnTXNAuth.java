@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_TXNAuth complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_TXNAuth">
  *   &lt;complexContent>
@@ -29,18 +28,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_TXNAuth", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "pinno",
-    "sendername",
-    "payoutamt",
-    "payoutcurrency"
+        "code",
+        "agentsessionid",
+        "message",
+        "pinno",
+        "sendername",
+        "payoutamt",
+        "payoutcurrency"
 })
 public class ReturnTXNAuth {
 
@@ -61,11 +58,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -73,11 +68,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -85,11 +78,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -97,11 +88,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -109,11 +98,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -121,11 +108,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -133,11 +118,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the pinno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPINNO() {
         return pinno;
@@ -145,11 +128,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the pinno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPINNO(String value) {
         this.pinno = value;
@@ -157,11 +138,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the sendername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERNAME() {
         return sendername;
@@ -169,11 +148,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the sendername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERNAME(String value) {
         this.sendername = value;
@@ -181,11 +158,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the payoutamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAMT() {
         return payoutamt;
@@ -193,11 +168,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the payoutamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAMT(String value) {
         this.payoutamt = value;
@@ -205,11 +178,9 @@ public class ReturnTXNAuth {
 
     /**
      * Gets the value of the payoutcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTCURRENCY() {
         return payoutcurrency;
@@ -217,11 +188,9 @@ public class ReturnTXNAuth {
 
     /**
      * Sets the value of the payoutcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTCURRENCY(String value) {
         this.payoutcurrency = value;

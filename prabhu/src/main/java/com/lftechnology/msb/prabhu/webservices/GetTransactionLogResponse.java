@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getTransactionLogResult"
+        "getTransactionLogResult"
 })
 @XmlRootElement(name = "GetTransactionLogResponse")
 public class GetTransactionLogResponse {
@@ -39,11 +36,9 @@ public class GetTransactionLogResponse {
 
     /**
      * Gets the value of the getTransactionLogResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfReturnTransactionLog }
-     *     
+     *
+     * @return possible object is
+     * {@link ArrayOfReturnTransactionLog }
      */
     public ArrayOfReturnTransactionLog getGetTransactionLogResult() {
         return getTransactionLogResult;
@@ -51,11 +46,9 @@ public class GetTransactionLogResponse {
 
     /**
      * Sets the value of the getTransactionLogResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfReturnTransactionLog }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ArrayOfReturnTransactionLog }
      */
     public void setGetTransactionLogResult(ArrayOfReturnTransactionLog value) {
         this.getTransactionLogResult = value;

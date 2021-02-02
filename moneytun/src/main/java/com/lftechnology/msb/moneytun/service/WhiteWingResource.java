@@ -9,6 +9,7 @@ import com.lftechnology.msb.moneytun.dto.CustomExchangeRate;
 import com.lftechnology.msb.moneytun.dto.DeliveryMethod;
 import com.lftechnology.msb.moneytun.dto.ExchangeRate;
 import com.lftechnology.msb.moneytun.dto.ListResponse;
+import com.lftechnology.msb.moneytun.dto.PayTransaction;
 import com.lftechnology.msb.moneytun.dto.Payer;
 import com.lftechnology.msb.moneytun.dto.PointOfContact;
 import com.lftechnology.msb.moneytun.dto.Response;
@@ -73,5 +74,9 @@ public interface WhiteWingResource {
 
     @POST("customrate")
     Call<Response> updateRate(@Header("Authentication") String authentication, @Query("id") String action, @Body ExchangeRate rate);
+
+    @POST("paytransaction")
+    Call<Response> pay(@Header("Authentication") String authentication, @Body PayTransaction payTransaction);
+
 
 }

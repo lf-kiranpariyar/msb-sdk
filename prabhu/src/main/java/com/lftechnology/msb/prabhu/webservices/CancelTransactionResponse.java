@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "cancelTransactionResult"
+        "cancelTransactionResult"
 })
 @XmlRootElement(name = "CancelTransactionResponse")
 public class CancelTransactionResponse {
@@ -39,11 +36,9 @@ public class CancelTransactionResponse {
 
     /**
      * Gets the value of the cancelTransactionResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnCreateTXN }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnCreateTXN }
      */
     public ReturnCreateTXN getCancelTransactionResult() {
         return cancelTransactionResult;
@@ -51,11 +46,9 @@ public class CancelTransactionResponse {
 
     /**
      * Sets the value of the cancelTransactionResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnCreateTXN }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnCreateTXN }
      */
     public void setCancelTransactionResult(ReturnCreateTXN value) {
         this.cancelTransactionResult = value;

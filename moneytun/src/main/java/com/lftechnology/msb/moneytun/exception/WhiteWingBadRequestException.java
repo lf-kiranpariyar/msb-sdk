@@ -10,7 +10,7 @@ public class WhiteWingBadRequestException extends RuntimeException {
         super(message);
     }
 
-    public WhiteWingBadRequestException(String message, Integer code){
+    public WhiteWingBadRequestException(String message, Integer code) {
         this.message = message;
         this.code = code;
     }

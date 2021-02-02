@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_TRANSREPORT complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_TRANSREPORT">
  *   &lt;complexContent>
@@ -57,46 +56,44 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_TRANSREPORT", propOrder = {
-    "code",
-    "agentname",
-    "agentbranch",
-    "transactionstatus",
-    "pinno",
-    "sendername",
-    "senderidtype",
-    "senderid",
-    "sendernationality",
-    "senderaddress",
-    "sendercontactno",
-    "receivername",
-    "receivercountry",
-    "receiveraddress",
-    "receivercontactno",
-    "remitamt",
-    "remitccy",
-    "remitcharge",
-    "remitexrate",
-    "payoutamt",
-    "payoutccy",
-    "transactiontype",
-    "transactiondate",
-    "userid",
-    "approvedate",
-    "approveuserid",
-    "bankname",
-    "bankbranchname",
-    "bankaccountnumber",
-    "status",
-    "paiddate",
-    "payoutagent",
-    "canceldate",
-    "message",
-    "agentsessionid"
+        "code",
+        "agentname",
+        "agentbranch",
+        "transactionstatus",
+        "pinno",
+        "sendername",
+        "senderidtype",
+        "senderid",
+        "sendernationality",
+        "senderaddress",
+        "sendercontactno",
+        "receivername",
+        "receivercountry",
+        "receiveraddress",
+        "receivercontactno",
+        "remitamt",
+        "remitccy",
+        "remitcharge",
+        "remitexrate",
+        "payoutamt",
+        "payoutccy",
+        "transactiontype",
+        "transactiondate",
+        "userid",
+        "approvedate",
+        "approveuserid",
+        "bankname",
+        "bankbranchname",
+        "bankaccountnumber",
+        "status",
+        "paiddate",
+        "payoutagent",
+        "canceldate",
+        "message",
+        "agentsessionid"
 })
 public class ReturnTRANSREPORT {
 
@@ -173,11 +170,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -185,11 +180,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -197,11 +190,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the agentname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTNAME() {
         return agentname;
@@ -209,11 +200,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the agentname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTNAME(String value) {
         this.agentname = value;
@@ -221,11 +210,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the agentbranch property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTBRANCH() {
         return agentbranch;
@@ -233,11 +220,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the agentbranch property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTBRANCH(String value) {
         this.agentbranch = value;
@@ -245,11 +230,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the transactionstatus property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTRANSACTIONSTATUS() {
         return transactionstatus;
@@ -257,11 +240,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the transactionstatus property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTRANSACTIONSTATUS(String value) {
         this.transactionstatus = value;
@@ -269,11 +250,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the pinno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPINNO() {
         return pinno;
@@ -281,11 +260,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the pinno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPINNO(String value) {
         this.pinno = value;
@@ -293,11 +270,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the sendername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERNAME() {
         return sendername;
@@ -305,11 +280,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the sendername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERNAME(String value) {
         this.sendername = value;
@@ -317,11 +290,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the senderidtype property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERIDTYPE() {
         return senderidtype;
@@ -329,11 +300,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the senderidtype property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERIDTYPE(String value) {
         this.senderidtype = value;
@@ -341,11 +310,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the senderid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERID() {
         return senderid;
@@ -353,11 +320,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the senderid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERID(String value) {
         this.senderid = value;
@@ -365,11 +330,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the sendernationality property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERNATIONALITY() {
         return sendernationality;
@@ -377,11 +340,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the sendernationality property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERNATIONALITY(String value) {
         this.sendernationality = value;
@@ -389,11 +350,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the senderaddress property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERADDRESS() {
         return senderaddress;
@@ -401,11 +360,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the senderaddress property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERADDRESS(String value) {
         this.senderaddress = value;
@@ -413,11 +370,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the sendercontactno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERCONTACTNO() {
         return sendercontactno;
@@ -425,11 +380,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the sendercontactno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERCONTACTNO(String value) {
         this.sendercontactno = value;
@@ -437,11 +390,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the receivername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERNAME() {
         return receivername;
@@ -449,11 +400,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the receivername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERNAME(String value) {
         this.receivername = value;
@@ -461,11 +410,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the receivercountry property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERCOUNTRY() {
         return receivercountry;
@@ -473,11 +420,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the receivercountry property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERCOUNTRY(String value) {
         this.receivercountry = value;
@@ -485,11 +430,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the receiveraddress property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERADDRESS() {
         return receiveraddress;
@@ -497,11 +440,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the receiveraddress property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERADDRESS(String value) {
         this.receiveraddress = value;
@@ -509,11 +450,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the receivercontactno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERCONTACTNO() {
         return receivercontactno;
@@ -521,11 +460,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the receivercontactno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERCONTACTNO(String value) {
         this.receivercontactno = value;
@@ -533,11 +470,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the remitamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getREMITAMT() {
         return remitamt;
@@ -545,11 +480,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the remitamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setREMITAMT(String value) {
         this.remitamt = value;
@@ -557,11 +490,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the remitccy property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getREMITCCY() {
         return remitccy;
@@ -569,11 +500,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the remitccy property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setREMITCCY(String value) {
         this.remitccy = value;
@@ -581,11 +510,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the remitcharge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getREMITCHARGE() {
         return remitcharge;
@@ -593,11 +520,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the remitcharge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setREMITCHARGE(String value) {
         this.remitcharge = value;
@@ -605,11 +530,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the remitexrate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getREMITEXRATE() {
         return remitexrate;
@@ -617,11 +540,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the remitexrate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setREMITEXRATE(String value) {
         this.remitexrate = value;
@@ -629,11 +550,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the payoutamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAMT() {
         return payoutamt;
@@ -641,11 +560,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the payoutamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAMT(String value) {
         this.payoutamt = value;
@@ -653,11 +570,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the payoutccy property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTCCY() {
         return payoutccy;
@@ -665,11 +580,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the payoutccy property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTCCY(String value) {
         this.payoutccy = value;
@@ -677,11 +590,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the transactiontype property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTRANSACTIONTYPE() {
         return transactiontype;
@@ -689,11 +600,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the transactiontype property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTRANSACTIONTYPE(String value) {
         this.transactiontype = value;
@@ -701,11 +610,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the transactiondate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTRANSACTIONDATE() {
         return transactiondate;
@@ -713,11 +620,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the transactiondate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTRANSACTIONDATE(String value) {
         this.transactiondate = value;
@@ -725,11 +630,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the userid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUSERID() {
         return userid;
@@ -737,11 +640,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the userid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUSERID(String value) {
         this.userid = value;
@@ -749,11 +650,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the approvedate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAPPROVEDATE() {
         return approvedate;
@@ -761,11 +660,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the approvedate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAPPROVEDATE(String value) {
         this.approvedate = value;
@@ -773,11 +670,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the approveuserid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAPPROVEUSERID() {
         return approveuserid;
@@ -785,11 +680,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the approveuserid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAPPROVEUSERID(String value) {
         this.approveuserid = value;
@@ -797,11 +690,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the bankname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKNAME() {
         return bankname;
@@ -809,11 +700,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the bankname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKNAME(String value) {
         this.bankname = value;
@@ -821,11 +710,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the bankbranchname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKBRANCHNAME() {
         return bankbranchname;
@@ -833,11 +720,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the bankbranchname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKBRANCHNAME(String value) {
         this.bankbranchname = value;
@@ -845,11 +730,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the bankaccountnumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBANKACCOUNTNUMBER() {
         return bankaccountnumber;
@@ -857,11 +740,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the bankaccountnumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBANKACCOUNTNUMBER(String value) {
         this.bankaccountnumber = value;
@@ -869,11 +750,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the status property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSTATUS() {
         return status;
@@ -881,11 +760,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the status property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSTATUS(String value) {
         this.status = value;
@@ -893,11 +770,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the paiddate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAIDDATE() {
         return paiddate;
@@ -905,11 +780,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the paiddate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAIDDATE(String value) {
         this.paiddate = value;
@@ -917,11 +790,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the payoutagent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAGENT() {
         return payoutagent;
@@ -929,11 +800,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the payoutagent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAGENT(String value) {
         this.payoutagent = value;
@@ -941,11 +810,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the canceldate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCANCELDATE() {
         return canceldate;
@@ -953,11 +820,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the canceldate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCANCELDATE(String value) {
         this.canceldate = value;
@@ -965,11 +830,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -977,11 +840,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -989,11 +850,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -1001,11 +860,9 @@ public class ReturnTRANSREPORT {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;

@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "queryTXNStatusResult"
+        "queryTXNStatusResult"
 })
 @XmlRootElement(name = "QueryTXNStatusResponse")
 public class QueryTXNStatusResponse {
@@ -39,11 +36,9 @@ public class QueryTXNStatusResponse {
 
     /**
      * Gets the value of the queryTXNStatusResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReturnTXNStatus }
-     *     
+     *
+     * @return possible object is
+     * {@link ReturnTXNStatus }
      */
     public ReturnTXNStatus getQueryTXNStatusResult() {
         return queryTXNStatusResult;
@@ -51,11 +46,9 @@ public class QueryTXNStatusResponse {
 
     /**
      * Sets the value of the queryTXNStatusResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ReturnTXNStatus }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ReturnTXNStatus }
      */
     public void setQueryTXNStatusResult(ReturnTXNStatus value) {
         this.queryTXNStatusResult = value;

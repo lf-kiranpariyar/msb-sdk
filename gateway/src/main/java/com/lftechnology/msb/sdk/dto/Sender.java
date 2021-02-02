@@ -12,6 +12,7 @@ public class Sender extends Person {
     Contact contact;
     List<Document> documentList;
 
+
     //FIXME : Maybe Replace it with List Of Custom Object eg. CustomField which will hold key, value and mapping attibute
     private Map<String, Object> metadata = new HashMap<>();
 
@@ -64,14 +65,16 @@ public class Sender extends Person {
         this.occupation = occupation;
     }
 
+
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Sender{");
+        final StringBuilder sb = new StringBuilder("Sender{");
         sb.append("referenceId='").append(referenceId).append('\'');
         sb.append(", occupation='").append(occupation).append('\'');
         sb.append(", address=").append(address);
         sb.append(", contact=").append(contact);
         sb.append(", documentList=").append(documentList);
+
         sb.append(", metadata=").append(metadata);
         sb.append('}');
         return sb.toString();

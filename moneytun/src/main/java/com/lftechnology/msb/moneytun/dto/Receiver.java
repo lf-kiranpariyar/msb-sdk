@@ -31,7 +31,7 @@ public class Receiver {
     String stateISOCode = "Default State";
 
     @JsonProperty("ReceiverCity")
-    String city="Default City";
+    String city = "Default City";
 
     @JsonProperty("ReceiverPhone1")
     String phoneNumber;
@@ -158,40 +158,41 @@ public class Receiver {
         public Builder() {
         }
 
-        public Receiver.Builder name(String firstName, String middleName, String lastName){
+        public Receiver.Builder name(String firstName, String middleName, String lastName) {
             this.firstName = firstName;
-            this.lastName=lastName;
+            this.lastName = lastName;
             this.middleName = middleName;
-            return  this;
+            return this;
         }
 
-        public Receiver.Builder addressDetails(String addressLine1, String addressLine2, String countryISOCode, String stateISOCode, String state, String city){
+        public Receiver.Builder addressDetails(String addressLine1, String addressLine2, String countryISOCode, String stateISOCode, String state, String city) {
             this.addressLine1 = addressLine1;
-            this.addressLine2 =addressLine2;
+            this.addressLine2 = addressLine2;
             this.countryISOCode = countryISOCode;
-            if(stateISOCode != null && !"".equals(stateISOCode)){
-                this.stateISOCode=stateISOCode;
-            }else{
+            if (stateISOCode != null && !"".equals(stateISOCode)) {
+                this.stateISOCode = stateISOCode;
+            } else {
                 this.stateISOCode = "Default State";
             }
-            if(state !=null && !"".equals(state)){
+            if (state != null && !"".equals(state)) {
                 this.state = state;
-            }else{
+            } else {
                 this.state = "Default State";
             }
-            this.city=city;
-            return  this;
+            this.city = city;
+            return this;
         }
 
-        public Receiver.Builder contactDetails(String phone){
-            this.phoneNumber=phone;
+        public Receiver.Builder contactDetails(String phone) {
+            this.phoneNumber = phone;
             return this;
         }
 
         public Builder gender(String gender) {
-            if(gender!=null && !"".equalsIgnoreCase(gender)){
+            if (gender != null && !"".equalsIgnoreCase(gender)) {
                 this.gender = gender;
-            }{
+            }
+            {
                 this.gender = "M";
             }
             return this;

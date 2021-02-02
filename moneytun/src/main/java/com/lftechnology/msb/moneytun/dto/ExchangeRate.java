@@ -7,17 +7,17 @@ import java.math.BigDecimal;
 
 /**
  * Request Format :
- *
+ * <p>
  * <pre>
  *     {
-     "SenderAgencyCode" : "machnet",
-     "SourceCurrencyISoCode" : "usd",
-     "DestinationCurrencyISoCode": "vnd",
-     "PayeeCode": "trg",
-     "SubPayer": "",
-     "GroupId": "1636",
-     "SellRate": 12.0000000000
- }
+ * "SenderAgencyCode" : "machnet",
+ * "SourceCurrencyISoCode" : "usd",
+ * "DestinationCurrencyISoCode": "vnd",
+ * "PayeeCode": "trg",
+ * "SubPayer": "",
+ * "GroupId": "1636",
+ * "SellRate": 12.0000000000
+ * }
  *
  *
  * </pre>

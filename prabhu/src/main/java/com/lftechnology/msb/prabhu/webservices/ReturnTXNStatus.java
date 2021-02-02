@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Return_TXNStatus complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Return_TXNStatus">
  *   &lt;complexContent>
@@ -38,27 +37,25 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Return_TXNStatus", propOrder = {
-    "code",
-    "agentsessionid",
-    "message",
-    "pinno",
-    "sendername",
-    "receivername",
-    "payoutamt",
-    "payoutcurrency",
-    "status",
-    "statusdate",
-    "collectamt",
-    "collectcurrency",
-    "exchangerate",
-    "servicecharge",
-    "partnersettlement",
-    "partnerccyrate"
+        "code",
+        "agentsessionid",
+        "message",
+        "pinno",
+        "sendername",
+        "receivername",
+        "payoutamt",
+        "payoutcurrency",
+        "status",
+        "statusdate",
+        "collectamt",
+        "collectcurrency",
+        "exchangerate",
+        "servicecharge",
+        "partnersettlement",
+        "partnerccyrate"
 })
 public class ReturnTXNStatus {
 
@@ -97,11 +94,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCODE() {
         return code;
@@ -109,11 +104,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCODE(String value) {
         this.code = value;
@@ -121,11 +114,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -133,11 +124,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -145,11 +134,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the message property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMESSAGE() {
         return message;
@@ -157,11 +144,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the message property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMESSAGE(String value) {
         this.message = value;
@@ -169,11 +154,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the pinno property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPINNO() {
         return pinno;
@@ -181,11 +164,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the pinno property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPINNO(String value) {
         this.pinno = value;
@@ -193,11 +174,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the sendername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENDERNAME() {
         return sendername;
@@ -205,11 +184,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the sendername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENDERNAME(String value) {
         this.sendername = value;
@@ -217,11 +194,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the receivername property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRECEIVERNAME() {
         return receivername;
@@ -229,11 +204,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the receivername property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRECEIVERNAME(String value) {
         this.receivername = value;
@@ -241,11 +214,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the payoutamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTAMT() {
         return payoutamt;
@@ -253,11 +224,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the payoutamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTAMT(String value) {
         this.payoutamt = value;
@@ -265,11 +234,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the payoutcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTCURRENCY() {
         return payoutcurrency;
@@ -277,11 +244,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the payoutcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTCURRENCY(String value) {
         this.payoutcurrency = value;
@@ -289,11 +254,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the status property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSTATUS() {
         return status;
@@ -301,11 +264,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the status property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSTATUS(String value) {
         this.status = value;
@@ -313,11 +274,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the statusdate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSTATUSDATE() {
         return statusdate;
@@ -325,11 +284,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the statusdate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSTATUSDATE(String value) {
         this.statusdate = value;
@@ -337,11 +294,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the collectamt property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLLECTAMT() {
         return collectamt;
@@ -349,11 +304,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the collectamt property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLLECTAMT(String value) {
         this.collectamt = value;
@@ -361,11 +314,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the collectcurrency property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLLECTCURRENCY() {
         return collectcurrency;
@@ -373,11 +324,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the collectcurrency property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLLECTCURRENCY(String value) {
         this.collectcurrency = value;
@@ -385,11 +334,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the exchangerate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEXCHANGERATE() {
         return exchangerate;
@@ -397,11 +344,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the exchangerate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEXCHANGERATE(String value) {
         this.exchangerate = value;
@@ -409,11 +354,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the servicecharge property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSERVICECHARGE() {
         return servicecharge;
@@ -421,11 +364,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the servicecharge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSERVICECHARGE(String value) {
         this.servicecharge = value;
@@ -433,11 +374,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the partnersettlement property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPARTNERSETTLEMENT() {
         return partnersettlement;
@@ -445,11 +384,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the partnersettlement property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPARTNERSETTLEMENT(String value) {
         this.partnersettlement = value;
@@ -457,11 +394,9 @@ public class ReturnTXNStatus {
 
     /**
      * Gets the value of the partnerccyrate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPARTNERCCYRATE() {
         return partnerccyrate;
@@ -469,11 +404,9 @@ public class ReturnTXNStatus {
 
     /**
      * Sets the value of the partnerccyrate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPARTNERCCYRATE(String value) {
         this.partnerccyrate = value;

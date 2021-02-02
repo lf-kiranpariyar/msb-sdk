@@ -10,8 +10,8 @@ import com.lftechnology.msb.sdk.exception.UnsupportedException;
 public enum TransactionPaymentType {
     BANK_ACCOUNT, HOME_DELIVERY, CASH, PARTNER_BANK_ACCOUNT;
 
-    public static com.lftechnology.msb.moneytun.enums.PaymentMode getMoneyTunPaymentMode(TransactionPaymentType type){
-        switch (type){
+    public static com.lftechnology.msb.moneytun.enums.PaymentMode getMoneyTunPaymentMode(TransactionPaymentType type) {
+        switch (type) {
             case BANK_ACCOUNT:
                 return com.lftechnology.msb.moneytun.enums.PaymentMode.ACCOUNT_DEPOSIT;
             case CASH:
@@ -23,8 +23,8 @@ public enum TransactionPaymentType {
         }
     }
 
-    public static com.lftechnology.msb.prabhu.enums.PaymentMode getPrabhuPaymentMode(TransactionPaymentType type){
-        switch (type){
+    public static com.lftechnology.msb.prabhu.enums.PaymentMode getPrabhuPaymentMode(TransactionPaymentType type) {
+        switch (type) {
             case BANK_ACCOUNT:
                 return PaymentMode.ACCOUNT_DEPOSIT;
             case CASH:

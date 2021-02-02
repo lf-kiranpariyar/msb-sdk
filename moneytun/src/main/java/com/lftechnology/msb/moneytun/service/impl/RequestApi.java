@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class RequestApi {
 
-    public static Retrofit getRetrofitObject(APIContext apiContext){
+    public static Retrofit getRetrofitObject(APIContext apiContext) {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);

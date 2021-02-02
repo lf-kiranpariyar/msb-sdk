@@ -2,8 +2,6 @@ package com.lftechnology.msb.moneytun.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.ws.rs.QueryParam;
-
 public class Bank {
 
     @JsonProperty("BankName")
@@ -20,8 +18,6 @@ public class Bank {
 
     @JsonProperty("DestinationCountryISOCode")
     String countryISOCode;
-
-
 
 
     public String getName() {

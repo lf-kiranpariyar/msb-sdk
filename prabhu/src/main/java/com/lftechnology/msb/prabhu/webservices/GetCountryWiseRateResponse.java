@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -24,12 +23,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "getCountryWiseRateResult"
+        "getCountryWiseRateResult"
 })
 @XmlRootElement(name = "GetCountryWiseRateResponse")
 public class GetCountryWiseRateResponse {
@@ -39,11 +36,9 @@ public class GetCountryWiseRateResponse {
 
     /**
      * Gets the value of the getCountryWiseRateResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArrayOfReturnExCountry }
-     *     
+     *
+     * @return possible object is
+     * {@link ArrayOfReturnExCountry }
      */
     public ArrayOfReturnExCountry getGetCountryWiseRateResult() {
         return getCountryWiseRateResult;
@@ -51,11 +46,9 @@ public class GetCountryWiseRateResponse {
 
     /**
      * Sets the value of the getCountryWiseRateResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArrayOfReturnExCountry }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ArrayOfReturnExCountry }
      */
     public void setGetCountryWiseRateResult(ArrayOfReturnExCountry value) {
         this.getCountryWiseRateResult = value;

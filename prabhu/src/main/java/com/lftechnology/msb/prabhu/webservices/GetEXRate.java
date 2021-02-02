@@ -1,4 +1,3 @@
-
 package com.lftechnology.msb.prabhu.webservices;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -34,22 +33,20 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "agentcode",
-    "userid",
-    "password",
-    "agentsessionid",
-    "transferamount",
-    "paymentmode",
-    "calcby",
-    "locationid",
-    "payoutcountry",
-    "waivefee",
-    "promotionalcode"
+        "agentcode",
+        "userid",
+        "password",
+        "agentsessionid",
+        "transferamount",
+        "paymentmode",
+        "calcby",
+        "locationid",
+        "payoutcountry",
+        "waivefee",
+        "promotionalcode"
 })
 @XmlRootElement(name = "GetEXRate")
 public class GetEXRate {
@@ -79,11 +76,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the agentcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTCODE() {
         return agentcode;
@@ -91,11 +86,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the agentcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTCODE(String value) {
         this.agentcode = value;
@@ -103,11 +96,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the userid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUSERID() {
         return userid;
@@ -115,11 +106,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the userid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUSERID(String value) {
         this.userid = value;
@@ -127,11 +116,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPASSWORD() {
         return password;
@@ -139,11 +126,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPASSWORD(String value) {
         this.password = value;
@@ -151,11 +136,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the agentsessionid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getAGENTSESSIONID() {
         return agentsessionid;
@@ -163,11 +146,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the agentsessionid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setAGENTSESSIONID(String value) {
         this.agentsessionid = value;
@@ -175,11 +156,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the transferamount property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTRANSFERAMOUNT() {
         return transferamount;
@@ -187,11 +166,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the transferamount property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTRANSFERAMOUNT(String value) {
         this.transferamount = value;
@@ -199,11 +176,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the paymentmode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYMENTMODE() {
         return paymentmode;
@@ -211,11 +186,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the paymentmode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYMENTMODE(String value) {
         this.paymentmode = value;
@@ -223,11 +196,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the calcby property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCALCBY() {
         return calcby;
@@ -235,11 +206,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the calcby property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCALCBY(String value) {
         this.calcby = value;
@@ -247,11 +216,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the locationid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLOCATIONID() {
         return locationid;
@@ -259,11 +226,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the locationid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLOCATIONID(String value) {
         this.locationid = value;
@@ -271,11 +236,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the payoutcountry property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPAYOUTCOUNTRY() {
         return payoutcountry;
@@ -283,11 +246,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the payoutcountry property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPAYOUTCOUNTRY(String value) {
         this.payoutcountry = value;
@@ -295,11 +256,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the waivefee property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getWAIVEFEE() {
         return waivefee;
@@ -307,11 +266,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the waivefee property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setWAIVEFEE(String value) {
         this.waivefee = value;
@@ -319,11 +276,9 @@ public class GetEXRate {
 
     /**
      * Gets the value of the promotionalcode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPROMOTIONALCODE() {
         return promotionalcode;
@@ -331,11 +286,9 @@ public class GetEXRate {
 
     /**
      * Sets the value of the promotionalcode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPROMOTIONALCODE(String value) {
         this.promotionalcode = value;

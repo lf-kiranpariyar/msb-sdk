@@ -1,7 +1,6 @@
 package com.lftechnology.msb.moneytun.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.lftechnology.msb.moneytun.enums.TxnStatus;
 
 import java.math.BigDecimal;
 

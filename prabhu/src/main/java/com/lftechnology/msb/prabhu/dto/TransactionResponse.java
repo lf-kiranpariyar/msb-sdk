@@ -5,17 +5,17 @@ package com.lftechnology.msb.prabhu.dto;
  */
 public class TransactionResponse {
 
-   private String code;
-   private String pinNumber;
-   private String agentTxnId;
-   private String collectCurrency;
-   private String agentSessionId;
-   private String message;
-   private String collectAmount;
-   private String payoutAmount;
-   private String payoutCurrency;
-   private String txnDate;
-   private String exchangeRate;
+    private String code;
+    private String pinNumber;
+    private String agentTxnId;
+    private String collectCurrency;
+    private String agentSessionId;
+    private String message;
+    private String collectAmount;
+    private String payoutAmount;
+    private String payoutCurrency;
+    private String txnDate;
+    private String exchangeRate;
 
     public String getCode() {
         return code;
@@ -105,7 +105,8 @@ public class TransactionResponse {
         this.exchangeRate = exchangeRate;
     }
 
-    @Override public String toString() {
+    @Override
+    public String toString() {
         final StringBuffer sb = new StringBuffer("TransactionResponse{");
         sb.append("code='").append(code).append('\'');
         sb.append(", pinNumber='").append(pinNumber).append('\'');
